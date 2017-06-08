@@ -2,7 +2,7 @@
 	class TipoPreco_model extends CI_Model {
 		
 		// -- SELECT -- /
-		function Listar($pData = null,$pOrderBy = null){
+		function Listar($pData = null){
 				
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_tipopreco.Id",					$pData["Id"]);}	
@@ -17,7 +17,12 @@
 			if(isset($pData["Origem"]["Id"])){		$this->db->where("tb_tipopreco.IdOrigem <=",		$pData["Origem"]["Id"]);}
 				
 			// ORDER BY	
-			if($pOrderBy != null){$this->db->order_by($pOrderBy);}
+			if(isset($pData["OrderBy"])){
+				$this->db->order_by($pData["OrderBy"]);
+			}
+			else{
+				$this->db->order_by("Descricao");
+			}
 			
 			// TB
 			$this->db->from("tb_tipopreco");	
@@ -29,7 +34,7 @@
                 	
                 	$this->db->join("tb_usuarios AS UI", "UI.Id = tb_tipopreco.IdUsuarioInclusao","inner");
                     $this->db->join("tb_usuarios AS UA", "UA.Id = tb_tipopreco.IdUsuarioAlteracao","left");
-                    $this->db->join("tb_origem AS Origem", "Origem.Id = tb_tipopreco.IdOrigem","inner");
+                    $this->db->join("tb_sys_origem AS Origem", "Origem.Id = tb_tipopreco.IdOrigem","inner");
                 	
                 	/* SELECT */
                     $this->db->select("

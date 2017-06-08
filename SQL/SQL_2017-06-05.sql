@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `tb_cest`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_cest` (
+CREATE TABLE IF NOT EXISTS `tb_cest_Log` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Codigo` bigint(20) NOT NULL,
   `Id_NCM-SH` bigint(20) NOT NULL,
@@ -35,6 +35,9 @@ CREATE TABLE IF NOT EXISTS `tb_cest` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -54,6 +57,9 @@ CREATE TABLE IF NOT EXISTS `tb_cst-csosn` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -70,7 +76,7 @@ INSERT INTO `tb_cst-csosn` (`Id`, `Codigo`, `UF`, `Aliquota`, `IdUsuarioInclusao
 -- Estrutura da tabela `tb_fornecedor`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_fornecedor` (
+CREATE TABLE IF NOT EXISTS `tb_fornecedor_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(100) NOT NULL,
   `IdUsuarioInclusao` bigint(20) NOT NULL,
@@ -78,6 +84,9 @@ CREATE TABLE IF NOT EXISTS `tb_fornecedor` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -94,7 +103,7 @@ INSERT INTO `tb_fornecedor` (`Id`, `Descricao`, `IdUsuarioInclusao`, `DataInclus
 -- Estrutura da tabela `tb_fotos-produtos`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_fotos-produtos` (
+CREATE TABLE IF NOT EXISTS `tb_fotos-produtos_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdProduto` bigint(20) NOT NULL,
   `NomeArquivo` varchar(250) NOT NULL,
@@ -103,6 +112,9 @@ CREATE TABLE IF NOT EXISTS `tb_fotos-produtos` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -112,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `tb_fotos-produtos` (
 -- Estrutura da tabela `tb_grupo`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_grupo` (
+CREATE TABLE IF NOT EXISTS `tb_grupo_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(50) NOT NULL,
   `IdUsuarioInclusao` bigint(20) NOT NULL,
@@ -120,6 +132,9 @@ CREATE TABLE IF NOT EXISTS `tb_grupo` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -136,7 +151,7 @@ INSERT INTO `tb_grupo` (`Id`, `Descricao`, `IdUsuarioInclusao`, `DataInclusao`, 
 -- Estrutura da tabela `tb_ncm-sh`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_ncm-sh` (
+CREATE TABLE IF NOT EXISTS `tb_ncm-sh_Log` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Codigo` varchar(15) NOT NULL,
   `Descricao` varchar(250) NOT NULL,
@@ -145,6 +160,9 @@ CREATE TABLE IF NOT EXISTS `tb_ncm-sh` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -161,9 +179,12 @@ INSERT INTO `tb_ncm-sh` (`Id`, `Codigo`, `Descricao`, `IdUsuarioInclusao`, `Data
 -- Estrutura da tabela `tb_origem`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_origem` (
+CREATE TABLE IF NOT EXISTS `tb_origem_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(100) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -181,7 +202,7 @@ INSERT INTO `tb_origem` (`Id`, `Descricao`) VALUES
 -- Estrutura da tabela `tb_preco`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_preco` (
+CREATE TABLE IF NOT EXISTS `tb_preco_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdTipoPreco` bigint(20) NOT NULL,
   `Preco` decimal(7,2) NOT NULL,
@@ -191,6 +212,9 @@ CREATE TABLE IF NOT EXISTS `tb_preco` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -208,7 +232,7 @@ INSERT INTO `tb_preco` (`Id`, `IdTipoPreco`, `Preco`, `IdProduto`, `IdUsuarioInc
 -- Estrutura da tabela `tb_produtos`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_produtos` (
+CREATE TABLE IF NOT EXISTS `tb_produtos_Log` (
   `IdOrigem` bigint(20) NOT NULL,
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdUsuarioInclusao` bigint(20) NOT NULL,
@@ -229,6 +253,9 @@ CREATE TABLE IF NOT EXISTS `tb_produtos` (
   `IdCest` bigint(20) DEFAULT NULL,
   `IdTipoPrecoApresentacao` bigint(20) NOT NULL DEFAULT '1',
   `Qtde_Estoque` int(11) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Id` (`Id`),
   UNIQUE KEY `Codigo` (`Codigo`)
@@ -247,7 +274,7 @@ INSERT INTO `tb_produtos` (`IdOrigem`, `Id`, `IdUsuarioInclusao`, `DataInclusao`
 -- Estrutura da tabela `tb_promocao`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_promocao` (
+CREATE TABLE IF NOT EXISTS `tb_promocao_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdProduto` bigint(20) NOT NULL,
   `Qtde` int(11) NOT NULL,
@@ -263,6 +290,9 @@ CREATE TABLE IF NOT EXISTS `tb_promocao` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -272,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `tb_promocao` (
 -- Estrutura da tabela `tb_setor`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_setor` (
+CREATE TABLE IF NOT EXISTS `tb_setor_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(50) NOT NULL,
   `IdUsuarioInclusao` bigint(20) NOT NULL,
@@ -280,6 +310,9 @@ CREATE TABLE IF NOT EXISTS `tb_setor` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -289,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `tb_setor` (
 -- Estrutura da tabela `tb_subgrupo`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_subgrupo` (
+CREATE TABLE IF NOT EXISTS `tb_subgrupo_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `IdGrupo` bigint(20) NOT NULL,
   `Descricao` varchar(50) NOT NULL,
@@ -298,6 +331,9 @@ CREATE TABLE IF NOT EXISTS `tb_subgrupo` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -307,7 +343,7 @@ CREATE TABLE IF NOT EXISTS `tb_subgrupo` (
 -- Estrutura da tabela `tb_tipo`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_tipo` (
+CREATE TABLE IF NOT EXISTS `tb_tipo_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(100) NOT NULL,
   `IdUsuarioInclusao` bigint(20) NOT NULL,
@@ -315,6 +351,9 @@ CREATE TABLE IF NOT EXISTS `tb_tipo` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -331,7 +370,7 @@ INSERT INTO `tb_tipo` (`Id`, `Descricao`, `IdUsuarioInclusao`, `DataInclusao`, `
 -- Estrutura da tabela `tb_tipopreco`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_tipopreco` (
+CREATE TABLE IF NOT EXISTS `tb_tipopreco_Log` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Descricao` varchar(20) NOT NULL,
   `IdUsuarioInclusao` bigint(20) NOT NULL,
@@ -339,6 +378,9 @@ CREATE TABLE IF NOT EXISTS `tb_tipopreco` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -356,7 +398,7 @@ INSERT INTO `tb_tipopreco` (`Id`, `Descricao`, `IdUsuarioInclusao`, `DataInclusa
 -- Estrutura da tabela `tb_unidadeapresentacao`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_unidadeapresentacao` (
+CREATE TABLE IF NOT EXISTS `tb_unidadeapresentacao_Log` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Codigo` varchar(6) NOT NULL,
   `Descricao` varchar(50) NOT NULL,
@@ -365,6 +407,9 @@ CREATE TABLE IF NOT EXISTS `tb_unidadeapresentacao` (
   `IdUsuarioAlteracao` bigint(20) NOT NULL,
   `DataAlteracao` datetime NOT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -381,7 +426,7 @@ INSERT INTO `tb_unidadeapresentacao` (`Id`, `Codigo`, `Descricao`, `IdUsuarioInc
 -- Estrutura da tabela `tb_usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_usuarios` (
+CREATE TABLE IF NOT EXISTS `tb_usuarios_Log` (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(250) NOT NULL,
   `Email` varchar(250) NOT NULL,
@@ -390,6 +435,9 @@ CREATE TABLE IF NOT EXISTS `tb_usuarios` (
   `IdUsuarioAlteracao` bigint(20) DEFAULT NULL,
   `DataAlteracao` datetime DEFAULT NULL,
   `IdOrigem` bigint(20) NOT NULL,
+  TipoAcao VARCHAR(50) NOT NULL,
+  DataAcao DATETIME NOT NULL,
+  IdUsuarioAcao BIGINT NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 

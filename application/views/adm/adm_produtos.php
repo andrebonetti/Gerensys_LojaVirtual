@@ -3,33 +3,110 @@
         
         <h1>Produtos</h1>
         
-        <?=var_dump($lProdutos);?>
+        <?=var_dump($lProduto)?>
+        
+        <?=var_dump($lProduto_TabelasFilhas)?>
         
         <h2>Cadastrar Produtos</h2>
         
         <?= form_open("adm_produtos/Incluir",array("class"=>"link-update"))?>
         
         	<!-- DIA -->
-
-                <input type="text" name="dataCompra" class="dataCompra-edit form-control" placeholder="DD/MM/AAAA">
-
-                <select name="categoria" class="categoria_modal categoria-atual form-control">       
-                    <option>Escolha a Categoria</option>
-                    <?php foreach($categorias as $categoria){?>
-                        <option value="<?=$categoria["IdCategoria"]?>"><?=$categoria["DescricaoCategoria"]?></option>
-                    <?php } ?>
-                    <option value="nova-categoria">Adicionar Categoria</option>
-                </select>
-				
-				<select name="sub_categoria" class="subcategoria_modal sub_categoria-atual form-control">
-                    <option>Escolha a Sub Categoria</option>
-                    <?php foreach($all_sub_categorias as $sub_categoria){?>
-                        <option value="<?=$sub_categoria["IdSubCategoria"]?>" class="option_SubCategoria" name="<?=$sub_categoria["IdCategoria"]?>"><?=$sub_categoria["DescricaoSubCategoria"]?></option>
-                    <?php } ?>
-                    <option value="nova-sub_categoria">Adicionar Sub_categoria</option>
-                </select>
-                    
-        
+	
+			<div class="Codigo">
+            
+            	<label>Código</label>    
+                <input type="text" name="Codigo" class="form-control" placeholder="" maxlength="50">
+            
+            </div> 
+            
+            <div class="CodigosAlternativos">
+            
+            	<label>Códigos Alternativos</label>    
+                <input type="text" name="CodigosAlternativos" class="form-control" placeholder="" maxlength="250">
+            
+            </div> 
+            
+            <div class="CodigosAlternativos">
+            
+            	<label>Códigos Alternativos</label>    
+                <input type="text" name="CodigosAlternativos" class="form-control" placeholder="" maxlength="250">
+            
+            </div>
+            
+            <div class="Descricao">
+            
+            	<label>Descrição</label>    
+                <input type="text" name="Descrição" class="form-control" placeholder="" maxlength="250">
+            
+            </div>
+            
+            <div class="UnidadeApresentacao">
+            
+	            <select name="UnidadeApresentacao" class="form-control"> 
+	                  
+	                <option>Unidade Apresentação</option>
+	                <?php foreach($lProduto_TabelasFilhas["lUnidadeApresentacao"] as $itemUnidadeApresentacao){?>
+	                    <option value="<?=$itemUnidadeApresentacao["Id"]?>"><?=$itemUnidadeApresentacao["Codigo"]?> - <?=$itemUnidadeApresentacao["Descricao"]?></option>
+	                <?php } ?>
+	                
+	            </select>
+	            
+            </div>
+            
+            <div class="Fabricante">
+            
+	            <select name="Fabricante" class="form-control"> 
+	                  
+	                <option>Fabricante</option>
+	                <?php foreach($lProduto_TabelasFilhas["lFornecedor"] as $itemFornecedor){?>
+	                    <option value="<?=$itemFornecedor["Id"]?>"><?=$itemFornecedor["Descricao"]?></option>
+	                <?php } ?>
+	                
+	            </select>
+	            
+            </div>
+            
+            <div class="Grupo">
+            
+	            <select name="Grupo" class="form-control"> 
+	                  
+	                <option>Grupo</option>
+	                <?php foreach($lProduto_TabelasFilhas["lGrupo"] as $itemGrupo){?>
+	                    <option value="<?=$itemGrupo["Id"]?>"><?=$itemGrupo["Descricao"]?></option>
+	                <?php } ?>
+	                
+	            </select>
+	            
+            </div>
+            
+            <div class="Tipo">
+            
+	            <select name="Tipo" class="form-control"> 
+	                  
+	                <option>Tipo</option>
+	                <?php foreach($lProduto_TabelasFilhas["lTipo"] as $itemTipo){?>
+	                    <option value="<?=$itemTipo["Id"]?>"><?=$itemTipo["Descricao"]?></option>
+	                <?php } ?>
+	                
+	            </select>
+	            
+            </div>
+            
+            <div class="CST_CSOSN">
+            
+            	<label>CST</label>    
+                <input type="number" name="CST_CSOSN" class="form-control" placeholder="">
+            
+            </div>
+            
+            <div class="Aliquota">
+            
+            	<label>Alíquota</label>    
+                <input type="number" name="Aliquota" class="form-control" placeholder="">
+            
+            </div>
+            
         <?= form_close()?>
         
     </div>

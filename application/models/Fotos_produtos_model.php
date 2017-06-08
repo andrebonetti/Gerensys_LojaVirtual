@@ -2,8 +2,16 @@
 	class Fotos_produtos_model extends CI_Model {
 		
 		// -- SELECT -- /
-		function Listar($pData = null,$pOrderBy = null){
+		function Listar($pData = null){
 
+			// ORDER BY	
+			if(isset($pData["OrderBy"])){
+				$this->db->order_by($pData["OrderBy"]);
+			}
+			else{
+				$this->db->order_by("NomeArquivo");
+			}
+			
 			// TB
 			$this->db->from("tb_fotos_produtos");	
 
@@ -29,7 +37,7 @@
                     
                 	$this->db->join("tb_usuarios AS UI", "UI.Id = tb_fotos_produtos.IdUsuarioInclusao","inner");
                     $this->db->join("tb_usuarios AS UA", "UA.Id = tb_fotos_produtos.IdUsuarioAlteracao","left");
-                    $this->db->join("tb_origem AS Origem", "Origem.Id = tb_fotos_produtos.IdOrigem","inner");
+                    $this->db->join("tb_sys_origem AS Origem", "Origem.Id = tb_fotos_produtos.IdOrigem","inner");
                 	
                 	/* SELECT */
                     $this->db->select("
@@ -42,9 +50,6 @@
                     ", false);
 				}
 			}
-			
-			// ORDER BY	
-			if($pOrderBy != null){$this->db->order_by($pOrderBy);}
 			
 			// RETURN
 			if(isset($pData["IsBusca"])){

@@ -22,7 +22,7 @@ $autoload['libraries'] = array('database', 'session','user_agent');
 | -------------------------------------------------------------------
 */
 
-$autoload['helper'] = array('url', 'form', 'text', 'date','active','filter','transform_name','adm_helper');
+$autoload['helper'] = array('url', 'form', 'text', 'date','active','filter','transform_name','adm_helper','produto_helper');
 
 /*
 | -------------------------------------------------------------------
@@ -47,15 +47,12 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array(
-				'crud_model'
-				,'Produto_model'
-				,'UnidadeApresentacao_model'
-				,'Cest_model'
+				'Produto_model'	
+				,'CodigosAlternativos_model'			
 				,'Cst_Csosn_model'
 				,'Fornecedor_model'
 				,'Fotos_produtos_model'
 				,'Grupo_model'
-				,'Ncm_sh_model'
 				,'Preco_model'
 				,'Promocao_model'
 				,'Setor_model'
@@ -63,4 +60,11 @@ $autoload['model'] = array(
 				,'Tipo_model'
 				,'TipoPreco_model'
 				,'Usuarios_model'
+				,'Sys_UnidadeApresentacao_model'
+				,'Sys_Origem_model'
+				,'Sys_Ncm_Sh_model'
+				,'Sys_Estado_model'
+				,'Sys_Cest_model'
+				,'Sys_Cst_Csosn_Origem_model'
+				,'Sys_Cst_Csosn_SituacaoTributaria_model'
 				);

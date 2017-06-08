@@ -2,7 +2,7 @@
 	class Preco_model extends CI_Model {
 		
 		// -- SELECT -- /
-		function Listar($pData = null,$pOrderBy = null){
+		function Listar($pData = null){
 				
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_preco.Id",					$pData["Id"]);}	
@@ -19,7 +19,12 @@
 			if(isset($pData["Origem"]["Id"])){		$this->db->where("tb_preco.IdOrigem <=",		$pData["Origem"]["Id"]);}
 				
 			// ORDER BY	
-			if($pOrderBy != null){$this->db->order_by($pOrderBy);}
+			if(isset($pData["OrderBy"])){
+				$this->db->order_by($pData["OrderBy"]);
+			}
+			else{
+				$this->db->order_by("Preco");
+			}
 			
 			// TB
 			$this->db->from("tb_preco");	
@@ -33,7 +38,7 @@
                     
                 	$this->db->join("tb_usuarios AS UI", "UI.Id = tb_preco.IdUsuarioInclusao","inner");
                     $this->db->join("tb_usuarios AS UA", "UA.Id = tb_preco.IdUsuarioAlteracao","left");
-                    $this->db->join("tb_origem AS Origem", "Origem.Id = tb_preco.IdOrigem","inner");
+                    $this->db->join("tb_sys_origem AS Origem", "Origem.Id = tb_preco.IdOrigem","inner");
                 	
                 	/* SELECT */
                     $this->db->select("
