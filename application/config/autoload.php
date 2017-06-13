@@ -22,7 +22,17 @@ $autoload['libraries'] = array('database', 'session','user_agent');
 | -------------------------------------------------------------------
 */
 
-$autoload['helper'] = array('url', 'form', 'text', 'date','active','filter','transform_name','adm_helper','produto_helper','validacao_helper');
+$autoload['helper'] = array(
+			'url'
+			,'form'
+			,'text'
+			,'date'
+			,'active'
+			,'transform_name'
+			,'codigosAlternativos_helper'
+			,'preco_helper'
+			,'produto_helper'
+			,'validacao_helper');
 
 /*
 | -------------------------------------------------------------------

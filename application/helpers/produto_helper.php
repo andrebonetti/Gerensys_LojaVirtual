@@ -1,51 +1,6 @@
 <?php
 
-	function produto_GetPosts(){
-        
-		$ci = get_instance();
-        
-        $data["Codigo"] 		= $ci->input->post("Codigo");	
-        
-        $n_codigos_alterativos 		 = $ci->input->post("n_codigos_alterativos");	
-		$data["CodigosAlternativos"] = array();	
-		for($n = 1;$n <= $n_codigos_alterativos; $n++){
-			
-			array_push($data["CodigosAlternativos"],$ci->input->post("CodigosAlternativos".$n));
-			
-		}
-
-        $data["Descricao"]							= $ci->input->post("Descricao");		
-        $data["UnidadeApresentacao"]["Id"]			= $ci->input->post("UnidadeApresentacao");	
-        $data["Fornecedor"]["Id"]					= $ci->input->post("Fornecedor");
-        $data["Grupo"]["Id"]						= $ci->input->post("Grupo");
-        $data["Tipo"]["Id"]							= $ci->input->post("Tipo");
-        
-        /* ------------------------------ CST ------------------------------ */
-        $CST["CodigoCompleto"]						= $ci->input->post("CST_CSOSN");
-        $CST["CST_CSOSN_Origem"]["Id"]				= $ci->input->post("CST_CSOSN_Origem_Id");
-        $CST["CST_CSOSN_SituacaoTributaria"]["Id"]	= $ci->input->post("CST_CSOSN_SituacaoTributaria_Id");
-        $CST["Aliquota"]							= valor_decimal($ci->input->post("Aliquota"));
-        
-        $data["CST"] = $CST;
-        
-        /* ------------------------------ NCM ------------------------------ */
-        $data["Ncm_Sh"]["Id"]						= $ci->input->post("Ncm_Sh_Id");
-        $data["Ncm_Sh"]["Descricao"]				= $ci->input->post("Ncm_Sh");
-        
-        /* ------------------------------ CEST ------------------------------ */
-        $data["Cest"]["Id"]							= $ci->input->post("Cest_Id");
-        $data["Cest"]["Descricao"]					= $ci->input->post("Cest");
-        
-        /* ------------------------------ PRECO ------------------------------ */
-        $preco["Preco"]								= valor_decimal($ci->input->post("Preco"));
-        $preco["TipoPreco"]["Id"]					= $ci->input->post("TipoPreco");
-        
-        $data["Preco"] = $preco;
-        
-		return $data;	
-    
-    }
-    
+    // Validacao
     function produto_Validar($pData){
         
         $ci = get_instance();
@@ -65,6 +20,7 @@
     
     }
     
+    // Tabelas Filhas
     function produto_Listar_TabelasFilhas(){
         	
     	$ci = get_instance();
@@ -89,8 +45,46 @@
 		return($tabelasFilhas);
     }
     
-    function produto_ConverterData_Insert($pData){
+	// CRUD
+	function produto_Salvar($pData,$pParametros){
 		
+		$validacao 	= produto_Validar($pData);	
+			
+		//VALIDACAO		
+		if($validacao["IsValidado"] == true){
+		
+	        // INCLUIR
+	        if($pParametros["Acao"] == "Incluir"){
+	        	produto_Incluir($pData,$pParametros);
+			}
+			
+			//ALTERAR
+			if($pParametros["Acao"] == "Alterar"){
+				produto_Alterar($pData,$pParametros);
+			}
+			
+		}
+		else{
+			
+			foreach($validacao["lMensagem"] as $itemMensagem){
+					
+				echo $itemMensagem;
+			
+			}
+			
+		}
+        
+		return $pData;			
+	}
+	
+	function produto_Incluir($pData,$pParametros){
+		
+		$ci = get_instance();
+		
+		// Transaction BEGIN
+        //$ci->db->trans_begin();
+		
+		//PREPARA $data
 		$data = array();
 		
 		$data["Codigo"] 					= $pData["Codigo"];
@@ -103,26 +97,91 @@
         $data["Id_NCM_SH"]					= $pData["Ncm_Sh"]["Id"];
         
         $data["IdUsuarioInclusao"] = 1;//TEMP
-        $data["DataInclusao"] = now();
-        $data["IdOrigem"] = 1;
-        
-		return $data;	
-				
+    	date_default_timezone_set('America/Sao_Paulo');
+		$data["DataInclusao"] = date('Y-m-d H:i');
+    	$data["IdOrigem"] = 1;
+    	
+
+		$idProduto = $ci->Produto_model -> Incluir($data);
+		
+		if($pParametros["SalvarEntidadesFilhas"] == true){
+			
+			// Codigos Alternativos
+			foreach($pData["CodigosAlternativos"] as $itemCodigoAlternativo){
+	    		
+	    		$itemCodigoAlternativo["IdProduto"] = $idProduto;
+	    			
+				codigosAlternativos_Salvar($itemCodigoAlternativo,array("Acao" => "Incluir"));
+			}
+			
+			// Preco
+			foreach($pData["Preco"] as $itemPreco){
+	    		
+	    		$itemPreco["IdProduto"] = $idProduto;
+	    			
+				preco_Salvar($itemPreco,array("Acao" => "Incluir"));
+			}
+			
+		}
+		
+		//$ci->db->trans_rollback();
 	}
 	
-	function produto_BuscarChaves($pData){
-		
+	// OUTROS
+	function produto_GetPosts(){
+        
 		$ci = get_instance();
         
-		$data["IdCst_Csosn_Origem"] 			= $pData["CST"]["CST_CSOSN_Origem"]["Id"];
-		$data["IdCst_Csosn_SituacaoTributaria"] = $pData["CST"]["CST_CSOSN_SituacaoTributaria"]["Id"];
-		$data["Aliquota"] 						= $pData["CST"]["Aliquota"];
-		$data["IsBusca"]						= true;
-
-		$cst = $ci->Cst_Csosn_model->Listar($data);
+        $data["Codigo"] 							= $ci->input->post("Codigo");	
         
-        $pData["CST"]["Id"] = $cst["Id"];
-        
-		return $pData;	
+        $n_codigos_alterativos 		 				= $ci->input->post("n_codigos_alterativos");	
+		$data["CodigosAlternativos"] 				= array();	
+		for($n = 1;$n <= $n_codigos_alterativos; $n++){
+			
+			$codigoAlternativo = array();
+			$codigoAlternativo["Codigo"] = $ci->input->post("CodigosAlternativos".$n);
+			
+			if($codigoAlternativo["Codigo"] != null){
 				
-	}
+				array_push($data["CodigosAlternativos"],$codigoAlternativo);
+				
+			}
+
+		}
+
+        $data["Descricao"]							= $ci->input->post("Descricao");		
+        $data["UnidadeApresentacao"]["Id"]			= $ci->input->post("UnidadeApresentacao");	
+        $data["Fornecedor"]["Id"]					= $ci->input->post("Fornecedor");
+        $data["Grupo"]["Id"]						= $ci->input->post("Grupo");
+        $data["Tipo"]["Id"]							= $ci->input->post("Tipo");
+        
+        /* ------------------------------ CST ------------------------------ */
+        $CST["CodigoCompleto"]						= $ci->input->post("CST_CSOSN");
+        $CST["CST_CSOSN_Origem"]["Id"]				= $ci->input->post("CST_CSOSN_Origem_Id");
+        $CST["CST_CSOSN_SituacaoTributaria"]["Id"]	= $ci->input->post("CST_CSOSN_SituacaoTributaria_Id");
+        $CST["Aliquota"]							= valor_decimal($ci->input->post("Aliquota"));
+        $CST["Id"]									= valor_decimal($ci->input->post("Id_CST_CSOSN"));
+        
+        $data["CST"] = $CST;
+        
+        /* ------------------------------ NCM ------------------------------ */
+        $data["Ncm_Sh"]["Id"]						= $ci->input->post("Ncm_Sh_Id");
+        $data["Ncm_Sh"]["Descricao"]				= $ci->input->post("Ncm_Sh");
+        
+        /* ------------------------------ CEST ------------------------------ */
+        $data["Cest"]["Id"]							= $ci->input->post("Cest_Id");
+        $data["Cest"]["Descricao"]					= $ci->input->post("Cest");
+        
+        /* ------------------------------ PRECO ------------------------------ */
+        $data["Preco"]								= array();
+        
+        $preco 										= array();
+        $preco["TipoPreco"]["Id"] 					= $ci->input->post("TipoPreco"); 
+        $preco["Preco"] 							= valor_decimal($ci->input->post("Preco"));
+        
+        array_push($data["Preco"],$preco);
+        
+		return $data;	
+    
+    }
+    

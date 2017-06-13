@@ -66,6 +66,19 @@
 			}
 			        
 	    }
+	    
+	    // -- INSERT -- //
+	    function Incluir_CodigosProdutos($pProduto){
+	    	
+	    	foreach($pProduto["CodigosAlternativos"] as $itemCodigoAlternativo){
+	    		
+	    		$data = array();
+	    		$data["IdProduto"]  = $pProduto["Id"];
+	    		$data["Codigo"]		= $itemCodigoAlternativo;
+	    		
+				Incluir($data);
+			}
+		}
 		
 		// -- INSERT -- //
 	    function Incluir($pData){

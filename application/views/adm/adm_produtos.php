@@ -108,8 +108,9 @@
 	            
 	            	<label>CST</label>    
 	            	<input type="text" name="CST_CSOSN" class="form-control" placeholder="">
-	                <input type="hidden" name="CST_CSOSN_Origem_Id" class="form-control" value="1">
-	                <input type="hidden" name="CST_CSOSN_SituacaoTributaria_Id" class="form-control" value="1">
+	                <input type="hidden" name="CST_CSOSN_Origem_Id" value="1">
+	                <input type="hidden" name="CST_CSOSN_SituacaoTributaria_Id" value="1">
+	                <input type="hidden" name="Id_CST_CSOSN" class="form-control" value="1">
 	            
 	            </div>
 	            

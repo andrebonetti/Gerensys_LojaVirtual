@@ -115,6 +115,8 @@
 	    function Incluir($pData){
 	        $pData["Id"] = null;
 			$this->db->insert("tb_produto", $pData);
+			
+			return $this->db->insert_id();
 		}
 	    
 	    // -- UPDATE -- // 

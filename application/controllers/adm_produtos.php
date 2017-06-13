@@ -28,28 +28,10 @@
 	   public function Incluir(){	
             
             $this->output->enable_profiler(TRUE);    
+            
+            $data 		= produto_GetPosts();
+			produto_Salvar($data,array("Acao"=>"Incluir","SalvarEntidadesFilhas"=>true));
 
-			$data 		= produto_GetPosts();
-			$data		= produto_BuscarChaves($data);
-			
-			$validacao 	= produto_Validar($data);	
-			
-			if($validacao["IsValidado"]){
-				
-				$data	= Produto_ConverterData_Insert($data);
-				$this->Produto_model ->	Incluir($data);
-				
-			}
-			else{
-				
-				foreach($validacao["lMensagem"] as $itemMensagem){
-				
-					echo $itemMensagem;
-				
-				}
-				
-			}
-			
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
                 "atual_page"  => "produtos");
