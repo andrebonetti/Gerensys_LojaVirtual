@@ -3,6 +3,9 @@
 		
 		// -- SELECT -- /
 		function Listar($pData = null){
+			
+			// TB
+			$this->db->from("tb_grupo");			
 				
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_grupo.Id",					$pData["Id"]);}	
@@ -23,10 +26,7 @@
 			else{
 				$this->db->order_by("Descricao");
 			}
-			
-			// TB
-			$this->db->from("tb_grupo");	
-			
+
 			/* -- JOIN -- */
 			if(isset($pData["Join"])){
                 
