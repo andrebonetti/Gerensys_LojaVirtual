@@ -66,30 +66,27 @@
 			}
 			        
 	    }
-	    
-	    // -- INSERT -- //
-	    function Incluir_CodigosProdutos($pProduto){
-	    	
-	    	foreach($pProduto["CodigosAlternativos"] as $itemCodigoAlternativo){
 	    		
-	    		$data = array();
-	    		$data["IdProduto"]  = $pProduto["Id"];
-	    		$data["Codigo"]		= $itemCodigoAlternativo;
-	    		
-				Incluir($data);
-			}
-		}
-		
 		// -- INSERT -- //
 	    function Incluir($pData){
 	        $pData["Id"] = null;
 			$this->db->insert("tb_codigosalternativos", $pData);
+			
+			//VERIICA ERRO
+    		$erro = $this->db->_error_message();
+			if(!empty($erro)) {throw new Exception($erro);}
+			
+			return $this->db->insert_id();
 		}
 	    
 	    // -- UPDATE -- // 
 	    function Atualizar($pData){
 			$this->db->where 	('Id', $pData["Id"]);
 			$this->db->update	("tb_codigosalternativos", $pData);
+			
+			//VERIICA ERRO
+    		$erro = $this->db->_error_message();
+			if(!empty($erro)) {throw new Exception($erro);}
 		}
 	
 	}

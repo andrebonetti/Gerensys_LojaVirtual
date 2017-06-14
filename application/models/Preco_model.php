@@ -72,12 +72,22 @@
 	    function Incluir($pData){
 	        $pData["Id"] = null;
 			$this->db->insert("tb_preco", $pData);
+			
+			//VERIICA ERRO
+    		$erro = $this->db->_error_message();
+			if(!empty($erro)) {throw new Exception($erro);}
+			
+			return $this->db->insert_id();
 		}
 	    
 	    // -- UPDATE -- // 
 	    function Atualizar($pData){
 			$this->db->where 	('Id', $pData["Id"]);
 			$this->db->update	("tb_preco", $pData);
+			
+			//VERIICA ERRO
+    		$erro = $this->db->_error_message();
+			if(!empty($erro)) {throw new Exception($erro);}
 		}
 	
 	}

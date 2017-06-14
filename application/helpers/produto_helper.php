@@ -52,15 +52,22 @@
 			
 		//VALIDACAO		
 		if($validacao["IsValidado"] == true){
-		
-	        // INCLUIR
-	        if($pParametros["Acao"] == "Incluir"){
-	        	produto_Incluir($pData,$pParametros);
-			}
 			
-			//ALTERAR
-			if($pParametros["Acao"] == "Alterar"){
-				produto_Alterar($pData,$pParametros);
+			try {
+			
+		        // INCLUIR
+		        if($pParametros["Acao"] == "Incluir"){
+		        	produto_Incluir($pData,$pParametros);
+				}
+				
+				//ALTERAR
+				if($pParametros["Acao"] == "Alterar"){
+					produto_Alterar($pData,$pParametros);
+				}
+				
+			}
+			catch (Exception $ex){
+				throw $ex;
 			}
 			
 		}
@@ -81,9 +88,6 @@
 		
 		$ci = get_instance();
 		
-		// Transaction BEGIN
-        //$ci->db->trans_begin();
-		
 		//PREPARA $data
 		$data = array();
 		
@@ -101,9 +105,9 @@
 		$data["DataInclusao"] = date('Y-m-d H:i');
     	$data["IdOrigem"] = 1;
     	
-
-		$idProduto = $ci->Produto_model -> Incluir($data);
 		
+		$idProduto = $ci->Produto_model -> Incluir($data);
+	
 		if($pParametros["SalvarEntidadesFilhas"] == true){
 			
 			// Codigos Alternativos
@@ -123,8 +127,7 @@
 			}
 			
 		}
-		
-		//$ci->db->trans_rollback();
+			
 	}
 	
 	// OUTROS

@@ -27,11 +27,24 @@
 	   
 	   public function Incluir(){	
             
-            $this->output->enable_profiler(TRUE);    
+            $this->output->enable_profiler(TRUE);  
             
             $data 		= produto_GetPosts();
-			produto_Salvar($data,array("Acao"=>"Incluir","SalvarEntidadesFilhas"=>true));
-
+            
+            $this->db->trans_begin();
+            
+            try{
+				produto_Salvar($data,array("Acao"=>"Incluir","SalvarEntidadesFilhas"=>true));	
+				
+				$this->db->trans_commit();
+			}
+			catch(Exception $ex){
+				
+				var_dump($ex);
+				$this->db->trans_rollback();
+				
+			}
+			
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
                 "atual_page"  => "produtos");

@@ -113,8 +113,13 @@
         
 		// -- INSERT -- //
 	    function Incluir($pData){
+	    	
 	        $pData["Id"] = null;
 			$this->db->insert("tb_produto", $pData);
+			
+			//VERIICA ERRO
+    		$erro = $this->db->_error_message();
+			if(!empty($erro)) {throw new Exception($erro);}
 			
 			return $this->db->insert_id();
 		}
@@ -123,5 +128,9 @@
 	    function Atualizar($pData){
 			$this->db->where 	('Id', $pData["Id"]);
 			$this->db->update	("tb_produto", $pData);
+			
+			//VERIICA ERRO
+    		$erro = $this->db->_error_message();
+			if(!empty($erro)) {throw new Exception($erro);}
 		}	
 	}	
