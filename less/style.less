@@ -1,1 +1,204 @@
 @import 'base';
+
+/* ----- BASE COLORS ----- */
+@orange-logo:hsl(19, 82%, 55%);
+@orange-1:hsl(19, 100%, 50%);
+@orange-2:hsl(19, 100%, 48%);
+@orange-3:hsl(19, 100%, 45%);
+@orange-4:hsla(19, 100%, 50%, 0.75);
+@orange-5:hsl(19, 100%, 60%);
+@orange-6:hsl(19, 100%, 65%);
+
+@red-1: rgb(222, 0, 0);
+@red-2: rgb(198, 0, 0);
+
+@blue-1: rgb(8, 8, 128);
+@blue-2: rgb(63, 63, 255);
+@blue-3: rgba(63, 63, 255, 0.69);
+
+/* -------------------- CONTAINER --------------------*/
+
+body{
+     background-color: @white-10;
+}
+
+@media (max-width:480px){.myContainer{.lateral-margin(98%);}}
+@media (min-width:481px){.myContainer{.lateral-margin(90%);}}
+@media (min-width:650px){.myContainer{.lateral-margin(80%);}}
+@media (min-width:768px){.myContainer{.lateral-margin(75%);}}
+@media (min-width:1024px){.myContainer{.lateral-margin(70%);}}
+@media (min-width:1350px){.myContainer{.lateral-margin(90%);}}
+
+.my-content:extend(.full-container) {
+    padding:0;
+    
+    @media(max-width:480px){padding:0 2% 0 2%;}
+    
+    h1{
+        margin:2% 0 0.5% 0;
+        font-size: 1.5em;
+        
+        @media(max-width:480px){ 
+            margin:5% 0 2% 0;
+            font-size: 1.4em;
+        }
+    }
+}
+
+/* -- FORMULARIOS --*/
+form{
+    
+    //LABEL
+    label{
+        width: 100%;
+        clear: both;
+    }
+    
+    // INPUT
+    input.form-control{
+        height: 40px;
+        padding: 4px 10px;
+    }
+    
+    input.com_opcoes{
+        border-radius: 4px 0 0 4px;
+        border-width:1px 0 1px 1px;
+    }
+    
+    input.input_validacao:focus{
+        border-color: orange;
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(233, 208, 102, 0.67) 0px 0px 10px;
+        background-color: rgba(255, 165, 0, 0.10);
+    }
+
+    .input-sucesso{
+        border-color:rgb(85, 216, 87);
+        background-color: rgba(96, 190, 98, 0.10);
+    }
+
+    .input-sucesso:hover{
+        border-color:rgb(85, 216, 87);
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(102, 233, 122, 0.67) 0px 0px 10px;
+        background-color: rgba(96, 190, 98, 0.10);
+    }
+
+    .input-erro{
+        border-color:rgb(216, 85, 85);
+        background-color: rgba(190, 96, 96, 0.1);
+    }
+
+    .input-erro:hover{
+        border-color:rgb(216, 85, 85);
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(233, 102, 102, 0.67) 0px 0px 10px;
+        background-color: rgba(190, 96, 96, 0.1);
+    }  
+    
+    //INPUT OPTIONS   
+    .input-options{
+        .float-config(right,30%);
+        
+        padding: 4px 10px;
+        display: table;
+        height: 40px;
+        border-radius:0 4px 4px 0;
+        background-color: @white-9;
+        border:solid 1px @white-6;
+        
+        .input-status{
+            
+            .float-config(left,22px);
+            
+            
+        }
+        .input-extra{
+            
+            .float-config(left,auto);
+            border-width: 0 0 0 1px;
+            border-style: solid;
+            border-color: @white-4;
+            padding-left: 6px;
+            margin-top: -2px;
+            height: 32px;
+            
+        }
+        
+    }
+
+    img.input-icon{
+        margin-top: 4px;
+        width: 16px;
+
+    }
+    
+    img.input-obrigatorio{
+        margin-top: 10px;
+        width: 12px;
+    }
+    
+    img.input-status-icon,.icon_onfocus{
+        display: none;
+    }
+    
+    //TOOLTIP
+    .input-info{
+        color: @white-10;
+    }
+    .tooltip-inner{
+        border:solid 1px @black-1;
+        background-color: @black-1;
+    }
+    
+    .tooltip-top{
+        margin-top: -10px;
+    }
+    
+    //VALIDACOES
+    .input-options_validacao{
+        
+        border-color: orange;
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(233, 208, 102, 0.67) 0px 0px 10px;
+        background-color: rgba(255, 165, 0, 0.3);
+           
+    }
+    
+    .input-options_validado{
+        
+        border-color:rgb(85, 216, 87);
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(102, 233, 122, 0.67) 0px 0px 10px;
+        background-color: rgba(96, 190, 98, 0.3);
+           
+    }
+}
+
+
+/* -------- Content Site -------- */
+
+
+
+
+.home{ 
+   
+    .myContainer{  
+        
+        form{
+        
+            .Codigo{
+            
+                display: table;
+            
+                input#codigo{
+                    .float-config(left,78%);
+                }
+                
+                .input-options{
+                    .float-config(right,auto);
+    
+                }
+                
+            }
+        }
+        
+    }
+    
+}
+

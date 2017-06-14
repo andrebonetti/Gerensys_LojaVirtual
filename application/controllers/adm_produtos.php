@@ -11,7 +11,7 @@
             $lProduto_Info			= $this->Sys_Info_Campos_model		->Listar(array("Tabela" => "tb_produto","IsBusca" => true));
             $PrecoPreferencial		= $this->TipoPreco_model			->Listar(array("Id"=>$lProduto_Info["IdInfo"], "IsBusca" => true));
             
-            var_dump($lProduto);
+            //var_dump($lProduto);
             
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
