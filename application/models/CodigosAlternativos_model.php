@@ -3,6 +3,9 @@
 		
 		// -- SELECT -- /
 		function Listar($pData = null){
+            
+            // TB
+			$this->db->from("tb_codigosalternativos");	
 
 			// ORDER BY	
 			if(isset($pData["OrderBy"])){
@@ -12,13 +15,10 @@
 				$this->db->order_by("tb_codigosalternativos.Codigo");
 			}
 			
-			// TB
-			$this->db->from("tb_codigosalternativos");	
-
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_codigosalternativos.Id",					$pData["Id"]);}	
 			if(isset($pData["Produto"]["Id"])){		$this->db->where("tb_codigosalternativos.IdProduto",			$pData["Produto"]["Id"]);}	
-			if(isset($pData["Codigo"])){			$this->db->where("tb_codigosalternativos.NomeArquivo",			$pData["Codigo"]);}	
+			if(isset($pData["Codigo"])){			$this->db->where("tb_codigosalternativos.Codigo",			    $pData["Codigo"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_codigosalternativos.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
 			if(isset($pData["IdUsuarioAlteracao"])){$this->db->where("tb_codigosalternativos.IdUsuarioAlteracao",	$pData["IdUsuarioAlteracao"]);}
@@ -64,7 +64,7 @@
 			else{
 				return $this->db->get()->result_array();
 			}
-			        
+			       
 	    }
 	    		
 		// -- INSERT -- //

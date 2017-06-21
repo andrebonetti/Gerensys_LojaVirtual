@@ -95,49 +95,126 @@ form{
     
     //INPUT OPTIONS   
     .input-options{
-        .float-config(right,30%);
-        
-        padding: 4px 10px;
+        .float-config(right,auto);
         display: table;
+        
+        padding:2px 0 2px 5px;       
         height: 40px;
+        
         border-radius:0 4px 4px 0;
         background-color: @white-9;
         border:solid 1px @white-6;
         
+        // ----- ICONES -----
+        .only_onFocus{
+            display: none;
+        }
+
+        img.input-icon{
+            max-width: @largura-icon;
+            max-height: @altura-icon;
+        }
+        
+        .hover_opacity{
+            opacity: 0.4;
+        }
+        
+        .hover_opacity:hover{
+            opacity: 0.8;
+        }
+        
+        
+        @altura-icon: 20px;
+        @largura-icon: 20px;
+        @largura-icon-img: 18px;
+        
         .input-status{
             
-            .float-config(left,22px);
-            
-            
-        }
-        .input-extra{
-            
             .float-config(left,auto);
-            border-width: 0 0 0 1px;
-            border-style: solid;
-            border-color: @white-4;
-            padding-left: 6px;
-            margin-top: -2px;
-            height: 32px;
+            padding:0 5px 0 0; 
+            
+            .input-status-icon{
+                display: none;               
+            }
+            
+            img{
+                margin-top: 12px;
+                width: 12px;
+            }
+            
+            img.input-obrigatorio{
+                cursor: pointer;
+            }
+            
+            img.input-naoObrigatorio{
+                width: 12px;
+                opacity: 0.5;
+                padding:2px;
+            }
+
+            img.icon-erro{
+                cursor: pointer;
+            }
+            
+            img.icon-correto{
+
+            }
             
         }
         
+        .input-extra{
+            
+            .float-config(left,auto);
+            padding: 0 0 0 5px;
+            border-width: 0 0 0 1px;
+            border-style: solid;
+            border-color: @white-6;
+            height: 32px;
+            
+            .icon-extra{
+                
+                margin: 7px 2px 0 0;
+                width: @largura-icon;
+                height: @altura-icon;           
+                float: left;
+                text-align: center;
+                
+                img{
+                    margin-top: 0;
+                    max-width: @largura-icon;
+                    max-height:@largura-icon-img;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+         
+        //EXTRA
+        
+                
+                /*img.input-status-icon,.icon_onfocus{
+                    display: none;
+                }
+
+                img.icon-info{
+                    margin-top: 6px;
+                    width: 12px;
+                }
+
+                img.only_hover{
+                    opacity: 0.4;
+                    cursor: pointer;
+                }
+
+                img.only_hover:hover{
+                    opacity: 0.8;
+                }*/
+                
+            
+  
     }
 
-    img.input-icon{
-        margin-top: 4px;
-        width: 16px;
-
-    }
     
-    img.input-obrigatorio{
-        margin-top: 10px;
-        width: 12px;
-    }
-    
-    img.input-status-icon,.icon_onfocus{
-        display: none;
-    }
     
     //TOOLTIP
     .input-info{
@@ -153,7 +230,7 @@ form{
     }
     
     //VALIDACOES
-    .input-options_validacao{
+    .input-options_validacao_pendente{
         
         border-color: orange;
         box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(233, 208, 102, 0.67) 0px 0px 10px;
@@ -161,11 +238,19 @@ form{
            
     }
     
-    .input-options_validado{
+    .input-options_validacao_sucesso{
         
         border-color:rgb(85, 216, 87);
         box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(102, 233, 122, 0.67) 0px 0px 10px;
         background-color: rgba(96, 190, 98, 0.3);
+           
+    }
+    
+    .input-options_validacao_erro{
+        
+        border-color:rgb(216, 85, 85);
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 2px inset, rgba(233, 102, 102, 0.67) 0px 0px 10px;
+        background-color: rgba(190, 96, 96, 0.3);
            
     }
 }
@@ -186,13 +271,17 @@ form{
             
                 display: table;
             
-                input#codigo{
-                    .float-config(left,78%);
+                input#Codigo{
+                    .float-config(left,71.3%);
                 }
                 
                 .input-options{
-                    .float-config(right,auto);
-    
+                    
+                    
+                    .icon-codigo-automatico{
+                        /*margin-top: 8px;
+                        width: 25px;*/
+                    }
                 }
                 
             }
@@ -200,5 +289,50 @@ form{
         
     }
     
+    #mdlCodigosAlternativos{
+        
+        .modal-dialog{
+            width: 25%;
+        
+            .CodigosAlternativos:extend(.full-container) {
+
+                .codigo_alternativo:extend(.full-container) {
+                    margin-bottom: 5px;
+
+                    label{
+                        .float-config(left,10%);
+                        margin-top: 10px;
+                    }
+
+                    input{
+                        .float-config(left,82.1%);
+                    }
+                }
+
+            }
+        }
+        
+    }
+    
+    
+    
 }
+
+/* -------- MODAL --------*/
+.modal{
+    
+    .modal-dialog{
+        display: table;
+    }
+    
+    .info{
+        display: none;
+    }
+    
+    .botoes_modal{
+        float: right;
+    }
+    
+}
+
 

@@ -8,10 +8,9 @@
 
             $lProduto				= $this->Produto_model				->Listar(array("Join" => true));
             $lProduto_TabelasFilhas = produto_Listar_TabelasFilhas();
-            $lProduto_Info			= $this->Sys_Info_Campos_model		->Listar(array("Tabela" => "tb_produto","IsBusca" => true));
-            $PrecoPreferencial		= $this->TipoPreco_model			->Listar(array("Id"=>$lProduto_Info["IdInfo"], "IsBusca" => true));
-            
-            //var_dump($lProduto);
+            $lProduto_Info			= $this->Sys_Info_Campos_model		->Listar(array("Tabela" => "tb_produto","HasInfo" => true));
+            $lProduto_Info_Preco	= $this->Sys_Info_Campos_model		->Listar(array("Tabela" => "tb_produto","IsBusca" => true,"Coluna" => "Preco"));
+            $PrecoPreferencial		= $this->TipoPreco_model			->Listar(array("Id"=>$lProduto_Info_Preco["IdInfo"], "IsBusca" => true));
             
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
