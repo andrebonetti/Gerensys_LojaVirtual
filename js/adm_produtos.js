@@ -11,12 +11,15 @@
 	2 = Sucesso.
 	*/
     
+    $("[data-tt=tooltip]").tooltip();
     $(function () {$('[data-toggle="tooltip"]').tooltip();})
     
-    $(".input_validacao").change(function(event) {
+    $(document).on('change', '.input_validacao', function(){
+        
         event.preventDefault();
         
-        input = $(this);
+        inputId = $(this).attr("id");
+        input = $("#"+inputId);
         
         var tabela = input.attr("tabela");
         var coluna = input.attr("coluna");
@@ -24,20 +27,23 @@
         var name = input.attr("name");
         
         HasErro = false;
-        
+
         if(tabela == "tb_codigosalternativos")
         {
             input_Lista = $(this);
             $(".codigoAlternativo").each(function() 
             {
                 
+                alert("1");
                 if($(this).val() != "")
                 {
-                    
+                    alert("2");
                     if(name != $(this).attr("name"))
                     {
+                        alert("3");
                         if(valor == $(this).val())
                         {
+                            alert("4");
                             HasErro = true;
                             
                             ZerarConfiguracoesStatus(input);
@@ -51,19 +57,19 @@
                 
             })
         }
-
+        
         if(HasErro == false){
             if(valor != ""){
-
+                
                 jQuery.ajax({
                     type: "POST",
                     url: "http://localhost/Gerensys_LojaVirtual/index.php/Ajax_Post/Valida_existencia",
                     dataType: 'json',
                     data: {tabela: tabela, coluna: coluna,valor:valor},
-                    success: function(res) {
+                    success: function(res) {input = $("#"+inputId);    
                     if (res)
                         {
-
+                            
                             ZerarConfiguracoesStatus(input);
 
                             input.attr("status",res.Status);
@@ -102,7 +108,7 @@
 
     });
 
-    $(".com_opcoes").click(function(event) {
+    $(document).on('click', '.com_opcoes', function(){
         
         status = $(this).attr("status");
         
@@ -112,11 +118,11 @@
             $(this).closest("div").find(".icon_notfocus").hide();
             $(this).closest("div").find(".icon_onfocus").show();
         }
-    
+        
     });
     
-    $(".com_opcoes").blur(function(event) {
-    
+    $(document).on('blur', '.com_opcoes', function(){
+        
         input = $(this);
         status = input.attr("status");
         
@@ -132,7 +138,7 @@
     
     });
     
-    $(".icon-info").click(function(event) {
+    $(document).on('click', '.icon-info', function(){
        
         campo = $(this).attr("name");
         clase = $(this).attr("classe");
@@ -142,8 +148,8 @@
         
     });
     
-    $(".add_codigo").click(function(event) {
-        
+    $(document).on('click', '.add_codigo', function(){
+
         numeroCodigos = $(".numero_codigosAlternativos").val();
         base_url = $(".base_url").text();
         
@@ -152,6 +158,7 @@
         $(".ListaCodigos").append("<div class='codigo_alternativo'><label>"+proximoCodigo+"º</label><input type='text' name='CodigosAlternativos"+proximoCodigo+"' tabela='tb_codigosalternativos' coluna='Codigo' status='0' class='com_opcoes codigoAlternativo form-control input_validacao' maxlength='250'><div class='input-options'><div class='input-status'><img class='input-icon input-naoObrigatorio icon_notfocus' src='"+base_url+"/img/circulo.png'><img class='input-icon input-naoObrigatorio icon_onfocus only_onFocus' src='"+base_url+"/img/circulo_orange.png'><img class='input-icon input-status-icon icon-correto' src='"+base_url+"/img/correto_green.png'><img class='input-icon input-status-icon icon-erro' src='"+base_url+"/img/alert_red.png' data-placement='right' data-trigger='hover' animation='true'></div></div></div>");
         
         $(".numero_codigosAlternativos").val(proximoCodigo);
+        
     }); 
  
 //});
@@ -161,7 +168,7 @@ function ZerarConfiguracoesStatus(pInput){
 	pInput.closest("div").find(".input-options").removeClass("input-options_validacao_pendente");	
 	pInput.closest("div").find(".input-options").removeClass("input-options_validacao_sucesso");
 	pInput.closest("div").find(".input-options").removeClass("input-options_validacao_erro");
-    pInput.removeClass("input_validacao");
+    //pInput.removeClass("input_validacao");
     pInput.removeClass("input-sucesso");
 	pInput.removeClass("input-erro");
     

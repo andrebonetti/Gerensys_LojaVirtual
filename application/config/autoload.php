@@ -25,6 +25,7 @@ $autoload['libraries'] = array('database', 'session','user_agent','exceptions');
 $autoload['helper'] = array(
 			'url'
 			,'form'
+            ,'typography'
 			,'text'
 			,'date'
 			,'active'

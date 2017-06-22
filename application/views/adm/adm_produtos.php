@@ -35,17 +35,17 @@
                             
                             <!-- CODIGO AUTOMATICO -->
                             <div class="icon-extra">
-                                <img class="input-icon icon-codigo-automatico hover_opacity" src="<?=base_url("img/generate_1.png")?>">
+                                <img class="input-icon icon-codigo-automatico hover_opacity" data-toggle="tooltip" data-html="true" title="<span class='input-info'>Gerar Código Automaticamente</span>" src="<?=base_url("img/generate_1.png")?>">
                             </div>
                             
                             <!-- CODIGO ALTERNATIVO -->
                             <div class="icon-extra">
-                                <img  data-toggle="modal" data-target="#mdlCodigosAlternativos" class="input-icon icon-add hover_opacity" src="<?=base_url("img/add_1.png")?>">
+                                <img  data-toggle="modal" data-target="#mdlCodigosAlternativos" class="input-icon icon-add hover_opacity" src="<?=base_url("img/add_1.png")?>" data-tt="tooltip" data-html="true" title="<span class='input-info'>Adicionar Códigos Alternativos</span>">
                             </div>
                             
                             <!-- INFORMACAO -->
                             <div class="icon-extra">
-                                <img  data-toggle="modal" data-target="#mdlInformacao" name="Código" classe="codigo" class="input-icon icon-info hover_opacity" icon-info_campo"" src="<?=base_url("img/info_4.png")?>">
+                                <img  data-toggle="modal" data-target="#mdlInformacao" name="Código" classe="codigo" class="input-icon icon-info hover_opacity" icon-info_campo"" src="<?=base_url("img/info_4.png")?>" data-tt="tooltip" data-html="true" title="<span class='input-info'>Informações</span>">
                             </div>
                             
                         </div>
@@ -196,7 +196,7 @@
                           
                             <div class="codigo_alternativo">  
                                 <label><?=$n?>º</label> 
-                                <input type="text" name="CodigosAlternativos<?=$n?>" tabela="tb_codigosalternativos" coluna="Codigo" status="0" class="com_opcoes codigoAlternativo form-control input_validacao" maxlength="250">
+                                <input type="text" id="CodigoAlternativo<?=$n?>" name="CodigosAlternativos<?=$n?>" tabela="tb_codigosalternativos" coluna="Codigo" status="0" class="com_opcoes codigoAlternativo form-control input_validacao" maxlength="250">
                                 <div class="input-options">
                         
                                     <!-- STATUS -->
@@ -262,7 +262,7 @@
 
                 <div class="info campo-<?=$info["Coluna"]?>">
 
-                    <p><?=$info["Informacao"]?></p>
+                    <p><?=auto_typography($info["Informacao"])?></p>
 
                 </div>    
 
