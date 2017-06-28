@@ -688,109 +688,284 @@ header:extend(.full-container) {
 .produto-descricao{
         
     .myContainer{
+        
+        .container1:extend(.full-container){
+            
+            .info-compra{
+                .float-config(right,45%);         
+                background-color: @white-7;
+                padding:8px;
+                .border(4px,@white-4);
 
-        .info-compra{
-            .float-config(right,40%);         
-            background-color: @white-7;
-            padding:8px;
-            .border(4px,@white-4);
-            
-            h1{
-                color: @blue-3;
-                font-size: 1.4em;
-                margin-top: 0;
-            }
-            
-            h2{
-                color: @black-7;
-                font-size: 1.25em;
-                margin: 10px 0 5px 0;
-                font-weight: 600;
-            }
-            
-            .valor{
-                
-                .valor-total{
-                    font-size: 1.15em;
+                h1{
+                    color: @blue-3;
+                    font-size: 1.4em;
+                    margin-top: 0;
+                }
+
+                h2{
+                    color: @black-7;
+                    font-size: 1.25em;
+                    margin: 10px 0 5px 0;
                     font-weight: 600;
-                    color: @red-2;
-                    float: left;
-                    margin:0 5px 0 0;
                 }
-                
-                .parcela{
-                    font-weight: 600;
-                    font-size: 1.05em;
-                    margin:4px 0 0 0;
-                    color: @black-6;
+
+                .valor{
+
+                    .valor-total{
+                        font-size: 1.15em;
+                        font-weight: 600;
+                        color: @red-2;
+                        float: left;
+                        margin:0 5px 0 0;
+                    }
+
+                    .parcela{
+                        font-weight: 600;
+                        font-size: 1.05em;
+                        margin:5px 0 0 0;
+                        color: @black-6;
+                    }
+                }
+
+                .calculo-frete:extend(.full-container){
+
+                    input{
+
+                        .float-config(left,30%);
+
+                    }
+
+                    .calcular-frete{
+                        .float-config(right,68%);
+                        height: 33px;
+                    }
+
+                }
+
+                .compra:extend(.full-container){
+
+                    input{                
+                        .float-config(left,30%);   
+                    }
+
+
+                    label{
+                        width: 100%;
+                    }
+
+                    .opcoes{
+                        .float-config(right,68%);
+
+                        .adicionar-carrinho{
+                            float: right;
+                            height: 33px;
+                            margin-right: 5px;
+                            width: 55%;
+                        }
+
+                        .compra-rapida{
+                            float: right;
+                            height: 33px;
+                            width: 43%;
+                        }
+                    }
+
+                }
+
+            }
+
+            .img-content{
+                .float-config(left,53%);
+
+                .img-teste{
+                    width: 100%;
+
+                    padding: 120px 70px;
+                    text-align: center;
+                    background-color: @white-8;
+
                 }
             }
-            
-            .calculo-frete:extend(.full-container){
-                
-                input{
-                    
-                    .float-config(left,30%);
-                    
-                }
-                
-                .calcular-frete{
-                    .float-config(right,68%);
-                }
-                
-            }
-            
-            .compra{
-                
-                input{
-                    
-                    .float-config(left,30%);
-                    
-                }
-                
-                .adicionar-carrinho{
-                    
-                    .float-config(right,34%);
-                    
-                }
-                
-                .compra-rapida{
-                    
-                    .float-config(right,34%);
-                    
-                }
-                
-            }
-            
+         
         }
-
-        .img-content{
-            .float-config(left,58%);
-
-            .img-teste{
-                width: 100%;
-
-                padding: 120px 70px;
-                text-align: center;
-                background-color: @white-8;
-
+        
+        .descricao-produto:extend(.full-container){
+            margin-top: 10px;
+            clear: both;
+            .border(6px,@white-8);
+            background-color: @white-9;
+            padding: 8px;
+            
+            .info-principal{
+                
+                h2{
+                    margin:0 0 8px 0;
+                }
+                
+            }
+            
+            .info-adicionais{
+                
+                h2{
+                    margin: 8px 0 8px 0;
+                }
+                
+                p{
+                    margin:0 0 5px 0;
+                }
+                
             }
         }
+        
+        .produtos-relacionados:extend(.full-container){
 
-        .descricao-produto{
-
+            margin-top: 20px;
             
-
-        }
-
-        .produtos-relacionados{
-
-
-
+            
         }
 
     }
 
+}
+
+/* -------- CARRINHO -------- */
+.carrinho{
+    
+    .myContainer{
+        
+        table:extend(.full-container){
+            
+            .imagem{
+                width: 15%;
+                
+                a{
+                    width: 100%;
+                    
+                    .img-teste{
+
+                        background-color: @white-7;
+                        text-align: center;
+                        padding: 30px 10px;
+                        color: @white-10;
+
+                    }
+                }    
+                
+            }
+            
+            .nome{
+                
+                width: 45%;
+                
+            }
+            
+            .quantidade{
+                //width: 10%;
+                
+                input{
+                    .float-config(left,50px);
+                    text-align: center;
+                }
+               
+                .opcoes{
+                    
+                    @largura_icon: 15px;
+                    
+                    .float-config(right,@largura_icon);
+                    padding-left: 3px;
+                    
+                    img{
+                        width: @largura_icon;
+                        opacity: 0.5;
+                    }
+                    
+                    img:hover{
+                        cursor: pointer;
+                        opacity: 1;
+                    }
+                    
+                    img.plus{
+                        
+                    }
+
+                    img.less{
+
+                    }
+                }    
+            }
+            
+            
+            .preco-unitario{
+                //width: 10%;
+                text-align: right;
+            }
+            th.preco-unitario{
+                text-align: left;
+            }
+            
+            .preco-subTotal{
+                //width: 10%;
+                text-align: right;
+            }
+            th.preco-subTotal{
+                text-align: left;
+            }
+            
+            .delete{
+               //width: 20%; 
+               text-align: right;
+                
+                img{
+                    width: 40px;
+                    opacity: 0.8;
+                }    
+                
+                img:hover{
+                    opacity: 1;
+                }
+            }
+            
+        }
+        
+        .calculo-frete{
+            
+            .float-config(left,auto);
+
+            h2{
+                font-size: 1.1em;
+            }
+            
+            input{
+
+                .float-config(left,90px);
+                margin-right: 5px;
+
+            }
+
+            .calcular-frete{
+                .float-config(right,auto);
+                height: 33px;
+            }
+
+        }
+        
+        .finalizacao-compra{
+            .float-config(right,auto);
+            text-align: right;
+            
+            .opcoes:extend(.full-container){
+                
+                a{
+                    float: left;
+                    margin-left: 5px;
+                }
+                
+            }
+        }
+        
+    }
+    
 }
 
 /* -------- CONTATO -------- */
@@ -861,6 +1036,48 @@ header:extend(.full-container) {
             }
             
         }
+    }
+    
+}
+
+/* -------- CLIENTE CADASTRO --------- */
+.cliente-cadastro{
+    
+    .myContainer{
+        
+        form{
+            .float-config(left,40%);
+            padding: 5px;
+            background-color: @white-9;
+            .border(4px,@white-8);
+            
+            .btn{
+                margin-top: 5px;
+                width: 50%
+            }
+        }
+        
+    }
+    
+}
+
+/* -------- CLIENTE LOGIN --------- */
+.cliente-login{
+    
+    .myContainer{
+        
+        form{
+            .float-config(left,40%);
+            padding: 5px;
+            background-color: @white-9;
+            .border(4px,@white-8);
+            
+            .btn{
+                margin-top: 5px;
+                width: 50%
+            }
+        }
+        
     }
     
 }

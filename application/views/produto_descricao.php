@@ -1,53 +1,60 @@
 <section class="produto-descricao my-content">
     <div class="myContainer">
               
-        <div class="info-compra">
+        <div class="container1">
             
-            <h1>Nome do Produto</h1>
-            
-            <div class="valor">
-                
-                <h2>Preço: </h2>
-                
-                <p class="valor-total">R$ 39,90</p>
-            
-                <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-            
-            </div>
-            
-            <div class="cartoes">
-            
-            
-            
-            </div>
-            
-            <div class="calculo-frete">
-                
-                <h2>Calculo de Frete</h2>
-                <input type="text" class="form-control" id="cep" placeholder="CEP">
-                <button class="calcular-frete" >Calcular Frete</button>
-                
+            <div class="info-compra">
+
+                <h1>Nome do Produto</h1>
+
+                <div class="valor">
+
+                    <h2>Preço: </h2>
+
+                    <p class="valor-total">R$ 39,90</p>
+
+                    <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
+
+                </div>
+
+                <div class="cartoes">
+
+
+
+                </div>
+
+                <div class="calculo-frete">
+
+                    <h2>Calculo de Frete</h2>
+                    <input type="text" class="form-control" id="cep" placeholder="CEP">
+                    <button class="calcular-frete" >Calcular Frete</button>
+
+                </div>
+
+                <div class="compra">
+
+                    <h2>Comprar</h2>
+
+                    <label>Quantidade</label>
+                    <input type="text" class="form-control" id="qtde">
+
+                    <div class="opcoes">
+                        <button class="compra-rapida">Compra Rápida</button>
+                        <button class="adicionar-carrinho">Adicionar ao Carrinho</button>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="compra">
-                
-                <h2>Comprar</h2>
-                
-                <label>Quantidade</label>
-                <input type="text" class="form-control" id="qtde">
-                <button class="compra-rapida">Compra Rápida</button>
-                <button class="adicionar-carrinho">Adicionar ao Carrinho</button>
-                  
-            </div>
-            
-        </div>
-        
-        <div class="img-content">
-            
-            <div class="img-teste">
-            
-                Imagem Teste
-            
+            <div class="img-content">
+
+                <div class="img-teste">
+
+                    Imagem Teste
+
+                </div>
+
             </div>
             
         </div>
@@ -85,6 +92,8 @@
         </div>
         
         <div class="produtos-relacionados">
+            
+            <h2>Produtos Relacionados</h2>
             
             <div class="boxes">
             

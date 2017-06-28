@@ -66,13 +66,13 @@
                 </nav>
                 
                 <div class="shop">
-                    <?=anchor("home","<img src='".base_url('img/shop.png')."'>")?>
+                    <?=anchor("carrinho","<img src='".base_url('img/shop.png')."'>")?>
                     <span class="quantidade">(0)</span>
                     <span class="valor">R$0,00</span>
                 </div>
                 <div class="conta">
-                    <?=anchor("home","Cadastre-se",array("class" => "cadastrese"))?>
-                    <?=anchor("home","Login",array("class" => "login"))?>
+                    <?=anchor("Cliente/cadastro","Cadastre-se",array("class" => "cadastrese"))?>
+                    <?=anchor("Cliente/login","Login",array("class" => "login"))?>
                     
                     <?php //anchor("home","<img src='".base_url('img/User.png')."'>")?>
                 </div>
