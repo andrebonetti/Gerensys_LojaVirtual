@@ -8,9 +8,9 @@
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "atual_page"  => "produtos");
+                "atual_page"  => "pedidos");
 
-            /*VIEW*/$this->load->template("cliente/area-cliente.php",$content);
+            /*VIEW*/$this->load->template_cliente("cliente/pedidos.php",$content);
             
 	   }
         
@@ -20,9 +20,34 @@
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "atual_page"  => "cliente");
+                "atual_page"  => "cadastro");
 
-            /*VIEW*/$this->load->template("cliente/cadastro.php",$content);
+            /*VIEW*///$this->load->template("cliente/cadastro.php",$content);
+            /*VIEW*/$this->load->template_cliente("cliente/cadastro_edit.php",$content);
+            
+	   }
+        
+        public function enderecos(){	
+            
+            $this->output->enable_profiler(TRUE);    
+
+            /*--------------------------CONTENT----------------------------------*/
+            $content = array(
+                "atual_page"  => "enderecos");
+
+            /*VIEW*/$this->load->template_cliente("cliente/enderecos.php",$content);
+            
+	   }
+        
+        public function pagamentos(){	
+            
+            $this->output->enable_profiler(TRUE);    
+
+            /*--------------------------CONTENT----------------------------------*/
+            $content = array(
+                "atual_page"  => "pagamentos");
+
+            /*VIEW*/$this->load->template_cliente("cliente/pagamentos.php",$content);
             
 	   }
         

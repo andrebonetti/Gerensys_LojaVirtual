@@ -1066,16 +1066,259 @@ header:extend(.full-container) {
     
     .myContainer{
         
-        form{
-            .float-config(left,40%);
+        h2{
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 5px 0 5px 0;
+        }
+        
+        h3{
+            font-size: 1.15em;
+        }
+        
+        .login{
+            .float-config(left,49%);
             padding: 5px;
             background-color: @white-9;
             .border(4px,@white-8);
+            
+            form{
+                margin-top: 26px;
+                
+                .btn{
+                    margin-top: 5px;
+                    width: 50%
+                }
+            }
+            
+        }
+        
+        .cadastrar{
+            .float-config(right,49%);
+            padding: 5px;
+            background-color: @white-9;
+            .border(4px,@white-8);
+            
+            ul{
+                margin: 5px 0 5px 0;
+                padding-left: 20px;
+                
+                li{list-style: circle;}
+                
+            }
             
             .btn{
                 margin-top: 5px;
                 width: 50%
             }
+            
+        }
+        
+    }
+    
+}
+
+/* ------- AREA CLIENTE -------- */
+.area-cliente{
+    
+    .myContainer{
+        
+        .header-cliente:extend(.full-container){
+            margin:10px 0 10px 0;
+            
+            h1{
+                float: left;
+                margin-top: 0;
+            }
+            
+            .dados-conta{
+                .float-config(right,auto);
+                display: table;
+                
+                .dados{
+                    .float-config(left,auto);
+                    text-align: right;
+                    padding: 0 10px 0 0;
+                }
+                
+                p.nome{
+                    
+                }
+                p.email{
+                    
+                }
+                
+                .img-teste{
+                    .float-config(right,115px);
+                    padding: 25px 30px;
+                    background-color: @white-8;
+                    color: @white-10;
+                    text-align: center;
+                }
+            }
+            
+        }
+        
+        aside.menu:extend(.full-container){
+            
+            .float-config(left,20%);
+            
+            a:extend(.full-container){
+                padding: 8px;
+                .border(4px,@white-6);
+                text-align: center;
+                margin-bottom: 8px;
+                color: @white-1;
+            }
+            
+            a:hover{
+                background-color: @white-4;
+                color: @white-10;
+            }
+            
+            a.active{
+                background-color: @blue-1;
+                color: @white-10;
+            }
+            
+        }
+        
+        .content-cliente{
+            
+            .float-config(right,78%);
+            .border(5px,@white-8);
+            background-color: @white-10;
+            padding: 8px;
+            
+            h2{
+                margin-top: 10px;
+            }
+            
+        }
+        
+        .pedidos{
+            
+            table{
+                
+                .status-entregue{
+                    color: #1ddb1d;
+                }
+                
+                .status-pendente{
+                    color: @blue-4
+                }
+                
+                .detalhes{
+                    
+                    a{
+                       color:  @red-1;
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        .cadastro{
+            
+            .alteracao-cadastro{
+                .float-config(left,47%);
+                
+                form{
+
+                }
+                
+            }
+            
+            .alteracao-senha{
+                .float-config(right,52%);
+                padding-left: 10px;
+                .border(0,@white-8);
+                border-width:0 0 0 1px;
+                
+                form{
+                    
+                }
+                
+            }
+            
+            btn{
+                margin-top: 5px;
+            }
+            
+        }
+        
+        .enderecos{
+            
+            table{
+                
+                td.tipoendereco{
+                    width: 15%;
+                }
+                
+                td.relevancia{
+                    width: 15%;
+                    
+                    .btn{
+                        width: 100%;
+                    }
+                }
+                
+                td.endereco{
+                    width: 60%;
+                }
+                
+                td.acoes{
+                    width: 10%;
+                    
+                    img{
+                       width: 22px; 
+                        margin: 0 5px;
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        .pagamentos{
+            
+            table{
+                
+                td.tipo{
+                    width: 20%;
+                }
+                
+                td.numero{
+                    width: 15%;   
+                }
+                
+                td.data-validade{
+                    width: 10%;
+                }
+                
+                td.nome-titular{
+                    width: 15%;
+                }
+                
+                td.endereço-cobranca{
+                    width: 25%;
+                }
+                
+                td.acoes{
+                    width: 10%;
+                    
+                    img{
+                       width: 22px; 
+                        margin: 0 5px;
+                    }
+                    
+                }
+                
+            }
+            
         }
         
     }
