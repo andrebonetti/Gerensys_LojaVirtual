@@ -7,12 +7,17 @@
             $this->output->enable_profiler(TRUE);    
 
             $lProduto				= $this->Produto_model				->Listar(array("Join" => true));
-            $lProduto_TabelasFilhas = produto_Listar_TabelasFilhas();
+            
+            var_dump($lProduto);
+            
+            /*$lProduto_TabelasFilhas = produto_Listar_TabelasFilhas();
             $lProduto_Info			= $this->Sys_Info_Campos_model		->Listar(array("Tabela" => "tb_produto","HasInfo" => true));
             $lProduto_Info_Preco	= $this->Sys_Info_Campos_model		->Listar(array("Tabela" => "tb_produto","IsBusca" => true,"Coluna" => "Preco"));
             $PrecoPreferencial		= $this->TipoPreco_model			->Listar(array("Id"=>$lProduto_Info_Preco["IdInfo"], "IsBusca" => true));
             
-            /*--------------------------CONTENT----------------------------------*/
+            
+            
+            // --------------------------CONTENT----------------------------------
             $content = array(
 			                "lProduto"      			=> $lProduto
 			                ,"lProduto_TabelasFilhas"	=> $lProduto_TabelasFilhas
@@ -20,7 +25,8 @@
 			                ,"PrecoPreferencial"		=> $PrecoPreferencial
 			                ,"atual_page"   			=> "produtos");
 
-            /*VIEW*/$this->load->template("adm/adm_produtos.php",$content);
+            // VIEW
+            $this->load->template("adm/adm_produtos.php",$content);*/
             
 	   }
 	   

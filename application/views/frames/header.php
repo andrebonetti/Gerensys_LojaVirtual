@@ -10,13 +10,20 @@
         <title> Base </title>
                       
         <link rel="stylesheet" type="text/css" href="<?=base_url("css/bootstrap.css")?>">  
-        <link rel="stylesheet" type="text/css" href="<?=base_url("css/style.css")?>">    
+        <link rel="stylesheet" type="text/css" href="<?=base_url("css/style.css")?>">  
+        <link rel="stylesheet" type="text/css" href="<?=base_url("css/my_jassor.css")?>"> 
+        <link rel="stylesheet" type="text/css" href="<?=base_url("css/thumbnail-navigator-with-arrows.source.css")?>"> 
         <link rel="stylesheet/less" href="<?=base_url("less/style.less")?>">    
-        
+
         <script src="<?=base_url("js/jquery-2.1.3.min.js")?>"></script>
         <script src="<?=base_url("js/bootstrap.js")?>"></script>
         <script src="<?=base_url("js/less.js")?>"></script>
-               	    	
+        <script src="<?=base_url("js/jssor.js")?>"></script>
+        <script src="<?=base_url("js/jssor.slider.js")?>"></script> 
+        <script src="<?=base_url("js/my_jassor.js")?>"></script>
+        <script src="<?=base_url("js/thumbnail-navigator-with-arrows.source.js")?>"></script>
+        
+        
         <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
         
 	</head>

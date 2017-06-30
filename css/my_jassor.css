@@ -1,0 +1,90 @@
+.slide-show{
+    width: 100%;
+    margin:0;
+    height: 350px;
+	position: relative; 
+}
+
+.slide-show .slide-container{
+    width:100%;
+    height: 350px;
+	cursor: move; 
+	position: relative; 
+	left: 0px; 
+	top: 0px;  
+	overflow: hidden;
+}
+
+.slide-container img{
+	width:100%;
+    height: 340px;
+	margin-bottom:5%;
+}
+
+.notificacao {
+    text-align: center;
+}
+
+.notificacao img{
+    
+    margin: 0 auto;
+}
+
+
+            .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+                background: url(../img/b21.png) no-repeat;
+                overflow: hidden;
+                cursor: pointer;
+            }
+    
+            .jssorb21 div {
+                background-position: -5px -5px;
+            }
+    
+                .jssorb21 div:hover, .jssorb21 .av:hover {
+                    background-position: -35px -5px;
+                }
+    
+            .jssorb21 .av {
+                background-position: -65px -5px;
+            }
+    
+            .jssorb21 .dn, .jssorb21 .dn:hover {
+                background-position: -95px -5px;
+            }
+			
+			.jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
+                position: absolute;
+                cursor: pointer;
+                display: block;
+                background: url(../img/a21.png) center center no-repeat;
+                overflow: hidden;
+            }
+    
+            .jssora21l {
+                background-position: -3px -33px;
+            }
+    
+            .jssora21r {
+                background-position: -63px -33px;
+            }
+    
+            .jssora21l:hover {
+                background-position: -123px -33px;
+            }
+    
+            .jssora21r:hover {
+                background-position: -183px -33px;
+            }
+    
+            .jssora21ldn {
+                background-position: -243px -33px;
+            }
+    
+            .jssora21rdn {
+                background-position: -303px -33px;
+            }
+
+.slide-produtos{
+    height: 340px;
+}

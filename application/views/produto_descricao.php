@@ -47,18 +47,49 @@
 
             </div>
 
-            <div class="img-content">
+            <div class="img-content" id="slider1_container" style="height: 480px;">
 
-                <div class="img-teste">
+                <!-- Loading Screen -->
+                <div u="loading" class="loading">
+                    <div class="loading1"></div>
+                    <div class="loading2"></div>
+                </div>
 
-                    Imagem Teste
+                <!-- Slides Container -->
+                <div u="slides" class="uSlides">
+                    <div>
+                        <img u="image" src="<?=base_url("img/slide_show/1f48222b02dcc__destaque-neutra.jpg")?>"/>
+                        <img u="thumb" src="<?=base_url("img/slide_show/1f48222b02dcc__destaque-neutra.jpg")?>"/>
+                    </div>
+                    <div>
+                        <img u="image" src="<?=base_url("img/slide_show/1edd433a3266a__22-06-17-Destaque-Skate.jpg")?>"/>
+                        <img u="thumb" src="<?=base_url("img/slide_show/1edd433a3266a__22-06-17-Destaque-Skate.jpg")?>"/>
+                    </div>
+                </div>
+
+                <!-- THUMB NAVIGATOR -->
+                <div u="thumbnavigator" class="jssort07">
+                    <div class="upSlides"></div>
+
+                    <div u="slides" class="Tslides">
+                        <div u="prototype" class="p" id="pSlides" style="POSITION: absolute; WIDTH: 99px; HEIGHT: 66px; TOP: 0; LEFT: 0;">
+                            <thumbnailtemplate class="i" style="position:absolute;"></thumbnailtemplate>
+                            <div class="o">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow Left -->
+                    <span u="arrowleft" class="jssora11l" style=""></span>
+                    <!-- Arrow Right -->
+                    <span u="arrowright" class="jssora11r" style="width: 37px; height: 37px; top: 123px; right: 8px"></span>
 
                 </div>
 
             </div>
-            
+
         </div>
-        
+
         <div class="descricao-produto">
         
             <div class="info-principal">

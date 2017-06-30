@@ -5,51 +5,65 @@
         	
         	$ci = get_instance();
             
-			/* -- PREENCHER ENTIDADES FILHAS -- */
+			// --- JOIN ---
             if(isset($pData["Join"])){
                 
                 if($pData["Join"] == true){
-                    
-                    /* JOIN */
+                	
+                	$query_select = "";
+                	
                     $this->db->join("tb_sys_unidadeapresentacao AS UN", "UN.Id = tb_produto.IdUnidadeApresentacao","inner");
                     $this->db->join("tb_grupo AS Grupo", "Grupo.Id = tb_produto.IdGrupo","left");
                     $this->db->join("tb_subgrupo AS SubGrupo", "SubGrupo.Id = tb_produto.IdSubGrupo","left");
                     $this->db->join("tb_setor AS Setor", "Setor.Id = tb_produto.IdSetor","left");
                     $this->db->join("tb_fornecedor AS Fornecedor", "Fornecedor.Id = tb_produto.IdFornecedor","left");
                     $this->db->join("tb_tipo AS Tipo", "Tipo.Id = tb_produto.IdTipo","left");
-                    $this->db->join("tb_cst_csosn AS CST", "CST.Id = tb_produto.Id_CST_CSOSN","inner");
-                    $this->db->join("tb_sys_cst_csosn_origem AS CST_Origem", "CST_Origem.Id = CST.IdCst_Csosn_Origem","inner");
-                    $this->db->join("tb_sys_cst_csosn_situacaotributaria AS CST_ST", "CST_ST.Id = CST.IdCst_Csosn_SituacaoTributaria","inner");
-                    $this->db->join("tb_sys_estado AS UF_CST", "UF_CST.Id = CST.IdEstado","inner");
-                    $this->db->join("tb_sys_ncm_sh AS NCM", "NCM.Id = tb_produto.Id_NCM_SH","inner");
-                    $this->db->join("tb_sys_cest AS CEST", "CEST.Id = tb_produto.IdCest","left");
+                    $this->db->join("tb_cor AS Cor", "Cor.Id = tb_produto.IdCor","left");
+                    $this->db->join("tb_sys_tamanho AS Tamanho", "Tamanho.Id = tb_produto.IdTamanho","left");
                     $this->db->join("tb_preco AS PRECO", "PRECO.IdProduto = tb_produto.Id and PRECO.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
                     $this->db->join("tb_tipopreco AS TipoPreco", "TipoPreco.Id = PRECO.IdTipoPreco","inner");
-                    $this->db->join("tb_usuarios AS UI", "UI.Id = tb_produto.IdUsuarioInclusao","inner");
-                    $this->db->join("tb_usuarios AS UA", "UA.Id = tb_produto.IdUsuarioAlteracao","left");
-                    $this->db->join("tb_sys_origem AS Origem", "Origem.Id = tb_produto.IdOrigem","inner");
                     
-                    /* SELECT */
-                    $this->db->select("
-                    tb_produto.*
+                	$query_select = "tb_produto.*
                     ,UN.Codigo AS CodigoUnidadeApresentacao,UN.Descricao AS DescricaoUnidadeApresentacao
                     ,Grupo.Descricao AS DescricaoGrupo
                     ,SubGrupo.Descricao AS DescricaoSubGrupo
                     ,Setor.Descricao AS DescricaoSetor
                     ,Fornecedor.Descricao AS DescricaoFornecedor
                     ,Tipo.Descricao AS DescricaoTipo
-                    ,CST_Origem.Codigo AS CodigoCST_CSOSN_Origem, CST_Origem.Descricao AS DescricaoCST_CSOSN_Origem
-                    ,CST_ST.Codigo AS CodigoCST_CSOSN_SituacaoTributaria, CST_ST.Descricao AS DescricaoCST__CSOSN_SituacaoTributaria
-                    ,UF_CST.UF AS CodigoUF_CST_CSOSN,UF_CST.Descricao AS DescricaoUF_CST_CSOSN
-                    ,CST.Aliquota AS Aliquota_CST_CSOSN
-                    ,NCM.Codigo AS Codigo_NCM,NCM.Descricao AS Descricao_NCM
-                    ,CEST.Codigo AS CodigoCest
+                    ,Cor.Descricao AS DescricaoCor
+                    ,Tamanho.Descricao as DescricaoTamanho
                     ,PRECO.IdTipoPreco, PRECO.Preco
-                    ,TipoPreco.Descricao AS TipoPrecoDescricao
-                    ,UI.Nome AS NomeUsuarioInclusao
-                    ,UA.Nome AS NomeUsuarioAlteracao
-                    ,Origem.Descricao AS OrigemProduto
-                    ", false);
+                    ,TipoPreco.Descricao AS TipoPrecoDescricao";
+                    
+                    if ( isset($pData["IsAdm"]) ){
+						
+                    	if ($pData["IsAdm"] == true){
+
+							$this->db->join("tb_cst_csosn AS CST", "CST.Id = tb_produto.Id_CST_CSOSN","inner");
+	                    	$this->db->join("tb_sys_cst_csosn_origem AS CST_Origem", "CST_Origem.Id = CST.IdCst_Csosn_Origem","inner");
+	                    	$this->db->join("tb_sys_cst_csosn_situacaotributaria AS CST_ST", "CST_ST.Id = CST.IdCst_Csosn_SituacaoTributaria","inner");
+	                    	$this->db->join("tb_sys_estado AS UF_CST", "UF_CST.Id = CST.IdEstado","inner");
+	                    	$this->db->join("tb_sys_ncm_sh AS NCM", "NCM.Id = tb_produto.Id_NCM_SH","inner");
+	                    	$this->db->join("tb_sys_cest AS CEST", "CEST.Id = tb_produto.IdCest","left");
+							$this->db->join("tb_usuarios AS UI", "UI.Id = tb_produto.IdUsuarioInclusao","inner");
+	                    	$this->db->join("tb_usuarios AS UA", "UA.Id = tb_produto.IdUsuarioAlteracao","left");
+	                    	$this->db->join("tb_sys_origem AS Origem", "Origem.Id = tb_produto.IdOrigem","inner");
+	                    
+	                    	$query_select = $query_select.",CST_Origem.Codigo AS CodigoCST_CSOSN_Origem, CST_Origem.Descricao AS DescricaoCST_CSOSN_Origem
+		                    ,CST_ST.Codigo AS CodigoCST_CSOSN_SituacaoTributaria, CST_ST.Descricao AS DescricaoCST__CSOSN_SituacaoTributaria
+		                    ,UF_CST.UF AS CodigoUF_CST_CSOSN,UF_CST.Descricao AS DescricaoUF_CST_CSOSN
+		                    ,CST.Aliquota AS Aliquota_CST_CSOSN
+		                    ,NCM.Codigo AS Codigo_NCM,NCM.Descricao AS Descricao_NCM
+		                    ,CEST.Codigo AS CodigoCest
+		                    ,UI.Nome AS NomeUsuarioInclusao
+	                    	,UA.Nome AS NomeUsuarioAlteracao
+	                    	,Origem.Descricao AS OrigemProduto";
+                    	
+                   		}
+                	}
+					
+                    // --- SELECT ---
+                    $this->db->select($query_select, false);
                 }
                   
             }
