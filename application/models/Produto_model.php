@@ -16,10 +16,8 @@
                     $this->db->join("tb_grupo AS Grupo", "Grupo.Id = tb_produto.IdGrupo","left");
                     $this->db->join("tb_subgrupo AS SubGrupo", "SubGrupo.Id = tb_produto.IdSubGrupo","left");
                     $this->db->join("tb_setor AS Setor", "Setor.Id = tb_produto.IdSetor","left");
-                    $this->db->join("tb_fornecedor AS Fornecedor", "Fornecedor.Id = tb_produto.IdFornecedor","left");
+                    $this->db->join("tb_marca AS Marca", "Marca.Id = tb_produto.IdMarca","left");
                     $this->db->join("tb_tipo AS Tipo", "Tipo.Id = tb_produto.IdTipo","left");
-                    $this->db->join("tb_cor AS Cor", "Cor.Id = tb_produto.IdCor","left");
-                    $this->db->join("tb_sys_tamanho AS Tamanho", "Tamanho.Id = tb_produto.IdTamanho","left");
                     $this->db->join("tb_preco AS PRECO", "PRECO.IdProduto = tb_produto.Id and PRECO.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
                     $this->db->join("tb_tipopreco AS TipoPreco", "TipoPreco.Id = PRECO.IdTipoPreco","inner");
                     
@@ -28,10 +26,8 @@
                     ,Grupo.Descricao AS DescricaoGrupo
                     ,SubGrupo.Descricao AS DescricaoSubGrupo
                     ,Setor.Descricao AS DescricaoSetor
-                    ,Fornecedor.Descricao AS DescricaoFornecedor
+                    ,Marca.Descricao AS DescricaoMarca
                     ,Tipo.Descricao AS DescricaoTipo
-                    ,Cor.Descricao AS DescricaoCor
-                    ,Tamanho.Descricao as DescricaoTamanho
                     ,PRECO.IdTipoPreco, PRECO.Preco
                     ,TipoPreco.Descricao AS TipoPrecoDescricao";
                     
@@ -96,8 +92,9 @@
 				
 					$lProduto[$n]["CodigosAlternativos"]	= $this->CodigosAlternativos_model	->Listar(array("Join" => true,"Produto" => $itemProduto));
 					$lProduto[$n]["Fotos"] 					= $this->Fotos_produtos_model		->Listar(array("Join" => true,"Produto" => $itemProduto));
-					$lProduto[$n]["Preco"] 					= $this->Preco_model				->Listar(array("Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["Preco"] 					= $this->Preco_model				->Listar(array("IsBusca" => true, "Join" => true,"Produto" => $itemProduto));
 					$lProduto[$n]["Promocao"] 				= $this->Promocao_model				->Listar(array("Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["Comentarios"] 			= $this->Produto_Comentarios_model	->Listar(array("Join" => true,"Produto" => $itemProduto));
 					
 					//var_dump($itemProduto);
 					$n++;

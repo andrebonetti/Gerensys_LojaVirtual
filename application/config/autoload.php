@@ -65,6 +65,7 @@ $autoload['model'] = array(
 				,'Fotos_produtos_model'
 				,'Grupo_model'
 				,'Preco_model'
+				,'Produto_Comentarios_model'
 				,'Promocao_model'
 				,'Setor_model'
 				,'SubGrupo_model'

@@ -8,7 +8,7 @@
 			if(isset($pData["Id"])){				$this->db->where("tb_preco.Id",					$pData["Id"]);}	
 			if(isset($pData["IdTipoPreco"])){		$this->db->where("tb_preco.Codigo",				$pData["IdTipoPreco"]);}	
 			if(isset($pData["Preco"])){				$this->db->where("tb_preco.Preco",				$pData["Preco"]);}	
-			if(isset($pData["IdProdutos"])){		$this->db->where("tb_preco.IdProdutos",			$pData["IdProdutos"]);}	
+			if(isset($pData["Produto"]["Id"])){		$this->db->where("tb_preco.IdProduto",			$pData["Produto"]["Id"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_preco.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
 			if(isset($pData["IdUsuarioAlteracao"])){$this->db->where("tb_preco.IdUsuarioAlteracao",	$pData["IdUsuarioAlteracao"]);}
