@@ -18,7 +18,7 @@
                     $this->db->join("tb_setor AS Setor", "Setor.Id = tb_produto.IdSetor","left");
                     $this->db->join("tb_marca AS Marca", "Marca.Id = tb_produto.IdMarca","left");
                     $this->db->join("tb_tipo AS Tipo", "Tipo.Id = tb_produto.IdTipo","left");
-                    $this->db->join("tb_preco AS PRECO", "PRECO.IdProduto = tb_produto.Id and PRECO.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
+                    $this->db->join("tb_produto_preco AS Preco", "Preco.IdProduto = tb_produto.Id and Preco.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
                     $this->db->join("tb_tipopreco AS TipoPreco", "TipoPreco.Id = PRECO.IdTipoPreco","inner");
                     
                 	$query_select = "tb_produto.*
@@ -90,13 +90,12 @@
             	$n = 0;
             	foreach($lProduto as $itemProduto){
 				
-					$lProduto[$n]["CodigosAlternativos"]	= $this->CodigosAlternativos_model	->Listar(array("Join" => true,"Produto" => $itemProduto));
-					$lProduto[$n]["Fotos"] 					= $this->Fotos_produtos_model		->Listar(array("Join" => true,"Produto" => $itemProduto));
-					$lProduto[$n]["Preco"] 					= $this->Preco_model				->Listar(array("IsBusca" => true, "Join" => true,"Produto" => $itemProduto));
-					$lProduto[$n]["Promocao"] 				= $this->Promocao_model				->Listar(array("Join" => true,"Produto" => $itemProduto));
-					$lProduto[$n]["Comentarios"] 			= $this->Produto_Comentarios_model	->Listar(array("Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["CodigosAlternativos"]	= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["Preco"] 					= $this->Produto_Preco_model				->Listar(array("IsBusca" => true, "Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Join" => true,"Produto" => $itemProduto));
+					$lProduto[$n]["Comentarios"] 			= $this->Produto_Comentarios_model			->Listar(array("Join" => true,"Produto" => $itemProduto));
 					
-					//var_dump($itemProduto);
 					$n++;
 					
 				}

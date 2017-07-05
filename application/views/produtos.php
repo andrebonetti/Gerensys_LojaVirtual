@@ -7,17 +7,13 @@
             
             <div class="categorizacao">
             
-                <h2>Categoria</h2>
+                <h2>Setor</h2>
                 <ul>
                     
-                    <li>
-                        <a href="#" class="active">Categoria 0</a>
-                    </li>
-                
-                    <?php for($n=1;$n <= 10;$n++){?> 
-                    
+                	<?php foreach($lSetor as $itemSetor){ ?>
+						
                         <li>
-                            <a href="#">Categoria <?=$n?></a>
+                            <a href="#"><?=$itemSetor["Descricao"]?></a>
                         </li>
                     
                     <?php } ?>
@@ -28,13 +24,64 @@
             
             <div class="categorizacao">
             
-                <h2>Marca</h2>
-                <ul>
-                
-                    <?php for($n=1;$n <= 10;$n++){?> 
+                <h2>Cores</h2>
+               	<ul>
                     
+                	<?php foreach($lCor as $itemCor){ ?>
+						
                         <li>
-                            <a href="#">Marca <?=$n?></a>
+                            <a href="#"><?=$itemCor["Descricao"]?></a>
+                        </li>
+                    
+                    <?php } ?>
+                    
+                </ul>
+            
+            </div>
+            
+            <div class="categorizacao">
+            
+                <h2>Grupos</h2>
+               	<ul>
+                    
+                	<?php foreach($lGrupo as $itemGrupo){ ?>
+						
+                        <li>
+                            <a href="#"><?=$itemGrupo["Descricao"]?></a>
+                        </li>
+                    
+                    <?php } ?>
+                    
+                </ul>
+            
+            </div>
+            
+            <div class="categorizacao">
+            
+                <h2>Marcas</h2>
+               	<ul>
+                    
+                	<?php foreach($lMarca as $itemMarca){ ?>
+						
+                        <li>
+                            <a href="#"><?=$itemMarca["Descricao"]?></a>
+                        </li>
+                    
+                    <?php } ?>
+                    
+                </ul>
+            
+            </div>
+            
+            <div class="categorizacao">
+            
+                <h2>SubGrupo</h2>
+               	<ul>
+                    
+                	<?php foreach($lSubGrupo as $itemSubGrupo){ ?>
+						
+                        <li>
+                            <a href="#"><?=$itemSubGrupo["Descricao"]?></a>
                         </li>
                     
                     <?php } ?>
@@ -81,20 +128,18 @@
             
             <div class="boxes">
             
-                <?php for($n=0;$n < 5;$n++){?> 
+                <?php foreach($lProduto as $itemProduto){?> 
                  
-                <?php// for($n=0;$n < 5;$n++){?>
-                    
-                    <!-- 1 -->
-                    <div class="max-box">
+                    <div class="master-box">
 
                         <div class="box">
                             
-                            <?=anchor("produtos/produto_descricao",
-                            "<div class='img_teste'>
-                                    Imagem Produto
+                            <div class="img-content">
+                            	<?=anchor("produtos/produto_descricao/".$itemProduto["Id"]," 
+                            	<img src='".base_url("img/Produtos/".$itemProduto["Fotos"][0]["NomeArquivo"]."")."' alt='".$itemProduto['Descricao']."' title='".$itemProduto['Descricao']."'>
+                            	<p class='detalhes_span'>+ Detalhes</p>")?>
                             </div>
-                            <p class='detalhes_span'>+ Detalhes</p>")?>
+                            
                             <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
                             <p class="preco">R$39,90</p>
                             <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
@@ -103,72 +148,8 @@
 
                     </div>
                 
-                <?php //} ?>
-                
-                <!-- 2 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="novidade">Novidade</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco">R$39,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
-                <!-- 3 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">5% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$139,90</p>
-                        <p class="preco-novo">R$134,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
-                <!-- 4 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">13% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$159,90</p>
-                        <p class="preco-novo">R$139,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
                 <?php } ?>
-            
+                
             </div>
             
             <!-- Paginação -->

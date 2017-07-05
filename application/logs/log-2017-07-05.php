@@ -1,0 +1,22 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2017-07-05 04:05:28 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:05:33 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:11:26 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:11:26 --> Severity: Warning  --> Missing argument 1 for Produtos::index() D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 5
+ERROR - 2017-07-05 04:11:26 --> Severity: Warning  --> Missing argument 2 for Produtos::index() D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 5
+ERROR - 2017-07-05 04:11:26 --> Severity: Warning  --> Missing argument 3 for Produtos::index() D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 5
+ERROR - 2017-07-05 04:11:50 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:11:50 --> Severity: Notice  --> mysql_pconnect():  D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:16:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:16:01 --> Severity: Notice  --> Undefined property: Produtos::$Cor_model D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 13
+ERROR - 2017-07-05 04:17:28 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:22:08 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:23:45 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:23:46 --> Severity: Notice  --> Undefined property: Produtos::$Marca_model D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 15
+ERROR - 2017-07-05 04:24:20 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:24:20 --> Severity: Notice  --> Undefined property: Produtos::$Marca_model D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 15
+ERROR - 2017-07-05 04:25:28 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:27:12 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:28:03 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-05 04:31:17 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
