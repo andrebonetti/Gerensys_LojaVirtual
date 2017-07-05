@@ -6,12 +6,13 @@
             
             $this->output->enable_profiler(TRUE);    
 
-            $data["Join"] = true;
-            $lProdutos = $this->Produto_model->Listar($data);
+            $lDestaque = $this->Produto_Destaques_model	->Listar(array("lJoin" => true,"Produto" => array ("Join" => true,"IsBusca" => true)));
+			$lNovidade = $this->Produto_model			->Listar(array("OrderBy" => "DataInclusao","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "lProdutos"   => $lProdutos
+                "lDestaque"    => $lDestaque
+                ,"lNovidade"   => $lNovidade
                 ,"atual_page"  => "home");
 
             /*VIEW*/$this->load->template("home.php",$content);

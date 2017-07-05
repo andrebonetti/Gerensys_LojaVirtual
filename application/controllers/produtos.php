@@ -2,12 +2,23 @@
 
 	class Produtos extends CI_Controller{
         
-		public function index($pFiltro = null,$pValor = null,$pPaginaAtual = 1){	
+		public function index($pPaginaAtual = 2,$pFiltro = null,$pValor = null){	
             
             $this->output->enable_profiler(TRUE);   
             
-            $lProduto	= $this->Produto_model	->Listar(array("Join" => true)); 
+            // --- PAGINACAO ----
+            $limite 			= '5';
+			$inicio				= ($pPaginaAtual*$limite)-$limite;
+		
+			$produtoData["Join"]   = true;
+			$produtoData["Limite"] = $limite;
+			$produtoData["OffSet"] = $inicio;
+			
+			// -- MODEL -- //
+            $lProduto			= $this->Produto_model	->Listar($produtoData); 
             
+            //$numeroPaginas 		= ($num_imoveis/$limite);
+			
             // -- Entidades Pai --
 			$lSetor		= $this->Setor_model	->Listar(); 
 			$lCor		= $this->Cor_model		->Listar(); 
@@ -32,11 +43,15 @@
         
         public function produto_descricao($IdProduto){	
             
-            $this->output->enable_profiler(TRUE);    
-
+            $this->output->enable_profiler(TRUE);   
+            
+            $produto	= $this->Produto_model	->Listar(array("Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
+			
+			//var_dump($produto);
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "atual_page"  => "produtos");
+            	"produto"		=> $produto
+                ,"atual_page"  	=> "produtos");
 
             /*VIEW*/$this->load->template("produto_descricao.php",$content);
             

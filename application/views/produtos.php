@@ -130,20 +130,25 @@
             
                 <?php foreach($lProduto as $itemProduto){?> 
                  
+                 	<?php  $valorParcela = produto_CalcularParcela($itemProduto["NumeroMaximoParcelas"],$itemProduto["JurosAPartirDe"],$itemProduto["PorcentagemJuros"],$itemProduto["Preco"])?>
+                 
                     <div class="master-box">
 
                         <div class="box">
                             
                             <div class="img-content">
                             	<?=anchor("produtos/produto_descricao/".$itemProduto["Id"]," 
-                            	<img src='".base_url("img/Produtos/".$itemProduto["Fotos"][0]["NomeArquivo"]."")."' alt='".$itemProduto['Descricao']."' title='".$itemProduto['Descricao']."'>
+                            	<img src='".base_url("img/Produtos/".$itemProduto["FotoPrincipal"]."")."' alt='".$itemProduto['Descricao']."' title='".$itemProduto['Descricao']."'>
                             	<p class='detalhes_span'>+ Detalhes</p>")?>
                             </div>
                             
-                            <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                            <p class="preco">R$39,90</p>
-                            <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
+                            <a href="#"><h3 class="nome-produto"><?=$itemProduto["Descricao"]?></h3></a>
+                            <p class="preco"><?=numeroEmReais($itemProduto["Preco"])?></p>
+                            
+                            <?php if($valorParcela != 0){ ?>
+                            	<p class="parcela"><?=$itemProduto["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
+							<?php } ?>
+							
                         </div>
 
                     </div>

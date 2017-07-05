@@ -17,8 +17,9 @@
 
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_produto_fotos.Id",					$pData["Id"]);}	
-			if(isset($pData["Produto"]["Id"])){		$this->db->where("tb_produto_fotos.IdProduto",				$pData["Produto"]["Id"]);}	
-			if(isset($pData["NomeArquivo"])){		$this->db->where("tb_produto_fotos.NomeArquivo",			$pData["NomeArquivo"]);}	
+			if(isset($pData["IsPrincipal"])){		$this->db->where("tb_produto_fotos.IsPrincipal",		$pData["IsPrincipal"]);}	
+			if(isset($pData["Produto"]["Id"])){		$this->db->where("tb_produto_fotos.IdProduto",			$pData["Produto"]["Id"]);}	
+			if(isset($pData["NomeArquivo"])){		$this->db->where("tb_produto_fotos.NomeArquivo",		$pData["NomeArquivo"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_produto_fotos.IdUsuarioInclusao",		$pData["IdUsuarioInclusao"]);}
 			if(isset($pData["IdUsuarioAlteracao"])){$this->db->where("tb_produto_fotos.IdUsuarioAlteracao",	$pData["IdUsuarioAlteracao"]);}

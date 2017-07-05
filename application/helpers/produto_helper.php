@@ -187,4 +187,27 @@
 		return $data;	
     
     }
+
+	function produto_CalcularParcela($pNumeroParcelas,$pJurosAPartirDe,$pPorcentagemJuros,$pPreco){
+		
+		$retorno = 0;
+		
+		if($pNumeroParcelas > 0){
+			
+			if($pJurosAPartirDe > 0){
+				
+				$precoFinal = $pPreco * (1 + ($pPorcentagemJuros/100));
+				$retorno = $precoFinal / $pNumeroParcelas;
+				
+			}
+			else{
+				
+				$retorno = $pPreco / $pNumeroParcelas;
+					
+			}
+			
+		}
+
+		return $retorno;
+	}
     

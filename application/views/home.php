@@ -58,112 +58,67 @@
             
             <div class="boxes">
                 
-                <?php for($n=1;$n <= 2;$n++){?>
-                <?php// for($n=0;$n < 5;$n++){?>
-                    
-                    <!-- 1 -->
-                    <div class="max-box">
+                <?php foreach($lDestaque as $itemDestaque){?>
+                
+                 	<?php  $valorParcela = produto_CalcularParcela($itemDestaque["Produto"]["NumeroMaximoParcelas"],$itemDestaque["Produto"]["JurosAPartirDe"],$itemDestaque["Produto"]["PorcentagemJuros"],$itemDestaque["Produto"]["Preco"])?>
+                 
+                    <div class="master-box">
 
                         <div class="box">
                             
-                            <a href="#">
-                                <div class="img_teste">
-                                    Imagem Produto
-                                </div>
-                                <p class="detalhes_span">+ Detalhes</p>
-                            </a> 
-                            <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                            <p class="preco">R$39,90</p>
-                            <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
+                            <div class="img-content">
+                            	<?=anchor("produtos/produto_descricao/".$itemDestaque["Produto"]["Id"]," 
+                            	<img src='".base_url("img/Produtos/".$itemDestaque["Produto"]["FotoPrincipal"]."")."' alt='".$itemDestaque["Produto"]['Descricao']."' title='".$itemDestaque["Produto"]['Descricao']."'>
+                            	<p class='detalhes_span'>+ Detalhes</p>")?>
+                            </div>
+                            
+                            <a href="#"><h3 class="nome-produto"><?=$itemDestaque["Produto"]["Descricao"]?></h3></a>
+                            <p class="preco"><?=numeroEmReais($itemDestaque["Produto"]["Preco"])?></p>
+                            
+                            <?php if($valorParcela != 0){ ?>
+                            	<p class="parcela"><?=$itemDestaque["Produto"]["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
+							<?php } ?>
+							
                         </div>
 
                     </div>
                 
-                <?php //} ?>
+                <?php } ?>
+            
+            </div>
+            
+        </div>
+        
+        <div class="Novidades">
+            
+            <h2>Novidades</h2>
+            
+            <div class="boxes">
                 
-                <!-- 2 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="novidade">Novidade</p>
-                        <a href="#">
-                                <div class="img_teste">
-                                    Imagem Produto
-                                </div>
-                                <p class="detalhes_span">+ Detalhes</p>
-                            </a> 
-                            <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco">R$39,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
+                <?php foreach($lNovidade as $itemNovidade){?>
                 
-                <!-- 3 -->
-                <div class="max-box">
+                 	<?php  $valorParcela = produto_CalcularParcela($itemNovidade["NumeroMaximoParcelas"],$itemNovidade["JurosAPartirDe"],$itemNovidade["PorcentagemJuros"],$itemNovidade["Preco"])?>
+                 
+                    <div class="master-box">
 
-                    <div class="box">
-                        
-                        <p class="promocao">5% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
+                        <div class="box">
+                            
+                            <div class="img-content">
+                            	<?=anchor("produtos/produto_descricao/".$itemNovidade["Id"]," 
+                            	<img src='".base_url("img/Produtos/".$itemNovidade["FotoPrincipal"]."")."' alt='".$itemNovidade['Descricao']."' title='".$itemNovidade['Descricao']."'>
+                            	<p class='detalhes_span'>+ Detalhes</p>")?>
                             </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a> 
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$139,90</p>
-                        <p class="preco-novo">R$134,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
+                            
+                            <a href="#"><h3 class="nome-produto"><?=$itemNovidade["Descricao"]?></h3></a>
+                            <p class="preco"><?=numeroEmReais($itemNovidade["Preco"])?></p>
+                            
+                            <?php if($valorParcela != 0){ ?>
+                            	<p class="parcela"><?=$itemNovidade["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
+							<?php } ?>
+							
+                        </div>
 
                     </div>
-
-                </div>
-                
-                <!-- 4 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">13% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a> 
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$159,90</p>
-                        <p class="preco-novo">R$139,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
-                <!-- 5 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">13% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a> 
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$139,90</p>
-                        <p class="preco-novo">R$119,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
                 
                 <?php } ?>
             

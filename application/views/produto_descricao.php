@@ -5,16 +5,20 @@
             
             <div class="info-compra">
 
-                <h1>Nome do Produto</h1>
+                <h1><?=$produto["Descricao"]?></h1>
 
                 <div class="valor">
-
-                    <h2>Preço: </h2>
+                
+                	<?php  $valorParcela = produto_CalcularParcela($produto["NumeroMaximoParcelas"],$produto["JurosAPartirDe"],$produto["PorcentagemJuros"],$produto["Preco"])?>
+                 
+                    <h2>Preço: <?=$produto["Preco"]?></h2>
 
                     <p class="valor-total">R$ 39,90</p>
-
-                    <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
+					
+					<?php if($valorParcela != 0){ ?>
+                    	<p class="parcela"><span class="no-negrito">ou</span> <?=$produto["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
+					<?php } ?>
+                    
                 </div>
 
                 <div class="cartoes">
@@ -36,7 +40,7 @@
                     <h2>Comprar</h2>
 
                     <label>Quantidade</label>
-                    <input type="text" class="form-control" id="qtde">
+                    <input type="text" class="form-control" id="qtde" value="1">
 
                     <div class="opcoes">
                         <button class="compra-rapida">Compra Rápida</button>
@@ -57,14 +61,16 @@
 
                 <!-- Slides Container -->
                 <div u="slides" class="uSlides">
-                    <div>
-                        <img u="image" src="<?=base_url("img/slide_show/1f48222b02dcc__destaque-neutra.jpg")?>"/>
-                        <img u="thumb" src="<?=base_url("img/slide_show/1f48222b02dcc__destaque-neutra.jpg")?>"/>
-                    </div>
-                    <div>
-                        <img u="image" src="<?=base_url("img/slide_show/1edd433a3266a__22-06-17-Destaque-Skate.jpg")?>"/>
-                        <img u="thumb" src="<?=base_url("img/slide_show/1edd433a3266a__22-06-17-Destaque-Skate.jpg")?>"/>
-                    </div>
+                
+                	<?php foreach($produto["Fotos"] as $itemFoto){ ?>
+                
+	                    <div>
+	                        <img u="image" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
+	                        <img u="thumb" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
+	                    </div>
+					
+					<?php } ?>
+					
                 </div>
 
                 <!-- THUMB NAVIGATOR -->
@@ -96,27 +102,15 @@
                 
                 <h2>Descrição</h2>
             
-                <p>Quem tem um aficcionado por dinossauros em casa vai adorar essa novidade! O Quebra-Cabeça 3D Tiranossauro-Rex da Bate Bumbo é uma ótima opção de presente para meninas e meninos apaixonados por essas incríveis criaturas.</p>
-
-                <p>Depois de montado, a criança pode criar aventuras fantásticas com o seu novo mascote e também usá-lo na decoração do seu quarto. Ele brilha no escuro!</p>
-
-                <p>Estimula a percepção visual, a coordenação motora, a concentração, o raciocínio lógico e a habilidade de resolver problemas.</p> 
-            
+                <p><?= auto_typography($produto["Detalhes"]) ?></p>
+                
             </div>
         
             <div class="info-adicionais">
             
                 <h2>Informações Adicionais</h2>
             
-                <p>INDICADO PARA CRIANÇAS: a partir de 5 anos</p>
-
-                <p>CÓDIGO DE BARRAS: 7898927095093</p>
-
-                <p>COMPOSIÇÃO: 46 peças de quebra cabeça que brilham no escuro.</p>
-
-                <p>DIMENSÕES DO PRODUTO NA CAIXA: A 18 cm  X  L 25 cm  X  P 5 cm</p>
-
-                <p>DIMENSÕES DO BRINQUEDO MONTADO: A 35 cm X L 40 cm</p>
+                <p><?= auto_typography($produto["Informacoes_Adicionais"]) ?></p>
                 
             </div>
         

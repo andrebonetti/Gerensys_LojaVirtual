@@ -64,6 +64,7 @@ $autoload['model'] = array(
 				,'Produto_Preco_model'
 				,'Produto_Promocao_model'
 				,'Produto_CodigosAlternativos_model'	
+				,'Produto_Destaques_model'	
 				,'Cor_model'	
 				,'Marca_model'	
 				,'Cst_Csosn_model'
