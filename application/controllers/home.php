@@ -7,7 +7,7 @@
             $this->output->enable_profiler(TRUE);    
 
             $lDestaque = $this->Produto_Destaques_model	->Listar(array("lJoin" => true,"Produto" => array ("Join" => true,"IsBusca" => true)));
-			$lNovidade = $this->Produto_model			->Listar(array("OrderBy" => "DataInclusao","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));
+			$lNovidade = $this->Produto_model			->Listar(array("OrderBy" => "Id","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(

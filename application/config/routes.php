@@ -41,6 +41,12 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['Produtos/CatalogoCompleto/Pagina/(:any)'] = "produtos/index/$1/Destroy/0"; 
+$route['Produtos/(:any)/LimpezaFiltro'] = "produtos/index/1/Id$1/UnsetData"; 
+$route['Produtos/(:any)/(:any)/(:any)/Pagina/(:any)'] = "produtos/index/$4/Id$1/$3";
+
+//$route['imoveis/(:any)/(:any)/pagina/(:num)'] = 'imoveis/index/$1/$2/$3'; //paginação 
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

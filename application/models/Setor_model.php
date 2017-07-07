@@ -3,7 +3,7 @@
 		
 		// -- SELECT -- /
 		function Listar($pData = null){
-				
+					
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_setor.Id",					$pData["Id"]);}	
 			if(isset($pData["Descricao"])){			$this->db->where("tb_setor.Descricao",			$pData["Descricao"]);}	
@@ -49,18 +49,39 @@
 			
 			// RETURN
 			if(isset($pData["IsBusca"])){
-                
-                if($pData["IsBusca"] == true){
-                	return $this->db->get()->row_array();
-				}
-				else{
-					return $this->db->get()->result_array();
-				}
+                $data = $this->db->get()->row_array();
 			}
 			else{
-				return $this->db->get()->result_array();
+				$data = $this->db->get()->result_array();
 			}
-			        
+			
+			//lJoin
+			if( (isset($pData["lJoinCount"])) && ($pData["lJoinCount"] == true) ){
+				
+				if( !isset($pData["IsBusca"] )){	
+					
+					$n = 0;
+					foreach($data as $itemData){
+						
+						produto_PreencherBreadCrumb("IdSetor",$itemData["Id"],"Setor",$itemData["Descricao"]);
+						
+						$pData[0]["Produto"]["Setor"]["Id"] = $itemData["Id"];
+						$data[$n]["CountFilhas"]	= $this->Produto_model	->Listar($pData[0]["Produto"]);
+						
+						$ci = get_instance();
+						if( empty($ci->session->userdata("IdSetor"))){
+							if($data[$n]["CountFilhas"] < 1){
+								unset($data[$n]);
+							}
+						}
+						
+						
+						$n++;				
+					}
+				}
+			}
+			
+			return $data;        
 	    }
 		
 		// -- INSERT -- //

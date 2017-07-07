@@ -7,17 +7,39 @@
         	
         	// TB
             $this->db->from("tb_produto");
-			
+            
 			// WHERE		
-			if(isset($pData["Id"])){				$this->db->where("tb_produto.Id",					$pData["Id"]);}	
-
-			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_produto.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
-			if(isset($pData["IdUsuarioAlteracao"])){$this->db->where("tb_produto.IdUsuarioAlteracao",	$pData["IdUsuarioAlteracao"]);}
-			if(isset($pData["DataInclusaoDe"])){	$this->db->where("tb_produto.DataInclusao >=",	$pData["DataInclusaoDe"]);}
-			if(isset($pData["DataInclusaoAte"])){	$this->db->where("tb_produto.DataInclusao <=",	$pData["DataInclusaoAte"]);}
-			if(isset($pData["DataAlteracaoDe"])){	$this->db->where("tb_produto.DataAlteracao >=",	$pData["DataAlteracaoDe"]);}
-			if(isset($pData["DataAlteracaoAte"])){	$this->db->where("tb_produto.DataAlteracao <=",	$pData["DataAlteracaoAte"]);}
-			if(isset($pData["Origem"]["Id"])){		$this->db->where("tb_produto.IdOrigem <=",		$pData["Origem"]["Id"]);}
+			if(isset($pData["Id"])){								$this->db->where("tb_produto.Id",							$pData["Id"]);}	
+			if(isset($pData["Codigo"])){							$this->db->where("tb_produto.Codigo",						$pData["Codigo"]);}	
+			if(isset($pData["Descricao"])){							$this->db->like("tb_produto.Descricao",						$pData["Descricao"]);}	
+			if(isset($pData["UnidadeApresentacao"]["Id"])){			$this->db->where("tb_produto.IdUnidadeApresentacao",		$pData["UnidadeApresentacao"]["Id"]);}	
+			if(isset($pData["Grupo"]["Id"])){						$this->db->where("tb_produto.IdGrupo",						$pData["Grupo"]["Id"]);}	
+			if(isset($pData["Grupo"]["SubGrupo"]["Id"])){			$this->db->where("tb_produto.IdSubGrupo",					$pData["Grupo"]["SubGrupo"]["Id"]);}	
+			if(isset($pData["Setor"]["Id"])){						$this->db->where("tb_produto.IdSetor",						$pData["Setor"]["Id"]);}	
+			if(isset($pData["Cor"]["Id"])){							$this->db->where("tb_produto.IdCor",						$pData["Cor"]["Id"]);}	
+			if(isset($pData["Marca"]["Id"])){						$this->db->where("tb_produto.IdMarca",						$pData["Marca"]["Id"]);}	
+			if(isset($pData["Fornecedor"]["Id"])){					$this->db->where("tb_produto.IdFornecedor",					$pData["Fornecedor"]["Id"]);}	
+			if(isset($pData["Tipo"]["Id"])){						$this->db->where("tb_produto.IdTipo",						$pData["Tipo"]["Id"]);}	
+			if(isset($pData["MediaClassificacao"])){				$this->db->where("tb_produto.MediaClassificacao",			$pData["MediaClassificacao"]);}	
+			if(isset($pData["EstoqueTotal"])){						$this->db->where("tb_produto.EstoqueTotal",					$pData["EstoqueTotal"]);}	
+			if(isset($pData["NumeroMaximoParcelas"])){				$this->db->where("tb_produto.NumeroMaximoParcelas",			$pData["NumeroMaximoParcelas"]);}	
+			if(isset($pData["JurosAPartirDe"])){					$this->db->where("tb_produto.JurosAPartirDe",				$pData["JurosAPartirDe"]);}	
+			if(isset($pData["PorcentagemJuros"])){					$this->db->where("tb_produto.PorcentagemJuros",				$pData["PorcentagemJuros"]);}	
+			if(isset($pData["PorcentagemJuros"])){					$this->db->where("tb_produto.PorcentagemJuros",				$pData["PorcentagemJuros"]);}	
+			if(isset($pData["CST_CSOSNId_NCM_SHIdCest"]["Id"])){	$this->db->where("tb_produto.Id_CST_CSOSNId_NCM_SHIdCest",	$pData["CST_CSOSNId_NCM_SHIdCest"]["Id"]);}	
+			if(isset($pData["TipoPrecoApresentacao"]["Id"])){		$this->db->where("tb_produto.IdTipoPrecoApresentacao",		$pData["TipoPrecoApresentacao"]["Id"]);}	
+			if(isset($pData["Detalhes"])){							$this->db->like("tb_produto.Detalhes",						$pData["Detalhes"]);}	
+			if(isset($pData["Informacoes_Adicionais"])){			$this->db->like("tb_produto.Informacoes_Adicionais",		$pData["Informacoes_Adicionais"]);}	
+			if(isset($pData["PesoLiquido"])){						$this->db->where("tb_produto.PesoLiquido",					$pData["PesoLiquido"]);}	
+			if(isset($pData["PesoBruto"])){							$this->db->where("tb_produto.PesoBruto",					$pData["PesoBruto"]);}	
+			
+			if(isset($pData["IdUsuarioInclusao"])){					$this->db->where("tb_produto.IdUsuarioInclusao",			$pData["IdUsuarioInclusao"]);}
+			if(isset($pData["IdUsuarioAlteracao"])){				$this->db->where("tb_produto.IdUsuarioAlteracao",			$pData["IdUsuarioAlteracao"]);}
+			if(isset($pData["DataInclusaoDe"])){					$this->db->where("tb_produto.DataInclusao >=",				$pData["DataInclusaoDe"]);}
+			if(isset($pData["DataInclusaoAte"])){					$this->db->where("tb_produto.DataInclusao <=",				$pData["DataInclusaoAte"]);}
+			if(isset($pData["DataAlteracaoDe"])){					$this->db->where("tb_produto.DataAlteracao >=",				$pData["DataAlteracaoDe"]);}
+			if(isset($pData["DataAlteracaoAte"])){					$this->db->where("tb_produto.DataAlteracao <=",				$pData["DataAlteracaoAte"]);}
+			if(isset($pData["Origem"]["Id"])){						$this->db->where("tb_produto.IdOrigem <=",					$pData["Origem"]["Id"]);}
 				
 			// --- JOIN ---
             if( (isset($pData["Join"])) && ($pData["Join"] == true) ){
@@ -26,10 +48,13 @@
             	
             	$this->db->join("tb_produto_preco AS Preco", "Preco.IdProduto = tb_produto.Id and Preco.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
             	$this->db->join("tb_produto_fotos AS Fotos", "Fotos.IdProduto = tb_produto.Id and IsPrincipal = 1","left");
+            	$this->db->join("tb_produto_promocao AS Promocao", "Promocao.IdProduto = tb_produto.Id","left");// -- ADD Vigencia --
             	
             	$query_select = "tb_produto.*
             	,Preco.IdTipoPreco, Preco.Preco
-            	,Fotos.NomeArquivo AS FotoPrincipal";
+            	,Fotos.NomeArquivo AS FotoPrincipal
+            	,Promocao.PorcentagemDesconto AS PromocaoPorcentagemDesconto
+            	,Promocao.PrecoFixoDesconto AS PromocaoPrecoFixoDesconto";
             	
                 if ( (isset($pData["IsDescricao"])) && ($pData["IsDescricao"] == true) ){
                 	
@@ -112,7 +137,14 @@
             	
 			}
 			
-			// ----- RETURN -----
+			// ----- Count -----
+			if( (isset($pData["IsCount"])) && ($pData["IsCount"] == true) ){
+				
+				return $this->db->count_all_results();  
+				
+			}	
+			
+			// ----- RETORNO -----*/
 			// -- IsBusca --
 			if( (isset($pData["IsBusca"])) && ($pData["IsBusca"] == true) ){
 				

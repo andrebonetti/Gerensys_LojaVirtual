@@ -49,18 +49,35 @@
 			
 			// RETURN
 			if(isset($pData["IsBusca"])){
-                
-                if($pData["IsBusca"] == true){
-                	return $this->db->get()->row_array();
-				}
-				else{
-					return $this->db->get()->result_array();
-				}
+                $data = $this->db->get()->row_array();
 			}
 			else{
-				return $this->db->get()->result_array();
+				$data = $this->db->get()->result_array();
 			}
-			        
+			
+			//lJoin
+			if( (isset($pData["lJoinCount"])) && ($pData["lJoinCount"] == true) ){
+				
+				if( !isset($pData["IsBusca"] )){	
+					
+					$n = 0;
+					foreach($data as $itemData){
+						
+						produto_PreencherBreadCrumb("IdCor",$itemData["Id"],"Cor",$itemData["Descricao"]);
+						
+						$pData[0]["Produto"]["Cor"]["Id"] = $itemData["Id"];
+						$data[$n]["CountFilhas"]	= $this->Produto_model	->Listar($pData[0]["Produto"]);
+						
+						if($data[$n]["CountFilhas"] < 1){
+							unset($data[$n]);
+						}
+						
+						$n++;				
+					}
+				}
+			}
+			
+			return $data;	        
 	    }
 		
 		// -- INSERT -- //

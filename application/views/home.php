@@ -58,22 +58,64 @@
             
             <div class="boxes">
                 
-                <?php foreach($lDestaque as $itemDestaque){?>
+                <?php foreach($lDestaque as $itemDestaque){
                 
-                 	<?php  $valorParcela = produto_CalcularParcela($itemDestaque["Produto"]["NumeroMaximoParcelas"],$itemDestaque["Produto"]["JurosAPartirDe"],$itemDestaque["Produto"]["PorcentagemJuros"],$itemDestaque["Produto"]["Preco"])?>
-                 
+                 	//Promocao
+                 	$HasPromocao = false;
+                 	if($itemDestaque["Produto"]["PromocaoPorcentagemDesconto"] > 0){
+						
+						$itemDestaque["Produto"]["NovoPreco"] 	= produto_promocao_CalcularPromocao($itemDestaque["Produto"]["PromocaoPorcentagemDesconto"],$itemDestaque["Produto"]["Preco"]);
+						
+					}
+                 	if($itemDestaque["Produto"]["PromocaoPrecoFixoDesconto"] > 0){
+                 		
+                 		$itemDestaque["Produto"]["NovoPreco"] 	= $itemDestaque["Produto"]["PromocaoPrecoFixoDesconto"];
+                 		
+					}
+                	
+                	if( isset($itemDestaque["NovoPreco"]) ){
+						$preco = $itemDestaque["Produto"]["NovoPreco"];
+					}
+					else{
+						$preco = $itemDestaque["Produto"]["Preco"];
+					}
+                	
+                	//Parcela
+                 	$valorParcela 	= produto_CalcularParcela($itemDestaque["Produto"]["NumeroMaximoParcelas"],$itemDestaque["Produto"]["JurosAPartirDe"],$itemDestaque["Produto"]["PorcentagemJuros"],$preco);
+                 	
+                 	?>
+                 	
                     <div class="master-box">
 
                         <div class="box">
                             
+                            <!-- Destaque Promocao -->
+                            <?php if($itemDestaque["Produto"]["PromocaoPorcentagemDesconto"] > 0 ){?>
+                            	<p class="promocao"><?=$itemDestaque["Produto"]["PromocaoPorcentagemDesconto"]?>% OFF</p>
+                           <?php } ?> 
+                           <?php if($itemDestaque["Produto"]["PromocaoPrecoFixoDesconto"] > 0 ){?>
+                            	<p class="promocao">- <?=numeroEmReais( ($itemDestaque["Produto"]["NovoPreco"] - $itemDestaque["Produto"]["Preco"])*-1) ?></p>
+                           <?php } ?> 
+                            
+                            <!-- Imagem -->
                             <div class="img-content">
                             	<?=anchor("produtos/produto_descricao/".$itemDestaque["Produto"]["Id"]," 
                             	<img src='".base_url("img/Produtos/".$itemDestaque["Produto"]["FotoPrincipal"]."")."' alt='".$itemDestaque["Produto"]['Descricao']."' title='".$itemDestaque["Produto"]['Descricao']."'>
                             	<p class='detalhes_span'>+ Detalhes</p>")?>
                             </div>
                             
+                            <!-- Descricao -->
                             <a href="#"><h3 class="nome-produto"><?=$itemDestaque["Produto"]["Descricao"]?></h3></a>
-                            <p class="preco"><?=numeroEmReais($itemDestaque["Produto"]["Preco"])?></p>
+                            
+                            <!-- Preco -->
+                            <?php if( ($itemDestaque["Produto"]["PromocaoPorcentagemDesconto"] == null) && ($itemDestaque["Produto"]["PromocaoPrecoFixoDesconto"] == null)) {?>
+                            	<p class="preco"><?=numeroEmReais($itemDestaque["Produto"]["Preco"])?></p>
+                            <?php } else{?>
+                             
+                             	<p class="preco-antigo"><?=numeroEmReais($itemDestaque["Produto"]["Preco"])?></p>
+                        		<p class="preco-novo"><?=numeroEmReais($itemDestaque["Produto"]["NovoPreco"])?></p>
+                             
+                            <?php }?>
                             
                             <?php if($valorParcela != 0){ ?>
                             	<p class="parcela"><?=$itemDestaque["Produto"]["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
@@ -95,23 +137,66 @@
             
             <div class="boxes">
                 
-                <?php foreach($lNovidade as $itemNovidade){?>
-                
-                 	<?php  $valorParcela = produto_CalcularParcela($itemNovidade["NumeroMaximoParcelas"],$itemNovidade["JurosAPartirDe"],$itemNovidade["PorcentagemJuros"],$itemNovidade["Preco"])?>
+                <?php foreach($lNovidade as $itemNovidade){
+                	
+                	//Promocao
+                 	$HasPromocao = false;
+                 	if($itemNovidade["PromocaoPorcentagemDesconto"] > 0){
+						
+						$itemNovidade["NovoPreco"] 	= produto_promocao_CalcularPromocao($itemNovidade["PromocaoPorcentagemDesconto"],$itemNovidade["Preco"]);
+						
+					}
+                 	if($itemNovidade["PromocaoPrecoFixoDesconto"] > 0){
+                 		
+                 		$itemNovidade["NovoPreco"] 	= $itemNovidade["PromocaoPrecoFixoDesconto"];
+                 		
+					}
+                	
+                	if( isset($itemNovidade["NovoPreco"]) ){
+						$preco = $itemNovidade["NovoPreco"];
+					}
+					else{
+						$preco = $itemNovidade["Preco"];
+					}
+                	
+                	//Parcela
+                 	$valorParcela 	= produto_CalcularParcela($itemNovidade["NumeroMaximoParcelas"],$itemNovidade["JurosAPartirDe"],$itemNovidade["PorcentagemJuros"],$preco);
+                 	
+                 	?>
                  
                     <div class="master-box">
 
                         <div class="box">
                             
+                            <!-- Destaque Promocao -->
+                            <?php if($itemNovidade["PromocaoPorcentagemDesconto"] > 0){?>
+                            	<p class="promocao"><?=$itemNovidade["PromocaoPorcentagemDesconto"]?>% OFF</p>
+                           <?php } ?> 
+                           <?php if($itemNovidade["PromocaoPrecoFixoDesconto"] > 0){?>
+                            	<p class="promocao">- <?=numeroEmReais( ($itemNovidade["NovoPreco"] - $itemNovidade["Preco"])*-1) ?></p>
+                           <?php } ?> 
+                            
+                            <!-- Imagem -->
                             <div class="img-content">
                             	<?=anchor("produtos/produto_descricao/".$itemNovidade["Id"]," 
                             	<img src='".base_url("img/Produtos/".$itemNovidade["FotoPrincipal"]."")."' alt='".$itemNovidade['Descricao']."' title='".$itemNovidade['Descricao']."'>
                             	<p class='detalhes_span'>+ Detalhes</p>")?>
                             </div>
                             
+                            <!-- Descrição -->
                             <a href="#"><h3 class="nome-produto"><?=$itemNovidade["Descricao"]?></h3></a>
-                            <p class="preco"><?=numeroEmReais($itemNovidade["Preco"])?></p>
                             
+                            <!-- Preco -->
+                            <?php if( ($itemNovidade["PromocaoPorcentagemDesconto"] == null) && ($itemNovidade["PromocaoPrecoFixoDesconto"] == null)) {?>
+                            	<p class="preco"><?=numeroEmReais($itemNovidade["Preco"])?></p>
+                            <?php } else{?>
+                             
+                             	<p class="preco-antigo"><?=numeroEmReais($itemNovidade["Preco"])?></p>
+                        		<p class="preco-novo"><?=numeroEmReais($itemNovidade["NovoPreco"])?></p>
+                             
+                            <?php }?>
+                            
+                            <!-- Parcela -->
                             <?php if($valorParcela != 0){ ?>
                             	<p class="parcela"><?=$itemNovidade["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
 							<?php } ?>

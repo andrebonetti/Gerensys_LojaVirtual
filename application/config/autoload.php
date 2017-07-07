@@ -33,6 +33,7 @@ $autoload['helper'] = array(
 			,'codigosAlternativos_helper'
 			,'preco_helper'
 			,'produto_helper'
+			,'produto_promocao_helper'
 			,'validacao_helper');
 
 /*

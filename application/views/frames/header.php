@@ -88,3 +88,5 @@
         	</div>
         
         </header>
+        
+        <?php Verifica_DestroySessao($atual_page); ?>

@@ -210,4 +210,117 @@
 
 		return $retorno;
 	}
-    
+	
+	function produto_HasSession(){
+		
+		/*$ci = get_instance();
+		
+		if( !empty($ci->session->userdata()){
+			return "active";
+		}*/
+	}
+	
+	function produto_activeFiltro($pFiltro){
+		
+		$ci = get_instance();
+		
+		if( !empty($ci->session->userdata($pFiltro))){
+			return "active";
+		}
+	}
+	
+	function produto_activeFiltroValor($pFiltro, $pValor){
+		
+		$ci = get_instance();
+		
+		if( !empty($ci->session->userdata($pFiltro))){
+			if( $ci->session->userdata($pFiltro) == $pValor ){
+				 return "active";
+			}
+		}
+	}
+	
+	function produto_PreencherFiltroSession($pProdutoData){
+		
+		$ci = get_instance();
+		
+		$filtros = array();
+		
+		if( !empty($ci->session->userdata("IdSetor")))		{$pProdutoData["Setor"]["Id"] 				= $ci->session->userdata("IdSetor");}
+		if( !empty($ci->session->userdata("IdCor")))		{$pProdutoData["Cor"]["Id"] 				= $ci->session->userdata("IdCor");}
+		if( !empty($ci->session->userdata("IdGrupo")))		{$pProdutoData["Grupo"]["Id"] 				= $ci->session->userdata("IdGrupo");}
+		if( !empty($ci->session->userdata("IdMarca")))		{$pProdutoData["Marca"]["Id"] 				= $ci->session->userdata("IdMarca");}
+		if( !empty($ci->session->userdata("IdSubGrupo")))	{$pProdutoData["Grupo"]["SubGrupo"]["Id"] 	= $ci->session->userdata("IdSubGrupo");}
+		
+		return $pProdutoData;
+	}
+	
+	function produto_PreencherBreadCrumb($pFiltro,$pValor,$pNomeFiltro,$pDescricao){
+		
+		$ci = get_instance();
+			
+		// --- Count --- 
+		$sessaoFiltro			= $ci->session->userdata($pFiltro);
+		
+		if( !empty($sessaoFiltro)){
+			
+			if($sessaoFiltro == $pValor){
+				
+				if( empty($ci->session->userdata("breadcrumb{$pNomeFiltro}"))){
+					
+					$sessaoBreadCrumbCount  = $ci->session->userdata("BreadCrumbCount");
+					
+					if( empty($sessaoBreadCrumbCount)){//-- If NAO Existe BreadCrumb			
+						$sessaoBreadCrumbCount = 1;
+					
+						echo $ci->session->userdata("breadcrumb1Link")." - ".$ci->session->userdata("breadcrumb1Descricao")."<br>";
+					}
+					else{	
+						$sessaoBreadCrumbCount++;
+					}
+					
+					$ci->session->set_userdata("BreadCrumbCount",$sessaoBreadCrumbCount);
+					$ci->session->set_userdata("breadcrumb{$pNomeFiltro}","1");
+					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Link","Produtos/LimpezaFiltro/{$sessaoBreadCrumbCount}");
+					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Descricao","$pDescricao");
+					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Filtro","$pFiltro");
+				}
+			
+			}
+		}
+		
+	}
+	
+	function produto_PreencherArrayBreadCrumb(){
+		
+		$ci = get_instance();
+		
+		// --- Count --- 
+		$sessaoBreadCrumbCount = $ci->session->userdata('BreadCrumbCount');
+		
+		$dataBreadCrumb = array();
+		
+		if( !empty($sessaoBreadCrumbCount)){//-- If Existe BreadCrumb	
+		
+			for($n = 1;$n <= $sessaoBreadCrumbCount;$n++){
+				
+				$bread["Link"] 		= $ci->session->userdata("breadcrumb{$n}Link");
+				$bread["Descricao"] = $ci->session->userdata("breadcrumb{$n}Descricao");
+				
+				array_push($dataBreadCrumb,$bread);
+			}	
+		}
+		
+		return $dataBreadCrumb;
+		
+	}
+	
+	function Verifica_DestroySessao($pParametro){
+		
+		$ci = get_instance();
+		
+		if(($pParametro != "produtos_descricao")&&($pParametro != "produtos")){
+			$ci->session->sess_destroy();
+		}
+		
+	}
