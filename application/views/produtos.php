@@ -239,20 +239,30 @@
 					            	    	
                     <!-- Total Imoveis -->
 	            	<p class="total">Total de <?=$numeroProdutos?> produtos.</p>
-                
-                    <!-- Ordenação -->
-	            	<select class="form-control order-by">
-	            		
-	            		<option>Ordenar por:</option>
-	            			            		
-                        <option class="option-for-url " name="order" value="codigo">Código</option>
-	            		<option class="option-for-url " name="order" value="menor_preco">Menor Preço</option>
-	            		<option class="option-for-url " name="order" value="maior_preco">Maior Preço</option>
-                        
-	            	</select>
-                
-                    <!-- Paginação -->
+                	
+                	<?= form_open("produtos",array("class"=>"form-OrderBy"))?>
                     
+	                    <!-- Ordenação -->
+		            	<select name="orderBy" class="form-control order-by">
+		            		
+		            		<?php if($postOrderBy != ""){?>
+		            			<option value="postOrderBy"><?=$NomeOrderBy?></option>
+		            		<?php } else { ?>
+		            			<option>Ordenar por:</option>
+		            		<?php } ?>	            		
+	                        
+	                        <?php if($postOrderBy != "data_mais_novos")		{?><option class="option-for-url" value="data_mais_novos">Mais Novos</option><?php }?>
+		            		<?php if($postOrderBy != "data_mais_antigos")	{?><option class="option-for-url" value="data_mais_antigos">Mais Antigos</option><?php }?>
+		            		<?php if($postOrderBy != "menor_preco")			{?><option class="option-for-url" value="menor_preco">Menor Preço</option><?php }?>
+		            		<?php if($postOrderBy != "maior_preco")			{?><option class="option-for-url" value="maior_preco">Maior Preço</option><?php }?>
+	                        
+		            	</select>
+		            	
+		            	<input type="submit" class="no-view btn btn-primary">
+	            	
+                	<?= form_close() ?>
+                	
+                    <!-- Paginação -->                  
                     <?php if ($numeroPaginas > 1){?>
                     
 	                    <ul class="pagination">
@@ -419,3 +429,7 @@
         
     </div>
 </section>
+
+<span class="no-view"><?=base_url()?></span>
+
+<script src="<?= base_url("js/my_script-produtos.js")?>"></script>

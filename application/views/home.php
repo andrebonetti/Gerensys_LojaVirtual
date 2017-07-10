@@ -1,3 +1,8 @@
+<script src="<?=base_url("js/jssor.js")?>"></script>
+<script src="<?=base_url("js/jssor.slider.js")?>"></script> 
+<script src="<?=base_url("js/my_jassor.js")?>"></script>
+<script src="<?=base_url("js/thumbnail-navigator-with-arrows.source.js")?>"></script>
+
 <section class="home my-content">
     <div class="myContainer">
         

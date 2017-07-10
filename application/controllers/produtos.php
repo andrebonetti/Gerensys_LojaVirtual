@@ -2,7 +2,7 @@
 
 	class Produtos extends CI_Controller{
         
-		public function index($pPaginaAtual = 1,$pFiltro = null,$pValor = null){	
+		public function index($pPaginaAtual = 1,$pFiltro = null,$pValor = null,$pValorDescricao = null){	
             
             $this->output->enable_profiler(TRUE);   
             
@@ -19,12 +19,22 @@
 
 			$produtoData = produto_PreencherFiltroSession($produtoData);
 			
+			// --- ORDER BY ---
+			$postOrderBy = $this->input->post("orderBy");
+			$produtoData["NomeOrderBy"]	= "Mais Novos";	
+			if(!empty($postOrderBy)){
+				$produtoData = produto_DefinirOrderBy($produtoData,$postOrderBy); 	
+			}
+			
 			// --- MODEL --- 
             $lProduto			= $this->Produto_model	->Listar($produtoData);
             
             $produtoData["IsCount"] = true;
             $produtoData["Join"] = false;
-             
+            if(isset($produtoData["OrderBy"])){
+				unset($produtoData["OrderBy"]);
+			}
+            
             $Count_Produto		= $this->Produto_model	->Listar($produtoData);
             
             $numeroPaginas 		= ceil($Count_Produto/$limite);
@@ -48,6 +58,8 @@
             	,"lGrupo"			=> $lGrupo
             	,"lMarca"			=> $lMarca
             	,"lSubGrupo"		=> $lSubGrupo
+            	,"NomeOrderBy"		=> $produtoData["NomeOrderBy"]
+            	,"postOrderBy"		=> $postOrderBy
             	,"pPaginaAtual"		=> $pPaginaAtual
             	,"numeroPaginas"	=> $numeroPaginas
             	,"numeroProdutos"	=> $Count_Produto
@@ -57,8 +69,7 @@
             // --- VIEW ---
             $this->load->template("produtos.php",$content);
             
-	   }
-        
+	   } 
         
        public function produto_descricao($IdProduto){	
             

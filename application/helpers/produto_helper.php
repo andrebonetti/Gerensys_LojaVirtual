@@ -390,4 +390,38 @@
 		}
 		
 	}
+	
+	function produto_DefinirOrderBy($pProdutoData,$pPostOrderBy){
+		
+		if($pPostOrderBy == "data_mais_novos"){
+			
+			$pProdutoData["OrderBy"] 		= "DataInclusao";
+			$pProdutoData["OrderByRegra"] 	= "desc";
+			$pProdutoData["NomeOrderBy"]	= "Mais Novos";	
+					
+		}
+		if($pPostOrderBy == "data_mais_antigos"){
+			
+			$pProdutoData["OrderBy"] 		= "DataInclusao";
+			$pProdutoData["OrderByRegra"] 	= "asc";
+			$pProdutoData["NomeOrderBy"]	= "Mais Antigos";
+			
+		}
+		if($pPostOrderBy == "menor_preco"){
+			
+			$pProdutoData["OrderBy"] 		= "Preco";
+			$pProdutoData["OrderByRegra"] 	= "asc";
+			$pProdutoData["NomeOrderBy"]	= "Menor Preco";
+			
+		}
+		if($pPostOrderBy == "maior_preco"){
+			
+			$pProdutoData["OrderBy"] 		= "Preco.Preco";
+			$pProdutoData["OrderByRegra"] 	= "Desc";
+			$pProdutoData["NomeOrderBy"]	= "Maior Preco";
+			
+		}
+		
+		return $pProdutoData;
+	}
     
