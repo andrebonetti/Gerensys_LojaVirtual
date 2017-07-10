@@ -10,6 +10,7 @@
 
 @red-1: rgb(255, 56, 56);
 @red-2: rgb(173, 0, 0);
+@red-3: rgba(217, 0, 0, 0.5);
 
 /* -------------------- CONTAINER --------------------*/
 
@@ -609,9 +610,19 @@ header:extend(.full-container) {
         display: table;
         padding: 0;
         
+        a.limpra-filtro-atual{
+            padding: 7px 5px;
+            .border(4px,@red-2);
+            color: @red-2;
+            width: 100%;
+            float: left;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
         .categorizacao:extend(.full-container){
             margin-bottom:10px;
-            .border(6px,transparent);
+            .border(8px,transparent);
             background-color: @white-9;
             padding: 0;
             
@@ -642,7 +653,16 @@ header:extend(.full-container) {
                         background-color: @white-8;
                         color: @black-9;
                     }
-                }       
+                } 
+                
+                li.limpra-filtro-atual{
+					
+					a{
+						background-color: @red-3;
+						color: @red-2;
+					}
+					
+				}      
 
             }
             

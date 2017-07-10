@@ -15,27 +15,11 @@
 			$produtoData["OffSet"] = $inicio;
 			
 			// --- FILTROS ---
-			$testeSessao	= $this->session->userdata("$pFiltro");
-			
-			if(($pFiltro != null)&&($pValor != null)){
-				
-				//echo $pFiltro." - ".$pValor;
-				
-				if(($pFiltro != "Destroy")&&($pValor != "UnsetData")){
-					if(empty($testeSessao)){$this->session->set_userdata("$pFiltro",$pValor);}	
-					if(!empty($testeSessao)){
-						if($testeSessao != $pValor){$this->session->set_userdata("$pFiltro",$pValor);}
-					}
-					
-				}
-				if($pValor 	== "UnsetData"){$this->session->unset_userdata("$pFiltro");}
-				if($pFiltro == "Destroy")  {$this->session->sess_destroy();}
-				
-			}
-			
+			produto_prepararFiltros($pFiltro,$pValor);
+
 			$produtoData = produto_PreencherFiltroSession($produtoData);
 			
-			// -- MODEL -- //
+			// --- MODEL --- 
             $lProduto			= $this->Produto_model	->Listar($produtoData);
             
             $produtoData["IsCount"] = true;
@@ -58,6 +42,7 @@
             // --------------------------CONTENT---------------------------------- 
             $content = array(
             	"lProduto"			=> $lProduto
+            	,"lProdutoFiltros"	=> $produtoData
             	,"lSetor"			=> $lSetor
             	,"lCor"				=> $lCor
             	,"lGrupo"			=> $lGrupo
@@ -75,43 +60,30 @@
 	   }
         
         
-        public function produto_descricao($IdProduto){	
+       public function produto_descricao($IdProduto){	
             
             $this->output->enable_profiler(TRUE);   
             
             $produto	= $this->Produto_model	->Listar(array("Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
 			
-			//var_dump($produto);
+			// ----- BreadCrumb -----
+			$lBreadCrumb = produto_PreencherArrayBreadCrumb();
+			
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
             	"produto"		=> $produto
+            	,"lBreadCrumb"		=> $lBreadCrumb
                 ,"atual_page"  	=> "produtos_descricao");
 
             /*VIEW*/$this->load->template("produto_descricao.php",$content);
             
 	   }
 	   
-	   public function LimpezaFiltro($breadCrumbN){	
+	   public function LimpezaFiltro($pBreadCrumbN){	
             
             $this->output->enable_profiler(TRUE);   
             
-            $sessaoBreadCrumbCount = $this->session->userdata('BreadCrumbCount');
-		
-			for($n = 1;$n <= $sessaoBreadCrumbCount;$n++){
-				
-				if($n > $breadCrumbN){
-					$this->session->unset_userdata("breadcrumb{$n}Link");
-					$this->session->unset_userdata("breadcrumb{$n}Descricao");
-					
-					$filtro = $this->session->userdata("breadcrumb{$n}Filtro");
-					
-					$this->session->unset_userdata("$filtro");
-					$this->session->unset_userdata("breadcrumb{$n}Filtro");
-				}
-
-			}	
-			
-			$this->session->set_userdata("BreadCrumbCount",$breadCrumbN);
+            produto_unsetDataBreadCrumb($pBreadCrumbN);
 
 	        redirect("produtos/index/1");
             

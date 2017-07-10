@@ -5,14 +5,15 @@
         
         <aside>
         
-        	<?php /* if( produto_HasSession() == "active" ){*/?>
+        	<?php if( count($lBreadCrumb) > 0 ){?>
                     
                 	<?=anchor("Produtos/CatalogoCompleto/Pagina/1"
                 	,"Limpar Filtros"
                 	,array( "class" => "limpra-filtro-atual"))?>
             
-            <?php /*} */?>
+            <?php } ?>
             
+            <!-- Setores -->
             <div class="categorizacao">
             
                 <h2>Setor</h2>
@@ -32,10 +33,9 @@
                     
                     <?php if( produto_activeFiltro("IdSetor") == "active" ){?>
                     
-                    	<li>
+                    	<li class="limpra-filtro-atual">
                         	<?=anchor("Produtos/Setor/LimpezaFiltro"
-                        	,"Limpar Filtro"
-                        	,array( "class" => "limpra-filtro-atual"))?>
+                        	,"Limpar Filtro")?>
                         </li>
                     
                     <?php } ?>
@@ -44,131 +44,147 @@
             
             </div>
             
-            <div class="categorizacao">
+            <!-- Grupos -->
+            <?php /*if( isset($lProdutoFiltros["IdSetor"])){*/ ?>
             
-                <h2>Cores</h2>
-               	<ul>
-                    
-                	<?php foreach($lCor as $itemCor){ ?>
-						
-                        <li>
-                            
-                        	<?=anchor("produtos/index/1/IdCor/{$itemCor["Id"]}"
-                        	,$itemCor["Descricao"]." (".$itemCor["CountFilhas"].")"
-                        	,array( "class" => produto_activeFiltroValor("IdCor", $itemCor["Id"])))?>
-                        
-                        </li>
-                    
-                    <?php } ?>
-                    
-                    <?php if( produto_activeFiltro("IdCor") == "active" ){?>
-                    
-                    	<li>
-                        	<?=anchor("Produtos/Cor/LimpezaFiltro"
-                        	,"Limpar Filtro"
-                        	,array( "class" => "limpra-filtro-atual"))?>
-                        </li>
-                    
-                    <?php } ?>
-                    
-                </ul>
+	            <div class="categorizacao">
+	            
+	                <h2>Grupos</h2>
+	               	<ul>
+	                    
+	                	<?php foreach($lGrupo as $itemGrupo){ ?>
+							
+	                        <li>
+	                            
+	                        	<?=anchor("produtos/index/1/IdGrupo/{$itemGrupo["Id"]}"
+	                        	,$itemGrupo["Descricao"]." (".$itemGrupo["CountFilhas"].")"
+	                        	,array( "class" => produto_activeFiltroValor("IdGrupo", $itemGrupo["Id"])))?>
+	                        
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                    <?php if( produto_activeFiltro("IdGrupo") == "active" ){?>
+	                    
+	                    	<li class="limpra-filtro-atual">
+	                        	<?=anchor("Produtos/Grupo/LimpezaFiltro"
+	                        	,"Limpar Filtro")?>
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                </ul>
+	            
+	            </div>
             
-            </div>
+			<?php /*}*/ ?>
+			
+			<!-- SubGrupo -->
+            <?php if( isset($lProdutoFiltros["Grupo"]["Id"])){?>
             
-            <div class="categorizacao">
+            	<div class="categorizacao">
             
-                <h2>Grupos</h2>
-               	<ul>
-                    
-                	<?php foreach($lGrupo as $itemGrupo){ ?>
-						
-                        <li>
-                            
-                        	<?=anchor("produtos/index/1/IdGrupo/{$itemGrupo["Id"]}"
-                        	,$itemGrupo["Descricao"]." (".$itemGrupo["CountFilhas"].")"
-                        	,array( "class" => produto_activeFiltroValor("IdGrupo", $itemGrupo["Id"])))?>
-                        
-                        </li>
-                    
-                    <?php } ?>
-                    
-                    <?php if( produto_activeFiltro("IdGrupo") == "active" ){?>
-                    
-                    	<li>
-                        	<?=anchor("Produtos/Grupo/LimpezaFiltro"
-                        	,"Limpar Filtro"
-                        	,array( "class" => "limpra-filtro-atual"))?>
-                        </li>
-                    
-                    <?php } ?>
-                    
-                </ul>
+	                <h2>SubGrupo</h2>
+	               	<ul>
+	                    
+	                	<?php foreach($lSubGrupo as $itemSubGrupo){ ?>
+							
+	                        <li>
+	                            
+	                        	<?=anchor("produtos/index/1/IdSubGrupo/{$itemSubGrupo["Id"]}"
+	                        	,$itemSubGrupo["Descricao"]." (".$itemSubGrupo["CountFilhas"].")"
+	                        	,array( "class" => produto_activeFiltroValor("IdSubGrupo", $itemSubGrupo["Id"])))?>
+	                        
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                    <?php if( produto_activeFiltro("IdSubGrupo") == "active" ){?>
+	                    
+	                    	<li class="limpra-filtro-atual">
+	                        	<?=anchor("Produtos/SubGrupo/LimpezaFiltro"
+	                        	,"Limpar Filtro")?>
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                </ul>
+	            
+	            </div>
+	            
+            <?php } ?>
+			            
+            <!-- Cores -->
+            <?php if( isset($lProdutoFiltros["SubGrupo"]["Id"])){?>
             
-            </div>
+            	<div class="categorizacao">
             
-            <div class="categorizacao">
+	                <h2>Cores</h2>
+	               	<ul>
+	                    
+	                	<?php foreach($lCor as $itemCor){ ?>
+							
+	                        <li>
+	                            
+	                        	<?=anchor("produtos/index/1/IdCor/{$itemCor["Id"]}"
+	                        	,$itemCor["Descricao"]." (".$itemCor["CountFilhas"].")"
+	                        	,array( "class" => produto_activeFiltroValor("IdCor", $itemCor["Id"])))?>
+	                        
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                    <?php if( produto_activeFiltro("IdCor") == "active" ){?>
+	                    
+	                    	<li class="limpra-filtro-atual">
+	                        	<?=anchor("Produtos/Cor/LimpezaFiltro"
+	                        	,"Limpar Filtro")?>
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                </ul>
+	            
+	            </div>
+	            
+            <?php } ?>
             
-                <h2>Marcas</h2>
-               	<ul>
-                    
-                	<?php foreach($lMarca as $itemMarca){ ?>
-						
-                        <li>
-                            
-                        	<?=anchor("produtos/index/1/IdMarca/{$itemMarca["Id"]}"
-                        	,$itemMarca["Descricao"]." (".$itemMarca["CountFilhas"].")"
-                        	,array( "class" => produto_activeFiltroValor("IdMarca", $itemMarca["Id"])))?>
-                        
-                        </li>
-                    
-                    <?php } ?>
-                    
-                    <?php if( produto_activeFiltro("IdMarca") == "active" ){?>
-                    
-                    	<li>
-                        	<?=anchor("Produtos/Marca/LimpezaFiltro"
-                        	,"Limpar Filtro"
-                        	,array( "class" => "limpra-filtro-atual"))?>
-                        </li>
-                    
-                    <?php } ?>
-                    
-                    
-                </ul>
+            <!-- Marcas -->
+            <?php if( isset($lProdutoFiltros["SubGrupo"]["Id"])){?>
             
-            </div>
+            	<div class="categorizacao">
             
-            <div class="categorizacao">
-            
-                <h2>SubGrupo</h2>
-               	<ul>
-                    
-                	<?php foreach($lSubGrupo as $itemSubGrupo){ ?>
-						
-                        <li>
-                            
-                        	<?=anchor("produtos/index/1/IdSubGrupo/{$itemSubGrupo["Id"]}"
-                        	,$itemSubGrupo["Descricao"]." (".$itemSubGrupo["CountFilhas"].")"
-                        	,array( "class" => produto_activeFiltroValor("IdSubGrupo", $itemSubGrupo["Id"])))?>
-                        
-                        </li>
-                    
-                    <?php } ?>
-                    
-                    <?php if( produto_activeFiltro("IdSubGrupo") == "active" ){?>
-                    
-                    	<li>
-                        	<?=anchor("Produtos/SubGrupo/LimpezaFiltro"
-                        	,"Limpar Filtro"
-                        	,array( "class" => "limpra-filtro-atual"))?>
-                        </li>
-                    
-                    <?php } ?>
-                    
-                </ul>
-            
-            </div>
-            
+	                <h2>Marcas</h2>
+	               	<ul>
+	                    
+	                	<?php foreach($lMarca as $itemMarca){ ?>
+							
+	                        <li>
+	                            
+	                        	<?=anchor("produtos/index/1/IdMarca/{$itemMarca["Id"]}"
+	                        	,$itemMarca["Descricao"]." (".$itemMarca["CountFilhas"].")"
+	                        	,array( "class" => produto_activeFiltroValor("IdMarca", $itemMarca["Id"])))?>
+	                        
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                    <?php if( produto_activeFiltro("IdMarca") == "active" ){?>
+	                    
+	                    	<li class="limpra-filtro-atual">
+	                        	<?=anchor("Produtos/Marca/LimpezaFiltro"
+	                        	,"Limpar Filtro")?>
+	                        </li>
+	                    
+	                    <?php } ?>
+	                    
+	                    
+	                </ul>
+	            
+	            </div>
+
+            <?php } ?>
+                  
         </aside>    
         
         <div class="produtos-content">
@@ -176,13 +192,24 @@
             <div class="cabecalho">
             
             		<ol class="breadcrumb">
-					  <li class="breadcrumb-item">
-					  
-				  		<?=anchor("Produtos/CatalogoCompleto/Pagina/1"
-                    	,"Produtos")?>
-
-					  </li>
-					  
+            		
+					  	<?php if( count($lBreadCrumb) > 0){?>
+					  	
+					  		<li class="breadcrumb-item">
+					  	
+						  		<?=anchor("Produtos/CatalogoCompleto/Pagina/1"
+	                    		,"Produtos")?>
+                    		
+                    		</li>
+                    			
+					  	<?php } else {?>
+					  		
+					  		<li class="breadcrumb-item active">
+					  			Produtos
+					  		</li>
+					  		
+					  	<?php } ?>
+				  		
 					  <?php 
 						    $totalBread = count($lBreadCrumb);
 						    $n = 1;
@@ -194,10 +221,9 @@
 						  		<li class="breadcrumb-item active">
 		                        	<?=$itemBreadCrumb["Descricao"]?>
 						  		</li>
-						  	
-						  	<?php } else {?>
-						  	
-						  		
+							  	
+							  <?php } else {?>
+							  	
 							  	<li class="breadcrumb-item">
 							  		<?=anchor("{$itemBreadCrumb["Link"]}"
 		                        	,"{$itemBreadCrumb["Descricao"]}")?>

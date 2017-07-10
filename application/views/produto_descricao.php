@@ -2,9 +2,48 @@
     <div class="myContainer">
               
         <div class="container1">
-            
-            <div class="info-compra">
+        
+        	<ol class="breadcrumb">
+			  <li class="breadcrumb-item">
+			  
+		  		<?=anchor("Produtos/CatalogoCompleto/Pagina/1"
+            	,"Produtos")?>
 
+			  </li>
+			  
+			  <?php 
+				    $totalBread = count($lBreadCrumb);
+				    $n = 1;
+				    foreach($lBreadCrumb as $itemBreadCrumb){?>
+			  	
+				  	<!-- Active -->
+				  	<?php if($n == $totalBread){?>
+				  	
+				  		<li class="breadcrumb-item">
+				  			<?=anchor("produtos",$itemBreadCrumb["Descricao"])?>
+				  		</li>
+					  	
+					<?php } else {?>
+					  	
+					  	<li class="breadcrumb-item">
+					  		<?=anchor("{$itemBreadCrumb["Link"]}"
+                        	,"{$itemBreadCrumb["Descricao"]}")?>
+					  	</li>
+				  	
+				  	<?php } ?>
+				  	
+			  <?php $n++;}
+			  
+			  ?>
+			  
+			  <li class="breadcrumb-item active">
+		  		<?=$produto["Descricao"]?>
+		  	  </li>
+			  	
+			</ol>
+
+            <div class="info-compra">
+            
                 <h1><?=$produto["Descricao"]?></h1>
 
                 <div class="valor">

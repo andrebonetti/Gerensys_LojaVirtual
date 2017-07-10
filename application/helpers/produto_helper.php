@@ -252,6 +252,8 @@
 		if( !empty($ci->session->userdata("IdMarca")))		{$pProdutoData["Marca"]["Id"] 				= $ci->session->userdata("IdMarca");}
 		if( !empty($ci->session->userdata("IdSubGrupo")))	{$pProdutoData["Grupo"]["SubGrupo"]["Id"] 	= $ci->session->userdata("IdSubGrupo");}
 		
+		//var_dump($pProdutoData);
+		
 		return $pProdutoData;
 	}
 	
@@ -266,7 +268,7 @@
 			
 			if($sessaoFiltro == $pValor){
 				
-				if( empty($ci->session->userdata("breadcrumb{$pNomeFiltro}"))){
+				if( empty($ci->session->userdata("breadcrumb{$pFiltro}"))){
 					
 					$sessaoBreadCrumbCount  = $ci->session->userdata("BreadCrumbCount");
 					
@@ -280,7 +282,7 @@
 					}
 					
 					$ci->session->set_userdata("BreadCrumbCount",$sessaoBreadCrumbCount);
-					$ci->session->set_userdata("breadcrumb{$pNomeFiltro}","1");
+					$ci->session->set_userdata("breadcrumb{$pFiltro}","1");
 					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Link","Produtos/LimpezaFiltro/{$sessaoBreadCrumbCount}");
 					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Descricao","$pDescricao");
 					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Filtro","$pFiltro");
@@ -324,3 +326,68 @@
 		}
 		
 	}
+
+	function produto_unsetDataBreadCrumb($pBreadCrumbN){
+		
+		$ci = get_instance();
+		
+		$sessaoBreadCrumbCount = $ci->session->userdata('BreadCrumbCount');
+		
+		if($sessaoBreadCrumbCount == 1){
+			
+			$ci->session->unset_userdata("breadcrumb1Link");
+			$ci->session->unset_userdata("breadcrumb1Descricao");			
+			$ci->session->unset_userdata("breadcrumb1Filtro");
+			
+			$ci->session->set_userdata("BreadCrumbCount","0");
+			
+			$pBreadCrumbN = 0;
+		}
+		else{
+			
+			for($n = 1;$n <= $sessaoBreadCrumbCount;$n++){
+				
+				if($n > $pBreadCrumbN){
+					$ci->session->unset_userdata("breadcrumb{$n}Link");
+					$ci->session->unset_userdata("breadcrumb{$n}Descricao");
+					
+					$filtro = $ci->session->userdata("breadcrumb{$n}Filtro");
+					
+					$ci->session->unset_userdata("$filtro");
+					$ci->session->unset_userdata("breadcrumb{$n}Filtro");
+				}
+
+			}
+		
+		}	
+		
+		$ci->session->set_userdata("BreadCrumbCount",$pBreadCrumbN);
+		
+	}
+	
+	function produto_prepararFiltros($pFiltro,$pValor){
+    	
+    	$ci = get_instance();
+        
+    	$testeSessao	= $ci->session->userdata($pFiltro);
+    	
+    	//echo "teste sessao: ".$testeSessao." pFiltro: ".$pFiltro." pValor: ".$pValor;
+    		
+		if(($pFiltro != null)&&($pValor != null)){
+				
+			if(($pFiltro != "Destroy")&&($pValor != "UnsetData")){
+				$ci->session->set_userdata("$pFiltro",$pValor);
+			}
+			if($pValor 	== "UnsetData"){
+				$ci->session->unset_userdata("$pFiltro");
+				
+				$breadCrumbFiltroCount = $ci->session->userdata("breadcrumb{$pFiltro}");
+				
+				produto_unsetDataBreadCrumb($breadCrumbFiltroCount);
+			}
+			if($pFiltro == "Destroy"){$ci->session->sess_destroy();}
+			
+		}
+		
+	}
+    
