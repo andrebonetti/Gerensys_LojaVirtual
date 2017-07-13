@@ -11,7 +11,7 @@
 	    	</ul>
         <?php } ?>
         
-        <?= form_open("cliente/cadastro_Inserir",array("class"=>""))?>
+        <?= form_open("cliente/cadastro_incluir_post",array("class"=>""))?>
             
             <label>Nome Completo</label>
             <input type="text" class="nome form-control" name="nome" value="<?php if(isset($dataCadastro["Nome"])){ echo $dataCadastro["Nome"]; }?>"> 

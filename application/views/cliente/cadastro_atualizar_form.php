@@ -1,4 +1,4 @@
-<div class="cadastro content-cliente">
+<div class="endereco_incluir_form content-cliente">
 
 	<?php if( count($erros) > 0){ ?>
     	<ul class="alert alert-danger">
@@ -12,7 +12,7 @@
             
             <h2>Alteração Cadastral</h2>
             
-            <?= form_open("cliente/cadastro_Alterar",array("class"=>""))?>
+            <?= form_open("cliente/cadastro_atualizar_post",array("class"=>""))?>
             
                 <label>Nome Completo</label>
                 <input type="text" class="nome form-control" name="nome" value="<?=$cliente["Nome"]?>">
@@ -33,7 +33,7 @@
         
         <h2>Alteração Senha</h2>
         
-        <?= form_open("cliente/cadastro_AlterarSenha",array("class"=>""))?>
+        <?= form_open("cliente/cadastro_alterarSenha_post",array("class"=>""))?>
 
             <label>Senha Anterior</label>
             <input type="password" class="senha form-control" name="senha-anterior">
@@ -50,4 +50,4 @@
         
     </div>
     
-</div>    
+</div>   

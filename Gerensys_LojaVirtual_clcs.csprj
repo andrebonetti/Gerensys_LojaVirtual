@@ -90,8 +90,8 @@
 <treenode node="Valida_existencia;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f8;10;2;56;;;;vpos;;v;;r;;d37,10;;b1,0;;m">
 </treenode>
 </treenode>
-<treenode node="Carrinho;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\carrinho.php;f1;2;5;16;;;;vpos;;vCI_Controller;;c;;r;;d37,2;;b0,0;;m">
-<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\carrinho.php;f9;4;5;14;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
+<treenode node="Carrinho;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\carrinho.php;f1;2;5;20;;;;vpos;;vCI_Controller;;c;;r;;d37,2;;b0,0;;m">
+<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\carrinho.php;f9;4;5;18;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
 </treenode>
 </treenode>
 <treenode node="CI_Benchmark;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\system\core\Benchmark.php;f0;29;1;112;;;;vpos;;v;;r Definition     class CI_Benchmark  Description      CodeIgniter Benchmark Class;;d19,29;;b0,0;;m">
@@ -3742,34 +3742,58 @@
 <treenode node="read_file;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Zip.php;f1;241;2;261;;;;vpos;;vbool;;r Definition     read_file($path, $preserve_filepath = FALSE)  Description      Read the contents of a file and add it to the zip;;d1,242;;b0,0;;mpath;;ppreserve_filepath;;p">
 </treenode>
 </treenode>
-<treenode node="Cliente;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f1;2;5;235;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
-<treenode node="cadastro;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;16;5;31;;;;vpos;;v;;r;;d31,16;;b1,0;;m">
+<treenode node="Cliente;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f1;2;5;399;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
+<treenode node="cadastro_alterarSenha_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;259;5;295;;;;vpos;;v;;r;;d46,259;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_Alterar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;77;5;109;;;;vpos;;v;;r;;d36,77;;b1,0;;m">
+<treenode node="cadastro_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;60;3;73;;;;vpos;;v;;r;;d44,60;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_AlterarSenha;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;111;5;147;;;;vpos;;v;;r;;d41,111;;b1,0;;m">
+<treenode node="cadastro_atualizar_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;224;5;257;;;;vpos;;v;;r;;d43,224;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_edit;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;33;3;45;;;;vpos;;v;;r;;d36,33;;b1,0;;m">
+<treenode node="cadastro_incluir_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;134;5;149;;;;vpos;;v;;r;;d42,134;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_Inserir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;47;5;75;;;;vpos;;v;;r;;d39,47;;b1,0;;m">
+<treenode node="cadastro_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;192;5;222;;;;vpos;;v;;r;;d44,192;;b1,0;;m">
 </treenode>
-<treenode node="enderecos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;164;5;174;;;;vpos;;v;;r;;d35,164;;b1,0;;m">
+<treenode node="enderecos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f16;24;5;46;;;;vpos;;v;;r;;d36,24;;b1,0;;m">
 </treenode>
-<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;4;5;14;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
+<treenode node="enderecos_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;94;5;116;;;;vpos;;v;;r;;d58,94;;b1,0;;mpId;;p">
 </treenode>
-<treenode node="login;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;188;5;201;;;;vpos;;v;;r;;d31,188;;b1,0;;m">
+<treenode node="enderecos_atualizar_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;330;6;362;;;;vpos;;v;;r;;d50,330;;b1,0;;m">
 </treenode>
-<treenode node="login_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;203;5;233;;;;vpos;;v;;r;;d36,203;;b1,0;;m">
+<treenode node="enderecos_excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;364;9;377;;;;vpos;;v;;r;;d47,364;;b1,0;;mpId;;p">
 </treenode>
-<treenode node="pagamentos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;176;5;186;;;;vpos;;v;;r;;d36,176;;b1,0;;m">
+<treenode node="enderecos_incluir_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;75;5;92;;;;vpos;;v;;r;;d43,75;;b1,0;;m">
 </treenode>
-<treenode node="pedidos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;149;5;162;;;;vpos;;v;;r;;d27,149;;b1,0;;m">
+<treenode node="enderecos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;297;5;328;;;;vpos;;v;;r;;d42,297;;b1,0;;m">
+</treenode>
+<treenode node="enderecos_tornarPrincipal;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;379;9;397;;;;vpos;;v;;r;;d55,379;;b1,0;;mpId;;p">
+</treenode>
+<treenode node="login_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;119;5;132;;;;vpos;;v;;r;;d31,119;;b1,0;;m">
+</treenode>
+<treenode node="login_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;153;6;183;;;;vpos;;v;;r;;d33,153;;b1,0;;m">
+</treenode>
+<treenode node="pagamentos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f16;48;5;58;;;;vpos;;v;;r;;d37,48;;b1,0;;m">
+</treenode>
+<treenode node="pedidos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f13;8;5;22;;;;vpos;;v;;r;;d31,8;;b1,0;;m">
+</treenode>
+<treenode node="sair;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;185;9;190;;;;vpos;;v;;r;;d27,185;;b1,0;;m">
 </treenode>
 </treenode>
-<treenode node="Cliente_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f1;1;2;91;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f1;1;2;92;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;86;3;89;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f5;87;3;90;;;;vpos;;v;;r;;d31,87;;b0,0;;mpData;;p">
+<treenode node="Cliente_Enderecos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f1;1;2;51;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f1;1;2;64;;;;vpos;;vCI_Model;;c;;r;;d48,1;;b0,0;;m">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;46;3;49;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;48;3;51;;;;vpos;;v;;r;;d31,48;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;80;3;83;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f5;81;3;84;;;;vpos;;v;;r;;d29,81;;b0,0;;mpData;;p">
+<treenode node="AtualizarClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;53;3;56;;;;vpos;;v;;r;;d43,53;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;59;3;62;;;;vpos;;v;;r;;d29,59;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;40;3;43;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;40;3;45;;;;vpos;;v;;r;;d29,40;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;37;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f2;4;6;37;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+</treenode>
+</treenode>
+<treenode node="Cliente_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f1;1;2;94;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;86;3;89;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f5;89;3;92;;;;vpos;;v;;r;;d31,89;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;80;3;83;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f5;81;3;86;;;;vpos;;v;;r;;d29,81;;b0,0;;mpData;;p">
 </treenode>
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;77;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f2;4;6;78;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
@@ -3782,16 +3806,16 @@
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\CodigosAlternativos.php;f2;4;6;67;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;67;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;8;;D:\wamp\www\Gerensys_LojaVirtual\application\models\CodigosAlternativos_model.php;f2;4;6;67;;D:\wamp\www\Gerensys_LojaVirtual\application\models\CodigosAlternativos_model.php;f2;4;6;67;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
-<treenode node="Contato;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\contato.php;f1;2;5;15;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
-<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\contato.php;f9;4;5;14;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
+<treenode node="Contato;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\contato.php;f1;2;5;19;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
+<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\contato.php;f9;4;5;18;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
 </treenode>
 </treenode>
 <treenode node="Cor_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f1;1;2;94;;;;vpos;;vCI_Model;;c;;r;;d34,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f5;89;3;92;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;83;3;86;;;;vpos;;v;;r;;d31,83;;b0,0;;mpData;;p">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;83;3;86;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f5;89;3;92;;;;vpos;;v;;r;;d31,89;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f5;83;3;86;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;77;3;80;;;;vpos;;v;;r;;d29,77;;b0,0;;mpData;;p">
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;77;3;80;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f5;83;3;86;;;;vpos;;v;;r;;d29,83;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f2;4;6;80;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;74;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;74;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cor_model.php;f2;4;6;80;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="Cst_Csosn_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\cst-csosn_model.php;f1;1;2;74;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cst_csosn_model.php;f1;1;2;89;;;;vpos;;vCI_Model;;c;;r;;d40,1;;b0,0;;m">
@@ -3810,8 +3834,8 @@
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;58;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cst_csocn_origem_model.php;f2;4;6;58;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;58;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cst_csosn_origem_model.php;f2;4;6;63;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
-<treenode node="Empresa;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\empresa.php;f1;2;5;15;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
-<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\empresa.php;f9;4;5;14;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
+<treenode node="Empresa;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\empresa.php;f1;2;5;19;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
+<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\empresa.php;f9;4;5;18;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
 </treenode>
 </treenode>
 <treenode node="exceptions;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\libraries\exceptions.php;f0;3;1;11;;;;vpos;;v;;r;;d17,3;;b0,0;;m">
@@ -3852,8 +3876,8 @@
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Grupo_model.php;f2;4;6;80;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
-<treenode node="Home;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\home.php;f1;2;5;20;;;;vpos;;vCI_Controller;;c;;r;;d33,2;;b0,0;;m">
-<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\home.php;f9;4;5;19;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
+<treenode node="Home;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\home.php;f1;2;5;24;;;;vpos;;vCI_Controller;;c;;r;;d33,2;;b0,0;;m">
+<treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\home.php;f9;4;5;23;;;;vpos;;v;;r;;d25,4;;b1,0;;m">
 </treenode>
 </treenode>
 <treenode node="Marca_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Marca_model.php;f1;1;2;95;;;;vpos;;vCI_Model;;c;;r;;d36,1;;b0,0;;m">
@@ -3911,11 +3935,11 @@
 </treenode>
 </treenode>
 <treenode node="Produto_Fotos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f1;1;2;82;;;;vpos;;vCI_Model;;c;;r;;d44,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;77;3;80;;;;vpos;;v;;r;;d31,77;;b0,0;;mpData;;p">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;77;3;80;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;77;3;80;;;;vpos;;v;;r;;d31,77;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;71;3;74;;;;vpos;;v;;r;;d29,71;;b0,0;;mpData;;p">
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;71;3;74;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;71;3;74;;;;vpos;;v;;r;;d29,71;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f2;4;6;68;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f2;4;6;68;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;68;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="produto_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f1;1;2;252;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
@@ -3942,12 +3966,12 @@
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Promocao_model.php;f2;4;6;73;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
-<treenode node="Produtos;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f1;2;5;106;;;;vpos;;vCI_Controller;;c;;r;;d37,2;;b0,0;;m">
+<treenode node="Produtos;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f1;2;5;110;;;;vpos;;vCI_Controller;;c;;r;;d37,2;;b0,0;;m">
 <treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f9;4;5;75;;;;vpos;;v;;r;;d97,4;;b1,0;;mpPaginaAtual;;ppFiltro;;ppValor;;ppValorDescricao;;p">
 </treenode>
-<treenode node="LimpezaFiltro;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f11;96;5;104;;;;vpos;;v;;r;;d48,96;;b1,0;;mpBreadCrumbN;;p">
+<treenode node="LimpezaFiltro;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f11;100;5;108;;;;vpos;;v;;r;;d48,100;;b1,0;;mpBreadCrumbN;;p">
 </treenode>
-<treenode node="produto_descricao;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f14;77;5;94;;;;vpos;;v;;r;;d52,77;;b1,0;;mIdProduto;;p">
+<treenode node="produto_descricao;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php;f14;77;5;98;;;;vpos;;v;;r;;d52,77;;b1,0;;mIdProduto;;p">
 </treenode>
 </treenode>
 <treenode node="Produtos_UnidadeApresentacao_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\produtos_UnidadeApresentacao.php;f1;1;2;65;;;;vpos;;vCI_Model;;c;;r;;d59,1;;b0,0;;m">
@@ -4140,17 +4164,23 @@
 </treenode>
 <treenode node="character_limiter;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\helpers\text_helper.php;f1;76;2;101;;;;vpos;;vstring;;r Definition     character_limiter($str, $n = 500, $end_char = &apos;&amp;#8230;s&apos;)  Description      Character Limiter  Parameters:     string     integer     string - the end character;;d1,77;;b0,0;;mstring;;pinteger;;pstring;;p">
 </treenode>
-<treenode node="cliente_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\Codelobster0.php;f1;2;2;13;;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;2;2;13;;;;vpos;;v;;r;;d28,2;;b0,0;;m">
+<treenode node="cliente_enderecos_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f1;2;2;12;;;;vpos;;v;;r;;d38,2;;b0,0;;m">
+</treenode>
+<treenode node="cliente_enderecos_ValidarCampo;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f4;33;2;47;;;;vpos;;v;;r;;d81,33;;b0,0;;mpValidacao;;ppCampo;;ppCampoNome;;ppId;;p">
+</treenode>
+<treenode node="cliente_enderecos_ValidarDados;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f4;14;2;31;;;;vpos;;v;;r;;d74,14;;b0,0;;mpEndereco;;ppTipo;;p">
+</treenode>
+<treenode node="cliente_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;2;2;13;;;;vpos;;v;;r;;d28,2;;b0,0;;m">
 </treenode>
 <treenode node="cliente_validarAlteracaoSenha;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;148;2;191;;;;vpos;;v;;r;;d47,148;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="cliente_ValidarCampo;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\Codelobster0.php;f1;31;2;52;;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;36;2;62;;;;vpos;;v;;r;;d68,36;;b0,0;;mpValidacao;;ppCampo;;ppCampoNome;;ppId;;p">
+<treenode node="cliente_ValidarCampo;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;36;2;62;;;;vpos;;v;;r;;d68,36;;b0,0;;mpValidacao;;ppCampo;;ppCampoNome;;ppId;;p">
 </treenode>
-<treenode node="cliente_ValidarDados;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\Codelobster0.php;f1;15;2;29;;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;15;2;34;;;;vpos;;v;;r;;d60,15;;b0,0;;mpCliente;;ppTipo;;p">
+<treenode node="cliente_ValidarDados;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;15;2;34;;;;vpos;;v;;r;;d60,15;;b0,0;;mpCliente;;ppTipo;;p">
 </treenode>
-<treenode node="cliente_validarLogin;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\Codelobster0.php;f1;66;2;124;;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;76;2;134;;;;vpos;;v;;r;;d41,76;;b0,0;;mpCliente;;p">
+<treenode node="cliente_validarLogin;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;76;2;134;;;;vpos;;v;;r;;d41,76;;b0,0;;mpCliente;;p">
 </treenode>
-<treenode node="cliente_validarSenha;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\Codelobster0.php;f1;54;2;64;;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;64;2;74;;;;vpos;;v;;r;;d53,64;;b0,0;;mpValidacao;;ppCliente;;p">
+<treenode node="cliente_validarSenha;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;64;2;74;;;;vpos;;v;;r;;d53,64;;b0,0;;mpValidacao;;ppCliente;;p">
 </treenode>
 <treenode node="cliente_validarSessao;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;136;2;146;;;;vpos;;v;;r;;d33,136;;b0,0;;m">
 </treenode>

@@ -8,10 +8,11 @@
         
             <tr>
             
-                <th class="tipoendereco">Tipo Endereço</th>
                 <th class="relevancia">Relevância</th>
                 <th class="endereco">Endereço</th>
-                <th class="acoes"></th>
+                <th class="complemento">Complemento</th>
+                <th class="cep">CEP</th>
+                <th class="acoes">Ações</th>
                 
             </tr>
         
@@ -19,34 +20,31 @@
         
         <tbody>
         
-            <tr>
-            
-                <td class="tipoendereco">Endereço 1</td>
-                <td class="relevancia"><button class="btn btn-primary">Principal</button></td>
-                <td class="endereco">Rua André Ansaldo, 2A</td>
-                <td class="acoes">
-                     <?=anchor("cliente/enderecos_edit","<img src=".base_url("img/edit_blue.png").">")?>
-                    <?=anchor("cliente/enderecos_delete","<img src=".base_url("img/delete.png").">")?>
-                </td>
+        	<?php foreach($cliente_enderecos as $itemEndereco) { ?>
+                <tr>
                 
-            </tr>
+                    <td class="relevancia">
+                    	<?php if($itemEndereco["IsPrincipal"] == true){ ?>
+                    		<button class="btn btn-success">Principal</button>
+                    	<?php } else {?> 
+                    		<?= anchor("cliente/enderecos_tornarPrincipal/{$itemEndereco["Id"]}","Tornar Principal",array("class"=>"btn btn-default" ))?>
+                    	<?php } ?> 
+                    </td>
+                    <td class="endereco"><?=$itemEndereco["Endereco"]?></td>
+                    <td class="complemento"><?=$itemEndereco["Numero"]?> - <?=$itemEndereco["Complemento"]?></td>
+                    <td class="cep"><?=$itemEndereco["CEP"]?></td>
+                    <td class="acoes">
+                    	<?=anchor("cliente/enderecos_excluir/{$itemEndereco["Id"]}","<img src=".base_url("img/delete.png").">")?>
+                        <?=anchor("cliente/enderecos_atualizar_form/{$itemEndereco["Id"]}","<img src=".base_url("img/edit_blue.png").">")?>
+                    </td>
+                    
+                </tr>
+            <?php } ?>
             
-            <tr>
-            
-                <td class="tipoendereco">Endereço 2</td>
-                <td class="relevancia"><button class="btn btn-default">Tornar Principal</button></td>
-                <td class="endereco">Rua Cândido Borges Monteiro, 13A</td>
-                <td class="acoes">
-                    <?=anchor("cliente/enderecos_edit","<img src=".base_url("img/edit_blue.png").">")?>
-                    <?=anchor("cliente/enderecos_delete","<img src=".base_url("img/delete.png").">")?>
-                </td>
-                
-            </tr>
-        
         </tbody>
     
     </table>
     
-    <button class="btn btn-primary">Adicionar novo Endereço</button>
-    
+    <?=anchor("cliente/enderecos_incluir_form","Adicionar Novo Endereço",array("class"=>"btn btn-primary"))?>
+
 </div>    

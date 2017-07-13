@@ -31,8 +31,9 @@
         
             <?=anchor("cliente/pedidos","Pedidos",array("class"=>atual_page($atual_page, "pedidos")))?> 
             <?=anchor("cliente/favoritos","Favoritos",array("class"=>atual_page($atual_page, "favoritos")))?> 
-            <?=anchor("cliente/cadastro_edit","Cadastro",array("class"=>atual_page($atual_page, "cliente_cadastro")))?> 
+            <?=anchor("cliente/cadastro_atualizar_form","Cadastro",array("class"=>atual_page($atual_page, "cliente_cadastro")))?> 
             <?=anchor("cliente/enderecos","Endereços",array("class"=>atual_page($atual_page, "enderecos")))?> 
             <?=anchor("cliente/pagamentos","Opções de Pagamento",array("class"=>atual_page($atual_page, "pagamentos")))?> 
-            <?=anchor("cliente/sair","Sair")?> 
+            <?=anchor("cliente/sair","Sair")?>
+             
         </aside>

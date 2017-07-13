@@ -40,7 +40,7 @@
                 <li>Salve seus dados e facilite compras futuras</li>
             </ul>
             
-            <?= form_open("cliente/cadastro",array("class"=>""))?>
+            <?= form_open("cliente/cadastro_incluir_form",array("class"=>""))?>
             
                 <label>Email</label>
                 <input type="text" class="email form-control" name="email">

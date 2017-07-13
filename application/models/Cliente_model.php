@@ -82,6 +82,8 @@
 	    function Incluir($pData){
 	        $pData["Id"] = null;
 			$this->db->insert("tb_cliente", $pData);
+			
+			return $this->db->insert_id();
 		}
 	    
 	    // -- UPDATE -- // 

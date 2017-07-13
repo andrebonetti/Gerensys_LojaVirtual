@@ -78,8 +78,8 @@
                     
                         <div class="sem-conta">
 	                    
-	                       <?=anchor("Cliente/cadastro","Cadastre-se",array("class" => "cadastrese"))?>
-	                       <?=anchor("Cliente/login","Login",array("class" => "login"))?>
+	                       <?=anchor("Cliente/cadastro_incluir_form","Cadastre-se",array("class" => "cadastrese"))?>
+	                       <?=anchor("Cliente/login_form","Login",array("class" => "login"))?>
 	                    
                         </div>    
                             
@@ -90,14 +90,14 @@
                             <div class="menu-conta">
                               <ul class="nav navbar-nav">
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php/*$cliente["Nome"]*/?>André</a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= explode(" ", $cliente["Nome"])[0] ?></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><?=anchor("cliente/pedidos","Pedidos")?></li>
-                                            <li><?=anchor("cliente/favoritos","Favoritos")?></li>
-                                            <li><?=anchor("cliente/cadastro_edit","Cadastro")?></li> 
-                                            <li><?=anchor("cliente/enderecos","Endereços")?></li> 
-                                            <li><?=anchor("cliente/pagamentos","Opções de Pagamento")?></li> 
-                                            <li><?=anchor("cliente/sair","Sair")?></li> 
+                                            <?=anchor("cliente/pedidos","Pedidos",array("class"=>atual_page($atual_page, "pedidos")))?> 
+								            <?=anchor("cliente/favoritos","Favoritos",array("class"=>atual_page($atual_page, "favoritos")))?> 
+								            <?=anchor("cliente/cadastro_atualizar_form","Cadastro",array("class"=>atual_page($atual_page, "cliente_cadastro")))?> 
+								            <?=anchor("cliente/enderecos","Endereços",array("class"=>atual_page($atual_page, "enderecos")))?> 
+								            <?=anchor("cliente/pagamentos","Opções de Pagamento",array("class"=>atual_page($atual_page, "pagamentos")))?> 
+								            <?=anchor("cliente/sair","Sair")?>
                                         </ul>
                                     </li>
                                 </ul>
