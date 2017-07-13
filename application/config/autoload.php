@@ -33,6 +33,7 @@ $autoload['helper'] = array(
 			,'codigosAlternativos_helper'
 			,'preco_helper'
 			,'produto_helper'
+			,'cliente_helper'
 			,'produto_promocao_helper'
 			,'validacao_helper');
 
@@ -76,6 +77,7 @@ $autoload['model'] = array(
 				,'Tipo_model'
 				,'TipoPreco_model'
 				,'Usuarios_model'
+				,'Cliente_model'
 				,'Functions_model'
 				,'Sys_Info_Campos_model'
 				,'Sys_UnidadeApresentacao_model'

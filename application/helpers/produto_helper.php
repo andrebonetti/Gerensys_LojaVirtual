@@ -317,12 +317,12 @@
 		
 	}
 	
-	function Verifica_DestroySessao($pParametro){
+	function produto_DestroySessaoFiltros($pParametro){
 		
 		$ci = get_instance();
 		
 		if(($pParametro != "produtos_descricao")&&($pParametro != "produtos")){
-			$ci->session->sess_destroy();
+			produto_unsetDataBreadCrumb(0);
 		}
 		
 	}
@@ -336,9 +336,13 @@
 		if($sessaoBreadCrumbCount == 1){
 			
 			$ci->session->unset_userdata("breadcrumb1Link");
-			$ci->session->unset_userdata("breadcrumb1Descricao");			
-			$ci->session->unset_userdata("breadcrumb1Filtro");
+			$ci->session->unset_userdata("breadcrumb1Descricao");
 			
+			$filtro = $ci->session->userdata("breadcrumb1Filtro");
+			
+			$ci->session->unset_userdata("$filtro");
+			$ci->session->unset_userdata("breadcrumb1Filtro");
+
 			$ci->session->set_userdata("BreadCrumbCount","0");
 			
 			$pBreadCrumbN = 0;
@@ -369,10 +373,6 @@
     	
     	$ci = get_instance();
         
-    	$testeSessao	= $ci->session->userdata($pFiltro);
-    	
-    	//echo "teste sessao: ".$testeSessao." pFiltro: ".$pFiltro." pValor: ".$pValor;
-    		
 		if(($pFiltro != null)&&($pValor != null)){
 				
 			if(($pFiltro != "Destroy")&&($pValor != "UnsetData")){
@@ -385,7 +385,9 @@
 				
 				produto_unsetDataBreadCrumb($breadCrumbFiltroCount);
 			}
-			if($pFiltro == "Destroy"){$ci->session->sess_destroy();}
+			if($pFiltro == "Destroy"){
+				produto_unsetDataBreadCrumb(0);
+			}
 			
 		}
 		

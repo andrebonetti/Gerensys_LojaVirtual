@@ -4,11 +4,15 @@
         
 		public function index(){	
             
-            $this->output->enable_profiler(TRUE);    
+            $this->output->enable_profiler(TRUE); 
+            
+            // --- SESSAO CLIENTE ---
+            $cliente = cliente_validarSessao();
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "atual_page"  => "contato");
+                "cliente"	  => $cliente
+                ,"atual_page"  => "contato");
 
             /*VIEW*/$this->load->template("contato.php",$content);
             

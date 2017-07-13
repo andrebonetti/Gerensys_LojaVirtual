@@ -514,17 +514,90 @@ header:extend(.full-container) {
             margin: @content_top 0 0 0;
             padding: 0 8px 0 0;
             
-            a{
-                color: @black-5;
-                margin:0 5px;
-                float: left;
-                font-size: @font-size_lateral;
+            .sem-conta{
                 
-                img{
-                    width: @img_header_lateral;
-                    margin-top: -10px;
+                a{
+                    color: @black-5;
+                    margin:0 5px;
+                    float: left;
+                    font-size: @font-size_lateral;
+
+                    img{
+                        width: @img_header_lateral;
+                        margin-top: -10px;
+                    }
                 }
             }
+            
+            .minha-conta{
+                
+                .menu-conta{
+                    .float-config(left,auto);
+
+                    ul.nav,.ul.navbar-nav{
+
+                        li.open{
+
+                            a{
+                                color: @black-5;
+                                background-color: transparent;
+                            }    
+                        }
+
+                        li.dropdown{
+
+                            a.dropdown-toggle{
+                                padding: 3px;
+                                color: @black-5;
+
+                            }
+
+                            a.dropdown-toggle:hover{
+                                background-color: transparent;
+                            }
+
+                            ul.dropdown-menu{
+                                width: 200px;
+                                left: -60px;
+                                border-radius: 8px;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                text-align: center;   
+                                left: -60px;
+                                border-radius: 8px;
+                                background-color: @white-6;
+                                text-align: center;
+
+                                li{
+
+                                    a{
+                                        padding:7px 0;
+                                        color: @white-10;
+                                        font-weight: 600;
+                                        font-size: @font-size_lateral;
+                                    }
+
+                                    a:hover{
+                                        background-color: transparent;
+                                        color: @blue-1;
+                                    }
+
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+                
+                img{
+                    
+                    .float-config(right,25px);
+                    margin-left: 5px;
+                }
+                
+            }
+            
+            
             
         }
         
@@ -1165,12 +1238,13 @@ header:extend(.full-container) {
                     
                 }
                 
-                .img-teste{
-                    .float-config(right,115px);
-                    padding: 25px 30px;
-                    background-color: @white-8;
-                    color: @white-10;
-                    text-align: center;
+                img{
+					width: 50px;
+				}
+                
+                img.no-foto{
+                    background-color: @white-7;
+                    padding: 3px;
                 }
             }
             
@@ -1243,6 +1317,10 @@ header:extend(.full-container) {
                 .float-config(left,47%);
                 
                 form{
+                	
+                	.btn{
+						margin-top: 5px;
+					}
 
                 }
                 
@@ -1255,6 +1333,10 @@ header:extend(.full-container) {
                 border-width:0 0 0 1px;
                 
                 form{
+                    
+                    .btn{
+						margin-top: 5px;
+					}
                     
                 }
                 

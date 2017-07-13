@@ -73,10 +73,51 @@
                     <span class="valor">R$0,00</span>
                 </div>
                 <div class="conta">
-                    <?=anchor("Cliente/cadastro","Cadastre-se",array("class" => "cadastrese"))?>
-                    <?=anchor("Cliente/login","Login",array("class" => "login"))?>
+                
+                	<?php if(empty($cliente)){ ?>
                     
-                    <?php //anchor("home","<img src='".base_url('img/User.png')."'>")?>
+                        <div class="sem-conta">
+	                    
+	                       <?=anchor("Cliente/cadastro","Cadastre-se",array("class" => "cadastrese"))?>
+	                       <?=anchor("Cliente/login","Login",array("class" => "login"))?>
+	                    
+                        </div>    
+                            
+                    <?php } else {?>
+                        
+                        <div class="minha-conta">
+                    	   
+                            <div class="menu-conta">
+                              <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php/*$cliente["Nome"]*/?>André</a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><?=anchor("cliente/pedidos","Pedidos")?></li>
+                                            <li><?=anchor("cliente/favoritos","Favoritos")?></li>
+                                            <li><?=anchor("cliente/cadastro_edit","Cadastro")?></li> 
+                                            <li><?=anchor("cliente/enderecos","Endereços")?></li> 
+                                            <li><?=anchor("cliente/pagamentos","Opções de Pagamento")?></li> 
+                                            <li><?=anchor("cliente/sair","Sair")?></li> 
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <?php if($cliente["Foto"] != ""){ ?>
+				
+                                <img class="com-foto" src="<?=base_url("img/Clientes/{$cliente["Foto"]}")?>">
+
+                            <?php } else {?>
+
+                                <img class="no-foto" src="<?=base_url('img/User.png')?>">
+
+                            <?php } ?>
+                            
+                        
+                        </div>
+                    
+                    <?php } ?>
+                    
                 </div>
         		
         		
@@ -84,4 +125,4 @@
         
         </header>
         
-        <?php Verifica_DestroySessao($atual_page); ?>
+        <?php produto_DestroySessaoFiltros($atual_page); ?>

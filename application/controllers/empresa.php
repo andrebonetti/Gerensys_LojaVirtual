@@ -5,10 +5,14 @@
 		public function index(){	
             
             $this->output->enable_profiler(TRUE);    
+            
+            // --- SESSAO CLIENTE ---
+            $cliente = cliente_validarSessao();
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "atual_page"  => "empresa");
+                "cliente"	  => $cliente
+                ,"atual_page"  => "empresa");
 
             /*VIEW*/$this->load->template("empresa.php",$content);
             

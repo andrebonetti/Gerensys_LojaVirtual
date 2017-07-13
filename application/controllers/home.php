@@ -5,6 +5,9 @@
 		public function index(){	
             
             $this->output->enable_profiler(TRUE);    
+            
+            // --- SESSAO CLIENTE ---
+            $cliente = cliente_validarSessao();
 
             $lDestaque = $this->Produto_Destaques_model	->Listar(array("lJoin" => true,"Produto" => array ("Join" => true,"IsBusca" => true)));
 			$lNovidade = $this->Produto_model			->Listar(array("OrderBy" => "Id","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));
@@ -13,6 +16,7 @@
             $content = array(
                 "lDestaque"    => $lDestaque
                 ,"lNovidade"   => $lNovidade
+                ,"cliente"	   => $cliente
                 ,"atual_page"  => "home");
 
             /*VIEW*/$this->load->template("home.php",$content);

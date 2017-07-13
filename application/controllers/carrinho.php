@@ -4,11 +4,15 @@
         
 		public function index(){	
             
-            $this->output->enable_profiler(TRUE);    
+            $this->output->enable_profiler(TRUE);   
+            
+            // --- SESSAO CLIENTE ---
+            $cliente = cliente_validarSessao();
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "atual_page"  => "produtos");
+                "cliente"	  	=> $cliente
+                ,"atual_page"  => "produtos");
 
             /*VIEW*/$this->load->template("carrinho.php",$content);
             

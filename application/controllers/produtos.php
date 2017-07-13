@@ -6,6 +6,9 @@
             
             $this->output->enable_profiler(TRUE);   
             
+            // --- SESSAO CLIENTE ---
+            $cliente = cliente_validarSessao();
+            
             // --- PAGINACAO ---
             $limite 			= '15';
 			$inicio				= ($pPaginaAtual*$limite)-$limite;
@@ -64,6 +67,7 @@
             	,"numeroPaginas"	=> $numeroPaginas
             	,"numeroProdutos"	=> $Count_Produto
             	,"lBreadCrumb"		=> $lBreadCrumb
+            	,"cliente"	  		=> $cliente
                 ,"atual_page"  		=> "produtos");
 
             // --- VIEW ---
@@ -74,6 +78,9 @@
        public function produto_descricao($IdProduto){	
             
             $this->output->enable_profiler(TRUE);   
+           
+           // --- SESSAO CLIENTE ---
+            $cliente = cliente_validarSessao();
             
             $produto	= $this->Produto_model	->Listar(array("Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
 			
@@ -83,7 +90,8 @@
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
             	"produto"		=> $produto
-            	,"lBreadCrumb"		=> $lBreadCrumb
+            	,"lBreadCrumb"	=> $lBreadCrumb
+                ,"cliente"	  	=> $cliente
                 ,"atual_page"  	=> "produtos_descricao");
 
             /*VIEW*/$this->load->template("produto_descricao.php",$content);
