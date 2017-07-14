@@ -80,6 +80,7 @@ $autoload['model'] = array(
 				,'Usuarios_model'
 				,'Cliente_model'
 				,'Cliente_Enderecos_model'
+                ,'Cliente_Favoritos_model'
 				,'Functions_model'
 				,'Sys_Info_Campos_model'
 				,'Sys_UnidadeApresentacao_model'

@@ -92,12 +92,12 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= explode(" ", $cliente["Nome"])[0] ?></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <?=anchor("cliente/pedidos","Pedidos",array("class"=>atual_page($atual_page, "pedidos")))?> 
-								            <?=anchor("cliente/favoritos","Favoritos",array("class"=>atual_page($atual_page, "favoritos")))?> 
-								            <?=anchor("cliente/cadastro_atualizar_form","Cadastro",array("class"=>atual_page($atual_page, "cliente_cadastro")))?> 
-								            <?=anchor("cliente/enderecos","Endereços",array("class"=>atual_page($atual_page, "enderecos")))?> 
-								            <?=anchor("cliente/pagamentos","Opções de Pagamento",array("class"=>atual_page($atual_page, "pagamentos")))?> 
-								            <?=anchor("cliente/sair","Sair")?>
+                                            <li><?=anchor("cliente/pedidos","Pedidos",array("class"=>atual_page($atual_page, "pedidos")))?></li>
+								            <li><?=anchor("cliente/favoritos","Favoritos",array("class"=>atual_page($atual_page, "favoritos")))?></li>
+								            <li><?=anchor("cliente/cadastro_atualizar_form","Cadastro",array("class"=>atual_page($atual_page, "cliente_cadastro")))?></li> 
+								            <li><?=anchor("cliente/enderecos","Endereços",array("class"=>atual_page($atual_page, "enderecos")))?></li> 
+								            <li><?=anchor("cliente/pagamentos","Opções de Pagamento",array("class"=>atual_page($atual_page, "pagamentos")))?></li> 
+								            <li><?=anchor("cliente/sair","Sair")?>
                                         </ul>
                                     </li>
                                 </ul>
@@ -124,5 +124,13 @@
         	</div>
         
         </header>
+        
+        <?php if (!empty($this->session->flashdata('msg-sucesso'))){?>
+    		<p class="alert alert-success alert-flash"><?=$this->session->flashdata('msg-sucesso')?></p>
+    	<?php } ?>  
+        
+        <?php if (!empty($this->session->flashdata('msg-erro'))){?>
+    		<p class="alert alert-danger alert-flash"><?=$this->session->flashdata('msg-erro')?></p>
+    	<?php } ?>
         
         <?php produto_DestroySessaoFiltros($atual_page); ?>

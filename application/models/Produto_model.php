@@ -139,22 +139,16 @@
 			
 			// ----- Count -----
 			if( (isset($pData["IsCount"])) && ($pData["IsCount"] == true) ){
-				
 				return $this->db->count_all_results();  
-				
 			}	
 			
 			// ----- RETORNO -----*/
 			// -- IsBusca --
 			if( (isset($pData["IsBusca"])) && ($pData["IsBusca"] == true) ){
-				
                 $lProduto = $this->db->get()->row_array();
-                
 			}
 			else{
-				
 				$lProduto = $this->db->get()->result_array();
-				
 			}
 			
             if( (isset($pData["lJoin"])) && ($pData["lJoin"] == true) ){

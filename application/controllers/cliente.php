@@ -8,20 +8,72 @@
 	    	
 		   	public function pedidos(){	
             
-            $this->output->enable_profiler(TRUE);    
-			
-			$cliente = cliente_validarSessao();
-            if(empty($cliente)){redirect("home");}
-			
-			// --- CONTENT ---	
-			$content = array(
-        	"cliente"	  => $cliente
-            ,"atual_page" => "pedidos");
+                $this->output->enable_profiler(TRUE);    
+    			
+    			$cliente = cliente_validarSessao();
+                if(empty($cliente)){redirect("home");}
+                
+                $data["Cliente"] = $cliente;
+                $data["IsCount"] = true;
+                
+                $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
+    			
+    			// --- CONTENT ---	
+    			$content = array(
+            	"cliente"	      => $cliente
+                ,"countFavoritos" => $countFavoritos
+                ,"atual_page"     => "pedidos");
+                
+            	// --- VIEW ---
+            	$this->load->template_cliente("cliente/pedidos.php",$content);
+	        }
             
-        	// --- VIEW ---
-        	$this->load->template_cliente("cliente/pedidos.php",$content);
-	   }
-	        
+            public function favoritos(){
+                
+                $this->output->enable_profiler(TRUE);    
+
+                $cliente = cliente_validarSessao();
+                if(empty($cliente)){redirect("home");}
+                
+                $data["Cliente"] = $cliente;
+                $data["lJoin"]    = true;
+                
+                $lFavoritos = $this->Cliente_Favoritos_model->Listar($data);
+                
+                $coutFavoritos = count($lFavoritos);
+                
+                // --- CONTENT ---	
+    			$content = array(
+            	"cliente"	  	    => $cliente
+                ,"countFavoritos" 	=> $coutFavoritos
+            	,"lFavoritos" 	    => $lFavoritos
+                ,"atual_page" 	    => "favoritos");
+
+                // --- VIEW ---
+                $this->load->template_cliente("cliente/favoritos.php",$content);
+            }
+      
+            public function cadastro_atualizar_form(){
+			
+    			$cliente = cliente_validarSessao();
+                if(empty($cliente)){redirect("home");}
+    			
+    			$data["Cliente"] = $cliente;
+                $data["IsCount"] = true;
+                $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
+    			
+    			// --- CONTENT ---	
+    			$content = array(
+            	"cliente"	          => $cliente
+                ,"countFavoritos"     => $countFavoritos
+            	,"erros"	  => array()
+                ,"atual_page" => "cliente_cadastro");
+    			
+    			// --- VIEW ---
+    			$this->load->template_cliente("cliente/cadastro_atualizar_form.php",$content);
+    			
+    		}
+        
 	        public function enderecos(){	
             
             $this->output->enable_profiler(TRUE);    
@@ -30,16 +82,19 @@
             if(empty($cliente)){redirect("home");}
             
             // -- ENDERECOS --
-            
             $dataEnderecos["Cliente"] = $cliente;
             $cliente_enderecos = $this->Cliente_Enderecos_model->Listar($dataEnderecos);
             
-
+            $data["Cliente"] = $cliente;
+            $data["IsCount"] = true;
+            $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
+			
 			// --- CONTENT ---	
 			$content = array(
-        	"cliente"	  			=> $cliente
-        	,"cliente_enderecos" 	=> $cliente_enderecos
-            ,"atual_page" 			=> "enderecos");
+        	"cliente"	          => $cliente
+            ,"countFavoritos"     => $countFavoritos
+        	,"cliente_enderecos"  => $cliente_enderecos
+            ,"atual_page" 		  => "enderecos");
 
             // --- VIEW ---
             $this->load->template_cliente("cliente/enderecos.php",$content);
@@ -57,21 +112,6 @@
             /*VIEW*/$this->load->template_cliente("cliente/pagamentos.php",$content);
             
 	   }
-
-			public function cadastro_atualizar_form(){
-			
-			$cliente = cliente_validarSessao();
-            if(empty($cliente)){redirect("home");}
-			
-			$content = array(
-        	"cliente"	  => $cliente
-        	,"erros"	  => array()
-            ,"atual_page" => "cliente_cadastro");
-			
-			// --- VIEW ---
-			$this->load->template_cliente("cliente/cadastro_atualizar_form.php",$content);
-			
-		}
 
 			public function enderecos_incluir_form(){
                 
@@ -167,6 +207,7 @@
 	   			
 				$this->session->set_userdata("ClienteId",$validacao["Cliente"]["Id"]);	
 				
+                $this->session->set_flashdata('msg-sucesso',"Bem vindo");
 				redirect("cliente/pedidos");
 			}
 			if($validacao["IsValidado"] == false){
@@ -206,7 +247,9 @@
 	   			
 				$IdCliente = $this->Cliente_model->Incluir($dataCliente);
 				
-				$this->session->set_userdata("ClienteId",$IdCliente);	
+				$this->session->set_userdata("ClienteId",$IdCliente);
+                
+                $this->session->set_flashdata('msg-sucesso',"Cadastro efetuado com sucesso! Bem vindo");	
 				
 				redirect("Cliente/pedidos");
 			}
@@ -242,6 +285,8 @@
 	   			
 				$this->Cliente_model->Atualizar($dataCliente);
 				
+                $this->session->set_flashdata('msg-sucesso',"Cadastro atualizado com sucesso");	
+                
 				redirect("Cliente/cadastro_atualizar_form");
 				
 			}
@@ -277,6 +322,8 @@
 				
 				$this->Cliente_model->Atualizar($dataCliente);
 				
+                $this->session->set_flashdata('msg-sucesso',"Senha alterada com sucesso");	
+                
 				redirect("Cliente/cadastro_atualizar_form");
 				
 			}
@@ -312,6 +359,7 @@
 	   			
 				$IdEndereco = $this->Cliente_Enderecos_model->Incluir($dataEndereco);
 				
+                $this->session->set_flashdata('msg-sucesso',"Endereço adicionado com sucesso");	
 				redirect("Cliente/enderecos");
 			}
 			if($validacao["IsValidado"] == false){
@@ -345,6 +393,8 @@
        			
     			$this->Cliente_Enderecos_model->Atualizar($data);
     			
+                $this->session->set_flashdata('msg-sucesso',"Endereço atualizado com sucesso");	
+                
     			redirect("Cliente/enderecos");
     		}
     		if($validacao["IsValidado"] == false){
@@ -370,9 +420,10 @@
 	        if(empty($cliente)){redirect("home");} 
 	   	
             $data["Id"] = $pId;	   
-       	
+       	    
     		$this->Cliente_Enderecos_model->Excluir($data);
     			
+            $this->session->set_flashdata('msg-sucesso',"Endereço excluido com sucesso");	    
     		redirect("Cliente/enderecos");
 
         }  
@@ -396,5 +447,80 @@
             
             redirect("cliente/enderecos");
         }
+
+        public function favoritos_incluir($pIdProduto){
+            
+            $this->output->enable_profiler(TRUE);  
+            
+            $cliente = cliente_validarSessao();
+	        if(empty($cliente)){
+                echo "ver depois caso Login";
+                //redirect("cliente/login");
+            }
+            else{
+                
+                $data["IdProduto"] = $pIdProduto;
+                $data["IdCliente"] = $cliente["Id"];
+                
+                $dataBusca["Produto"]["Id"]   = $data["IdProduto"];
+                $dataBusca["Cliente"]["Id"]   = $data["IdCliente"];
+                $dataBusca["IsBusca"]         = true;
+                
+                $lFavoritos = $this->Cliente_Favoritos_model->Listar($dataBusca);
+                
+                if(empty($lFavoritos)){
+                    
+                    $this->Cliente_Favoritos_model->Incluir($data);
+                    
+                    $this->session->set_flashdata('msg-sucesso',"Produto foi adicionado a sua lista de favoritos com sucesso");
+                    redirect("produtos/produto_descricao/{$pIdProduto}");
+                    
+                }
+                else{
+                
+                    $this->session->set_flashdata('msg-erro',"Produto ja consta na lista de favoritos");
+                    redirect("produtos/produto_descricao/{$pIdProduto}");
+                    
+                }
+
+            }
+        }
         
+        public function favoritos_excluir($pIdFavorito,$pIdProduto = null){
+        
+            $this->output->enable_profiler(TRUE);  
+            
+            $cliente = cliente_validarSessao();
+	        if(empty($cliente)){redirect("home");}
+            
+            $dataFavorito["Id"]   = $pIdFavorito;
+            
+            $this->Cliente_Favoritos_model->Excluir($dataFavorito);
+            
+            $this->session->set_flashdata('msg-sucesso',"Produto removido da sua lista de favoritos com sucesso");
+               
+            if($pIdProduto != null){
+                redirect("produtos/produto_descricao/{$pIdProduto}");
+            }
+            else{
+                redirect("cliente/favoritos");
+            }
+            
+        }
+        
+        public function favoritos_excluirTodos(){
+            
+            $this->output->enable_profiler(TRUE);  
+            
+            $cliente = cliente_validarSessao();
+	        if(empty($cliente)){redirect("home");}
+            
+            $data["IdCliente"] = $cliente["Id"];
+            
+            $this->Cliente_Favoritos_model->ExcluirClienteGeral($data);
+            
+            redirect("cliente/favoritos");
+            
+        }
+            
     }

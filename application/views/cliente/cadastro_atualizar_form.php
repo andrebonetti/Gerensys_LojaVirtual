@@ -1,4 +1,4 @@
-<div class="endereco_incluir_form content-cliente">
+<div class="cadastro content-cliente">
 
 	<?php if( count($erros) > 0){ ?>
     	<ul class="alert alert-danger">

@@ -77,10 +77,18 @@
                 <div class="compra">
 
                     <h2>Comprar</h2>
-
-                    <label>Quantidade</label>
-                    <input type="text" class="form-control" id="qtde" value="1">
-
+                    
+                    <?php if($IdFavorito != null){ ?>
+                        <?=anchor("cliente/favoritos_excluir/{$IdFavorito}/{$produto["Id"]}","<img src='".base_url("img/favorito_amarelo.png")."'>",array("class"=>"favoritos_add"))?>
+                    <?php } else { ?>               
+                        <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/favorito.png")."'>",array("class"=>"favoritos_add"))?>                 
+                    <?php } ?>
+                    
+                    <div class="input-quantidade">
+                        <label>Quantidade</label>
+                        <input type="text" class="form-control" id="qtde" value="1">
+                    </div>
+                    
                     <div class="opcoes">
                         <button class="compra-rapida">Compra Rápida</button>
                         <button class="adicionar-carrinho">Adicionar ao Carrinho</button>

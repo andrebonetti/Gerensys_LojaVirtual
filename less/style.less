@@ -54,6 +54,10 @@ body{
     
 }
 
+.alert-flash:extend(.myContainer){
+    text-align: center;
+}
+
 /* -- FORMULARIOS --*/
 form{
     
@@ -568,6 +572,7 @@ header:extend(.full-container) {
                                 text-align: center;
 
                                 li{
+                                    width: 100%;
 
                                     a{
                                         padding:7px 0;
@@ -795,6 +800,7 @@ header:extend(.full-container) {
                 background-color: @white-7;
                 padding:8px;
                 .border(4px,@white-4);
+                display: table;
 
                 h1{
                     color: @blue-3;
@@ -843,18 +849,40 @@ header:extend(.full-container) {
                 }
 
                 .compra:extend(.full-container){
-
-                    input{                
-                        .float(left,30%);   
+                    
+                    a.favoritos_add{
+                        .float(left,10%);
+                        margin-top: 16px;
+                        
+                        img{
+                            width: 100%;
+                            padding: 10px;
+                        }
+                    }
+                    
+                    a.favoritos_add:hover{
+                        
+                        opacity: 0.8;
+                        
                     }
 
+                    .input-quantidade{
+                        .float(left,20%); 
+                        
+                        input{                
+                            width:100%; 
+                        }
 
-                    label{
-                        width: 100%;
+
+                        label{
+                            width: 100%;
+                        }
+                    
                     }
 
                     .opcoes{
                         .float(right,68%);
+                        margin-top: 25px;
 
                         .adicionar-carrinho{
                             float: right;
@@ -984,8 +1012,7 @@ header:extend(.full-container) {
                     }
                 }    
             }
-            
-            
+                     
             .preco-unitario{
                 //width: 10%;
                 text-align: right;
@@ -1424,6 +1451,24 @@ header:extend(.full-container) {
                     }
                     
                 }
+                
+            }
+            
+        }
+
+        .favoritos{
+            
+            h2{
+                .float(left,auto);
+            }
+  
+            a.excluir-todos{
+                .float(right,auto);
+            }
+            
+            .master-box{
+                
+                .inline-content(4%);
                 
             }
             

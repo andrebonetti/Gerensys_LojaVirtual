@@ -2,7 +2,7 @@
 
 	class Produtos extends CI_Controller{
         
-		public function index($pPaginaAtual = 1,$pFiltro = null,$pValor = null,$pValorDescricao = null){	
+	   public function index($pPaginaAtual = 1,$pFiltro = null,$pValor = null,$pValorDescricao = null){	
             
             $this->output->enable_profiler(TRUE);   
             
@@ -29,8 +29,8 @@
 				$produtoData = produto_DefinirOrderBy($produtoData,$postOrderBy); 	
 			}
 			
-			// --- MODEL --- 
-            $lProduto			= $this->Produto_model	->Listar($produtoData);
+			// --- MODEL ---          
+            $lProduto	= $this->Produto_model	->Listar($produtoData);
             
             $produtoData["IsCount"] = true;
             $produtoData["Join"] = false;
@@ -75,15 +75,29 @@
             
 	   } 
         
-       public function produto_descricao($IdProduto){	
+       public function produto_descricao($pIdProduto){	
             
             $this->output->enable_profiler(TRUE);   
            
            // --- SESSAO CLIENTE ---
             $cliente = cliente_validarSessao();
             
-            $produto	= $this->Produto_model	->Listar(array("Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
+            $produto	= $this->Produto_model	->Listar(array("Id"=>$pIdProduto, "Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
 			
+            $IdFavorito = null;
+            if(!empty($cliente)){
+                
+                $dataBusca["Produto"]["Id"]   = $pIdProduto;
+                $dataBusca["Cliente"]["Id"]   = $cliente["Id"];
+                $dataBusca["IsBusca"]         = true;
+                
+                $favorito = $this->Cliente_Favoritos_model->Listar($dataBusca);
+                
+                if(!empty($favorito)){
+                    $IdFavorito = $favorito["Id"];    
+                }
+            }
+            
 			// ----- BreadCrumb -----
 			$lBreadCrumb = produto_PreencherArrayBreadCrumb();
 			
@@ -92,6 +106,7 @@
             	"produto"		=> $produto
             	,"lBreadCrumb"	=> $lBreadCrumb
                 ,"cliente"	  	=> $cliente
+                ,"IdFavorito"   => $IdFavorito
                 ,"atual_page"  	=> "produtos_descricao");
 
             /*VIEW*/$this->load->template("produto_descricao.php",$content);
