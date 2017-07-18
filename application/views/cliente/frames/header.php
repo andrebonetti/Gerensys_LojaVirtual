@@ -8,13 +8,13 @@
             <div class="dados-conta">
             
                 <div class="dados">                
-                    <p class="nome"><?=$cliente["Nome"]?></p>
-                    <p class="email"><?=$cliente["Email"]?></p>
+                    <p class="nome"><?=$header["Cliente"]["Nome"]?></p>
+                    <p class="email"><?=$header["Cliente"]["Email"]?></p>
                 </div>
 				
-				<?php if($cliente["Foto"] != ""){ ?>
+				<?php if($header["Cliente"]["Foto"] != ""){ ?>
 				
-					<img class="no-foto" src="<?=base_url("img/Clientes/{$cliente["Foto"]}")?>">
+					<img class="no-foto" src="<?=base_url("img/Clientes/{$header["Cliente"]["Foto"]}")?>">
 				
 				<?php } else {?>
 				

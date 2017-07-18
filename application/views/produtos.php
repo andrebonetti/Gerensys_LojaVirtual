@@ -7,9 +7,9 @@
         
         	<?php if( count($lBreadCrumb) > 0 ){?>
                     
-                	<?=anchor("Produtos/CatalogoCompleto/Pagina/1"
-                	,"Limpar Filtros"
-                	,array( "class" => "limpra-filtro-atual"))?>
+            	<?=anchor("Produtos/CatalogoCompleto/Pagina/1"
+            	,"Limpar Filtros"
+            	,array( "class" => "limpra-filtro-atual"))?>
             
             <?php } ?>
             
@@ -20,8 +20,6 @@
                 <ul>
                     
                 	<?php foreach($lSetor as $itemSetor){ ?>
-						
-						<?php /* {$itemSetor["Descricao"]}/{$itemSetor["Id"]}/Pagina/1" */ ?>
 						
                         <li>
                         	<?=anchor("Produtos/Setor/{$itemSetor["Descricao"]}/{$itemSetor["Id"]}/Pagina/1"

@@ -252,8 +252,6 @@
 		if( !empty($ci->session->userdata("IdMarca")))		{$pProdutoData["Marca"]["Id"] 				= $ci->session->userdata("IdMarca");}
 		if( !empty($ci->session->userdata("IdSubGrupo")))	{$pProdutoData["Grupo"]["SubGrupo"]["Id"] 	= $ci->session->userdata("IdSubGrupo");}
 		
-		//var_dump($pProdutoData);
-		
 		return $pProdutoData;
 	}
 	
@@ -261,33 +259,49 @@
 		
 		$ci = get_instance();
 			
-		// --- Count --- 
-		$sessaoFiltro			= $ci->session->userdata($pFiltro);
-		
+		// --- Verifica se Sessão do Filtro do Parametro Existe --- 
+		$sessaoFiltro = $ci->session->userdata($pFiltro);
+            
 		if( !empty($sessaoFiltro)){
-			
+            
+            // --- Verifica se o Filtro da Sessão tem o mesmo valor do Parametro
 			if($sessaoFiltro == $pValor){
 				
-				if( empty($ci->session->userdata("breadcrumb{$pFiltro}"))){
+                //echo "sessao breadcrumb{$pFiltro}: ".$ci->session->userdata("breadcrumb{$pFiltro}")."<br>";
+                    
+                //Count Atual de BreadCrumb;
+                $sessaoBreadCrumbCount = $ci->session->userdata("BreadCrumbCount");
+                //echo "sessaoBreadCrumbCount: ". $sessaoBreadCrumbCount."<br>";
+                
+                $IsFirstBreadCrumb = false;
+                if($sessaoBreadCrumbCount < 1){//-- If NAO Existe BreadCrumb ou é 0		
+					$sessaoBreadCrumbCount = 1;
+				    $IsFirstBreadCrumb = true;
+                    
+					//echo $ci->session->userdata("breadcrumb1Link")." - ".$ci->session->userdata("breadcrumb1Descricao")."<br>";
+				}
+                
+                //--- Verifica Se este filtro ja esta sendo usado no BreadCrumb
+				if( empty($ci->session->userdata("breadcrumb{$pFiltro}"))){ // Não esta sendo usado
 					
-					$sessaoBreadCrumbCount  = $ci->session->userdata("BreadCrumbCount");
-					
-					if( empty($sessaoBreadCrumbCount)){//-- If NAO Existe BreadCrumb			
-						$sessaoBreadCrumbCount = 1;
-					
-						echo $ci->session->userdata("breadcrumb1Link")." - ".$ci->session->userdata("breadcrumb1Descricao")."<br>";
-					}
-					else{	
+                    //echo "breadcrumb{$pFiltro} - Não esta sendo usado<br>";
+                    
+					if($IsFirstBreadCrumb == false){
 						$sessaoBreadCrumbCount++;
 					}
-					
-					$ci->session->set_userdata("BreadCrumbCount",$sessaoBreadCrumbCount);
-					$ci->session->set_userdata("breadcrumb{$pFiltro}","1");
-					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Link","Produtos/LimpezaFiltro/{$sessaoBreadCrumbCount}");
-					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Descricao","$pDescricao");
-					$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Filtro","$pFiltro");
 				}
-			
+                else{
+                    //echo "breadcrumb{$pFiltro} - Esta sendo usado<br>";
+                }
+                
+                //echo "Count Final BreadCrumb: ".$sessaoBreadCrumbCount."<br>";
+                
+                $ci->session->set_userdata("BreadCrumbCount",$sessaoBreadCrumbCount);
+				$ci->session->set_userdata("breadcrumb{$pFiltro}",$pValor);
+				$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Link","Produtos/LimpezaFiltro/{$sessaoBreadCrumbCount}");
+				$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Descricao","$pDescricao");
+				$ci->session->set_userdata("breadcrumb{$sessaoBreadCrumbCount}Filtro","$pFiltro");
+                
 			}
 		}
 		
@@ -341,6 +355,8 @@
 			$filtro = $ci->session->userdata("breadcrumb1Filtro");
 			
 			$ci->session->unset_userdata("$filtro");
+            
+            $ci->session->unset_userdata("breadcrumb{$filtro}");
 			$ci->session->unset_userdata("breadcrumb1Filtro");
 
 			$ci->session->set_userdata("BreadCrumbCount","0");
@@ -351,14 +367,19 @@
 			
 			for($n = 1;$n <= $sessaoBreadCrumbCount;$n++){
 				
-				if($n > $pBreadCrumbN){
+                if($n >= $pBreadCrumbN){
+                    
 					$ci->session->unset_userdata("breadcrumb{$n}Link");
 					$ci->session->unset_userdata("breadcrumb{$n}Descricao");
 					
 					$filtro = $ci->session->userdata("breadcrumb{$n}Filtro");
 					
 					$ci->session->unset_userdata("$filtro");
+                    $ci->session->unset_userdata("breadcrumb{$filtro}");
 					$ci->session->unset_userdata("breadcrumb{$n}Filtro");
+                    
+                    $pBreadCrumbN = $pBreadCrumbN-1;
+                    
 				}
 
 			}

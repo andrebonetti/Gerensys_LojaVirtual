@@ -6,6 +6,7 @@
 					
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_setor.Id",					$pData["Id"]);}	
+            if(isset($pData["Ordem"])){			    $this->db->where("tb_setor.Ordem",			    $pData["Ordem"]);}	
 			if(isset($pData["Descricao"])){			$this->db->where("tb_setor.Descricao",			$pData["Descricao"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_setor.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
@@ -21,7 +22,7 @@
 				$this->db->order_by($pData["OrderBy"]);
 			}
 			else{
-				$this->db->order_by("Descricao");
+				$this->db->order_by("Ordem");
 			}
 			
 			// TB
@@ -63,6 +64,7 @@
 					$n = 0;
 					foreach($data as $itemData){
 						
+                        //echo "Teste: ".$itemData["Descricao"]."<br>";
 						produto_PreencherBreadCrumb("IdSetor",$itemData["Id"],"Setor",$itemData["Descricao"]);
 						
 						$pData[0]["Produto"]["Setor"]["Id"] = $itemData["Id"];
@@ -74,8 +76,7 @@
 								unset($data[$n]);
 							}
 						}
-						
-						
+
 						$n++;				
 					}
 				}

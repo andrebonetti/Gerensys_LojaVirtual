@@ -4,10 +4,8 @@
         
 	   public function index($pPaginaAtual = 1,$pFiltro = null,$pValor = null,$pValorDescricao = null){	
             
-            $this->output->enable_profiler(TRUE);   
-            
-            // --- SESSAO CLIENTE ---
-            $cliente = cliente_validarSessao();
+            // --- HEADER ---
+            $header = preencheConteudoHeader();
             
             // --- PAGINACAO ---
             $limite 			= '15';
@@ -38,9 +36,9 @@
 				unset($produtoData["OrderBy"]);
 			}
             
-            $Count_Produto		= $this->Produto_model	->Listar($produtoData);
+            $Count_Produto	= $this->Produto_model	->Listar($produtoData);
             
-            $numeroPaginas 		= ceil($Count_Produto/$limite);
+            $numeroPaginas 	= ceil($Count_Produto/$limite);
 
             // -- Entidades Pai --
 			$lSetor		= $this->Setor_model	->Listar(array("lJoinCount" => true,array ("Produto" => $produtoData)) ); 
@@ -67,7 +65,8 @@
             	,"numeroPaginas"	=> $numeroPaginas
             	,"numeroProdutos"	=> $Count_Produto
             	,"lBreadCrumb"		=> $lBreadCrumb
-            	,"cliente"	  		=> $cliente
+                ,"header"	        => $header
+                ,"title"            => "Loja Virtual | Catalogo de Produtos"
                 ,"atual_page"  		=> "produtos");
 
             // --- VIEW ---
@@ -77,10 +76,8 @@
         
        public function produto_descricao($pIdProduto){	
             
-            $this->output->enable_profiler(TRUE);   
-           
-           // --- SESSAO CLIENTE ---
-            $cliente = cliente_validarSessao();
+            // --- HEADER ---
+            $header = preencheConteudoHeader();
             
             $produto	= $this->Produto_model	->Listar(array("Id"=>$pIdProduto, "Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
 			
@@ -105,8 +102,9 @@
             $content = array(
             	"produto"		=> $produto
             	,"lBreadCrumb"	=> $lBreadCrumb
-                ,"cliente"	  	=> $cliente
                 ,"IdFavorito"   => $IdFavorito
+                ,"header"	    => $header
+                ,"title"        => "Loja Virtual | {$produto["Descricao"]}"
                 ,"atual_page"  	=> "produtos_descricao");
 
             /*VIEW*/$this->load->template("produto_descricao.php",$content);

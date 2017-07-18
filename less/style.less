@@ -400,12 +400,75 @@ header:extend(.full-container) {
             display: table;
             border-width:0;
 
-            p.nome_empresa{
+            a.nome_empresa{
                 float: left;
                 color: @white-10;
                 font-weight: 600;
                 font-size: 1.15em;
                 margin-top: 3px;
+            }
+            a:hover{
+                color: yellow;
+            }
+            
+            .menu{
+                .float(right,auto);
+                
+                ul.nav,.ul.navbar-nav{
+                    
+                    li.open{
+                        
+                        a{
+                            background-color: transparent;
+                        }    
+                    }
+                    
+                    li.dropdown{
+                        
+                        a.dropdown-toggle{
+                            padding: 3px;
+                            
+                            img.menu_icon{
+                                width: 25px;
+                            }
+                        }
+                    
+
+                        a.dropdown-toggle:hover{
+                            background-color: transparent;
+                        }
+                        
+                        ul.dropdown-menu{
+                            left: -60px;
+                            border-radius: 8px;
+                            background-color: rgba(0, 0, 0, 0.5);
+                            text-align: center;   
+                            left: -60px;
+                            border-radius: 8px;
+                            background-color: @black-0;
+                            opacity: 0.9;
+                            text-align: center;
+                            
+                            li{
+                                
+                                a{
+                                    padding:7px 0;
+                                    color: @white-10;
+                                    font-weight: 600;
+                                    font-size: 1.2em;
+                                }
+                                
+                                a:hover{
+                                    background-color: transparent;
+                                    color: @blue-2;
+                                }
+                                
+                            }
+                            
+                        }
+                    }
+                    
+                }
             }
 
             form{
@@ -657,6 +720,29 @@ header:extend(.full-container) {
         
     }
     
+    .grupos:extend(.full-container){
+        
+        background-color: @white-9;
+        
+        h2{
+            text-align: center;
+        }
+        
+        a{
+            .inline-content(3%);
+            
+            img{
+                padding: 20px;
+            }
+        }
+        a:hover{
+            
+            opacity: 0.75;
+            
+        }
+        
+    }
+    
 }
 
 /* -------- EMPRESA -------- */
@@ -865,20 +951,21 @@ header:extend(.full-container) {
                         opacity: 0.8;
                         
                     }
-
-                    .input-quantidade{
-                        .float(left,20%); 
+                    
+                    form{
+                        .float(left,50%); 
                         
                         input{                
                             width:100%; 
+                            text-align: center;
                         }
-
-
+                        
                         label{
                             width: 100%;
                         }
                     
                     }
+                    
 
                     .opcoes{
                         .float(right,68%);
@@ -956,17 +1043,13 @@ header:extend(.full-container) {
             
             .imagem{
                 width: 15%;
+                text-align: center;
                 
                 a{
                     width: 100%;
                     
-                    .img-teste{
-
-                        background-color: @white-7;
-                        text-align: center;
-                        padding: 30px 10px;
-                        color: @white-10;
-
+                    img{
+                        height: 100px;
                     }
                 }    
                 

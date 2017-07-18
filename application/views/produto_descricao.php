@@ -84,16 +84,19 @@
                         <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/favorito.png")."'>",array("class"=>"favoritos_add"))?>                 
                     <?php } ?>
                     
-                    <div class="input-quantidade">
-                        <label>Quantidade</label>
-                        <input type="text" class="form-control" id="qtde" value="1">
-                    </div>
+                    <?= form_open("carrinho/incluir_post")?>
                     
-                    <div class="opcoes">
-                        <button class="compra-rapida">Compra Rápida</button>
-                        <button class="adicionar-carrinho">Adicionar ao Carrinho</button>
-                    </div>
+                        <input type="hidden" name="idproduto" value="<?=$produto["Id"]?>"/>
+                    
+                        <label>Quantidade</label>
+                        <input type="text" class="form-control" name="quantidade" id="qtde" value="1">
 
+                        <input type="submit" class="compra-rapida" value="Adicionar ao Carrinho">
+                        
+                    <?= form_close() ?>  
+
+                    <button class="adicionar-carrinho">Compra Rapida</button>
+                    
                 </div>
 
             </div>

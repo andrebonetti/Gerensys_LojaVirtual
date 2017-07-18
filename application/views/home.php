@@ -8,32 +8,31 @@
         
         <h1>Página Principal</h1>
         
-        <?php //var_dump($lProdutos);?>
-        
+        <!-- SLIDES -->
         <div class="slide-show" id="slider1_container">
 
             <!-- SLIDES - HOME -->
             <div data-u="slides" class="slide-container">
 
                 <!---------- SLIDE 1 ---------->
-                <div class="content"><a href="#">
-                    <img src="img/slide_show/1f48222b02dcc__destaque-neutra.jpg">
-                </a></div>
+                <div class="content">
+                    <a href="#"><img src="<?=base_url("img/slide_show/1f48222b02dcc__destaque-neutra.jpg")?>"></a>
+                </div>
                 
                 <!---------- SLIDE 2 ---------->
-                <div class="content"><a href="#">
-                    <img src="img/slide_show/1edd433a3266a__22-06-17-Destaque-Skate.jpg">
-                </a></div>
+                <div class="content">
+                    <a href="#"><img src="<?=base_url("img/slide_show/1edd433a3266a__22-06-17-Destaque-Skate.jpg")?>"></a>
+                </div>
                 
                 <!---------- SLIDE 3 ---------->
-                <div class="content"><a href="#">
-                    <img src="img/slide_show/2c565492eaaca__CAT-31.jpg">
-                </a></div>
+                <div class="content">
+                    <a href="#"><img src="<?=base_url("img/slide_show/2c565492eaaca__CAT-31.jpg")?>"></a>
+                </div>
                 
                 <!---------- SLIDE 4 ---------->
-                <div class="content"><a href="#">
-                    <img src="img/slide_show/1856d337596b__FEM-11.jpg">
-                </a></div>
+                <div class="content">
+                    <a href="#"><img src="<?=base_url("img/slide_show/1856d337596b__FEM-11.jpg")?>"></a>
+                </div>
                 
             </div>    
 
@@ -57,6 +56,7 @@
 
         </div> 
         
+        <!-- DESTAQUES -->
         <div class="destaques">
             
             <h2>Destaques</h2>
@@ -136,6 +136,7 @@
             
         </div>
         
+        <!-- NOVIDADES -->
         <div class="Novidades">
             
             <h2>Novidades</h2>
@@ -215,8 +216,35 @@
             </div>
             
         </div>
+
+    </div>
+    
+    <!-- GRUPOS -->
+    <div class="grupos">
+    
+        <div class="myContainer">
+
+            <h2>Grupos</h2>
+            
+            <?php foreach($lGrupo as $itemGrupo){ ?>
+        					
+                <li>
+                    
+                	<?=anchor("produtos/index/1/IdGrupo/{$itemGrupo["Id"]}"
+                	,"<img src='".base_url("img/Home/".$itemGrupo["Descricao"].".fw.png")."'>")?>
+                
+                </li>
+            
+            <?php } ?>
+        
+        </dib>
         
     </div>
+    
 </section>
+
+
+        
+
 
 

@@ -4,19 +4,20 @@
         
 		public function index(){	
             
-            $this->output->enable_profiler(TRUE);    
+            // --- HEADER ---
+            $header = preencheConteudoHeader();
             
-            // --- SESSAO CLIENTE ---
-            $cliente = cliente_validarSessao();
-
-            $lDestaque = $this->Produto_Destaques_model	->Listar(array("lJoin" => true,"Produto" => array ("Join" => true,"IsBusca" => true)));
-			$lNovidade = $this->Produto_model			->Listar(array("OrderBy" => "Id","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));
-
+            $lDestaque   = $this->Produto_Destaques_model	->Listar(array("lJoin" => true,"Produto" => array ("Join" => true,"IsBusca" => true)));
+			$lNovidade   = $this->Produto_model			    ->Listar(array("OrderBy" => "Id","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));          
+            $lGrupo		 = $this->Grupo_model	            ->Listar(); 
+			
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
                 "lDestaque"    => $lDestaque
                 ,"lNovidade"   => $lNovidade
-                ,"cliente"	   => $cliente
+                ,"lGrupo"      => $lGrupo
+                ,"header"	   => $header
+                ,"title"       => "Loja Virtual | Página Principal"
                 ,"atual_page"  => "home");
 
             /*VIEW*/$this->load->template("home.php",$content);

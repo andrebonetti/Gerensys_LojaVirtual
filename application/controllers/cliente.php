@@ -3,25 +3,64 @@
 	class Cliente extends CI_Controller{
         
 		// ------------ PAGINAS ------------ //
+        
+            // --- LOGIN/CADASTRO ---
+			public function login_form(){	
+            
+                // --- HEADER ---
+                $header = preencheConteudoHeader();
+             
+                // --------------------------CONTENT---------------------------------- 
+                $content = array(
+                	"dataLogin"	      => array()
+                	,"erros"	      => array()	
+                    ,"header"	      => $header
+                    ,"title"          => "Loja Virtual | Login"
+                    ,"atual_page"     => "cliente");
+
+                // --- VIEW ---
+                $this->load->template("cliente/login.php",$content);
+                
+    	   } 
+
+    		public function cadastro_incluir_form(){	
+                
+                // --- HEADER ---
+                $header = preencheConteudoHeader();
+
+                $dataCadastro["Email"] = $this->input->post("email");	
+                
+                /*--------------------------CONTENT----------------------------------*/
+                $content = array(
+                	"dataCadastro" => $dataCadastro
+                	,"erros"	   => array()
+                    ,"header"	   => $header
+                    ,"title"       => "Loja Virtual | Cadastro"
+                    ,"atual_page"  => "cadastro");
+    		
+                // --- VIEW ---
+                $this->load->template("cliente/cadastro_incluir_form.php",$content);
+            
+    	   }
     	
 	    	// --- AREA CLIENTE --- //
 	    	
 		   	public function pedidos(){	
             
-                $this->output->enable_profiler(TRUE);    
-    			
-    			$cliente = cliente_validarSessao();
-                if(empty($cliente)){redirect("home");}
-                
-                $data["Cliente"] = $cliente;
+                // --- HEADER ---
+                $header = preencheConteudoHeader();
+                if(empty($header["Cliente"])){redirect("home");}
+            
+                $data["Cliente"] = $header["Cliente"];
                 $data["IsCount"] = true;
                 
                 $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
     			
     			// --- CONTENT ---	
     			$content = array(
-            	"cliente"	      => $cliente
-                ,"countFavoritos" => $countFavoritos
+                "countFavoritos" => $countFavoritos
+                ,"header"	      => $header
+                ,"title"          => "Loja Virtual | Catalogo de Produtos"
                 ,"atual_page"     => "pedidos");
                 
             	// --- VIEW ---
@@ -30,12 +69,11 @@
             
             public function favoritos(){
                 
-                $this->output->enable_profiler(TRUE);    
-
-                $cliente = cliente_validarSessao();
-                if(empty($cliente)){redirect("home");}
-                
-                $data["Cliente"] = $cliente;
+                // --- HEADER ---
+                $header = preencheConteudoHeader();
+                if(empty($header["Cliente"])){redirect("home");}
+            
+                $data["Cliente"] = $header["Cliente"];
                 $data["lJoin"]    = true;
                 
                 $lFavoritos = $this->Cliente_Favoritos_model->Listar($data);
@@ -44,9 +82,10 @@
                 
                 // --- CONTENT ---	
     			$content = array(
-            	"cliente"	  	    => $cliente
-                ,"countFavoritos" 	=> $coutFavoritos
+                "countFavoritos" 	=> $coutFavoritos
             	,"lFavoritos" 	    => $lFavoritos
+                ,"header"	        => $header
+                ,"title"            => "Loja Virtual | Área do Cliente"
                 ,"atual_page" 	    => "favoritos");
 
                 // --- VIEW ---
@@ -55,19 +94,21 @@
       
             public function cadastro_atualizar_form(){
 			
-    			$cliente = cliente_validarSessao();
-                if(empty($cliente)){redirect("home");}
+    			// --- HEADER ---
+                $header = preencheConteudoHeader();
+                if(empty($header["Cliente"])){redirect("home");}
     			
-    			$data["Cliente"] = $cliente;
+    			$data["Cliente"] = $header["Cliente"];
                 $data["IsCount"] = true;
                 $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
     			
     			// --- CONTENT ---	
     			$content = array(
-            	"cliente"	          => $cliente
-                ,"countFavoritos"     => $countFavoritos
-            	,"erros"	  => array()
-                ,"atual_page" => "cliente_cadastro");
+                "countFavoritos" => $countFavoritos
+            	,"erros"	      => array()
+                ,"header"	      => $header
+                ,"title"          => "Loja Virtual | Área do Cliente"
+                ,"atual_page"     => "cliente_cadastro");
     			
     			// --- VIEW ---
     			$this->load->template_cliente("cliente/cadastro_atualizar_form.php",$content);
@@ -76,24 +117,24 @@
         
 	        public function enderecos(){	
             
-            $this->output->enable_profiler(TRUE);    
-
-            $cliente = cliente_validarSessao();
-            if(empty($cliente)){redirect("home");}
+            // --- HEADER ---
+            $header = preencheConteudoHeader();
+            if(empty($header["Cliente"])){redirect("home");}
             
             // -- ENDERECOS --
-            $dataEnderecos["Cliente"] = $cliente;
+            $dataEnderecos["Cliente"] = $header["Cliente"];
             $cliente_enderecos = $this->Cliente_Enderecos_model->Listar($dataEnderecos);
             
-            $data["Cliente"] = $cliente;
+            $data["Cliente"] = $header["Cliente"];
             $data["IsCount"] = true;
             $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
 			
 			// --- CONTENT ---	
 			$content = array(
-        	"cliente"	          => $cliente
-            ,"countFavoritos"     => $countFavoritos
+            "countFavoritos"     => $countFavoritos
         	,"cliente_enderecos"  => $cliente_enderecos
+            ,"header"	          => $header
+            ,"title"              => "Loja Virtual | Área do Cliente"
             ,"atual_page" 		  => "enderecos");
 
             // --- VIEW ---
@@ -115,16 +156,16 @@
 
 			public function enderecos_incluir_form(){
                 
-                $this->output->enable_profiler(TRUE); 
-			
-				$cliente = cliente_validarSessao();
-	            if(empty($cliente)){redirect("home");}
+                // --- HEADER ---
+                $header = preencheConteudoHeader();
+                if(empty($header["Cliente"])){redirect("home");}
 				
 				$content = array(
-	        	"cliente"	    => $cliente
-                ,"dataCadastro" => array()
+                "dataCadastro"  => array()
 	        	,"erros"	    => array()
                 ,"acao_form"    => "incluir"
+                ,"header"	    => $header
+                ,"title"        => "Loja Virtual | Cadastro"
 	            ,"atual_page"   => "enderecos");
 				
 				// --- VIEW ---
@@ -134,10 +175,9 @@
 
             public function enderecos_atualizar_form($pId){
 			
-                $this->output->enable_profiler(TRUE); 
-            
-				$cliente = cliente_validarSessao();
-	            if(empty($cliente)){redirect("home");}
+                // --- HEADER ---
+                $header = preencheConteudoHeader();
+                if(empty($header["Cliente"])){redirect("home");}
                 
                 $data["Id"] = $pId;
                 $data["IsBusca"] = true;
@@ -145,50 +185,18 @@
                 $dataCadastro = $this->Cliente_Enderecos_model->Listar($data);
                 
 				$content = array(
-	        	"cliente"	    => $cliente
-                ,"dataCadastro" => $dataCadastro
+                "dataCadastro" => $dataCadastro
 	        	,"erros"	    => array()
                 ,"acao_form"    => "atualizar"
+                ,"header"	    => $header
+                ,"title"        => "Loja Virtual | Atualizar Cadastro"
 	            ,"atual_page"   => "enderecos");
 				
 				// --- VIEW ---
 				$this->load->template_cliente("cliente/enderecos_form.php",$content);
 				
 				}
-		   
-			// --- LOGIN/CADASTRO ---
-			public function login_form(){	
-            
-            $this->output->enable_profiler(TRUE);    
 
-            // --------------------------CONTENT---------------------------------- 
-            $content = array(
-            	"dataLogin"	  => array()
-            	,"erros"	  => array()	
-                ,"atual_page" => "cliente");
-
-            // --- VIEW ---
-            $this->load->template("cliente/login.php",$content);
-            
-	   } 
-
-			public function cadastro_incluir_form(){	
-            
-            $this->output->enable_profiler(TRUE);    
-            
-            $dataCadastro["Email"] = $this->input->post("email");	
-            
-            /*--------------------------CONTENT----------------------------------*/
-            $content = array(
-            	"dataCadastro" => $dataCadastro
-            	,"erros"	   => array()
-                ,"atual_page"  => "cadastro");
-		
-            // --- VIEW ---
-            $this->load->template("cliente/cadastro_incluir_form.php",$content);
-        
-	   }
-	   
 	    // ------------ POST(Funcoes/CRUD) ------------ //
 	    
 	    public function login_post(){	

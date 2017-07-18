@@ -3,8 +3,9 @@
         
         <h1>Carrinho</h1>
         
-        <table class="table table-striped">
-
+        <?php if(count($lCarrinho) > 0){?>
+            
+            <table class="table table-striped">
             <thead>
                 <tr>
                     <th class="imagem">Imagem</th>
@@ -12,34 +13,30 @@
                     <th class="quantidade">Quantidade</th>
                     <th class="preco-unitario">Preço</th>
                     <th class="preco-subTotal">SubTotal</th>
-                    <th class="delete"></th>
+                    <th class="delete"><?=anchor("carrinho/limpar_carrinho","Limpar Tudo")?></th>
                 </tr>
             </thead>
 
             <tbody>
-
-                <?php for($n = 1; $n <= 5;$n++){ ?>
-
-                    <tr data-item-id="{{ item.id }}">
+            
+                <?php foreach($lCarrinho as $itemCarrinho){ ?>
+                    
+                    <tr>
 
                         <!-- IMAGEM -->
                         <td class="imagem">
-                            <a  href="#">
-                                <div class="img-teste">
-                                    Imagem Teste
-                                </div>
-                            </a>
+                            <?=anchor("produtos/produto_descricao/{$itemCarrinho["Produto"]["Id"]}","<img src='".base_url("img/Produtos/{$itemCarrinho["Produto"]["FotoPrincipal"]}")."'>")?>
                         </td>
 
                         <!-- NOME -->
                         <td class="nome">
-                            Nome do Produto <?=$n?>
+                            <?=$itemCarrinho["Produto"]["Descricao"]?>
                         </td>
 
                         <!-- QUANTIDADE -->
                         <td class="quantidade">
 
-                            <input type="text" class="form-control" name="quantidade" value="1"/>  
+                            <input type="text" class="form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
                             <div class="opcoes">
                                 <img class="plus" src="<?=base_url("img/plus.png")?>">
                                 <img class="less" src="<?=base_url("img/less.png")?>">
@@ -48,46 +45,53 @@
 
                         <!-- PREÇO UNITARIO -->
                         <td class="preco-unitario">
-                            39,99
+                            <?=numeroEmReais($itemCarrinho["Produto"]["Preco"])?>
                         </td>
 
                         <!--PRECO SUB_TOTAL-->
                         <td class="preco-subTotal">
-                           39,99 
+                           <?=numeroEmReais($itemCarrinho["SubTotal"])?>
                         </td>
 
                         <!--DELETAR-->
                         <td class="delete">
-                            <a href="#"> <img src="<?=base_url("img/delete.png")?>"> </a>
+                            <?=anchor("carrinho/excluir_produto_carrinho/{$itemCarrinho["Count"]}","<img src='".base_url("img/delete.png")."'>")?>
                         </td>
 
                     </tr>
-
+                
                 <?php } ?>
 
             </tbody>
                 
         </table>
-        
-        <div class="calculo-frete">
 
-            <h2>Calculo de Frete</h2>
-            <input type="text" class="form-control" id="cep" placeholder="CEP">
-            <button class="calcular-frete" >Calcular Frete</button>
+             <div class="calculo-frete">
 
-        </div>
-        
-        <div class="finalizacao-compra">
-            
-            <div class="total">
-                Total: R$<span class="Preco-total">100,00</span>
+                <h2>Calculo de Frete</h2>
+                <input type="text" class="form-control" id="cep" placeholder="CEP">
+                <button class="calcular-frete" >Calcular Frete</button>
+
             </div>
             
-            <div class="opcoes">
+            <div class="finalizacao-compra">
+                
+                <div class="total">
+                    Total: R$<span class="Preco-total"><?=numeroEmReais($valorTotal)?></span>
+                </div>
+                
+                <div class="opcoes">
                 <?=anchor("produtos","Continuar Comprando",array("class"=>"btn btn-primary"))?>
                 <?=anchor("#","Finalizar Compra",array("class"=>"btn btn-danger"))?>
-            </div>    
-        </div>
+            </div> 
+       
+            </div>
+        
+        <?php } else { ?>
+        
+            <p class="alert alert-warning">Não existe nenhum produto no Carrinho!</p>
+        
+        <?php } ?>
         
     </div>
 </section>

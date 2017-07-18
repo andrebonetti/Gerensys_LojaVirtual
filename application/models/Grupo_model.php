@@ -24,7 +24,7 @@
 				$this->db->order_by($pData["OrderBy"]);
 			}
 			else{
-				$this->db->order_by("Descricao");
+				$this->db->order_by("Ordem");
 			}
 
 			/* -- JOIN -- */

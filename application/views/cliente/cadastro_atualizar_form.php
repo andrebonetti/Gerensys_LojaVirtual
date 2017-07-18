@@ -15,13 +15,13 @@
             <?= form_open("cliente/cadastro_atualizar_post",array("class"=>""))?>
             
                 <label>Nome Completo</label>
-                <input type="text" class="nome form-control" name="nome" value="<?=$cliente["Nome"]?>">
+                <input type="text" class="nome form-control" name="nome" value="<?=$header["Cliente"]["Nome"]?>">
 
                 <label>Email</label>
-                <input type="text" class="email form-control" name="email" value="<?=$cliente["Email"]?>">
+                <input type="text" class="email form-control" name="email" value="<?=$header["Cliente"]["Email"]?>">
 
                 <label>Telefone (opcional)</label>
-                <input type="text" class="telefone form-control" name="telefone" value="<?=$cliente["Telefone"]?>">
+                <input type="text" class="telefone form-control" name="telefone" value="<?=$header["Cliente"]["Telefone"]?>">
 
                 <input type="submit" value="Alterar" class="btn btn-primary">
 

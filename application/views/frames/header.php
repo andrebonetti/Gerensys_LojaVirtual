@@ -7,7 +7,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
              
         <link rel="shortcut icon" type="image/x-icon" href="<" title="" >
-        <title> Base </title>
+        <title> <?=$title?> </title>
                       
         <link rel="stylesheet" type="text/css" href="<?=base_url("css/bootstrap.css")?>">  
         <link rel="stylesheet" type="text/css" href="<?=base_url("css/style.css")?>">  
@@ -30,8 +30,22 @@
             <div class="sup_header">
                 
                 <div class="myContainer">
-                        
-                    <p class="nome_empresa">Nome da Loja Virtual</p>
+                       
+                    <?=anchor("home/index","Nome da Loja Virtual",array("class"=>"nome_empresa"))?>    
+                    
+                    <div class="menu">
+                      <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="<?=base_url("img/menu.png")?>" class="menu_icon"></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="<?= atual_page($atual_page, "home")?>"><?= anchor("home","Home")?></li>
+                                    <li class="<?= atual_page($atual_page, "empresa")?>"><?= anchor("empresa","Empresa")?></li>
+                                    <li class="<?= atual_page($atual_page, "produtos")?> <?= atual_page($atual_page, "produto_descricao")?>" ><?= anchor("produtos","Produtos")?></li>
+                                    <li class="<?= atual_page($atual_page, "contato")?>"><?= anchor("contato","Contato")?></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                         
                     <div class="telefones">
                         <img src="<?=base_url('img/tel_icon.png')?>">
@@ -60,21 +74,27 @@
                     
                 <nav>
                     <ul>
-                        <li class="<?= atual_page($atual_page, "home")?>"><?= anchor("home","Home")?></li>
-                        <li class="<?= atual_page($atual_page, "empresa")?>"><?= anchor("empresa","Empresa")?></li>
-                        <li class="<?= atual_page($atual_page, "produtos")?> <?= atual_page($atual_page, "produto_descricao")?>" ><?= anchor("produtos","Produtos")?></li>
-                        <li class="<?= atual_page($atual_page, "contato")?>"><?= anchor("contato","Contato")?></li>
+                        <?php for($n = 0;$n < count($header["lSetorHeader"]) && $n < 5;$n++){ ?>
+						
+                            <li>
+                            	<?=anchor("Produtos/Setor/{$header["lSetorHeader"][$n]["Descricao"]}/{$header["lSetorHeader"][$n]["Id"]}/Pagina/1"
+                            	,$header["lSetorHeader"][$n]["Descricao"]
+                            	,array( "class" => produto_activeFiltroValor("IdSetor", $header["lSetorHeader"][$n]["Id"])))?>
+                            </li>
+                        
+                        <?php } ?>
+                        
                     </ul>    
                 </nav>
                 
                 <div class="shop">
                     <?=anchor("carrinho","<img src='".base_url('img/shop.png')."'>")?>
-                    <span class="quantidade">(0)</span>
+                    <span class="quantidade">(<?=$header["QuantidadeCarrinho"]?>)</span>
                     <span class="valor">R$0,00</span>
                 </div>
                 <div class="conta">
                 
-                	<?php if(empty($cliente)){ ?>
+                	<?php if(empty($header["Cliente"])){ ?>
                     
                         <div class="sem-conta">
 	                    
@@ -90,7 +110,7 @@
                             <div class="menu-conta">
                               <ul class="nav navbar-nav">
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= explode(" ", $cliente["Nome"])[0] ?></a>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?= explode(" ", $header["Cliente"]["Nome"])[0] ?></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><?=anchor("cliente/pedidos","Pedidos",array("class"=>atual_page($atual_page, "pedidos")))?></li>
 								            <li><?=anchor("cliente/favoritos","Favoritos",array("class"=>atual_page($atual_page, "favoritos")))?></li>
@@ -103,9 +123,9 @@
                                 </ul>
                             </div>
                             
-                            <?php if($cliente["Foto"] != ""){ ?>
+                            <?php if($header["Cliente"]["Foto"] != ""){ ?>
 				
-                                <img class="com-foto" src="<?=base_url("img/Clientes/{$cliente["Foto"]}")?>">
+                                <img class="com-foto" src="<?=base_url("img/Clientes/{$header["Cliente"]["Foto"]}")?>">
 
                             <?php } else {?>
 

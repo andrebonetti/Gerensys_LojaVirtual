@@ -4,14 +4,13 @@
         
 		public function index(){	
             
-            $this->output->enable_profiler(TRUE); 
-            
-            // --- SESSAO CLIENTE ---
-            $cliente = cliente_validarSessao();
-
+            // --- HEADER ---
+            $header = preencheConteudoHeader();
+             
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "cliente"	  => $cliente
+                "header"	    => $header
+                ,"title"       => "Loja Virtual | Contato"
                 ,"atual_page"  => "contato");
 
             /*VIEW*/$this->load->template("contato.php",$content);
