@@ -113,7 +113,7 @@
             <?php } ?>
 			            
             <!-- Cores -->
-            <?php if( isset($lProdutoFiltros["SubGrupo"]["Id"])){?>
+            <?php /*if( isset($lProdutoFiltros["SubGrupo"]["Id"])){ */?>
             
             	<div class="categorizacao">
             
@@ -145,10 +145,10 @@
 	            
 	            </div>
 	            
-            <?php } ?>
+            <?php/* } */?>
             
             <!-- Marcas -->
-            <?php if( isset($lProdutoFiltros["SubGrupo"]["Id"])){?>
+            <?php /*if( isset($lProdutoFiltros["SubGrupo"]["Id"])){ */?>
             
             	<div class="categorizacao">
             
@@ -181,7 +181,7 @@
 	            
 	            </div>
 
-            <?php } ?>
+            <?php /* }*/ ?>
                   
         </aside>    
         
@@ -308,69 +308,54 @@
             
                 <?php foreach($lProduto as $itemProduto){ 
                  
-                 	//Promocao
-                 	$HasPromocao = false;
-                 	if($itemProduto["PromocaoPorcentagemDesconto"] > 0){
-						
-						$itemProduto["NovoPreco"] 	= produto_promocao_CalcularPromocao($itemProduto["PromocaoPorcentagemDesconto"],$itemProduto["Preco"]);
-						
-					}
-                 	if($itemProduto["PromocaoPrecoFixoDesconto"] > 0){
-                 		
-                 		$itemProduto["NovoPreco"] 	= $itemProduto["PromocaoPrecoFixoDesconto"];
-                 		
-					}
-                	
-                	if( isset($itemProduto["NovoPreco"]) ){
-						$preco = $itemProduto["NovoPreco"];
-					}
-					else{
-						$preco = $itemProduto["Preco"];
-					}
-                	
-                	//Parcela
-                 	$valorParcela 	= produto_CalcularParcela($itemProduto["NumeroMaximoParcelas"],$itemProduto["JurosAPartirDe"],$itemProduto["PorcentagemJuros"],$preco);
+                 	$produto = produto_prepararConteudoMenu($itemProduto);
+                    ?>
                  	
-                 	?>
-                 
                     <div class="master-box">
 
                         <div class="box">
                             
-                            <!-- Destaque Promocao -->
-                            <?php if($itemProduto["PromocaoPorcentagemDesconto"] > 0){?>
-                            	<p class="promocao"><?=$itemProduto["PromocaoPorcentagemDesconto"]?>% OFF</p>
+                            <!-- Novidade Promocao -->
+                            <?php if($produto["PromocaoPorcentagemDesconto"] > 0 ){?>
+                            	<p class="promocao"><?=$produto["PromocaoPorcentagemDesconto"]?>% OFF</p>
                            <?php } ?> 
-                           <?php if($itemProduto["PromocaoPrecoFixoDesconto"] > 0){?>
-                            	<p class="promocao">- <?=numeroEmReais( ($itemProduto["NovoPreco"] - $itemProduto["Preco"])*-1) ?></p>
+                           <?php if($produto["PromocaoPrecoFixoDesconto"] > 0 ){?>
+                            	<p class="promocao">- <?=numeroEmReais( ($produto["NovoPreco"] - $produto["Preco"])*-1) ?></p>
                            <?php } ?> 
-                           <?php if($itemProduto["Id"] >= ($numeroProdutos-5)){?>
-                           		<p class="novidade">Novidade</p>
-                        	<?php } ?> 
-                        	
+                            
                             <!-- Imagem -->
                             <div class="img-content">
-                            	<?=anchor("produtos/produto_descricao/".$itemProduto["Id"]," 
-                            	<img src='".base_url("img/Produtos/".$itemProduto["FotoPrincipal"]."")."' alt='".$itemProduto['Descricao']."' title='".$itemProduto['Descricao']."'>
-                            	<p class='detalhes_span'>+ Detalhes</p>")?>
+                                
+                            	<?=anchor("produtos/produto_descricao/".$produto["Id"]
+                                ,"<img src='".$produto["imagem1"]."' alt='".$produto['Descricao']."' title='".$produto['Descricao']."'>
+                            	<p class='detalhes_span'>+ Detalhes</p>",array("class" => $produto["classImg1"]))?>
+                                
+                                <?php if(isset($produto["imagem2"])){ ?>
+                                
+                                    <?=anchor("produtos/produto_descricao/".$produto["Id"]
+                                    ,"<img src='".$produto["imagem2"]."' alt='".$produto['Descricao']."' title='".$produto['Descricao']."'>
+                                    <p class='detalhes_span'>+ Detalhes</p>"
+                                    ,array("class" => "Foto2"))?>
+                                
+                                <?php } ?>
+                                
                             </div>
                             
-                            <!-- Descrição -->
-                            <a href="#"><h3 class="nome-produto"><?=$itemProduto["Descricao"]?></h3></a>
+                            <!-- Descricao -->
+                            <a href="#"><h3 class="nome-produto"><?=$produto["Descricao"]?></h3></a>
                             
                             <!-- Preco -->
-                            <?php if( ($itemProduto["PromocaoPorcentagemDesconto"] == null) && ($itemProduto["PromocaoPrecoFixoDesconto"] == null)) {?>
-                            	<p class="preco"><?=numeroEmReais($itemProduto["Preco"])?></p>
+                            <?php if( ($produto["PromocaoPorcentagemDesconto"] == null) && ($produto["PromocaoPrecoFixoDesconto"] == null)) {?>
+                            	<p class="preco"><?=numeroEmReais($produto["Preco"])?></p>
                             <?php } else{?>
                              
-                             	<p class="preco-antigo"><?=numeroEmReais($itemProduto["Preco"])?></p>
-                        		<p class="preco-novo"><?=numeroEmReais($itemProduto["NovoPreco"])?></p>
+                             	<p class="preco-antigo"><?=numeroEmReais($produto["Preco"])?></p>
+                        		<p class="preco-novo"><?=numeroEmReais($produto["NovoPreco"])?></p>
                              
                             <?php }?>
                             
-                            <!-- Parcela -->
-                            <?php if($valorParcela != 0){ ?>
-                            	<p class="parcela"><?=$itemProduto["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
+                            <?php if($produto["valorParcela"] != 0){ ?>
+                            	<p class="parcela"><?=$produto["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($produto["valorParcela"])?></p>
 							<?php } ?>
 							
                         </div>

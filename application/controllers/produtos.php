@@ -79,33 +79,36 @@
             // --- HEADER ---
             $header = preencheConteudoHeader();
             
-            $produto	= $this->Produto_model	->Listar(array("Id"=>$pIdProduto, "Join" => true,"lJoin" => true,"IsBusca" => true,"lJoinCompleto" => true,"IsDescricao" => true));  
-			
-            $IdFavorito = null;
-            if(!empty($cliente)){
-                
-                $dataBusca["Produto"]["Id"]   = $pIdProduto;
-                $dataBusca["Cliente"]["Id"]   = $cliente["Id"];
-                $dataBusca["IsBusca"]         = true;
-                
-                $favorito = $this->Cliente_Favoritos_model->Listar($dataBusca);
-                
-                if(!empty($favorito)){
-                    $IdFavorito = $favorito["Id"];    
-                }
-            }
+            // -- PRODUTO --
+            $dataBusca["Id"]            = $pIdProduto;
+            $dataBusca["Join"]          = true;
+            $dataBusca["lJoin"]         = true;
+            $dataBusca["IsBusca"]       = true;
+            $dataBusca["lJoinCompleto"] = true;
+            $dataBusca["IsDescricao"]   = true;
+            $dataBusca["ClienteLogado"] = $header["Cliente"];
             
+            $produto	= $this->Produto_model	->Listar($dataBusca);  
+			
+            // ----- Produtos Relacionados ----- //
+            $dataProdutoRelacionado["Grupo"]["Id"] = $produto["IdGrupo"];
+            $dataProdutoRelacionado["Setor"]["Id"] = $produto["IdSetor"];
+            $dataProdutoRelacionado["!Id"]         = $produto["Id"];
+            $dataProdutoRelacionado["Join"]        = true;
+            
+            $lProdutoRelacionado = $this->Produto_model	->Listar($dataProdutoRelacionado);  
+			
 			// ----- BreadCrumb -----
 			$lBreadCrumb = produto_PreencherArrayBreadCrumb();
 			
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-            	"produto"		=> $produto
-            	,"lBreadCrumb"	=> $lBreadCrumb
-                ,"IdFavorito"   => $IdFavorito
-                ,"header"	    => $header
-                ,"title"        => "Loja Virtual | {$produto["Descricao"]}"
-                ,"atual_page"  	=> "produtos_descricao");
+            	"produto"		        => $produto
+                ,"lProdutoRelacionado"  => $lProdutoRelacionado
+            	,"lBreadCrumb"	        => $lBreadCrumb
+                ,"header"	            => $header
+                ,"title"                => "Loja Virtual | {$produto["Descricao"]}"
+                ,"atual_page"  	        => "produtos_descricao");
 
             /*VIEW*/$this->load->template("produto_descricao.php",$content);
             
@@ -120,5 +123,20 @@
 	        redirect("produtos/index/1");
             
 	   }
+
+       public function Produtos_Filtros_Temp($pIdSetor = null,$pIdGrupo = null,$pIdSubGrupo = null){
+           
+           if($pIdSetor != null){
+               produto_prepararFiltros("IdSetor",$pIdSetor);
+           }
+           if($pIdGrupo != null){
+               produto_prepararFiltros("IdGrupo",$pIdGrupo);
+           }
+           if($pIdSubGrupo != null){
+               produto_prepararFiltros("IdSubGrupo",$pIdSubGrupo);
+           }
+           
+           redirect("Produtos");
+       }
         
     }

@@ -12,7 +12,6 @@
             $CarrinhoCount = $this->session->userdata("CarrinhoCount"); 
             
             $lCarrinho = array();
-            $valorTotal = 0;
             for($n = 1;$n <= $CarrinhoCount;$n++){
                 
                 $dataProduto["Id"] = $this->session->userdata("Carrinho{$n}IdProduto"); 
@@ -29,8 +28,6 @@
                     $itemProduto["SubTotal"]   = $produto["Preco"]*$itemProduto["Quantidade"];
                     $itemProduto["Count"]      = $n;
                     
-                    $valorTotal = $valorTotal + $itemProduto["SubTotal"];
-                    
                     array_push($lCarrinho,$itemProduto);
                 
                 }
@@ -40,8 +37,7 @@
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(
-                "valorTotal"       => $valorTotal
-                ,"lCarrinho"        => $lCarrinho
+                "lCarrinho"        => $lCarrinho
                 ,"header"	        => $header
                 ,"title"            => "Loja Virtual | Carrinho"
                 ,"atual_page"       => "produtos");
@@ -55,9 +51,10 @@
              
             $this->output->enable_profiler(TRUE); 
          
-            $data["Quantidade"]	    = $this->input->post("quantidade");  
-		    $data["Produto"]["Id"]	= $this->input->post("idproduto"); 
-         
+            $data["Quantidade"]	     = $this->input->post("quantidade");  
+		    $data["Produto"]["Id"]	 = $this->input->post("idproduto"); 
+            $data["Produto"]["Preco"]= $this->input->post("precoproduto");  
+             
             carrinho_adicionarProdutoSessao($data); 
              
             redirect("produtos/produto_descricao/{$data["Produto"]["Id"]}"); 
@@ -76,10 +73,12 @@
                 
                 $this->session->unset_userdata("Carrinho{$n}IdProduto");
                 $this->session->unset_userdata("Carrinho{$n}Quantidade"); 
+                $this->session->unset_userdata("Carrinho{$n}Preco"); 
                 $this->session->unset_userdata("IdProduto{$idProduto}Count");
             }
             
             $this->session->set_userdata("CarrinhoCount",0); 
+            $this->session->set_userdata("CarrinhoValorTotal",0);
             
             redirect("carrinho");
          } 
@@ -92,8 +91,26 @@
             $CarrinhoCount = $this->session->userdata("CarrinhoCount"); 
             $IdProduto     = $this->session->userdata("Carrinho{$pCount}IdProduto");
             
+            // --- VALOR TOTAL ---
+            if($CarrinhoCount == 1){
+                $this->session->set_userdata("CarrinhoValorTotal",0);
+            }
+            else{
+                $preco          = $this->session->userdata("Carrinho{$pCount}Preco"); 
+                $quantidade     = $this->session->userdata("Carrinho{$pCount}Quantidade"); 
+                $valorCarrinhoA = $this->session->userdata("CarrinhoValorTotal"); 
+                
+                $subPreco       = $preco * $quantidade; 
+                
+                $valorCarrinho  = $valorCarrinhoA-$subPreco;
+                
+                $this->session->set_userdata("CarrinhoValorTotal",$valorCarrinho);
+            }
+            
+            // --- UNSET ---
             $this->session->unset_userdata("Carrinho{$pCount}IdProduto");
             $this->session->unset_userdata("Carrinho{$pCount}Quantidade"); 
+            $this->session->unset_userdata("Carrinho{$pCount}Preco"); 
             $this->session->unset_userdata("IdProduto{$IdProduto}Count");
 
             $this->session->set_userdata("CarrinhoCount",$CarrinhoCount - 1); 
@@ -102,19 +119,21 @@
                 
                 $IdProdutoAtual  = $this->session->userdata("Carrinho{$n}IdProduto");
                 $QuantidadeAtual = $this->session->userdata("Carrinho{$n}Quantidade"); 
+                $PrecoAtual      = $this->session->userdata("Carrinho{$n}Preco"); 
                 $CountAtual      = $this->session->userdata("IdProduto{$n}Count");
                 
                 $NovoCount = $n-1;
-                $this->session->set_userdata("Carrinho{$NovoCount}IdProduto",$IdProdutoAtual);
+                $this->session->set_userdata("Carrinho{$NovoCount}IdProduto" ,$IdProdutoAtual);
                 $this->session->set_userdata("Carrinho{$NovoCount}Quantidade",$QuantidadeAtual); 
-                $this->session->set_userdata("IdProduto{$NovoCount}Count",$n-1);
+                $this->session->set_userdata("Carrinho{$NovoCount}Preco"     ,$PrecoAtual); 
+                $this->session->set_userdata("IdProduto{$IdProdutoAtual}Count",$NovoCount);
                 
             }
             
             $this->session->unset_userdata("Carrinho{$CarrinhoCount}IdProduto");
             $this->session->unset_userdata("Carrinho{$CarrinhoCount}Quantidade"); 
-            $this->session->unset_userdata("IdProduto{$CarrinhoCount}Count");
-            
+            $this->session->unset_userdata("Carrinho{$CarrinhoCount}Preco"); 
+      
             redirect("carrinho");
          } 
         

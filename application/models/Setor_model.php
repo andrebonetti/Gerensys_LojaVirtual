@@ -55,8 +55,42 @@
 			else{
 				$data = $this->db->get()->result_array();
 			}
+            
+            //lJoin
+			if( (isset($pData["Grupo"]["lJoin"])) && ($pData["Grupo"]["lJoin"] == true)){
+                
+                if(isset($pData["IsBusca"])){
+                    
+                    $pGrupoBusca["Setor"]["Id"]             = $data["Id"];
+                    
+                    if( isset($pData["Grupo"]["SubGrupo"]["lJoin"])){
+                        $pGrupoBusca["SubGrupo"]["lJoin"]   = $pData["Grupo"]["SubGrupo"]["lJoin"]; 
+                    }  
+                                     
+                    $data["lGrupo"]                         = $this->Grupo_model->Listar($pGrupoBusca);
+                    
+                }
+                else{
+                     
+                    $n = 0;
+                    foreach($data as $item){
+                        
+                        $pGrupoBusca["Setor"]["Id"]             = $item["Id"];
+                    
+                        if( isset($pData["Grupo"]["SubGrupo"]["lJoin"])){
+                            $pGrupoBusca["SubGrupo"]["lJoin"]   = $pData["Grupo"]["SubGrupo"]["lJoin"]; 
+                        }  
+                                         
+                        $data[$n]["lGrupo"]                     = $this->Grupo_model->Listar($pGrupoBusca);
+                        
+                        $n++;
+                    } 
+    
+                }
+                
+            }
 			
-			//lJoin
+			//lJoinCount
 			if( (isset($pData["lJoinCount"])) && ($pData["lJoinCount"] == true) ){
 				
 				if( !isset($pData["IsBusca"] )){	

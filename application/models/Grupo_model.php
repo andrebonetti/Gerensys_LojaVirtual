@@ -10,6 +10,7 @@
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_grupo.Id",					$pData["Id"]);}	
 			if(isset($pData["Descricao"])){			$this->db->where("tb_grupo.Descricao",			$pData["Descricao"]);}	
+            if(isset($pData["Setor"]["Id"])){		$this->db->where("tb_grupo.IdSetor",			$pData["Setor"]["Id"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_grupo.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
 			if(isset($pData["IdUsuarioAlteracao"])){$this->db->where("tb_grupo.IdUsuarioAlteracao",	$pData["IdUsuarioAlteracao"]);}
@@ -54,8 +55,33 @@
 			else{
 				$data = $this->db->get()->result_array();
 			}
+            
+            //lJoin
+			if( (isset($pData["SubGrupo"]["lJoin"])) && ($pData["SubGrupo"]["lJoin"] == true)){
+                
+                if(isset($pData["IsBusca"])){
+                    
+                    $pSubGrupoBusca["Grupo"]["Id"] = $data["Id"];           
+                    $data["lSubGrupo"]          = $this->SubGrupo_model->Listar($pSubGrupoBusca);
+                    
+                }
+                else{
+                     
+                    $n = 0;
+                    foreach($data as $item){
+                        
+                        $pSubGrupoBusca["Grupo"]["Id"] = $item["Id"];
+                        
+                        $data[$n]["lSubGrupo"]         = $this->SubGrupo_model->Listar($pSubGrupoBusca);
+                        
+                        $n++;
+                    } 
+    
+                }
+                
+            }
 			
-			//lJoin
+			//lJoinCount
 			if( (isset($pData["lJoinCount"])) && ($pData["lJoinCount"] == true) ){
 				
 				if( !isset($pData["IsBusca"] )){	

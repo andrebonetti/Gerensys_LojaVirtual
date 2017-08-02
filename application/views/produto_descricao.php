@@ -1,6 +1,11 @@
+<script src="<?=base_url("js/jssor.js")?>"></script>
+<script src="<?=base_url("js/jssor.slider.js")?>"></script> 
+<script src="<?=base_url("js/my_jassor.js")?>"></script>
+<script src="<?=base_url("js/thumbnail-navigator-with-arrows.source.js")?>"></script>
+
 <section class="produto-descricao my-content">
     <div class="myContainer">
-              
+    
         <div class="container1">
         
         	<ol class="breadcrumb">
@@ -78,24 +83,25 @@
 
                     <h2>Comprar</h2>
                     
-                    <?php if($IdFavorito != null){ ?>
-                        <?=anchor("cliente/favoritos_excluir/{$IdFavorito}/{$produto["Id"]}","<img src='".base_url("img/favorito_amarelo.png")."'>",array("class"=>"favoritos_add"))?>
+                    <?php if($produto["IdFavorito"] != null){ ?>
+                        <?=anchor("cliente/favoritos_excluir/{$produto["IdFavorito"]}/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos_vermelho.png")."'>",array("class"=>"favoritos_add"))?>
                     <?php } else { ?>               
-                        <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/favorito.png")."'>",array("class"=>"favoritos_add"))?>                 
+                        <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos.png")."'>",array("class"=>"favoritos_add"))?>                 
                     <?php } ?>
                     
                     <?= form_open("carrinho/incluir_post")?>
                     
                         <input type="hidden" name="idproduto" value="<?=$produto["Id"]?>"/>
-                    
+                        <input type="hidden" name="precoproduto" value="<?=$produto["Preco"]?>"/>
+                        
                         <label>Quantidade</label>
-                        <input type="text" class="form-control" name="quantidade" id="qtde" value="1">
+                        <input type="text" class="form-control quantidade" name="quantidade" id="qtde" value="1">
 
-                        <input type="submit" class="compra-rapida" value="Adicionar ao Carrinho">
+                        <input type="submit" class="adicionar-carrinho" value="Adicionar ao Carrinho">
                         
                     <?= form_close() ?>  
 
-                    <button class="adicionar-carrinho">Compra Rapida</button>
+                    <button class="compra-rapida">Compra Rapida</button>
                     
                 </div>
 
@@ -111,7 +117,7 @@
 
                 <!-- Slides Container -->
                 <div u="slides" class="uSlides">
-                
+                    
                 	<?php foreach($produto["Fotos"] as $itemFoto){ ?>
                 
 	                    <div>
@@ -166,124 +172,88 @@
         
         </div>
         
-        <div class="produtos-relacionados">
+        <?php if(count($lProdutoRelacionado) > 0){?>
+            
+            <div class="produtos-relacionados">
             
             <h2>Produtos Relacionados</h2>
             
             <div class="boxes">
             
-                <?php for($n=0;$n < 2;$n++){?> 
+                <?php foreach($lProdutoRelacionado as $itemProduto){ 
                  
-                <?php// for($n=0;$n < 5;$n++){?>
-                    
-                    <!-- 1 -->
-                    <div class="max-box">
+                 	//Promocao
+                 	$HasPromocao = false;
+                 	if($itemProduto["PromocaoPorcentagemDesconto"] > 0){
+						
+						$itemProduto["NovoPreco"] 	= produto_promocao_CalcularPromocao($itemProduto["PromocaoPorcentagemDesconto"],$itemProduto["Preco"]);
+						
+					}
+                 	if($itemProduto["PromocaoPrecoFixoDesconto"] > 0){
+                 		
+                 		$itemProduto["NovoPreco"] 	= $itemProduto["PromocaoPrecoFixoDesconto"];
+                 		
+					}
+                	
+                	if( isset($itemProduto["NovoPreco"]) ){
+						$preco = $itemProduto["NovoPreco"];
+					}
+					else{
+						$preco = $itemProduto["Preco"];
+					}
+                	
+                	//Parcela
+                 	$valorParcela 	= produto_CalcularParcela($itemProduto["NumeroMaximoParcelas"],$itemProduto["JurosAPartirDe"],$itemProduto["PorcentagemJuros"],$preco);
+                 	
+                 	?>
+                 
+                    <div class="master-box">
 
                         <div class="box">
                             
-                            <?=anchor("produtos/produto_descricao",
-                            "<div class='img_teste'>
-                                    Imagem Produto
+                            <!-- Destaque Promocao -->
+                            <?php if($itemProduto["PromocaoPorcentagemDesconto"] > 0){?>
+                            	<p class="promocao"><?=$itemProduto["PromocaoPorcentagemDesconto"]?>% OFF</p>
+                           <?php } ?> 
+                           <?php if($itemProduto["PromocaoPrecoFixoDesconto"] > 0){?>
+                            	<p class="promocao">- <?=numeroEmReais( ($itemProduto["NovoPreco"] - $itemProduto["Preco"])*-1) ?></p>
+                           <?php } ?> 
+                           
+                            <!-- Imagem -->
+                            <div class="img-content">
+                            	<?=anchor("produtos/produto_descricao/".$itemProduto["Id"]," 
+                            	<img src='".base_url("img/Produtos/".$itemProduto["FotoPrincipal"]."")."' alt='".$itemProduto['Descricao']."' title='".$itemProduto['Descricao']."'>
+                            	<p class='detalhes_span'>+ Detalhes</p>")?>
                             </div>
-                            <p class='detalhes_span'>+ Detalhes</p>")?>
-                            <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                            <p class="preco">R$39,90</p>
-                            <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
+                            
+                            <!-- Descrição -->
+                            <a href="#"><h3 class="nome-produto"><?=$itemProduto["Descricao"]?></h3></a>
+                            
+                            <!-- Preco -->
+                            <?php if( ($itemProduto["PromocaoPorcentagemDesconto"] == null) && ($itemProduto["PromocaoPrecoFixoDesconto"] == null)) {?>
+                            	<p class="preco"><?=numeroEmReais($itemProduto["Preco"])?></p>
+                            <?php } else{?>
+                             
+                             	<p class="preco-antigo"><?=numeroEmReais($itemProduto["Preco"])?></p>
+                        		<p class="preco-novo"><?=numeroEmReais($itemProduto["NovoPreco"])?></p>
+                             
+                            <?php }?>
+                            
+                            <!-- Parcela -->
+                            <?php if($valorParcela != 0){ ?>
+                            	<p class="parcela"><?=$itemProduto["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
+							<?php } ?>
+							
                         </div>
 
                     </div>
                 
-                <?php //} ?>
-                
-                <!-- 2 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="novidade">Novidade</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco">R$39,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
-                <!-- 3 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">5% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$139,90</p>
-                        <p class="preco-novo">R$134,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
-                <!-- 4 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">13% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$159,90</p>
-                        <p class="preco-novo">R$139,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
-                <!-- 5 -->
-                <div class="max-box">
-
-                    <div class="box">
-                        
-                        <p class="promocao">13% OFF</p>
-                        <a href="#">
-                            <div class="img_teste">
-                                Imagem Produto
-                            </div>
-                            <p class="detalhes_span">+ Detalhes</p>
-                        </a>    
-                        <a href="#"><h3 class="nome-produto">Nome do Produto</h3></a>
-                        <p class="preco-antigo">R$159,90</p>
-                        <p class="preco-novo">R$139,90</p>
-                        <p class="parcela">9x <span class="no-negrito">de</span> R$5,12</p>
-
-                    </div>
-
-                </div>
-                
                 <?php } ?>
-            
+                
             </div>
             
         </div>
+        <?php } ?>
         
     </div>
 </section>

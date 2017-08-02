@@ -5,6 +5,7 @@
 @blue-2: rgb(63, 63, 255);
 @blue-3: rgba(63, 63, 255, 0.69);
 @blue-4: rgb(61, 61, 175);
+@blue-5: rgb(103, 103, 255);
 
 @yellow-1: rgb(255, 255, 65);
 
@@ -19,13 +20,6 @@ body{
     
     font-family: 'Spectral', serif;
 }
-
-@media (max-width:480px){.myContainer{.lateral-margin(98%);}}
-@media (min-width:481px){.myContainer{.lateral-margin(90%);}}
-@media (min-width:650px){.myContainer{.lateral-margin(80%);}}
-@media (min-width:768px){.myContainer{.lateral-margin(75%);}}
-@media (min-width:1024px){.myContainer{.lateral-margin(70%);}}
-@media (min-width:1350px){.myContainer{.lateral-margin(90%);}}
 
 .my-content:extend(.full-container) {
     padding:0;
@@ -45,6 +39,13 @@ body{
 
 .myContainer:extend(.full-container) {
     margin-top: 10px;
+    
+    @media (max-width:480px){.myContainer{.lateral-margin(98%);}}
+    @media (min-width:481px){.myContainer{.lateral-margin(90%);}}
+    @media (min-width:650px){.myContainer{.lateral-margin(80%);}}
+    @media (min-width:768px){.myContainer{.lateral-margin(75%);}}
+    @media (min-width:1024px){.myContainer{.lateral-margin(90%);}}
+    @media (min-width:1350px){.myContainer{.lateral-margin(95%);}}
     
     h1{
         font-weight: 600;
@@ -293,7 +294,27 @@ form{
 	                    display: none;
 	                }
 	            }
+                
+                .Foto1{
+                    display: block;
+                }
+                
+                .Foto2{
+                    display: none;
+                }
             
+            }
+            
+            .img-content:hover{
+                
+                .Foto1{
+                    display: none;
+                }
+                
+                .Foto2{
+                    display: block;
+                }
+                
             }
             
             a:hover{
@@ -305,7 +326,7 @@ form{
                     top: 70px;
                     text-align: center;
                     color: @white-9;
-                    padding: 10px 8px;
+                    padding: 6px 4px;
                     font-size: 1.2em;
                     letter-spacing: 2px;
                 }
@@ -537,20 +558,23 @@ header:extend(.full-container) {
         @content_top: 20px;
         
         nav{
-            .float(left,auto);
-            text-align: left;
+            .float(left,45%);
+            text-align: center;
             margin: @content_top 0 0 25px;
             
             ul:extend(.full-container) {
                 
                 li{
-                    display: inline;
-                    padding:0 15px;
+                    .inline-content(5%);
+                    padding:0 10px;
                     font-size: 1.3em;
+                    position: relative;
+                    font-weight: 600;
+                    display: table;
                     
                     a{
                         color: @black-5;
-                        
+                        width: 100%;
                     }
                     
                 }
@@ -568,6 +592,83 @@ header:extend(.full-container) {
                     a{
                         color: @blue-2;
                     }    
+                }
+                
+                ul.header-grupo{
+                    display: none;
+                    position: absolute;
+                    z-index: 99999;
+                    top: 30px;
+                    left: -40px;
+                    width: 200px;
+                    background-color: @blue-4;
+                    border-radius: 3px;
+                    
+                    li{
+                        width: 100%;
+                        position: relative;
+                        padding: 3px 15px;
+                        font-size: 0.9em;
+                        text-align: center;
+                        display: table;
+                        font-weight: 500;
+                        height: 30px;
+                        
+                        a{
+                            color: @white-9;
+                            width: 96%;
+                            float: left;
+                        }
+                        
+                        img{
+                            float: right;
+                            width: 4%;
+                            margin-top: 8px;
+                        }
+                        
+                        ul.header-subgrupo{
+                            display: none;
+                            position: absolute;
+                            z-index: 99999;
+                            top: 0;
+                            right: -200px;
+                            background-color: @blue-5;
+                            
+                            li{
+                                padding: 3px 15px;
+                                text-align: left;
+                                display: table;
+                                
+                                a{
+                                    color: @white-10;
+                                    width: 100%;
+                                    padding-top: 2px;
+                                }
+                            }
+                            
+                            li:hover{
+                                
+                                a{
+                                    color: @yellow-1;
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                    
+                    li:hover{                      
+                        background-color: @blue-5;
+                        
+                        a{
+                            color: @yellow-1;
+                        }
+                    }
+                       
+                }
+                
+                ul.header-grupo:hover{
+                    border-radius: 3px 0 0 3px; 
                 }
                 
             }
@@ -938,7 +1039,7 @@ header:extend(.full-container) {
                     
                     a.favoritos_add{
                         .float(left,10%);
-                        margin-top: 16px;
+                        margin-top: 18px;
                         
                         img{
                             width: 100%;
@@ -955,9 +1056,17 @@ header:extend(.full-container) {
                     form{
                         .float(left,50%); 
                         
-                        input{                
-                            width:100%; 
+                        input.quantidade{                
+                            width:29%;
+                            float: left;
                             text-align: center;
+                            height: 35px;
+                        }
+                        
+                        .adicionar-carrinho{
+                            width:70%;
+                            float: right;
+                            height: 35px;
                         }
                         
                         label{
@@ -966,23 +1075,11 @@ header:extend(.full-container) {
                     
                     }
                     
-
-                    .opcoes{
-                        .float(right,68%);
+                    .compra-rapida{
+                        float: right;
+                        height: 33px;
+                        width: 38%;
                         margin-top: 25px;
-
-                        .adicionar-carrinho{
-                            float: right;
-                            height: 33px;
-                            margin-right: 5px;
-                            width: 55%;
-                        }
-
-                        .compra-rapida{
-                            float: right;
-                            height: 33px;
-                            width: 43%;
-                        }
                     }
 
                 }

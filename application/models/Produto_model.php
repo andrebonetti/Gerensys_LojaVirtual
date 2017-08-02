@@ -10,6 +10,7 @@
             
 			// WHERE		
 			if(isset($pData["Id"])){								$this->db->where("tb_produto.Id",							$pData["Id"]);}	
+			if(isset($pData["!Id"])){								$this->db->where("tb_produto.Id !=",						$pData["!Id"]);}	
 			if(isset($pData["Codigo"])){							$this->db->where("tb_produto.Codigo",						$pData["Codigo"]);}	
 			if(isset($pData["Descricao"])){							$this->db->like("tb_produto.Descricao",						$pData["Descricao"]);}	
 			if(isset($pData["UnidadeApresentacao"]["Id"])){			$this->db->where("tb_produto.IdUnidadeApresentacao",		$pData["UnidadeApresentacao"]["Id"]);}	
@@ -47,12 +48,15 @@
             	$query_select = "";
             	
             	$this->db->join("tb_produto_preco AS Preco", "Preco.IdProduto = tb_produto.Id and Preco.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
-            	$this->db->join("tb_produto_fotos AS Fotos", "Fotos.IdProduto = tb_produto.Id and IsPrincipal = 1","left");
+            	$this->db->join("tb_produto_fotos AS Fotos", "Fotos.IdProduto = tb_produto.Id and Fotos.Ordem = 1","left");
+                $this->db->join("tb_produto_fotos AS Fotos2", "Fotos2.IdProduto = tb_produto.Id and Fotos2.Ordem = 2","left");
             	$this->db->join("tb_produto_promocao AS Promocao", "Promocao.IdProduto = tb_produto.Id","left");// -- ADD Vigencia --
             	
+                //tb_cliente_favoritos
             	$query_select = "tb_produto.*
             	,Preco.IdTipoPreco, Preco.Preco
             	,Fotos.NomeArquivo AS FotoPrincipal
+                ,Fotos2.NomeArquivo AS FotoSecundaria
             	,Promocao.PorcentagemDesconto AS PromocaoPorcentagemDesconto
             	,Promocao.PrecoFixoDesconto AS PromocaoPrecoFixoDesconto";
             	
@@ -70,6 +74,15 @@
             		,Setor.Descricao AS DescricaoSetor
             		,Marca.Descricao AS DescricaoMarca
             		,Tipo.Descricao AS DescricaoTipo";
+                    
+                    if ( (isset($pData["ClienteLogado"])) && ($pData["ClienteLogado"]["Id"] != null) ){
+                    
+                        $this->db->join("tb_cliente_favoritos AS Favoritos", "Favoritos.IdProduto = tb_produto.Id AND Favoritos.IdCliente = {$pData["ClienteLogado"]["Id"]}","left");
+                        
+                        $query_select = $query_select."
+                        ,Favoritos.Id AS IdFavorito";
+                        
+                    }
 				}
                 
                 if ( (isset($pData["IsAdm"])) && ($pData["IsAdm"] == true) ){

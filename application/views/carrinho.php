@@ -77,12 +77,13 @@
             <div class="finalizacao-compra">
                 
                 <div class="total">
-                    Total: R$<span class="Preco-total"><?=numeroEmReais($valorTotal)?></span>
+                    Total: R$<span class="Preco-total"><?=numeroEmReais($header["ValorCarrinho"])?></span>
                 </div>
                 
                 <div class="opcoes">
                 <?=anchor("produtos","Continuar Comprando",array("class"=>"btn btn-primary"))?>
                 <?=anchor("#","Finalizar Compra",array("class"=>"btn btn-danger"))?>
+                
             </div> 
        
             </div>

@@ -6,7 +6,7 @@
 				
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_subgrupo.Id",					$pData["Id"]);}	
-			if(isset($pData["IdGrupo"])){			$this->db->where("tb_subgrupo.IdGrupo",				$pData["IdGrupo"]);}	
+			if(isset($pData["Grupo"]["Id"])){		$this->db->where("tb_subgrupo.IdGrupo",				$pData["Grupo"]["Id"]);}	
 			if(isset($pData["Descricao"])){			$this->db->where("tb_subgrupo.Descricao",			$pData["Descricao"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_subgrupo.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
@@ -58,7 +58,7 @@
 				$data = $this->db->get()->result_array();
 			}
 			
-			//lJoin
+			//lJoinCount
 			if( (isset($pData["lJoinCount"])) && ($pData["lJoinCount"] == true) ){
 				
 				if( !isset($pData["IsBusca"] )){	

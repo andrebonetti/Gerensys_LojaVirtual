@@ -55,7 +55,7 @@
 		else{
 			
 			$pValidacao["IsValidado"] = false;
-			array_push($pValidacao["erros"],"O campo '".$pCampoNome."' é obrigatório");
+			array_push($pValidacao["erros"],"O campo '".$pCampoNome."' é ¯brigatï¿½rio");
 			
 		}
 		
@@ -97,7 +97,7 @@
 		else{
 			
 			$validacao["IsValidado"] = false;
-			array_push($validacao["erros"],"O campo 'Email' é obrigatorio");
+			array_push($validacao["erros"],"O campo 'Email' é ¯brigatorio");
 			
 		}
 		
@@ -127,7 +127,7 @@
 		else{
 			
 			$validacao["IsValidado"] = false;
-			array_push($validacao["erros"],"O campo 'Senha' é obrigatorio");
+			array_push($validacao["erros"],"O campo 'Senha' é ¯brigatorio");
 			
 		}
 			
@@ -139,10 +139,13 @@
 		$ci = get_instance();
 
 		$dataCliente["Id"] = $ci->session->userdata("ClienteId");
-		$dataCliente["IsBusca"] = true;
-		
-		$cliente = $ci->Cliente_model->Listar($dataCliente);
-		
+        
+        $cliente = array();
+        if( !empty($dataCliente["Id"])){
+            $dataCliente["IsBusca"] = true;
+		    $cliente = $ci->Cliente_model->Listar($dataCliente);
+        }
+
 		return $cliente;
 	}
 
@@ -155,7 +158,7 @@
 		
 		if($pData["senhaAnterior"] == ""){
 			$validacao["IsValidado"] = false;
-			array_push($validacao["erros"],"O campo 'Senha Anterior' é obrigatório");
+			array_push($validacao["erros"],"O campo 'Senha Anterior' é ¯brigatï¿½rio");
 		}
 		else{
 			
@@ -172,18 +175,18 @@
 		
 		if($pData["novaSenha"] == ""){
 			$validacao["IsValidado"] = false;
-			array_push($validacao["erros"],"O campo 'Nova Senha' é obrigatório");
+			array_push($validacao["erros"],"O campo 'Nova Senha' é ¯brigatï¿½rio");
 		}
 		if($pData["confirmaNovaSenha"] == ""){
 			$validacao["IsValidado"] = false;
-			array_push($validacao["erros"],"O campo 'Confirmar Nova Senha' é obrigatório");
+			array_push($validacao["erros"],"O campo 'Confirmar Nova Senha' é ¯brigatï¿½rio");
 		}
 		
 		if( ($pData["novaSenha"] != "") && ($pData["confirmaNovaSenha"] != "") ) {
 			
 			if($pData["novaSenha"] != $pData["confirmaNovaSenha"]){
 				$validacao["IsValidado"] = false;
-				array_push($validacao["erros"],"Senhas são Diferentes");
+				array_push($validacao["erros"],"Senhas sã¯ Diferentes");
 			}
 			
 		}

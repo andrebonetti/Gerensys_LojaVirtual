@@ -447,4 +447,48 @@
 		
 		return $pProdutoData;
 	}
+
+    // VIEW
+    function produto_prepararConteudoMenu($pProduto){
+        
+        //Promoção
+        if($pProduto["PromocaoPorcentagemDesconto"] > 0){
+            $pProduto["NovoPreco"] 	= produto_promocao_CalcularPromocao($pProduto["PromocaoPorcentagemDesconto"],$pProduto["Preco"]);	
+        }
+        if($pProduto["PromocaoPrecoFixoDesconto"] > 0){
+            $pProduto["NovoPreco"] 	= $pProduto["PromocaoPrecoFixoDesconto"];
+        }
+        
+        if( isset($pProduto["NovoPreco"]) ){
+            $pProduto["PrecoApresentacao"] = $pProduto["NovoPreco"];
+        }
+        else{
+            $pProduto["PrecoApresentacao"] = $pProduto["Preco"];
+        }
+        
+        //Parcela
+        $pProduto["valorParcela"] = produto_CalcularParcela($pProduto["NumeroMaximoParcelas"],$pProduto["JurosAPartirDe"],$pProduto["PorcentagemJuros"],$pProduto["PrecoApresentacao"]);
+                 	
+        //-- Imagem -->
+        // Imagem Primaria 
+        if($pProduto["FotoPrincipal"] != null){
+            $pProduto["imagem1"] = base_url("img/Produtos/".$pProduto["FotoPrincipal"]);       
+        }
+        else{
+            $pProduto["imagem1"] = base_url("img/sem-foto.gif");
+        }
+        
+        //Imagem Secundaria
+        unset($pProduto["imagem2"]);
+        if($pProduto["FotoSecundaria"] != null){
+            $pProduto["imagem2"] = base_url("img/Produtos/".$pProduto["FotoSecundaria"]);   
+            $pProduto["classImg1"] = "Foto1";
+        }     
+        else{
+            $pProduto["classImg1"] = "Foto";
+        }
+        
+        return $pProduto;
+        
+    }
     

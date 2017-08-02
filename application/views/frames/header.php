@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
              
-        <link rel="shortcut icon" type="image/x-icon" href="<" title="" >
+        <link rel="shortcut icon" type="image/x-icon" href="<?=base_url("img/logo.png")?>" title="" >
         <title> <?=$title?> </title>
                       
         <link rel="stylesheet" type="text/css" href="<?=base_url("css/bootstrap.css")?>">  
@@ -17,6 +17,7 @@
 
         <script src="<?=base_url("js/jquery-2.1.3.min.js")?>"></script>
         <script src="<?=base_url("js/bootstrap.js")?>"></script>
+        <script src="<?=base_url("js/my_script-header.js")?>"></script>
         <script src="<?=base_url("js/less.js")?>"></script>
         
         <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
@@ -72,16 +73,49 @@
                     <?=anchor("home","<img src='".base_url('img/logo.png')."'>")?>
                 </div>
                     
-                <nav>
-                    <ul>
+                <nav class="nav_menu">
+                    
+                    <ul class="header-setor">
                         <?php for($n = 0;$n < count($header["lSetorHeader"]) && $n < 5;$n++){ ?>
 						
-                            <li>
-                            	<?=anchor("Produtos/Setor/{$header["lSetorHeader"][$n]["Descricao"]}/{$header["lSetorHeader"][$n]["Id"]}/Pagina/1"
-                            	,$header["lSetorHeader"][$n]["Descricao"]
-                            	,array( "class" => produto_activeFiltroValor("IdSetor", $header["lSetorHeader"][$n]["Id"])))?>
+                            <li class="header-setor-item">
+                                
+                            	<?=anchor("Produtos/Setor/{$header["lSetorHeader"][$n]["DescricaoSetor"]}/{$header["lSetorHeader"][$n]["IdSetor"]}/Pagina/1"
+                            	,$header["lSetorHeader"][$n]["DescricaoSetor"]
+                            	,array( "class" => produto_activeFiltroValor("IdSetor", $header["lSetorHeader"][$n]["IdSetor"])))?>
+                                
+                                <ul class="sub-nav1 header-grupo">
+                                
+                                    <?php foreach($header["lSetorHeader"][$n]["lGrupo"] as $itemGrupo){?>
+
+                                        <li class="header-grupo-item">
+                                            
+                                            <?=anchor("Produtos/Produtos_Filtros_Temp/{$header["lSetorHeader"][$n]["IdSetor"]}/{$itemGrupo["IdGrupo"]}"
+                                            ,$itemGrupo["DescricaoGrupo"])?>
+                                            
+                                            <img src="<?=base_url("img/Seta_direita.png")?>">
+                                            
+                                            <ul class="sub-nav2 header-subgrupo">
+
+                                                <?php foreach($itemGrupo["lSubGrupo"] as $itemSubGrupo){?>
+
+                                                    <li>
+                                                         <?=anchor("Produtos/Produtos_Filtros_Temp/{$header["lSetorHeader"][$n]["IdSetor"]}/{$itemGrupo["IdGrupo"]}/{$itemSubGrupo["IdSubGrupo"]}"
+                                                          ,$itemSubGrupo["DescricaoSubGrupo"])?>
+                                                    </li>
+
+                                                <?php } ?>
+
+                                            </ul>
+                                            
+                                        </li>
+
+                                    <?php } ?>
+
+                                </ul>
+                                
                             </li>
-                        
+
                         <?php } ?>
                         
                     </ul>    
@@ -90,8 +124,9 @@
                 <div class="shop">
                     <?=anchor("carrinho","<img src='".base_url('img/shop.png')."'>")?>
                     <span class="quantidade">(<?=$header["QuantidadeCarrinho"]?>)</span>
-                    <span class="valor">R$0,00</span>
+                    <span class="valor"><?=numeroEmReais($header["ValorCarrinho"])?></span>
                 </div>
+                
                 <div class="conta">
                 
                 	<?php if(empty($header["Cliente"])){ ?>

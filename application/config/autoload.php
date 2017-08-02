@@ -38,6 +38,7 @@ $autoload['helper'] = array(
 			,'cliente_helper'
             ,'cliente_enderecos_helper'
 			,'produto_promocao_helper'
+            ,'R_SetorXGrupoXSubGrupo_helper'
 			,'validacao_helper');
 
 /*
@@ -92,4 +93,5 @@ $autoload['model'] = array(
 				,'Sys_Cest_model'
 				,'Sys_Cst_Csosn_Origem_model'
 				,'Sys_Cst_Csosn_SituacaoTributaria_model'
+                ,'R_SetorXGrupoXSubGrupo_model'
 				);

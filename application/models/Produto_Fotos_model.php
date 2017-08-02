@@ -17,17 +17,17 @@
 
 			// WHERE		
 			if(isset($pData["Id"])){				$this->db->where("tb_produto_fotos.Id",					$pData["Id"]);}	
-			if(isset($pData["IsPrincipal"])){		$this->db->where("tb_produto_fotos.IsPrincipal",		$pData["IsPrincipal"]);}	
+			if(isset($pData["Ordem"])){		        $this->db->where("tb_produto_fotos.Ordem",		        $pData["Ordem"]);}	
 			if(isset($pData["Produto"]["Id"])){		$this->db->where("tb_produto_fotos.IdProduto",			$pData["Produto"]["Id"]);}	
 			if(isset($pData["NomeArquivo"])){		$this->db->where("tb_produto_fotos.NomeArquivo",		$pData["NomeArquivo"]);}	
 
-			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_produto_fotos.IdUsuarioInclusao",		$pData["IdUsuarioInclusao"]);}
+			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_produto_fotos.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}
 			if(isset($pData["IdUsuarioAlteracao"])){$this->db->where("tb_produto_fotos.IdUsuarioAlteracao",	$pData["IdUsuarioAlteracao"]);}
-			if(isset($pData["DataInclusaoDe"])){	$this->db->where("tb_produto_fotos.DataInclusao >=",		$pData["DataInclusaoDe"]);}
-			if(isset($pData["DataInclusaoAte"])){	$this->db->where("tb_produto_fotos.DataInclusao <=",		$pData["DataInclusaoAte"]);}
-			if(isset($pData["DataAlteracaoDe"])){	$this->db->where("tb_produto_fotos.DataAlteracao >=",		$pData["DataAlteracaoDe"]);}
-			if(isset($pData["DataAlteracaoAte"])){	$this->db->where("tb_produto_fotos.DataAlteracao <=",		$pData["DataAlteracaoAte"]);}
-			if(isset($pData["Origem"]["Id"])){		$this->db->where("tb_produto_fotos.IdOrigem <=",			$pData["Origem"]["Id"]);}
+			if(isset($pData["DataInclusaoDe"])){	$this->db->where("tb_produto_fotos.DataInclusao >=",	$pData["DataInclusaoDe"]);}
+			if(isset($pData["DataInclusaoAte"])){	$this->db->where("tb_produto_fotos.DataInclusao <=",	$pData["DataInclusaoAte"]);}
+			if(isset($pData["DataAlteracaoDe"])){	$this->db->where("tb_produto_fotos.DataAlteracao >=",	$pData["DataAlteracaoDe"]);}
+			if(isset($pData["DataAlteracaoAte"])){	$this->db->where("tb_produto_fotos.DataAlteracao <=",	$pData["DataAlteracaoAte"]);}
+			if(isset($pData["Origem"]["Id"])){		$this->db->where("tb_produto_fotos.IdOrigem <=",		 $pData["Origem"]["Id"]);}
 						
 			/* -- JOIN -- */
 			if(isset($pData["Join"])){

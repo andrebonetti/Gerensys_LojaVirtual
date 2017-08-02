@@ -1,3 +1,4 @@
+// -- SLIDE
 var alturaTela = $(window).height();
 
 $(".slide").css("height",alturaTela);

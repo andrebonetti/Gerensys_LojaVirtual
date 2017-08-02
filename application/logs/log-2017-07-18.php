@@ -1320,3 +1320,383 @@ ERROR - 2017-07-18 11:43:02 --> Severity: 8192  --> mysql_pconnect(): The mysql 
 ERROR - 2017-07-18 11:43:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
 ERROR - 2017-07-18 11:43:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
 ERROR - 2017-07-18 11:43:06 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:01:12 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:20:48 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:02 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:02 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:05 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:05 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:21:06 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:21:07 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:21:08 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:21:09 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:21:09 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:21:13 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:14 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:16 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:21:16 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:21:19 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:30 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:31 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:33 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:33 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:21:34 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:21:34 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:21:34 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:21:34 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:21:34 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:21:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:42 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:45 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:21:45 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:21:49 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:23:38 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:41:31 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:41:32 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:41:47 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:41:48 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:41:50 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:41:50 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:41:54 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:42:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:42:44 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:42:46 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:42:46 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:42:46 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:42:46 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:42:46 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:42:47 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:42:51 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:15 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:16 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:22 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:34 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:39 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:42 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:43:42 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:43:44 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:43:52 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:24 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:29 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:30 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:32 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:32 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:46:32 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:46:32 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:46:32 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:32 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:46:33 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:46:36 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:36 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:39 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:46:39 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:46:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:40 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:46:40 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:46:41 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:46:48 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:46:49 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:06 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:07 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:07 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 19:47:07 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 19:47:08 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 19:47:10 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:24 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:33 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 19:47:34 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:09:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:22:36 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:23:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:23:41 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:23:55 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 20:23:56 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 20:24:05 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:26:16 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:26:17 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:26:19 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 20:26:19 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 20:26:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:57:30 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:57:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:57:42 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:57:47 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:57:47 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 20:57:48 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 20:57:49 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:58:58 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:59:07 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 20:59:08 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:00:01 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:00:02 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:00:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 21:00:04 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 21:00:05 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 21:00:05 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 21:00:05 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 21:00:05 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 21:00:06 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:05:44 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:05:45 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:05:57 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:05:58 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:04 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 21:06:04 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 21:06:13 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:37 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:38 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:40 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 21:06:40 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 21:06:41 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 21:06:41 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 21:06:42 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:43 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:45 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 21:06:45 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 21:06:46 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:52 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:06:53 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:07:20 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:07:21 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:07:23 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:07:23 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php 107
+ERROR - 2017-07-18 21:07:23 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 40
+ERROR - 2017-07-18 21:07:23 --> Severity: Notice  --> Undefined index: Descricao D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 47
+ERROR - 2017-07-18 21:07:23 --> Severity: Notice  --> Undefined index: NumeroMaximoParcelas D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:07:23 --> Severity: Notice  --> Undefined index: JurosAPartirDe D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:07:23 --> Severity: Notice  --> Undefined index: PorcentagemJuros D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 51
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 53
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 84
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Id D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 89
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Preco D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 90
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Detalhes D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 156
+ERROR - 2017-07-18 21:07:24 --> Severity: Notice  --> Undefined index: Informacoes_Adicionais D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php 164
+ERROR - 2017-07-18 21:07:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:07:29 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2017-07-18 21:07:30 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\Gerensys_LojaVirtual\system\database\drivers\mysql\mysql_driver.php 91
