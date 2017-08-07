@@ -8,7 +8,7 @@
 			public function login_form(){	
             
                 // --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
              
                 // --------------------------CONTENT---------------------------------- 
                 $content = array(
@@ -26,7 +26,7 @@
     		public function cadastro_incluir_form(){	
                 
                 // --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
 
                 $dataCadastro["Email"] = $this->input->post("email");	
                 
@@ -48,18 +48,20 @@
 		   	public function pedidos(){	
             
                 // --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
-            
-                $data["Cliente"] = $header["Cliente"];
-                $data["IsCount"] = true;
                 
-                $countFavoritos = $this->Cliente_Favoritos_model->Listar($data);
-    			
+                // --- HEADER CLIENTE ---
+                $headerCliente = cliente_preencheConteudoHeader($header);
+                
+                $dataBuscaPedidos["IdCliente"] = $header["Cliente"];
+                $lPedidos = $this->Cliente_Pedidos_model->Listar($dataBuscaPedidos);
+                
     			// --- CONTENT ---	
     			$content = array(
-                "countFavoritos" => $countFavoritos
-                ,"header"	      => $header
+                "header"	      => $header
+                ,"headerCliente"  => $headerCliente
+                ,"lPedidos"       => $lPedidos
                 ,"title"          => "Loja Virtual | Catalogo de Produtos"
                 ,"atual_page"     => "pedidos");
                 
@@ -70,7 +72,7 @@
             public function favoritos(){
                 
                 // --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
             
                 $data["Cliente"] = $header["Cliente"];
@@ -95,7 +97,7 @@
             public function cadastro_atualizar_form(){
 			
     			// --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
     			
     			$data["Cliente"] = $header["Cliente"];
@@ -118,7 +120,7 @@
 	        public function enderecos(){	
             
             // --- HEADER ---
-            $header = preencheConteudoHeader();
+            $header = header_preencheConteudoHeader();
             if(empty($header["Cliente"])){redirect("home");}
             
             // -- ENDERECOS --
@@ -157,7 +159,7 @@
 			public function enderecos_incluir_form(){
                 
                 // --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
 				
 				$content = array(
@@ -176,7 +178,7 @@
             public function enderecos_atualizar_form($pId){
 			
                 // --- HEADER ---
-                $header = preencheConteudoHeader();
+                $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
                 
                 $data["Id"] = $pId;
@@ -530,5 +532,42 @@
             redirect("cliente/favoritos");
             
         }
+
+        public function pedidos_incluir_post(){
+             
+            $this->output->enable_profiler(TRUE); 
+             
+            $cliente = cliente_validarSessao();
+            
+            if(empty($cliente)){
+                "tratar usuario não logado";
+            }
+            else{
+                
+                $dataInsert["QtdeProdutos"]   = $this->input->post("QuantidadeCarrinho");
+                $dataInsert["ValorTotal"]     = $this->input->post("ValorCarrinho");
+                
+                $dataInsert["IdCliente"]      = $cliente["Id"];
+                
+                $dataInsert["IdPedidoStatus"] = 1;
+                
+                $dataInsert["Numero"]         = carrinho_gerarNumero();
+                
+                //INSERT tb_cliente_pedidos
+                $dataInsertProduto["IdPedido"] = $this->Cliente_Pedidos_model->Incluir($dataInsert);
+                 
+                for($n = 1;$n <= $dataInsert["QtdeProdutos"]; $n++){
+                    
+                    $dataInsertProduto["IdProduto"] = $this->input->post("IdProduto{$n}");
+                    
+                    $this->Cliente_Pedido_Produtos_model->Incluir($dataInsertProduto);
+                }
+            
+            }
+            
+            carrinho_limpar();
+            redirect("Cliente/pedidos");
+        }
+        
             
     }

@@ -193,3 +193,15 @@
 
 		return $validacao;
 	}
+
+    function cliente_preencheConteudoHeader($pHeader){
+        
+        $ci = get_instance();
+        
+        $dataBuscaFavoritos["Cliente"] = $pHeader["Cliente"];
+        $dataBuscaFavoritos["IsCount"] = true;
+        
+        $data["CountFavoritos"] = $ci->Cliente_Favoritos_model->Listar($dataBuscaFavoritos);
+        
+        return $data;
+    }

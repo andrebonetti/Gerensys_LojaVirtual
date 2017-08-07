@@ -210,6 +210,63 @@
 
 		return $retorno;
 	}
+    
+    function produto_ListarOpcoesParcelas($pNumeroParcelas,$pJurosAPartirDe,$pPorcentagemJuros,$pPreco){
+    
+        $lOpcoesParcelas = array();
+        $pJurosAPartirDe = (int)$pJurosAPartirDe;
+        $jurosDecimal = (1 + ($pPorcentagemJuros/100));
+
+        for($n = 1; $n <= $pNumeroParcelas;$n ++){
+            
+            $opcaoParcela["Parcela"] = $n;
+            $opcaoParcela["Valor"] = $pPreco/$n;
+            
+            if($n >= $pJurosAPartirDe){
+                
+                $valorTotal = $pPreco;
+                
+                for($i = 1; $i < $n ; $i ++){               
+                    $valorTotal = $valorTotal * $jurosDecimal;
+                    //echo $i." - ".$valorTotal."<br>";
+                }
+                
+                /*$jurosDecimal = (1 + ($pPorcentagemJuros/100));
+                $jurosTotal = $jurosDecimal;
+                $mesesJuros++;
+                
+                for($i = 1; $i < $mesesJuros; $i ++){               
+                    $jurosTotal = $jurosTotal * $jurosDecimal;
+                    echo $i." - ".$jurosTotal."<br>";
+                }
+                
+                echo "TAXA Parcela ".$n." = ".$jurosTotal."<br>";*/
+                
+                $opcaoParcela["ValorTotal"] = $valorTotal;
+                $opcaoParcela["Valor"] = $opcaoParcela["ValorTotal"]/$n;
+                $opcaoParcela["Juros"] = numeroEmPorcentagem($pPorcentagemJuros);
+            }
+            else{
+                //echo "TAXA Parcela ".$n." = 1 <br>";
+                
+                $opcaoParcela["ValorTotal"] = $pPreco;
+                $opcaoParcela["Juros"] = 0;
+            }
+            
+            $opcaoParcela["ValorTotal"] = numeroEmReais($opcaoParcela["ValorTotal"]);
+            $opcaoParcela["Valor"] = numeroEmReais($opcaoParcela["Valor"]);
+            
+            /*echo "PARCELA ".$n." = ".$opcaoParcela["Valor"]."<br>";
+            echo "TOTAL = ".$opcaoParcela["ValorTotal"]."<br>";
+            echo " ---------------------------------- <br>";*/
+                     
+            array_push($lOpcoesParcelas,$opcaoParcela);       
+        }
+        
+        return $lOpcoesParcelas;
+    
+    }
+
 	
 	function produto_HasSession(){
 		

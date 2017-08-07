@@ -5,7 +5,7 @@
 		public function index(){	
             
             // --- HEADER ---
-            $header = preencheConteudoHeader();
+            $header = header_preencheConteudoHeader();
 
             /*--------------------------CONTENT----------------------------------*/
             $content = array(

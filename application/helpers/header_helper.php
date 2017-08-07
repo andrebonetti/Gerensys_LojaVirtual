@@ -1,6 +1,6 @@
 <?php
 
-    function preencheConteudoHeader(){
+    function header_preencheConteudoHeader(){
         
         $ci = get_instance();
         
@@ -11,11 +11,6 @@
         
         // --- LISTA SETORES ---
         $data["lSetorHeader"]  = R_SetorXGrupoXSubGrupo_ListarRelacao(); 
-        
-        /*var_dump($data["lSetorHeader"]);
-        var_dump($data["lSetorHeader"][0]);
-        var_dump($data["lSetorHeader"][0]["lGrupo"]);
-        var_dump($data["lSetorHeader"][0]["lGrupo"][0]);*/
         
         // --- CARRINHO ---
         // QTDE

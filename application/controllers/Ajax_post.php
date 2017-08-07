@@ -55,4 +55,25 @@ class Ajax_Post extends CI_Controller {
 
 		echo json_encode($dataResult);
 	}
+    
+    // This function call from AJAX
+	public function AlterarSessaoCarrinho() {
+		     
+        $data["Quantidade"]	     = $this->input->post("quantidade");  
+        $data["Produto"]["Id"]	 = $this->input->post("idProduto"); 
+        $data["Produto"]["Preco"]= $this->input->post("precoProduto");  
+        
+        $count                   = $this->input->post("count");  
+             
+        carrinho_adicionarProdutoSessao($data);
+        
+        $dataResult = array();
+		$dataResult["ValorTotal"]             = numeroEmReais($this->session->userdata("CarrinhoValorTotal")); 
+        $dataResult["SubTotalProdutoAtual"]   = numeroEmReais($this->session->userdata("Carrinho{$count}SubTotal")); 
+        
+		echo json_encode($dataResult);
+	}
+    
+    
+    
 }

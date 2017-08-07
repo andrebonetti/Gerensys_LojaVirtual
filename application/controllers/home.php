@@ -5,7 +5,7 @@
 		public function index(){	
             
             // --- HEADER ---
-            $header = preencheConteudoHeader();
+            $header = header_preencheConteudoHeader();
             
             $lDestaque   = $this->Produto_Destaques_model	->Listar(array("lJoin" => true,"Produto" => array ("Join" => true,"IsBusca" => true)));
 			$lNovidade   = $this->Produto_model			    ->Listar(array("OrderBy" => "Id","OrderByRegra" => "desc", "Limite" => 5, "Join" => true));          

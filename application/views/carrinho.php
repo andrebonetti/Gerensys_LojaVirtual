@@ -6,23 +6,30 @@
         <?php if(count($lCarrinho) > 0){?>
             
             <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="imagem">Imagem</th>
-                    <th class="nome">Produto</th>
-                    <th class="quantidade">Quantidade</th>
-                    <th class="preco-unitario">Preço</th>
-                    <th class="preco-subTotal">SubTotal</th>
-                    <th class="delete"><?=anchor("carrinho/limpar_carrinho","Limpar Tudo")?></th>
-                </tr>
-            </thead>
+                
+                <thead>
+                    <tr>
+                        <th class="item">Item</th>
+                        <th class="imagem">Imagem</th>
+                        <th class="nome">Produto</th>
+                        <th class="quantidade">Quantidade</th>
+                        <th class="preco-unitario">Preço</th>
+                        <th class="preco-subTotal">SubTotal</th>
+                        <th class="delete"><?=anchor("carrinho/limpar_carrinho","Limpar Tudo")?></th>
+                    </tr>
+                </thead>
+                
+                <tbody>
 
-            <tbody>
-            
                 <?php foreach($lCarrinho as $itemCarrinho){ ?>
                     
                     <tr>
-
+                        
+                        <!-- N -->
+                        <td class="item" value="<?=$itemCarrinho["Produto"]["Id"]?>">
+                            <?=$itemCarrinho["Count"]?>
+                        </td>
+                        
                         <!-- IMAGEM -->
                         <td class="imagem">
                             <?=anchor("produtos/produto_descricao/{$itemCarrinho["Produto"]["Id"]}","<img src='".base_url("img/Produtos/{$itemCarrinho["Produto"]["FotoPrincipal"]}")."'>")?>
@@ -36,7 +43,7 @@
                         <!-- QUANTIDADE -->
                         <td class="quantidade">
 
-                            <input type="text" class="form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
+                            <input type="text" class="input-qtde form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
                             <div class="opcoes">
                                 <img class="plus" src="<?=base_url("img/plus.png")?>">
                                 <img class="less" src="<?=base_url("img/less.png")?>">
@@ -44,12 +51,12 @@
                         </td>
 
                         <!-- PREÇO UNITARIO -->
-                        <td class="preco-unitario">
+                        <td class="preco-unitario" value="<?=$itemCarrinho["Produto"]["Preco"]?>">
                             <?=numeroEmReais($itemCarrinho["Produto"]["Preco"])?>
                         </td>
 
                         <!--PRECO SUB_TOTAL-->
-                        <td class="preco-subTotal">
+                        <td class="preco-subTotal subTotal-<?=$itemCarrinho["Count"]?>">
                            <?=numeroEmReais($itemCarrinho["SubTotal"])?>
                         </td>
 
@@ -62,9 +69,9 @@
                 
                 <?php } ?>
 
-            </tbody>
+                </tbody>
                 
-        </table>
+            </table>
 
              <div class="calculo-frete">
 
@@ -82,8 +89,22 @@
                 
                 <div class="opcoes">
                 <?=anchor("produtos","Continuar Comprando",array("class"=>"btn btn-primary"))?>
-                <?=anchor("#","Finalizar Compra",array("class"=>"btn btn-danger"))?>
                 
+                <?=form_open("Cliente/pedidos_incluir_post")?>
+                
+                    <input type="hidden" name="QuantidadeCarrinho" value="<?=$header["QuantidadeCarrinho"]?>" />
+                    <input type="hidden" name="ValorCarrinho" value="<?=$header["ValorCarrinho"]?>" />
+                
+                    <?php $n = 1; foreach($lCarrinho as $itemCarrinho){ ?>
+                    
+                        <input type="hidden" name="IdProduto<?=$n?>" value="<?=$itemCarrinho["Produto"]["Id"]?>"/>
+                    
+                    <?php $n++; } ?>
+                    
+                    <input type="submit" value="Finalizar Compra" class="btn btn-danger"/>
+                    
+                <?=form_close()?>
+                    
             </div> 
        
             </div>
@@ -96,3 +117,5 @@
         
     </div>
 </section>
+
+<script src="<?=base_url("js/my_script-carrinho.js")?>"></script> 

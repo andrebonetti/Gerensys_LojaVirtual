@@ -75,7 +75,7 @@
             		,Marca.Descricao AS DescricaoMarca
             		,Tipo.Descricao AS DescricaoTipo";
                     
-                    if ( (isset($pData["ClienteLogado"])) && ($pData["ClienteLogado"]["Id"] != null) ){
+                    if ( (isset($pData["ClienteLogado"])) && ( !empty($pData["ClienteLogado"])) ){
                     
                         $this->db->join("tb_cliente_favoritos AS Favoritos", "Favoritos.IdProduto = tb_produto.Id AND Favoritos.IdCliente = {$pData["ClienteLogado"]["Id"]}","left");
                         

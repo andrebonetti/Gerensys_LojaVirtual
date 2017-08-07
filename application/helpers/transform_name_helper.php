@@ -1,11 +1,19 @@
 <?php
 
+    /*function arredondarNumero($pNumero,$pCasas) {
+        return number_format($pNumero, $pCasas, ",", ".");
+	}*/
+
 	function numeroEmReais($numero) {
-		    return "R$ " . number_format($numero, 2, ",", ".");
+        return "R$ " . number_format($numero, 2, ",", ".");
 	}
 
 	function numeroEmReais2($numero) {
-		    return number_format($numero, 2, ",", ".");
+        return number_format($numero, 2, ",", ".");
+	}
+
+    function numeroEmPorcentagem($numero) {
+        return "% " . number_format($numero, 2, ",", ".")." a.m";
 	}
 
 	function no_acento_code($string){

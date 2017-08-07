@@ -6,7 +6,7 @@
 	    public function index(){	
             
             // --- HEADER ---
-            $header = preencheConteudoHeader();
+            $header = header_preencheConteudoHeader();
             
             // --- CONTEUDO ---
             $CarrinhoCount = $this->session->userdata("CarrinhoCount"); 
@@ -63,23 +63,9 @@
          public function limpar_carrinho(){
              
             $this->output->enable_profiler(TRUE); 
-         
-            // --- CONTEUDO ---
-            $CarrinhoCount = $this->session->userdata("CarrinhoCount"); 
             
-            for($n = 1;$n <= $CarrinhoCount;$n++){
-                
-                $idProduto = $this->session->userdata("Carrinho{$n}IdProduto");
-                
-                $this->session->unset_userdata("Carrinho{$n}IdProduto");
-                $this->session->unset_userdata("Carrinho{$n}Quantidade"); 
-                $this->session->unset_userdata("Carrinho{$n}Preco"); 
-                $this->session->unset_userdata("IdProduto{$idProduto}Count");
-            }
-            
-            $this->session->set_userdata("CarrinhoCount",0); 
-            $this->session->set_userdata("CarrinhoValorTotal",0);
-            
+            carrinho_limpar();
+
             redirect("carrinho");
          } 
          
@@ -136,5 +122,4 @@
       
             redirect("carrinho");
          } 
-        
     }

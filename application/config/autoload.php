@@ -37,6 +37,7 @@ $autoload['helper'] = array(
 			,'produto_helper'
 			,'cliente_helper'
             ,'cliente_enderecos_helper'
+            ,'cliente_pedidos_helper'
 			,'produto_promocao_helper'
             ,'R_SetorXGrupoXSubGrupo_helper'
 			,'validacao_helper');
@@ -84,6 +85,8 @@ $autoload['model'] = array(
 				,'Cliente_model'
 				,'Cliente_Enderecos_model'
                 ,'Cliente_Favoritos_model'
+                ,'Cliente_Pedidos_model'
+                ,'Cliente_Pedido_Produtos_model'
 				,'Functions_model'
 				,'Sys_Info_Campos_model'
 				,'Sys_UnidadeApresentacao_model'

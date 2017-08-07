@@ -57,11 +57,17 @@
                  
                     <h2>Preço: <?=$produto["Preco"]?></h2>
 
-                    <p class="valor-total">R$ 39,90</p>
-					
 					<?php if($valorParcela != 0){ ?>
-                    	<p class="parcela"><span class="no-negrito">ou</span> <?=$produto["NumeroMaximoParcelas"]?> <span class="no-negrito">de</span> <?=numeroEmReais($valorParcela)?></p>
-					<?php } ?>
+                        <div class="opcao-parcela">
+                    	   <p>
+                               <span class="no-negrito">ou</span> 
+                                <?=$produto["NumeroMaximoParcelas"]?> 
+                               <span class="no-negrito">de</span> 
+                                <?=numeroEmReais($valorParcela)?>
+                            </p>
+                            <a href="" data-toggle="modal" data-target="#mdlParcelas">Ver Parcelas</a>
+					    </div>
+                    <?php } ?>
                     
                 </div>
 
@@ -83,7 +89,7 @@
 
                     <h2>Comprar</h2>
                     
-                    <?php if($produto["IdFavorito"] != null){ ?>
+                    <?php if( (isset($produto["IdFavorito"])) && ($produto["IdFavorito"] != null) ) { ?>
                         <?=anchor("cliente/favoritos_excluir/{$produto["IdFavorito"]}/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos_vermelho.png")."'>",array("class"=>"favoritos_add"))?>
                     <?php } else { ?>               
                         <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos.png")."'>",array("class"=>"favoritos_add"))?>                 
@@ -256,4 +262,58 @@
         <?php } ?>
         
     </div>
+    
+    <div class="modal fade" id="mdlParcelas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Contato</h4>
+                </div>
+                
+                <div class="modal-body">
+                  
+                    <?php  $lOpcoesParcelas = produto_ListarOpcoesParcelas($produto["NumeroMaximoParcelas"],$produto["JurosAPartirDe"],$produto["PorcentagemJuros"],$produto["Preco"])?>
+                 
+                    <table class="table table-stripped">
+                    
+                        <thead>
+                        
+                            <tr>
+                            
+                                <th>Parcela</th>
+                                <th>Valor</th>
+                                <th>Juros</th>
+                                <th>Valor Total</th>
+                                
+                            </tr>
+                            
+                        </thead>
+                    
+                        <tbody>
+                        
+                            <?php foreach ($lOpcoesParcelas as $itemParcela) { ?>
+                            
+                                <tr>
+                                
+                                    <td><?=$itemParcela["Parcela"]?></td>
+                                    <td><?=$itemParcela["Valor"]?></td>
+                                    <td><?=$itemParcela["Juros"]?></td>
+                                    <td><?=$itemParcela["ValorTotal"]?></td>
+                                    
+                                </tr>
+                            
+                            <?php } ?>
+                            
+                        </tbody>
+                        
+                    </table>
+                    
+                </div>
+                
+            </div>
+          </div>
+    </div>
+    
 </section>

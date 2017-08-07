@@ -30,7 +30,7 @@
         <aside class="menu">
         
             <?=anchor("cliente/pedidos","Pedidos",array("class"=>atual_page($atual_page, "pedidos")))?> 
-            <?=anchor("cliente/favoritos","Favoritos ({$countFavoritos})",array("class"=>atual_page($atual_page, "favoritos")))?> 
+            <?=anchor("cliente/favoritos","Favoritos ({$headerCliente["CountFavoritos"]})",array("class"=>atual_page($atual_page, "favoritos")))?> 
             <?=anchor("cliente/cadastro_atualizar_form","Cadastro",array("class"=>atual_page($atual_page, "cliente_cadastro")))?> 
             <?=anchor("cliente/enderecos","Endereços",array("class"=>atual_page($atual_page, "enderecos")))?> 
             <?=anchor("cliente/pagamentos","Opções de Pagamento",array("class"=>atual_page($atual_page, "pagamentos")))?> 

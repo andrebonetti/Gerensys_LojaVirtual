@@ -5,7 +5,7 @@
 	   public function index($pPaginaAtual = 1,$pFiltro = null,$pValor = null,$pValorDescricao = null){	
             
             // --- HEADER ---
-            $header = preencheConteudoHeader();
+            $header = header_preencheConteudoHeader();
             
             // --- PAGINACAO ---
             $limite 			= '15';
@@ -77,7 +77,7 @@
        public function produto_descricao($pIdProduto){	
             
             // --- HEADER ---
-            $header = preencheConteudoHeader();
+            $header = header_preencheConteudoHeader();
             
             // -- PRODUTO --
             $dataBusca["Id"]            = $pIdProduto;
