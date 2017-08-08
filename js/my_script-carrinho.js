@@ -8,10 +8,9 @@ $(document).on("click", ".plus", function(){
     idProduto = tr.find(".item").attr("value");
     Count = parseInt(tr.find(".item").text());
     
-    input.val(qtdeAtual + 1);
-    
     AlterarSessaoCarrinho(1,idProduto,precoProduto,Count);
     
+    input.val(qtdeAtual + 1);   
 });
 
 $(document).on("click", ".less", function(){
@@ -20,6 +19,14 @@ $(document).on("click", ".less", function(){
     qtdeAtual = parseInt(input.val());
     
     if(qtdeAtual > 0){
+        
+        tr  = $(this).closest("tr");
+        precoProduto = tr.find(".preco-unitario").attr("value");
+        idProduto = tr.find(".item").attr("value");
+        Count = parseInt(tr.find(".item").text());
+        
+        AlterarSessaoCarrinho(-1,idProduto,precoProduto,Count);
+        
         input.val(qtdeAtual - 1);
     }
     

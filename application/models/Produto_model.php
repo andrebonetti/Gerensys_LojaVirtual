@@ -169,66 +169,47 @@
             	// IsBusca
 				if( (isset($pData["IsBusca"])) && ($pData["IsBusca"] == true) ){
 					
-	                if( isset($pData["lJoinCompleto"]) && $pData["lJoinCompleto"] == true ){
-							
-						$lProduto["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Join" => true,"Produto" => $lProduto));
-						$lProduto["Precos"] 				= $this->Produto_Preco_model				->Listar(array("IsBusca" => true, "Join" => true,"Produto" => $lProduto));
-						$lProduto["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Join" => true,"IsVigente" => true,"Produto" => $lProduto));
-						
-						if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
-							$lProduto["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => true,"Produto" => $lProduto));
-							$lProduto["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => true,"Produto" => $lProduto));
-						}
+	                if( !isset($pData["lJoinCompleto"])){$pData["lJoinCompleto"] = false;}
+	
+					$lProduto["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
+					$lProduto["Precos"] 				= $this->Produto_Preco_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto,"IsBusca" => true));
+					$lProduto["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto,"IsVigente" => true));
 					
-					}
-					else{
+					if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
 						
-						$lProduto["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Produto" => $lProduto));
-						$lProduto["Precos"] 					= $this->Produto_Preco_model				->Listar(array("IsBusca" => true,"Produto" => $lProduto));
-						$lProduto["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Produto" => $lProduto));
-						
-						if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
-							$lProduto["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Produto" => $lProduto));
-							$lProduto["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Produto" => $lProduto));
-						}
-						
-					}
+                        $lProduto["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
+						$lProduto["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
+					
+                        //Variantes
+                        $lProduto["lVariantes"]         = produtoEstoque_ListarVariantes($lProduto,true);
+
+                    }
+                    
 				}
 				else{
 					
 					$n = 0;
 	            	foreach($lProduto as $itemProduto){
 						
-						if( isset($pData["IsJoinCompleto"]) && $pData["IsJoinCompleto"] == true ){
-							
-							$lProduto[$n]["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Join" => true,"Produto" => $itemProduto));
-							$lProduto[$n]["Precos"] 					= $this->Produto_Preco_model				->Listar(array("IsBusca" => true, "Join" => true,"Produto" => $itemProduto));
-							$lProduto[$n]["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Join" => true,"IsVigente" => true,"Produto" => $itemProduto));
-							
-							if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
-								$lProduto[$n]["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => true,"Produto" => $itemProduto));
-								$lProduto[$n]["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => true,"Produto" => $itemProduto));
-							}
-						
-						}
-						else{
-							
-							$lProduto[$n]["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Produto" => $itemProduto));
-							$lProduto[$n]["Precos"] 					= $this->Produto_Preco_model				->Listar(array("IsBusca" => true,"Produto" => $itemProduto));
-							$lProduto[$n]["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Produto" => $itemProduto));
-							
-							if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
-								$lProduto[$n]["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Produto" => $itemProduto));
-								$lProduto[$n]["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Produto" => $itemProduto));
-							}
-							
-						}
+						if( !isset($pData["lJoinCompleto"])){$pData["lJoinCompleto"] = false;}
+	
+    					$lProduto[$n]["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
+    					$lProduto[$n]["Precos"] 				= $this->Produto_Preco_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto,"IsBusca" => true));
+    					$lProduto[$n]["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto,"IsVigente" => true));
+    					
+    					if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
+    						$lProduto[$n]["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
+    						$lProduto[$n]["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
+    					    
+                            //
+                            $lProduto[$n]["lVariantes"]         = produtoEstoque_ListarVariantes($lProduto,true);
+
+                        }
 						
 						$n++;
 						
 					}
 				}
-				
 				
 			}
 			

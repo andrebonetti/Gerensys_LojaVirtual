@@ -46,7 +46,13 @@
                             <input type="text" class="input-qtde form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
                             <div class="opcoes">
                                 <img class="plus" src="<?=base_url("img/plus.png")?>">
-                                <img class="less" src="<?=base_url("img/less.png")?>">
+                                
+                                <?php if($itemCarrinho["Quantidade"] > 1 ){?>
+                                    <img class="less" src="<?=base_url("img/less.png")?>">
+                                <?php } else { ?>
+                                    <?=anchor("carrinho/excluir_produto_carrinho/{$itemCarrinho["Count"]}","<img class='less' src='".base_url("img/less.png")."' >")?>
+                                <?php } ?>
+                                
                             </div>    
                         </td>
 

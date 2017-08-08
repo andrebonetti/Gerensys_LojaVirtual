@@ -42,7 +42,6 @@
 
             // -- Entidades Pai --
 			$lSetor		= $this->Setor_model	->Listar(array("lJoinCount" => true,array ("Produto" => $produtoData)) ); 
-			$lCor		= $this->Cor_model		->Listar(array("lJoinCount" => true,array ("Produto" => $produtoData)) ); 
 			$lGrupo		= $this->Grupo_model	->Listar(array("lJoinCount" => true,array ("Produto" => $produtoData)) ); 
 			$lMarca		= $this->Marca_model	->Listar(array("lJoinCount" => true,array ("Produto" => $produtoData)) ); 
 			$lSubGrupo	= $this->SubGrupo_model	->Listar(array("lJoinCount" => true,array ("Produto" => $produtoData)) );
@@ -55,7 +54,6 @@
             	"lProduto"			=> $lProduto
             	,"lProdutoFiltros"	=> $produtoData
             	,"lSetor"			=> $lSetor
-            	,"lCor"				=> $lCor
             	,"lGrupo"			=> $lGrupo
             	,"lMarca"			=> $lMarca
             	,"lSubGrupo"		=> $lSubGrupo
@@ -89,7 +87,7 @@
             $dataBusca["ClienteLogado"] = $header["Cliente"];
             
             $produto	= $this->Produto_model	->Listar($dataBusca);  
-			
+            
             // ----- Produtos Relacionados ----- //
             $dataProdutoRelacionado["Grupo"]["Id"] = $produto["IdGrupo"];
             $dataProdutoRelacionado["Setor"]["Id"] = $produto["IdSetor"];

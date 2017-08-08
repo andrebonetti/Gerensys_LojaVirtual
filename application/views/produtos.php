@@ -112,41 +112,6 @@
 	            
             <?php } ?>
 			            
-            <!-- Cores -->
-            <?php /*if( isset($lProdutoFiltros["SubGrupo"]["Id"])){ */?>
-            
-            	<div class="categorizacao">
-            
-	                <h2>Cores</h2>
-	               	<ul>
-	                    
-	                	<?php foreach($lCor as $itemCor){ ?>
-							
-	                        <li>
-	                            
-	                        	<?=anchor("produtos/index/1/IdCor/{$itemCor["Id"]}"
-	                        	,$itemCor["Descricao"]." (".$itemCor["CountFilhas"].")"
-	                        	,array( "class" => produto_activeFiltroValor("IdCor", $itemCor["Id"])))?>
-	                        
-	                        </li>
-	                    
-	                    <?php } ?>
-	                    
-	                    <?php if( produto_activeFiltro("IdCor") == "active" ){?>
-	                    
-	                    	<li class="limpra-filtro-atual">
-	                        	<?=anchor("Produtos/Cor/LimpezaFiltro"
-	                        	,"Limpar Filtro")?>
-	                        </li>
-	                    
-	                    <?php } ?>
-	                    
-	                </ul>
-	            
-	            </div>
-	            
-            <?php/* } */?>
-            
             <!-- Marcas -->
             <?php /*if( isset($lProdutoFiltros["SubGrupo"]["Id"])){ */?>
             
