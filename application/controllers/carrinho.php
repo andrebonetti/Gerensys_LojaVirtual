@@ -18,16 +18,29 @@
                 
                 if(!empty($dataProduto["Id"])){
                 
-                    $dataProduto["Join"] = true;
-                    $dataProduto["IsBusca"] = true;
+                    $dataProduto["Join"]       = true;
+                    $dataProduto["IsBusca"]    = true;
+                    $dataProduto["lJoin"] = true;
+                    $dataProduto["lVariantes"] = true;
                     
                     $produto = $this->Produto_model	->Listar($dataProduto);
-
+                    
                     $itemProduto["Produto"]    = $produto;
-                    $itemProduto["Quantidade"] = $this->session->userdata("Carrinho{$n}Quantidade"); 
+                    $itemProduto["Quantidade"] = $this->session->userdata("Carrinho{$n}Quantidade");
+                    $itemProduto["IdTamanho"]  = $this->session->userdata("Carrinho{$n}IdTamanho"); 
+                    $itemProduto["IdCor"]      = $this->session->userdata("Carrinho{$n}IdCor"); 
                     $itemProduto["SubTotal"]   = $produto["Preco"]*$itemProduto["Quantidade"];
                     $itemProduto["Count"]      = $n;
                     
+                    if( !empty($itemProduto["IdTamanho"])){
+                        $itemProduto["DescricaoTamanho"] = $this->Produto_V_Tamanho_model->Listar(array("Id" => $itemProduto["IdTamanho"],"IsBusca" => true))["Descricao"];
+                    }else{unset($itemProduto["IdTamanho"]);}
+                    
+                    if( !empty($itemProduto["IdCor"])){
+                        
+                        $itemProduto["DescricaoCor"] = $this->Produto_V_Cor_model->Listar(array("Id" => $itemProduto["IdCor"],"IsBusca" => true))["Descricao"];
+                    }else{unset($itemProduto["IdCor"]);}
+                   
                     array_push($lCarrinho,$itemProduto);
                 
                 }
@@ -53,11 +66,15 @@
          
             $data["Quantidade"]	     = $this->input->post("quantidade");  
 		    $data["Produto"]["Id"]	 = $this->input->post("idproduto"); 
-            $data["Produto"]["Preco"]= $this->input->post("precoproduto");  
+            $data["Produto"]["Preco"]= $this->input->post("precoproduto");
+            
+            $data["lVariantes"]["Tamanho"] = $this->input->post("IdTamanho");    
+            $data["lVariantes"]["Cor"]     = $this->input->post("IdCor");
              
             carrinho_adicionarProdutoSessao($data); 
              
-            redirect("produtos/produto_descricao/{$data["Produto"]["Id"]}"); 
+            redirect("carrinho"); 
+            //redirect("produtos/produto_descricao/{$data["Produto"]["Id"]}"); 
          } 
          
          public function limpar_carrinho(){
@@ -106,20 +123,25 @@
                 $IdProdutoAtual  = $this->session->userdata("Carrinho{$n}IdProduto");
                 $QuantidadeAtual = $this->session->userdata("Carrinho{$n}Quantidade"); 
                 $PrecoAtual      = $this->session->userdata("Carrinho{$n}Preco"); 
+                $SubTotal        = $this->session->userdata("Carrinho{$n}SubTotal");
+                $IdTamanho       = $this->session->userdata("Carrinho{$n}IdTamanho"); 
+                $IdCor           = $this->session->userdata("Carrinho{$n}IdCor"); 
+
                 $CountAtual      = $this->session->userdata("IdProduto{$n}Count");
                 
                 $NovoCount = $n-1;
-                $this->session->set_userdata("Carrinho{$NovoCount}IdProduto" ,$IdProdutoAtual);
-                $this->session->set_userdata("Carrinho{$NovoCount}Quantidade",$QuantidadeAtual); 
-                $this->session->set_userdata("Carrinho{$NovoCount}Preco"     ,$PrecoAtual); 
+                $this->session->set_userdata("Carrinho{$NovoCount}IdProduto"  ,$IdProdutoAtual);
+                $this->session->set_userdata("Carrinho{$NovoCount}Quantidade" ,$QuantidadeAtual); 
+                $this->session->set_userdata("Carrinho{$NovoCount}Preco"      ,$PrecoAtual); 
+                $this->session->set_userdata("Carrinho{$NovoCount}SubTotal"   ,$SubTotal);
+                $this->session->set_userdata("Carrinho{$NovoCount}IdTamanho"  ,$IdTamanho); 
+                $this->session->set_userdata("Carrinho{$NovoCount}IdCor"      ,$IdCor); 
                 $this->session->set_userdata("IdProduto{$IdProdutoAtual}Count",$NovoCount);
                 
             }
             
-            $this->session->unset_userdata("Carrinho{$CarrinhoCount}IdProduto");
-            $this->session->unset_userdata("Carrinho{$CarrinhoCount}Quantidade"); 
-            $this->session->unset_userdata("Carrinho{$CarrinhoCount}Preco"); 
-      
+            carrinho_unsetDataCount($CarrinhoCount); 
+             
             redirect("carrinho");
          } 
     }

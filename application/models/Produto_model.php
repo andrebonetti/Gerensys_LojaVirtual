@@ -179,12 +179,13 @@
 						
                         $lProduto["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
 						$lProduto["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
-					
-                        //Variantes
-                        $lProduto["lVariantes"]         = produtoEstoque_ListarVariantes($lProduto,true);
-
                     }
                     
+                    if ( (isset($pData["lVariantes"]) && $pData["lVariantes"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
+                        //Variantes
+                        $lProduto["lVariantes"]         = produtoEstoque_ListarVariantes($lProduto,true);
+                    }
+
 				}
 				else{
 					
@@ -199,11 +200,12 @@
     					
     					if ( (isset($pData["IsDescricao"]) && $pData["IsDescricao"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
     						$lProduto[$n]["CodigosAlternativos"]= $this->Produto_CodigosAlternativos_model	->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
-    						$lProduto[$n]["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
-    					    
-                            //
+    						$lProduto[$n]["Comentarios"] 		= $this->Produto_Comentarios_model			->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));			
+                        }
+                        
+                        if ( (isset($pData["lVariantes"]) && $pData["lVariantes"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
+                            //Variantes
                             $lProduto[$n]["lVariantes"]         = produtoEstoque_ListarVariantes($lProduto,true);
-
                         }
 						
 						$n++;

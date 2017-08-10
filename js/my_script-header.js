@@ -19,3 +19,5 @@ $(document).on("mouseleave", ".header-grupo", function(){
 $(document).on("mouseleave", ".header-subgrupo", function(){      
     $(this).hide(); 
 });
+
+$(function () {$('[data-toggle="tooltip"]').tooltip();})

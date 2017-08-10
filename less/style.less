@@ -983,10 +983,10 @@ header:extend(.full-container) {
         .container1:extend(.full-container){
             
             .info-compra{
-                .float(right,45%);         
-                background-color: @white-7;
+                .float(right,40%);         
+                background-color: @white-8;
                 padding:8px;
-                .border(4px,@white-4);
+                .border(4px,@blue-3);
                 display: table;
 
                 h1{
@@ -1003,87 +1003,9 @@ header:extend(.full-container) {
                     font-weight: 600;
                 }
                 
-                .variantes:extend(.full-container){
-                    background-color: @white-8;
-                    padding: 4px;
-                    
-                    h3{
-                       font-size: 1.05em; 
-                    }
-                    
-                    .listaVariantes:extend(.full-container){
-                        padding: 15px 0;
-                        
-                        .variante{
-                            float: left;
-                            
-                            a.esgotado{
-                                opacity:0.6;
-                                cursor:no-drop;
-                            }
-                            
-                            a.alerta{
-                                background-color: #ffa3a3;
-                            }
-                            a.alerta:hover{
-                                background-color: #ff7171;
-                            }
-                        }
-                        
-                    }
-                    
-                    .listaTamanhos{
-                        
-                        .variante{
-                            padding: 0 3px;
-                            
-                            a{ 
-                                width: 10px;
-                                color: @black-7;
-                                padding: 2px 4px;
-                                background-color: @white-10;
-                                border-radius: 4px;
-                                border: solid 2px @black-7;
-                                font-weight: 600;
-                                font-size: 1.05em;
-                            }
-                            
-                            a:hover{
-                                background-color: @white-9;
-                                border-color:@black-5;
-                                color: @black-5;
-                            }
-                        }
-                        
-                    }
-                    
-                    .listaCores{
-                        
-                        .variante{
-                            padding: 0 3px;
-                        
-                            a{
-                                padding: 2px 8px;
-                                border-radius: 4px;
-                                border: solid 2px @white-10;
-                            }
-                            
-                            a.alerta{
-                                border-color: #ffa3a3;
-                            }
-                            a.alerta:hover{
-                                border-color: #ff7171;
-                            }
-                        
-                        }
-                        
-                    }
-                    
-                }
-
                 .valor{
                     background-color: @white-9;
-                    padding: 4px;
+                    padding:8px 4px;
                     width: 100%;
                     display: table;
                     
@@ -1127,9 +1049,38 @@ header:extend(.full-container) {
                     }
                 }
 
+                .favoritos-classificacao:extend(.full-container){
+                    background-color: @white-10;
+                    padding:8px 4px;
+                    
+                    h3{
+                        font-size: 1.1em;
+                    }
+                    
+                    .favorito{
+                        text-align: center;
+                        .float(left,30%);
+                        
+                        a{
+                            
+                            
+                            img{
+                                margin-top: 8px;
+                                margin-bottom: 5px;
+                                width: 30px;
+                            }
+                        }
+                    }
+                    
+                    .classificacao{
+                        text-align: center;
+                        .float(right,70%);
+                    }
+                }
+                
                 .calculo-frete:extend(.full-container){
-                    background-color: @white-8;
-                    padding: 4px;
+                    background-color: @white-9;
+                    padding:8px 4px;
 
                     input{
 
@@ -1143,10 +1094,109 @@ header:extend(.full-container) {
                     }
 
                 }
+                
+                .variantes:extend(.full-container){
+                    background-color: @white-10;
+                    padding:8px 4px;
+                    
+                    h3{
+                       font-size: 1.05em; 
+                    }
+                    
+                    .listaVariantes:extend(.full-container){
+                        padding: 15px 0;
+                        
+                        .variante{
+                            float: left;
+                            
+                            p{
+                                cursor: pointer;
+                            }
+                            
+                            p.esgotado{
+                                opacity:0.6;
+                                cursor:no-drop;
+                            }
+                            
+                            p.alerta{
+                                background-color: #c32626;
+                                color: @white-9;
+                                border-color:  @white-9;
+                            }
+                            p.alerta:hover{
+                                background-color: #b41212;
+                                color: @white-10;
+                                border-color:  @white-10;
+                            }
+
+                        }
+                        
+                    }
+                    
+                    .listaTamanhos{
+                        
+                        .variante{
+                            padding: 0 3px;
+                            
+                            p{ 
+                                width: 10px;
+                                color: @black-7;
+                                padding: 2px;
+                                background-color: @white-10;
+                                border-radius: 4px;
+                                border: solid 2px @black-7;
+                                font-weight: 600;
+                                font-size: 0.95em;
+                                width: 35px;
+                                text-align: center;
+                            }
+                            
+                            p:hover{
+                                background-color: @white-9;
+                                border-color:@black-5;
+                                color: @black-5;
+                            }
+                            
+                            p.activeVariante{
+                                background-color: @white-7;
+                            }
+                        }
+                        
+                    }
+                    
+                    .listaCores{
+                        
+                        .variante{
+                            padding: 0 3px;
+                        
+                            p{
+                                width: 20px;
+                                height: 20px;
+                                padding: 2px 8px;
+                                border-radius: 4px;
+                                border: solid 2px transparent;
+                            }
+                            
+                            p.alerta{
+                                border-color: #c32626;
+                            }
+                            p.alerta:hover{
+                                border-color: #ff7171;
+                            }
+                            
+                            p.activeVariante{
+                                border-color: @white-5;
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
 
                 .compra:extend(.full-container){
                     background-color: @white-9;
-                    padding: 4px;
+                    padding:8px 4px;
                     
                     a.favoritos_add{
                         .float(left,10%);
@@ -1164,35 +1214,65 @@ header:extend(.full-container) {
                         
                     }
                     
-                    form{
-                        .float(left,50%); 
+                    form:extend(.full-container){
+                        .float(left,100%); 
+                        
+                        table{
+                            margin-bottom:0;
+                            
+                            tr{
+                                background-color: @white-10;
+                                
+                                .qtde{
+                                    width: 20%;
+                                }
+                                
+                                .tamanho{
+                                    width: 40%;
+                                }
+                                
+                                .cor{
+                                    width: 40%;
+                                }
+                                
+                                td.tamanho,td.cor{
+                                    
+                                    padding:18px 2px 2px 2px;
+                                    
+                                }
+                            }
+                            
+                        }
                         
                         input.quantidade{                
-                            width:29%;
-                            float: left;
+                            .float(left,50px);
                             text-align: center;
-                            height: 35px;
+                            height: 40px;
                         }
                         
-                        .adicionar-carrinho{
-                            width:70%;
-                            float: right;
-                            height: 35px;
-                        }
+                        .finalizacao-venda:extend(.full-container){
+                            padding-top: 5px;
+                            
+                            .alerta-variantes{
+                                margin: 3px 0;
+                                padding: 4px;
+                                text-align: center;
+                            }
                         
-                        label{
-                            width: 100%;
-                        }
-                    
-                    }
-                    
-                    .compra-rapida{
-                        float: right;
-                        height: 33px;
-                        width: 38%;
-                        margin-top: 25px;
-                    }
+                            .adicionar-carrinho{
+                                .float(left,49.5%);
+                                height: 35px;
+                            }
 
+                            .compra-rapida{
+                                .float(right,49.5%);
+                                height: 35px;
+                            }
+                            
+                        }    
+
+                    }
+                    
                 }
 
             }
@@ -1249,15 +1329,19 @@ header:extend(.full-container) {
         
         table:extend(.full-container){
             
+            .item{
+                width: 2%;
+            }
+            
             .imagem{
-                width: 15%;
+                width: 10%;
                 text-align: center;
                 
                 a{
                     width: 100%;
                     
                     img{
-                        height: 100px;
+                        height: 85px;
                     }
                 }    
                 
@@ -1265,12 +1349,22 @@ header:extend(.full-container) {
             
             .nome{
                 
-                width: 45%;
+                width: 30%;
+                
+            }
+            
+            .variantes{
+                
+                width: 18%;
+                
+                select{
+                    margin-bottom:8px;
+                }
                 
             }
             
             .quantidade{
-                //width: 10%;
+                width: 8%;
                 
                 input{
                     .float(left,50px);
@@ -1305,33 +1399,39 @@ header:extend(.full-container) {
             }
                      
             .preco-unitario{
-                //width: 10%;
+                width: 10%;
                 text-align: right;
-            }
-            th.preco-unitario{
-                text-align: left;
             }
             
             .preco-subTotal{
-                //width: 10%;
+                width: 10%;
                 text-align: right;
-            }
-            th.preco-subTotal{
-                text-align: left;
             }
             
             .delete{
-               //width: 20%; 
+               width: 10%; 
                text-align: right;
                 
                 img{
-                    width: 40px;
+                    width: 35px;
                     opacity: 0.8;
                 }    
                 
                 img:hover{
                     opacity: 1;
                 }
+            }
+            
+            td.nome,td.preco-unitario,td.preco-subTotal{
+                padding-top:18px;
+            }
+            
+            td.quantidade{
+                padding-top:8px;
+            }
+            
+            td.delete{
+                padding-top:18px;
             }
             
         }

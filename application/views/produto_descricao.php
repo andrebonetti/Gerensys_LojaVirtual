@@ -1,4 +1,3 @@
-<script src="<?=base_url("js/my_script-produtoDescricao.js")?>"></script>
 <script src="<?=base_url("js/jssor.js")?>"></script>
 <script src="<?=base_url("js/jssor.slider.js")?>"></script> 
 <script src="<?=base_url("js/my_jassor.js")?>"></script>
@@ -52,82 +51,7 @@
             
                 <h1><?=$produto["Descricao"]?></h1>
                 
-                <?php if( count($produto["lVariantes"]) > 0 ){ ?>
-                
-                    <div class="variantes">
-                
-                        <h2>Variantes</h2>
-                    
-                        <?php if( count($produto["lVariantes"]["lTamanho"] > 0 )) { ?>
-                        
-                            <h3>Tamanhos</h3>
-                        
-                            <div class="listaVariantes listaTamanhos">
-                                
-                                <?php foreach($produto["lVariantes"]["lTamanho"] as $itemTamanho){ ?>
-                                
-                                    <div class="variante">
-                                        
-                                        <?php 
-                                            $cssClass = produtoEstoque_DefinirCSSVariante($itemTamanho["Qtde_Estoque"]); 
-                                            $dataToggle = "";
-                                            if($cssClass == "alerta"){
-                                                $dataToggle = "tooltip";
-                                                $msg = "Restam apenas {$itemTamanho["Qtde_Estoque"]} produtos no estoque";
-                                            }
-                                            if($cssClass == "esgotado"){
-                                                $dataToggle = "tooltip";
-                                                $msg = "Produto Esgotado";
-                                            }                                                                                                                                                       
-                                        ?>
-                                        
-                                        <a href="#" class="<?=$cssClass?>" data-toggle="<?=$dataToggle?>" data-html="true" title="<?=$msg?>" ><?=$itemTamanho["DescricaoTamanho"]?></a>
-                                        
-                                    </div>
-                                
-                                <?php } ?>
-                                
-                            </div>
-                        
-                        <?php } ?>
-                        
-                        <?php if( count($produto["lVariantes"]["lCor"] > 0 )) { ?>
-                        
-                            <h3>Cores</h3>
-                        
-                            <div class="listaVariantes listaCores">
-                                
-                                <?php foreach($produto["lVariantes"]["lCor"] as $itemCor){ ?>
-                                
-                                    <div class="variante">
-                                        
-                                        <?php 
-                                            $cssClass = produtoEstoque_DefinirCSSVariante($itemCor["Qtde_Estoque"]); 
-                                            $dataToggle = "";
-                                            if($cssClass == "alerta"){
-                                                $dataToggle = "tooltip";
-                                                $msg = "Restam apenas {$itemCor["Qtde_Estoque"]} produtos no estoque";
-                                            }
-                                            if($cssClass == "esgotado"){
-                                                $dataToggle = "tooltip";
-                                                $msg = "Produto Esgotado";
-                                            }                                                                                                                                                       
-                                        ?>
-                                        
-                                        <a href="#" style="background-color: <?=$itemCor["CorCSS"]?>" class="<?=$cssClass?>" data-toggle="<?=$dataToggle?>" data-html="true" title="<?=$msg?>"></a>
-                                        
-                                    </div>
-                                
-                                <?php } ?>
-                                
-                            </div>
-                        
-                        <?php } ?>
-                        
-                    </div>
-                    
-                <?php } ?>
-
+                <!-- VALOR -->
                 <div class="valor">
                 
                 	<?php  $valorParcela = produto_CalcularParcela($produto["NumeroMaximoParcelas"],$produto["JurosAPartirDe"],$produto["PorcentagemJuros"],$produto["Preco"])?>
@@ -147,13 +71,38 @@
                     <?php } ?>
                     
                 </div>
-
+                
+                <!-- CARTOES -->
                 <div class="cartoes">
 
 
 
                 </div>
 
+                <!-- FAVORITOS - CLASSIFICACAO -->
+                <div class="favoritos-classificacao">
+                    
+                    <div class="favorito">
+                        
+                        <h3>Tornar Favorito</h3>
+                        
+                        <?php if( (isset($produto["IdFavorito"])) && ($produto["IdFavorito"] != null) ) { ?>
+                            <?=anchor("cliente/favoritos_excluir/{$produto["IdFavorito"]}/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos_vermelho.png")."'>",array("class"=>"favoritos_add"))?>
+                        <?php } else { ?>               
+                            <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos.png")."'>",array("class"=>"favoritos_add"))?>                 
+                        <?php } ?>
+                        
+                    </div>    
+                    
+                    <div class="classificacao">
+                    
+                        <h3>Classificação</h3>
+                        
+                    </div>
+                
+                </div>
+
+                <!-- CALCULA-FRETE -->
                 <div class="calculo-frete">
 
                     <h2>Calculo de Frete</h2>
@@ -161,31 +110,165 @@
                     <button class="calcular-frete" >Calcular Frete</button>
 
                 </div>
-
+                
+                <!-- VARIANTES -->
+                <?php if( count($produto["lVariantes"]) > 0 ){ ?>
+                
+                    <span class="has-variante no-view">1</span>
+                
+                    <div class="variantes">
+                
+                        <h2>Variantes</h2>
+                    
+                        <?php if( count($produto["lVariantes"]["lTamanho"] > 0 )) { ?>
+                        
+                            <span class="has-variante-tamanho no-view">1</span>
+                        
+                            <h3>Tamanhos</h3>
+                        
+                            <div class="listaVariantes listaTamanhos">
+                                
+                                <?php foreach($produto["lVariantes"]["lTamanho"] as $itemTamanho){ ?>
+                                
+                                    <div class="variante">
+                                        
+                                        <?php 
+                                            $cssClass = produtoEstoque_DefinirCSSVariante($itemTamanho["Qtde_Estoque"]); 
+                                            $dataToggle = "";
+                                            $msg = "";
+                                            $ativo = "variante-option";
+                                            if($cssClass == "alerta"){
+                                                $dataToggle = "tooltip";
+                                                $msg = "Restam apenas {$itemTamanho["Qtde_Estoque"]} produtos no estoque";
+                                            }
+                                            if($cssClass == "esgotado"){
+                                                $dataToggle = "tooltip";
+                                                $msg = "Produto Esgotado";
+                                                $ativo = "";
+                                            }                                                                                                                                                       
+                                        ?>
+                                        
+                                        <p class="<?=$cssClass?> <?=$ativo?> " data-name="tamanho" data-value="<?=$itemTamanho["IdTamanho"]?>" data-content="<?=$itemTamanho["DescricaoTamanho"]?>" data-toggle="<?=$dataToggle?>" data-html="true" title="<?=$msg?>" ><?=$itemTamanho["DescricaoTamanho"]?></p>
+                                        
+                                    </div>
+                                
+                                <?php } ?>
+                                
+                            </div>
+                        
+                        <?php } else { ?>
+                        
+                            <span class="has-variante-tamanho no-view">0</span>
+                        
+                        <?php } ?>
+                        
+                        <?php if( count($produto["lVariantes"]["lCor"] > 0 )) { ?>
+                        
+                            <span class="has-variante-cor no-view">1</span>
+                        
+                            <h3>Cores</h3>
+                        
+                            <div class="listaVariantes listaCores">
+                                
+                                <?php foreach($produto["lVariantes"]["lCor"] as $itemCor){ ?>
+                                
+                                    <div class="variante">
+                                        
+                                        <?php 
+                                            $cssClass = produtoEstoque_DefinirCSSVariante($itemCor["Qtde_Estoque"]); 
+                                            $dataToggle = "";
+                                            $msg = "";
+                                            $ativo = "variante-option";
+                                            if($cssClass == "alerta"){
+                                                $msg = " - Restam apenas {$itemCor["Qtde_Estoque"]} produtos no estoque";
+                                            }
+                                            if($cssClass == "esgotado"){
+                                                $msg = " - Produto Esgotado";
+                                                $ativo = "";
+                                            }                                                                                                                                                       
+                                        ?>
+                                        
+                                        <p style="background-color: <?=$itemCor["CorCSS"]?>" class="<?=$cssClass?> <?=$ativo?>" data-name="cor" data-value="<?=$itemCor["IdCor"]?>" data-content="<?=$itemCor["DescricaoCor"]?>" data-toggle="tooltip" data-html="true" title="<?=$itemCor["DescricaoCor"].$msg?>"></p>
+                                        
+                                    </div>
+                                
+                                <?php } ?>
+                                
+                            </div>
+                        
+                        <?php } else { ?>
+                        
+                            <span class="has-variante-cor no-view">0</span>
+                        
+                        <?php } ?>
+                        
+                    </div>
+                    
+                <?php } else { ?>
+                
+                    <span class="has-variante no-view">0</span>    
+                
+                <?php } ?>
+                
+                <!-- COMPRAR -->
                 <div class="compra">
 
                     <h2>Comprar</h2>
-                    
-                    <?php if( (isset($produto["IdFavorito"])) && ($produto["IdFavorito"] != null) ) { ?>
-                        <?=anchor("cliente/favoritos_excluir/{$produto["IdFavorito"]}/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos_vermelho.png")."'>",array("class"=>"favoritos_add"))?>
-                    <?php } else { ?>               
-                        <?=anchor("cliente/favoritos_incluir/{$produto["Id"]}","<img src='".base_url("img/icone_favoritos.png")."'>",array("class"=>"favoritos_add"))?>                 
-                    <?php } ?>
                     
                     <?= form_open("carrinho/incluir_post")?>
                     
                         <input type="hidden" name="idproduto" value="<?=$produto["Id"]?>"/>
                         <input type="hidden" name="precoproduto" value="<?=$produto["Preco"]?>"/>
+                    
+                        <table class="table table-stripped">
                         
-                        <label>Quantidade</label>
-                        <input type="text" class="form-control quantidade" name="quantidade" id="qtde" value="1">
+                            <thead>
+                            
+                                <tr>
+                                    <th class="qtde">Quantidade</th>
+                                    
+                                    <?php if (count($produto["lVariantes"]) > 0){ ?>
+                                    
+                                        <th class="tamanho">Tamanho</th>
+                                        <th class="cor">Cor</th>
+                                    
+                                    <?php } ?>
+                                </tr>
+                                
+                            </thead>
+                            
+                            <tbody>
+                                
+                                <tr>
+                                	<td class="qtde"><input type="text" class="form-control quantidade" name="quantidade" id="qtde" value="1"></td>
+                                    
+                                    <?php if (count($produto["lVariantes"]) > 0){ ?>
+                                    
+                                    <td class="tamanho tamanho-td">---</td>
+                                    <td class="cor cor-td">---</td>
+                                    
+                                    <?php } ?>
+                                    
+                                </tr>
+                                
+                            </tbody>
+                            
+                        </table>
+                    
+                        <input type="hidden" class="tamanho-input" name="IdTamanho" value="">
+                        <input type="hidden" class="cor-input" name="IdCor" value="">
 
-                        <input type="submit" class="adicionar-carrinho" value="Adicionar ao Carrinho">
-                        
+                        <div class="finalizacao-venda">
+                            
+                            <p class="alert alert-warning alerta-variantes no-view">Selecione todas as variantes do produto para finalizar a compra.</p>
+                            
+                            <input type="submit" class="btn btn-success adicionar-carrinho" value="Adicionar ao Carrinho">
+                            <button class="compra-rapida btn btn-danger">Compra Rapida</button>
+                            
+                        </div>
+                    
                     <?= form_close() ?>  
 
-                    <button class="compra-rapida">Compra Rapida</button>
-                    
                 </div>
 
             </div>
@@ -394,3 +477,5 @@
     </div>
     
 </section>
+
+<script src="<?=base_url("js/my_script-produtoDescricao.js")?>"></script>

@@ -8,7 +8,7 @@
 			$this->db->from("tb_produto_v_cor");			
 				
 			// WHERE		
-			if(isset($pData["Id"])){				$this->db->where("tb_cor.Id",					$pData["Id"]);}	
+			if(isset($pData["Id"])){				$this->db->where("tb_produto_v_cor.Id",					$pData["Id"]);}	
 			if(isset($pData["Descricao"])){			$this->db->where("tb_produto_v_cor.Descricao",			$pData["Descricao"]);}	
 
 			if(isset($pData["IdUsuarioInclusao"])){	$this->db->where("tb_produto_v_cor.IdUsuarioInclusao",	$pData["IdUsuarioInclusao"]);}

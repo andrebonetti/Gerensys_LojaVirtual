@@ -12,6 +12,7 @@
                         <th class="item">Item</th>
                         <th class="imagem">Imagem</th>
                         <th class="nome">Produto</th>
+                        <th class="variantes">Variantes</th>
                         <th class="quantidade">Quantidade</th>
                         <th class="preco-unitario">Preço</th>
                         <th class="preco-subTotal">SubTotal</th>
@@ -22,7 +23,7 @@
                 <tbody>
 
                 <?php foreach($lCarrinho as $itemCarrinho){ ?>
-                    
+                
                     <tr>
                         
                         <!-- N -->
@@ -38,6 +39,41 @@
                         <!-- NOME -->
                         <td class="nome">
                             <?=$itemCarrinho["Produto"]["Descricao"]?>
+                        </td>
+                        
+                        <!-- VARIANTES -->
+                        <td class="variantes">
+                        
+                            <?php if( isset($itemCarrinho["IdTamanho"]) ){ ?>
+                                <select class="form-control">
+                                    <option value="<?=$itemCarrinho["IdTamanho"]?>">Tamanho - <?=$itemCarrinho["DescricaoTamanho"]?></option>   
+
+                                    <?php foreach($itemCarrinho["Produto"]["lVariantes"]["lTamanho"] as $itemTamanho){ ?>
+
+                                        <?php if($itemCarrinho["IdTamanho"] != $itemTamanho["IdTamanho"]) { ?>
+                                            <option value="<?=$itemTamanho["IdTamanho"]?>">Tamanho - <?=$itemTamanho["DescricaoTamanho"]?></option>
+                                        <?php } ?> 
+
+                                    <?php } ?>
+
+                                </select>
+                            <?php } ?>
+                            
+                            <?php if( isset($itemCarrinho["IdCor"]) ){ ?>
+                                <select class="form-control">
+                                    <option value="<?=$itemCarrinho["IdCor"]?>">Cor - <?=$itemCarrinho["DescricaoCor"]?></option>   
+
+                                    <?php foreach($itemCarrinho["Produto"]["lVariantes"]["lCor"] as $itemCor){ ?>
+
+                                        <?php if($itemCarrinho["IdCor"] != $itemCor["IdCor"]) { ?>
+                                            <option value="<?=$itemCor["IdCor"]?>">Cor - <?=$itemCor["DescricaoCor"]?></option>
+                                        <?php } ?> 
+
+                                    <?php } ?>
+
+                                </select>
+                            <?php } ?>
+                            
                         </td>
 
                         <!-- QUANTIDADE -->

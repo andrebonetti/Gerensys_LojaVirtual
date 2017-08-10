@@ -15,6 +15,9 @@
             $ci->session->set_userdata("Carrinho{$CarrinhoCount}Preco"          ,$pData["Produto"]["Preco"]);                           //Preco
             $ci->session->set_userdata("Carrinho{$CarrinhoCount}SubTotal"       ,$pData["Produto"]["Preco"] * $pData["Quantidade"]); 
             
+            if( !empty($pData["lVariantes"]["Tamanho"]) ){$ci->session->set_userdata("Carrinho{$CarrinhoCount}IdTamanho",$pData["lVariantes"]["Tamanho"]); } //Preco
+            if( !empty($pData["lVariantes"]["Cor"]) )    {$ci->session->set_userdata("Carrinho{$CarrinhoCount}IdCor"    ,$pData["lVariantes"]["Cor"]);}       //Preco
+            
             $ci->session->set_userdata("IdProduto{$pData["Produto"]["Id"]}Count","1");                                                  //ProdutoCount
             
             // --- Valor Total ---
@@ -42,6 +45,9 @@
                 $ci->session->set_userdata("Carrinho{$CarrinhoCount}Quantidade"     ,$pData["Quantidade"]);                                 //Quantidade
                 $ci->session->set_userdata("Carrinho{$CarrinhoCount}Preco"          ,$pData["Produto"]["Preco"]);                           //Preco
                 $ci->session->set_userdata("Carrinho{$CarrinhoCount}SubTotal"       ,$pData["Produto"]["Preco"] * $pData["Quantidade"]); 
+                
+                if( !empty($pData["lVariantes"]["Tamanho"]) ){$ci->session->set_userdata("Carrinho{$CarrinhoCount}IdTamanho",$pData["lVariantes"]["Tamanho"]); } //Preco
+                if( !empty($pData["lVariantes"]["Cor"]) )    {$ci->session->set_userdata("Carrinho{$CarrinhoCount}IdCor"    ,$pData["lVariantes"]["Cor"]);}      //Preco
             
                 $ci->session->set_userdata("IdProduto{$pData["Produto"]["Id"]}Count",$CarrinhoCount);                                       //ProdutoCount
                 
@@ -68,14 +74,25 @@
             
             $idProduto = $ci->session->userdata("Carrinho{$n}IdProduto");
             
-            $ci->session->unset_userdata("Carrinho{$n}IdProduto");
-            $ci->session->unset_userdata("Carrinho{$n}Quantidade"); 
-            $ci->session->unset_userdata("Carrinho{$n}Preco");         
-            $ci->session->unset_userdata("Carrinho{$n}SubTotal"); 
+            carrinho_unsetDataCount($n);
+            
             $ci->session->unset_userdata("IdProduto{$idProduto}Count");
         }
         
         $ci->session->set_userdata("CarrinhoCount",0); 
         $ci->session->set_userdata("CarrinhoValorTotal",0);
         
+    }
+
+    function carrinho_unsetDataCount($pCountCarrinho){
+        
+        $ci = get_instance();   
+        
+        $ci->session->unset_userdata("Carrinho{$pCountCarrinho}IdProduto");
+        $ci->session->unset_userdata("Carrinho{$pCountCarrinho}Quantidade"); 
+        $ci->session->unset_userdata("Carrinho{$pCountCarrinho}Preco");         
+        $ci->session->unset_userdata("Carrinho{$pCountCarrinho}SubTotal"); 
+        $ci->session->unset_userdata("Carrinho{$pCountCarrinho}IdTamanho"); 
+        $ci->session->unset_userdata("Carrinho{$pCountCarrinho}IdCor"); 
+
     }

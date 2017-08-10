@@ -2,12 +2,10 @@
 
 class Ajax_Post extends CI_Controller {
 
-	// Show view Page
 	public function index(){
 		$this->load->view("ajax_post_view");
 	}
 
-	// This function call from AJAX
 	public function Valida_existencia() {
 		
 		$data = array(
@@ -56,7 +54,6 @@ class Ajax_Post extends CI_Controller {
 		echo json_encode($dataResult);
 	}
     
-    // This function call from AJAX
 	public function AlterarSessaoCarrinho() {
 		     
         $data["Quantidade"]	     = $this->input->post("quantidade");  
@@ -74,6 +71,12 @@ class Ajax_Post extends CI_Controller {
 		echo json_encode($dataResult);
 	}
     
-    
+    /*public function ProdutoDescricao_VerificarEstoqueVariante(){
+        
+        $idProduto = $this->input->post("idProduto");  
+        $tipo      = $this->input->post("tipo"); 
+        $id        = $this->input->post("id"); 
+        
+    }*/
     
 }

@@ -84,6 +84,7 @@
             $dataBusca["IsBusca"]       = true;
             $dataBusca["lJoinCompleto"] = true;
             $dataBusca["IsDescricao"]   = true;
+            $dataBusca["lVariantes"]    = true;
             $dataBusca["ClienteLogado"] = $header["Cliente"];
             
             $produto	= $this->Produto_model	->Listar($dataBusca);  
