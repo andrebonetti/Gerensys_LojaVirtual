@@ -69,35 +69,52 @@
         
         $lEstoque = $ci->Produto_Estoque_model->Listar($dataBusca);
         
-        $totalEstoque = 0;
+        $totalEstoque = array();
+        $totalEstoque["EstoqueTotal"] = 0;
+        $totalEstoque["lDetalhada"] = array();
         foreach($lEstoque as $itemEstoque){
-        
-            $totalEstoque = $totalEstoque + $itemEstoque["Qtde_estoque"];
             
-        }
+            $totalEstoque["EstoqueTotal"] = $totalEstoque["EstoqueTotal"] + $itemEstoque["Qtde_estoque"];
+            
+            unset($item);
+            if($pTipo == "Tamanho"){
+                $item["Chave"]            = "EstoqueIdCor{$itemEstoque["IdCor"]}";
+                $item["Conteudo"]         = $itemEstoque["Qtde_estoque"];
+            }
+            if($pTipo == "Cor"){
+                $item["Chave"]            = "EstoqueIdTamanho{$itemEstoque["IdTamanho"]}";
+                $item["Conteudo"]         = $itemEstoque["Qtde_estoque"];
+            }
+            
+            array_push($totalEstoque["lDetalhada"],$item);
+        }    
+        
+        //var_dump($totalEstoque);
                 
         return $totalEstoque;
     }
 
     function produtoEstoque_DefinirCSSVariante($pQtde){
         
-        $css = "";
-        
+        $info               = array();
+        $info["css"]        = "";
+        $info["qtdeAlerta"] = 1000000;
+            
         if($pQtde < 1){
             
-            $css = "esgotado";
+            $info["css"] = "esgotado";
             
         }
         else{
             
-            $valor = BuscarValorConfig("EstoqueVarianteAlerta");
+            $info["qtdeAlerta"] = BuscarValorConfig("EstoqueVarianteAlerta");
             
-            if($pQtde <= $valor){
+            if($pQtde <= $info["qtdeAlerta"]){
                 
-                $css = "alerta";
+                $info["css"] = "alerta";
                 
             }
         }
         
-        return $css;
+        return $info;
     }

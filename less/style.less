@@ -1004,7 +1004,7 @@ header:extend(.full-container) {
                 }
                 
                 .valor{
-                    background-color: @white-9;
+                    background-color: @white-10;
                     padding:8px 4px;
                     width: 100%;
                     display: table;
@@ -1050,7 +1050,7 @@ header:extend(.full-container) {
                 }
 
                 .favoritos-classificacao:extend(.full-container){
-                    background-color: @white-10;
+                    background-color: @white-9;
                     padding:8px 4px;
                     
                     h3{
@@ -1079,7 +1079,7 @@ header:extend(.full-container) {
                 }
                 
                 .calculo-frete:extend(.full-container){
-                    background-color: @white-9;
+                    background-color: @white-10;
                     padding:8px 4px;
 
                     input{
@@ -1096,7 +1096,7 @@ header:extend(.full-container) {
                 }
                 
                 .variantes:extend(.full-container){
-                    background-color: @white-10;
+                    background-color: @white-9;
                     padding:8px 4px;
                     
                     h3{
@@ -1127,6 +1127,12 @@ header:extend(.full-container) {
                                 background-color: #b41212;
                                 color: @white-10;
                                 border-color:  @white-10;
+                            }
+                            
+                            p.js-esgotado{
+                                opacity:0.6;
+                                cursor:no-drop;
+                                border-color: transparent;
                             }
 
                         }
@@ -1159,6 +1165,19 @@ header:extend(.full-container) {
                             
                             p.activeVariante{
                                 background-color: @white-7;
+                                border: solid 2px @black-7;
+                                color: @black-7;
+                            }
+                            p.activeVariante:hover{
+                                background-color: @white-7;
+                                border: solid 2px @black-7;
+                                color: @black-7;
+                            }
+                            
+                            p.js-esgotado{
+                                opacity:0.6;
+                                cursor:no-drop;
+                                border-color: transparent;
                             }
                         }
                         
@@ -1177,15 +1196,24 @@ header:extend(.full-container) {
                                 border: solid 2px transparent;
                             }
                             
-                            p.alerta{
+                            p.alerta,p.js-alerta{
                                 border-color: #c32626;
                             }
-                            p.alerta:hover{
+                            p.alerta:hover,p.js-alerta:hover{
                                 border-color: #ff7171;
                             }
                             
                             p.activeVariante{
                                 border-color: @white-5;
+                            }
+                            
+                            p.js-esgotado{
+                                opacity:0.6;
+                                cursor:no-drop;
+                                border-color: transparent;
+                            }
+                            p.js-esgotado:hover{
+                                border-color: transparent;
                             }
                             
                         }
@@ -1195,7 +1223,7 @@ header:extend(.full-container) {
                 }
 
                 .compra:extend(.full-container){
-                    background-color: @white-9;
+                    background-color: @white-10;
                     padding:8px 4px;
                     
                     a.favoritos_add{

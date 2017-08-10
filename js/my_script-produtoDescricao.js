@@ -7,7 +7,7 @@ if(hasVariante == 1){
     $(".alerta-variantes").show();
 }
 
-$(document).on("click", ".variante-option", function(){
+$(document).on("click", ".variante-naoAtiva", function(){
 
     tipo = $(this).attr("data-name");
     id = $(this).attr("data-value");
@@ -17,22 +17,75 @@ $(document).on("click", ".variante-option", function(){
     $("."+tipo+"-td").text(descricao);
     
     $(this).closest(".listaVariantes").find(".variante-option").removeClass("activeVariante");
+    $(this).closest(".listaVariantes").find(".variante-option").addClass("variante-naoAtiva");
     $(this).addClass("activeVariante");
-    
-    //alert("tipo - "+tipo+" id - "+id+" descricao - "+descricao);
+    $(this).removeClass("variante-naoAtiva");
     
     validar_compra();
     
+    if(tipo == "tamanho")
+    {
+        $(".variante-Cor").each(function() 
+        {
+            $(this).find(".variante-option").removeClass("js-esgotado");
+            $(this).find(".variante-option").removeClass("js-alerta");
+            $(this).find(".variante-option").addClass("variante-naoAtiva");
+            
+            msgPadrao = $(this).find(".msgPadrao").text();
+            $(this).find(".variante-option").attr("data-original-title",msgPadrao);
+            
+            EstoqueCorRelacionada = $(this).find(".EstoqueIdTamanho"+id).text();
+            qtdeAlerta            = parseInt($(this).find(".QtdeAlerta").text());
+            
+            if(EstoqueCorRelacionada == ""){
+                $(this).find(".variante-option").addClass("js-esgotado");
+                $(this).find(".variante-option").removeClass("variante-naoAtiva");
+                
+                nomeCor = $(this).find(".nomeCor").text();
+                
+                $(this).find(".variante-option").attr("data-original-title",nomeCor + " - Esgotado");
+            }
+            else{
+                if(qtdeAlerta >= parseInt(EstoqueCorRelacionada)){
+                    //alert("alerta " + EstoqueCorRelacionada);
+                    
+                    $(this).find(".variante-option").addClass("js-alerta");
+                    
+                    nomeCor = $(this).find(".nomeCor").text();
+                
+                    $(this).find(".variante-option").attr("data-original-title",nomeCor + " - Restam apenas " + EstoqueCorRelacionada + " produtos no estoque");
+                
+                }
+            }
+            
+            
+        });
+    }
 });
 
 $(document).on("click", "p.activeVariante", function(){
     
     $(this).removeClass("activeVariante");
+    $(this).addClass("variante-naoAtiva");
     
     tipo = $(this).attr("data-name");
     
     $("."+tipo+"-input").val("");
     $("."+tipo+"-td").text("");
+    
+    if(tipo == "tamanho"){
+        
+        $(".variante-Cor").each(function() 
+        {
+            $(this).find(".variante-option").removeClass("js-esgotado");
+            $(this).find(".variante-option").removeClass("js-alerta");
+            $(this).find(".variante-option").addClass("variante-naoAtiva");
+            
+            msgPadrao = $(this).find(".msgPadrao").text();
+            $(this).find(".variante-option").attr("data-original-title",msgPadrao);
+        });
+        
+    }
     
     desativar_compra();
     

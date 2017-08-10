@@ -130,25 +130,35 @@
                                 
                                 <?php foreach($produto["lVariantes"]["lTamanho"] as $itemTamanho){ ?>
                                 
-                                    <div class="variante">
+                                    <div class="variante variante-Tamanho">
                                         
                                         <?php 
-                                            $cssClass = produtoEstoque_DefinirCSSVariante($itemTamanho["Qtde_Estoque"]); 
+                                            $info = produtoEstoque_DefinirCSSVariante($itemTamanho["Qtde_Estoque"]["EstoqueTotal"]); 
                                             $dataToggle = "";
                                             $msg = "";
-                                            $ativo = "variante-option";
-                                            if($cssClass == "alerta"){
+                                            $ativo = "variante-option variante-naoAtiva";
+                                            if($info["css"] == "alerta"){
                                                 $dataToggle = "tooltip";
-                                                $msg = "Restam apenas {$itemTamanho["Qtde_Estoque"]} produtos no estoque";
+                                                $msg = "Restam apenas {$itemTamanho["Qtde_Estoque"]["EstoqueTotal"]} produtos no estoque";
                                             }
-                                            if($cssClass == "esgotado"){
+                                            if($info["css"] == "esgotado"){
                                                 $dataToggle = "tooltip";
                                                 $msg = "Produto Esgotado";
                                                 $ativo = "";
                                             }                                                                                                                                                       
                                         ?>
                                         
-                                        <p class="<?=$cssClass?> <?=$ativo?> " data-name="tamanho" data-value="<?=$itemTamanho["IdTamanho"]?>" data-content="<?=$itemTamanho["DescricaoTamanho"]?>" data-toggle="<?=$dataToggle?>" data-html="true" title="<?=$msg?>" ><?=$itemTamanho["DescricaoTamanho"]?></p>
+                                        <span class="QtdeAlerta no-view"><?=$info["qtdeAlerta"]?></span>
+                                        <span class="msgPadrao no-view"><?=$msg?></span>
+                                        <span class="togglePadrao no-view"><?=$dataToggle?></span>
+                                        
+                                        <p class="<?=$info["css"]?> <?=$ativo?> " data-name="tamanho" data-value="<?=$itemTamanho["IdTamanho"]?>" data-content="<?=$itemTamanho["DescricaoTamanho"]?>" data-toggle="<?=$dataToggle?>" data-html="true" title="<?=$msg?>" ><?=$itemTamanho["DescricaoTamanho"]?></p>
+                                        
+                                        <?php foreach($itemTamanho["Qtde_Estoque"]["lDetalhada"] as $itemDetalhada) { ?>
+                                        
+                                            <span class="<?=$itemDetalhada["Chave"]?> no-view"><?=$itemDetalhada["Conteudo"]?></span>
+                                        
+                                        <?php } ?>
                                         
                                     </div>
                                 
@@ -172,23 +182,33 @@
                                 
                                 <?php foreach($produto["lVariantes"]["lCor"] as $itemCor){ ?>
                                 
-                                    <div class="variante">
+                                    <div class="variante variante-Cor">
                                         
                                         <?php 
-                                            $cssClass = produtoEstoque_DefinirCSSVariante($itemCor["Qtde_Estoque"]); 
+                                            $info = produtoEstoque_DefinirCSSVariante($itemCor["Qtde_Estoque"]["EstoqueTotal"]); 
                                             $dataToggle = "";
                                             $msg = "";
-                                            $ativo = "variante-option";
-                                            if($cssClass == "alerta"){
-                                                $msg = " - Restam apenas {$itemCor["Qtde_Estoque"]} produtos no estoque";
+                                            $ativo = "variante-option variante-naoAtiva";
+                                            if($info["css"] == "alerta"){
+                                                $msg = " - Restam apenas {$itemCor["Qtde_Estoque"]["EstoqueTotal"]} produtos no estoque";
                                             }
-                                            if($cssClass == "esgotado"){
+                                            if($info["css"] == "esgotado"){
                                                 $msg = " - Produto Esgotado";
                                                 $ativo = "";
                                             }                                                                                                                                                       
                                         ?>
                                         
-                                        <p style="background-color: <?=$itemCor["CorCSS"]?>" class="<?=$cssClass?> <?=$ativo?>" data-name="cor" data-value="<?=$itemCor["IdCor"]?>" data-content="<?=$itemCor["DescricaoCor"]?>" data-toggle="tooltip" data-html="true" title="<?=$itemCor["DescricaoCor"].$msg?>"></p>
+                                        <span class="QtdeAlerta no-view"><?=$info["qtdeAlerta"]?></span>
+                                        <span class="msgPadrao no-view"><?=$itemCor["DescricaoCor"].$msg?></span>
+                                        <span class="nomeCor no-view"><?=$itemCor["DescricaoCor"]?></span>
+                                      
+                                        <p style="background-color: <?=$itemCor["CorCSS"]?>" class="<?=$info["css"]?> <?=$ativo?>" data-name="cor" data-value="<?=$itemCor["IdCor"]?>" data-content="<?=$itemCor["DescricaoCor"]?>" data-toggle="tooltip" data-html="true" title="<?=$itemCor["DescricaoCor"].$msg?>"></p>
+                                        
+                                        <?php foreach($itemCor["Qtde_Estoque"]["lDetalhada"] as $itemDetalhada) { ?>
+                                        
+                                            <span class="<?=$itemDetalhada["Chave"]?> no-view"><?=$itemDetalhada["Conteudo"]?></span>
+                                        
+                                        <?php } ?>
                                         
                                     </div>
                                 
