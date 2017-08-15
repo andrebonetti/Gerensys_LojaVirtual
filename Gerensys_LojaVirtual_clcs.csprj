@@ -3750,7 +3750,7 @@
 <treenode node="read_file;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Zip.php;f1;241;2;261;;;;vpos;;vbool;;r Definition     read_file($path, $preserve_filepath = FALSE)  Description      Read the contents of a file and add it to the zip;;d1,242;;b0,0;;mpath;;ppreserve_filepath;;p">
 </treenode>
 </treenode>
-<treenode node="Cliente;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f1;2;5;595;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
+<treenode node="Cliente;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f1;2;5;598;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
 <treenode node="cadastro_alterarSenha_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;334;5;372;;;;vpos;;v;;r;;d46,334;;b1,0;;m">
 </treenode>
 <treenode node="cadastro_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;100;7;125;;;;vpos;;v;;r;;d53,100;;b1,0;;m">
@@ -3791,7 +3791,7 @@
 </treenode>
 <treenode node="pedidos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f13;47;10;69;;;;vpos;;v;;r;;d31,47;;b1,0;;m">
 </treenode>
-<treenode node="pedidos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;555;9;592;;;;vpos;;v;;r;;d46,555;;b1,0;;m">
+<treenode node="pedidos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;555;9;596;;;;vpos;;v;;r;;d46,555;;b1,0;;m">
 </treenode>
 <treenode node="sair;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;256;9;261;;;;vpos;;v;;r;;d27,256;;b1,0;;m">
 </treenode>
@@ -3966,12 +3966,12 @@
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Estoque_model.php;f2;4;6;63;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
-<treenode node="Produto_Fotos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f1;1;2;83;;;;vpos;;vCI_Model;;c;;r;;d44,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;78;3;81;;;;vpos;;v;;r;;d31,78;;b0,0;;mpData;;p">
+<treenode node="Produto_Fotos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f1;1;2;85;;;;vpos;;vCI_Model;;c;;r;;d44,1;;b0,0;;m">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;80;3;83;;;;vpos;;v;;r;;d31,80;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;72;3;75;;;;vpos;;v;;r;;d29,72;;b0,0;;mpData;;p">
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f5;74;3;77;;;;vpos;;v;;r;;d29,74;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f2;4;6;69;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f2;4;6;71;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="produto_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f1;1;2;242;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
@@ -4505,6 +4505,8 @@
 <treenode node="produtoEstoque_DefinirCSSVariante;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;111;5;134;;;;vpos;;v;;r;;d54,111;;b0,0;;mpQtde;;p">
 </treenode>
 <treenode node="produtoEstoque_ListarVariantes;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;2;5;54;;;;vpos;;v;;r;;d78,2;;b0,0;;mpProduto;;ppListarEstoque;;p">
+</treenode>
+<treenode node="produtoFotos_ListarPorCor;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_fotos_helper.php;f4;2;5;37;;;;vpos;;v;;r;;d49,2;;b0,0;;mpProduto;;p">
 </treenode>
 <treenode node="quotes_to_entities;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\helpers\string_helper.php;f1;115;2;118;;;;vpos;;vstring;;r Definition     quotes_to_entities($str)  Description      Quotes to Entities  Parameters:     string;;d1,116;;b0,0;;mstring;;p">
 </treenode>

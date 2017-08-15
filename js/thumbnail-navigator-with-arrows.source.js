@@ -26,22 +26,29 @@ jQuery(document).ready(function ($) {
                     }
                 }
             };
+            
+            numeroSlideShow = 1;
+            $(".slide-show").each(function() {
+                
+                var jssor_slider = new $JssorSlider$("slider"+numeroSlideShow+"_container", options);
 
-            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
-            function ScaleSlider() {
-                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
-                if (parentWidth)
-                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, larguraSlide));
-                else
-                    window.setTimeout(ScaleSlider, 30);
-            }
-            ScaleSlider();
+                //responsive code begin
+                //you can remove responsive code if you don't want the slider scales while window resizes
+                function ScaleSlider() {
+                    var parentWidth = jssor_slider.$Elmt.parentNode.clientWidth;
+                    if (parentWidth)
+                        jssor_slider.$ScaleWidth(Math.min(parentWidth, larguraSlide));
+                    else
+                        window.setTimeout(ScaleSlider, 30);
+                }
+                
+                numeroSlideShow = numeroSlideShow + 1;
+            });
+    
+            /*ScaleSlider();
 
             $(window).bind("load", ScaleSlider);
             $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);*/
             //responsive code end
         });

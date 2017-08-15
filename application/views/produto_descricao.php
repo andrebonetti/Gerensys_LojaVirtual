@@ -318,54 +318,61 @@
 
                 <span class="IdCorPreferencial" value="<?=$produto["IdCor"]?>"></span>
                 
-                <?php foreach($produto["Fotos"] as $itemFoto){ ?>
-                    <span class="imgsProduto"><?=$itemFoto["IdCorFoto"]?></span>
-                <?php } ?>
-
             </div>
-
-            <div class="img-content" id="slider1_container" style="height: 480px;">
-
-                <!-- Loading Screen -->
-                <div u="loading" class="loading">
-                    <div class="loading1"></div>
-                    <div class="loading2"></div>
-                </div>
-
-                <!-- Slides Container -->
-                <div u="slides" class="uSlides">
-                    
-                	<?php foreach($produto["Fotos"] as $itemFoto){ ?>
+            
+            <div class="img-content"> 
                 
-	                    <div>
-	                        <img u="image" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
-	                        <img u="thumb" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
-	                    </div>
-					
-					<?php } ?>
-					
-                </div>
+                <?php 
+                    $n = 1;
+                    foreach($produto["Fotos"] as $itemCor){ ?>
+                
+                    <?php if($n == 1){$status = "slide-active";}else{$status = "slide-noActive";} ?>
+                    <div class="slide-show <?=$status?> slideCor-<?=$itemCor["IdCor"]?>" id="slider<?=$n?>_container" style="height: 600px;">
 
-                <!-- THUMB NAVIGATOR -->
-                <div u="thumbnavigator" class="jssort07">
-                    <div class="upSlides"></div>
-
-                    <div u="slides" class="Tslides">
-                        <div u="prototype" class="p" id="pSlides" style="POSITION: absolute; WIDTH: 99px; HEIGHT: 66px; TOP: 0; LEFT: 0;">
-                            <thumbnailtemplate class="i" style="position:absolute;"></thumbnailtemplate>
-                            <div class="o">
-                            </div>
+                        <!-- Loading Screen -->
+                        <div u="loading" class="loading">
+                            <div class="loading1"></div>
+                            <div class="loading2"></div>
                         </div>
+
+                        <!-- Slides Container -->
+                        <div u="slides" class="uSlides">
+
+                            <?php foreach($itemCor["Fotos"] as $itemFoto){ ?>
+
+                                <div>
+                                    <img u="image" class="img-slide" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
+                                    <img u="thumb" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
+                                </div>
+
+                            <?php } ?>
+
+                        </div>
+
+                        <!-- THUMB NAVIGATOR -->
+                        <div u="thumbnavigator" class="jssort07">
+                            <div class="upSlides"></div>
+
+                            <div u="slides" class="Tslides">
+                                <div u="prototype" class="p" id="pSlides" style="POSITION: absolute; WIDTH: 99px; HEIGHT: 66px; TOP: 0; LEFT: 0;">
+                                    <thumbnailtemplate class="i" style="position:absolute;"></thumbnailtemplate>
+                                    <div class="o">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arrow Left -->
+                            <span u="arrowleft" class="jssora11l" style=""></span>
+                            <!-- Arrow Right -->
+                            <span u="arrowright" class="jssora11r" style="width: 37px; height: 37px; top: 123px; right: 8px"></span>
+
+                        </div>
+
                     </div>
-
-                    <!-- Arrow Left -->
-                    <span u="arrowleft" class="jssora11l" style=""></span>
-                    <!-- Arrow Right -->
-                    <span u="arrowright" class="jssora11r" style="width: 37px; height: 37px; top: 123px; right: 8px"></span>
-
-                </div>
-
-            </div>
+                
+                <?php $n++; } ?> 
+                
+            </div>    
 
         </div>
 

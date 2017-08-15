@@ -3,7 +3,7 @@
     overflow: hidden;
 }
 
-.loading{
+/*.loading{
 	position: absolute; top: 0px; left: 0px;
 }
 
@@ -13,23 +13,38 @@
 }
 
 .loading2{
-	position: absolute; display: block; background: url(../../../img/loading.gif) no-repeat center center;
+	position: absolute; display: block; background: url(../img/loading.gif) no-repeat center center;
                 top: 0px; left: 0px;width: 100%;height:100%;
-}
+}*/
 
 .uSlides{
-	cursor: move; position: absolute; left: 0px; top: 0px; width: 500px; height: 400px;
-            overflow: hidden;
+	cursor: move; 
+    position: absolute; 
+    left: 0px; 
+    top: 0px; 
+    width: 100%; 
+    height: 500px;
+    overflow: hidden;
 }
 
 .jssort07{
-	position: absolute; width: 500px; height: 100px; left: 0px; bottom: 0px; overflow: hidden; ">
-            <div style=" background-color: #000; filter:alpha(opacity=30); opacity:.3; width: 100%; height:100%;
+	position: absolute; 
+    width: 100%; 
+    height: 100px; 
+    left: 0px; 
+    bottom: 0px; 
+    overflow: hidden; 
+    background-color: rgba(0, 0, 0, 0.42);  
+    width: 100%; 
 }
 
-.upSlides{
-	background-color: #000; filter:alpha(opacity=30); opacity:.3; width: 100%; height:100%;
-}
+/*.upSlides{
+	background-color: #000; 
+    filter:alpha(opacity=30); 
+    opacity:.3;
+    width: 100%; 
+    height:100%;
+}*/
 
 .Tslides{
 	cursor: move;
@@ -111,7 +126,7 @@
                         position: absolute;
                         cursor: pointer;
                         display: block;
-                        background: url(../../../../img/a11.png) no-repeat;
+                        background: url(../img/a11.png) no-repeat;
                         overflow: hidden;
                     }
 

@@ -171,7 +171,6 @@
 					
 	                if( !isset($pData["lJoinCompleto"])){$pData["lJoinCompleto"] = false;}
 	
-					$lProduto["Fotos"] 					= $this->Produto_Fotos_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto));
 					$lProduto["Precos"] 				= $this->Produto_Preco_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto,"IsBusca" => true));
 					$lProduto["Promocao"] 				= $this->Produto_Promocao_model				->Listar(array("Join" => $pData["lJoinCompleto"],"Produto" => $lProduto,"IsVigente" => true));
 					
@@ -184,8 +183,21 @@
                     if ( (isset($pData["lVariantes"]) && $pData["lVariantes"] == true ) or (isset($pData["IsAdm"]) && $pData["IsAdm"] == true )  ){
                         //Variantes
                         $lProduto["lVariantes"]         = produtoEstoque_ListarVariantes($lProduto,true);
+                        
+                        if(isset($lProduto["lVariantes"]["lCor"]) > 0){
+                            $lProduto["Fotos"] 			= produtoFotos_ListarPorCor($lProduto);		
+                        }
+                        else{
+                            $lProduto["Fotos"][0]["IdCor"] = $lProduto["IdCor"];
+                            $lProduto["Fotos"][0]["Fotos"] = $this->Produto_Fotos_model                ->Listar(array("Produto" => $lProduto));
+                        }
                     }
-
+                    else{
+                       $lProduto["Fotos"][0]["IdCor"]       = $lProduto["IdCor"];
+                       $lProduto["Fotos"][0]["Fotos"]		= $this->Produto_Fotos_model       ->Listar(array("Produto" => $lProduto));
+                    }
+                    
+                    //var_dump($lProduto["Fotos"][0]);
 				}
 				else{
 					

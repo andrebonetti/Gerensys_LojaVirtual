@@ -7,6 +7,9 @@ if(hasVariante == 1){
     $(".alerta-variantes").show();
 }
 
+//Ajustes Slide Jassor
+$(".slide-noActive").css("visibility","hidden");
+
 $(document).on("click", ".variante-naoAtiva", function(){
 
     tipo = $(this).attr("data-name");
@@ -29,8 +32,8 @@ $(document).on("click", ".variante-naoAtiva", function(){
  
         if(statusCor == "0"){
                 
-            $(".variante-Cor").each(function() 
-            {
+            $(".variante-Cor").each(function(){
+                
                 $(this).find(".variante-option").removeClass("js-esgotado");
                 $(this).find(".variante-option").removeClass("js-alerta");
                 $(this).find(".variante-option").addClass("variante-naoAtiva");
@@ -119,6 +122,13 @@ $(document).on("click", ".variante-naoAtiva", function(){
         }
         
         $(".variante-cor-ativo").text("1");
+        
+        //Alterar Imagem
+        $(".slide-active").hide();
+        $(".slideCor-"+id).show();
+        $(".slideCor-"+id).css("visibility","visible");
+        $(".slideCor-"+id).addClass("slide-active");
+        $(".slideCor-"+id).removeClass("slide-noActive");
     }
     
 });
@@ -167,6 +177,7 @@ $(document).on("click", "p.activeVariante", function(){
         });
         
         $(".variante-cor-ativo").text("0");
+        
     }
     
     desativar_compra();

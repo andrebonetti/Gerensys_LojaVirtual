@@ -40,6 +40,7 @@ $autoload['helper'] = array(
             ,'cliente_enderecos_helper'
             ,'cliente_pedidos_helper'
 			,'produto_promocao_helper'
+            ,'produto_fotos_helper'
             ,'config_helper'
             ,'R_SetorXGrupoXSubGrupo_helper'
 			,'validacao_helper');

@@ -54,7 +54,7 @@
                 
                 // RETURN
     		if(isset($pData["IsBusca"])){
-                    $data = $this->db->get()->row_array();
+                $data = $this->db->get()->row_array();
     		}
     		else{
     			$data = $this->db->get()->result_array();
