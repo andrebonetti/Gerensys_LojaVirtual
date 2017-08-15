@@ -25,42 +25,102 @@ $(document).on("click", ".variante-naoAtiva", function(){
     
     if(tipo == "tamanho")
     {
-        $(".variante-Cor").each(function() 
-        {
-            $(this).find(".variante-option").removeClass("js-esgotado");
-            $(this).find(".variante-option").removeClass("js-alerta");
-            $(this).find(".variante-option").addClass("variante-naoAtiva");
-            
-            msgPadrao = $(this).find(".msgPadrao").text();
-            $(this).find(".variante-option").attr("data-original-title",msgPadrao);
-            
-            EstoqueCorRelacionada = $(this).find(".EstoqueIdTamanho"+id).text();
-            qtdeAlerta            = parseInt($(this).find(".QtdeAlerta").text());
-            
-            if(EstoqueCorRelacionada == ""){
-                $(this).find(".variante-option").addClass("js-esgotado");
-                $(this).find(".variante-option").removeClass("variante-naoAtiva");
+        statusCor = $(".variante-cor-ativo").text();
+ 
+        if(statusCor == "0"){
                 
-                nomeCor = $(this).find(".nomeCor").text();
+            $(".variante-Cor").each(function() 
+            {
+                $(this).find(".variante-option").removeClass("js-esgotado");
+                $(this).find(".variante-option").removeClass("js-alerta");
+                $(this).find(".variante-option").addClass("variante-naoAtiva");
                 
-                $(this).find(".variante-option").attr("data-original-title",nomeCor + " - Esgotado");
-            }
-            else{
-                if(qtdeAlerta >= parseInt(EstoqueCorRelacionada)){
-                    //alert("alerta " + EstoqueCorRelacionada);
-                    
-                    $(this).find(".variante-option").addClass("js-alerta");
+                msgPadrao = $(this).find(".msgPadrao").text();
+                $(this).find(".variante-option").attr("data-original-title",msgPadrao);
+                
+                EstoqueCorRelacionada = $(this).find(".EstoqueIdTamanho"+id).text();
+                qtdeAlerta            = parseInt($(this).find(".QtdeAlerta").text());
+                
+                if(EstoqueCorRelacionada == ""){
+                    $(this).find(".variante-option").addClass("js-esgotado");
+                    $(this).find(".variante-option").removeClass("variante-naoAtiva");
                     
                     nomeCor = $(this).find(".nomeCor").text();
-                
-                    $(this).find(".variante-option").attr("data-original-title",nomeCor + " - Restam apenas " + EstoqueCorRelacionada + " produtos no estoque");
-                
+                    
+                    $(this).find(".variante-option").attr("data-original-title",nomeCor + " - Esgotado");
                 }
-            }
-            
-            
-        });
+                else{
+                    if(qtdeAlerta >= parseInt(EstoqueCorRelacionada)){
+                        //alert("alerta " + EstoqueCorRelacionada);
+                        
+                        $(this).find(".variante-option").addClass("js-alerta");
+                        
+                        nomeCor = $(this).find(".nomeCor").text();
+                    
+                        $(this).find(".variante-option").attr("data-original-title",nomeCor + " - Restam apenas " + EstoqueCorRelacionada + " produtos no estoque");
+                    
+                    }
+                }
+                
+                
+            });
+        
+        }
+        
+        $(".variante-tamanho-ativo").text("1");
     }
+    
+    if(tipo == "cor")
+    {
+        statusTamanho = $(".variante-tamanho-ativo").text();
+ 
+        if(statusTamanho == "0"){
+        
+            $(".variante-Tamanho").each(function() 
+            {
+                $(this).find(".variante-option").removeClass("js-esgotado");
+                $(this).find(".variante-option").removeClass("js-alerta");
+                $(this).find(".variante-option").addClass("variante-naoAtiva");
+                
+                msgPadrao = $(this).find(".msgPadrao").text();
+                $(this).find(".variante-option").attr("data-original-title",msgPadrao);
+                
+                togglePadrao = $(this).find(".togglePadrao").text();
+                if(togglePadrao == "tooltip"){
+                    $(this).find(".variante-option").tooltip();
+                }
+                else{
+                    $(this).find(".variante-option").tooltip('destroy');
+                }
+                
+                EstoqueTamanhoRelacionada = $(this).find(".EstoqueIdCor"+id).text();
+                qtdeAlerta                = parseInt($(this).find(".QtdeAlerta").text());
+                
+                if(EstoqueTamanhoRelacionada == ""){
+                    $(this).find(".variante-option").addClass("js-esgotado");
+                    $(this).find(".variante-option").removeClass("variante-naoAtiva");
+                    
+                    $(this).find(".variante-option").attr("data-original-title","Produto Esgotado");
+                    
+                    $(this).find(".variante-option").tooltip();
+                }
+                else{
+                    if(qtdeAlerta >= parseInt(EstoqueTamanhoRelacionada)){
+                        
+                        $(this).find(".variante-option").addClass("js-alerta");
+                        
+                        $(this).find(".variante-option").attr("data-original-title","Restam apenas " + EstoqueTamanhoRelacionada + " produtos no estoque");
+                        $(this).find(".variante-option").tooltip();
+                    }
+                }
+
+            });
+        
+        }
+        
+        $(".variante-cor-ativo").text("1");
+    }
+    
 });
 
 $(document).on("click", "p.activeVariante", function(){
@@ -85,6 +145,28 @@ $(document).on("click", "p.activeVariante", function(){
             $(this).find(".variante-option").attr("data-original-title",msgPadrao);
         });
         
+        $(".variante-tamanho-ativo").text("0");
+    }
+    
+    if(tipo == "cor"){
+        
+        $(".variante-Tamanho").each(function() 
+        {
+            $(this).find(".variante-option").removeClass("js-esgotado");
+            $(this).find(".variante-option").removeClass("js-alerta");
+            $(this).find(".variante-option").addClass("variante-naoAtiva");
+            
+            togglePadrao = $(this).find(".togglePadrao").text();
+
+            if(togglePadrao == "tooltip"){
+                $(this).find(".variante-option").tooltip();
+            }
+            else{
+                $(this).find(".variante-option").tooltip('destroy');
+            }
+        });
+        
+        $(".variante-cor-ativo").text("0");
     }
     
     desativar_compra();
@@ -118,7 +200,7 @@ function validar_compra(){
         if(valorCor == ""){
             $validacao = false;
         }
-        
+
     }
     
     if($validacao == true){
@@ -143,4 +225,3 @@ function desativar_compra(){
     $(".alerta-variantes").show();
     
 }
-

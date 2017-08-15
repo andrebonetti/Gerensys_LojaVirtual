@@ -45,13 +45,25 @@
                         <td class="variantes">
                         
                             <?php if( isset($itemCarrinho["IdTamanho"]) ){ ?>
-                                <select class="form-control">
-                                    <option value="<?=$itemCarrinho["IdTamanho"]?>">Tamanho - <?=$itemCarrinho["DescricaoTamanho"]?></option>   
+                                <select class="form-control variante-select" value="tamanho">
+                                    <option value="<?=$itemCarrinho["IdTamanho"]?>" class="active">Tamanho - <?=$itemCarrinho["DescricaoTamanho"]?></option>   
 
                                     <?php foreach($itemCarrinho["Produto"]["lVariantes"]["lTamanho"] as $itemTamanho){ ?>
 
+                                        <?php 
+                                            $info = produtoEstoque_DefinirCSSVariante($itemTamanho["Qtde_Estoque"]["EstoqueTotal"]); 
+                                            $msg = "";
+                                            $ativo = "variante-option variante-naoAtiva";
+                                            if($info["css"] == "alerta"){
+                                                $msg = " - Apenas {$itemTamanho["Qtde_Estoque"]["EstoqueTotal"]}";
+                                            }
+                                            if($info["css"] == "esgotado"){
+                                                $msg = " - Esgotado";
+                                            }                                                                                                                                                       
+                                        ?>
+                                            
                                         <?php if($itemCarrinho["IdTamanho"] != $itemTamanho["IdTamanho"]) { ?>
-                                            <option value="<?=$itemTamanho["IdTamanho"]?>">Tamanho - <?=$itemTamanho["DescricaoTamanho"]?></option>
+                                            <option value="<?=$itemTamanho["IdTamanho"]?>" class="<?=$info["css"]?>">Tamanho - <?=$itemTamanho["DescricaoTamanho"]?><?=$msg?></option>
                                         <?php } ?> 
 
                                     <?php } ?>
@@ -60,13 +72,25 @@
                             <?php } ?>
                             
                             <?php if( isset($itemCarrinho["IdCor"]) ){ ?>
-                                <select class="form-control">
+                                <select class="form-control variante-select" data-tipo="tamanho">
                                     <option value="<?=$itemCarrinho["IdCor"]?>">Cor - <?=$itemCarrinho["DescricaoCor"]?></option>   
 
                                     <?php foreach($itemCarrinho["Produto"]["lVariantes"]["lCor"] as $itemCor){ ?>
+                                    
+                                        <?php 
+                                            $info = produtoEstoque_DefinirCSSVariante($itemCor["Qtde_Estoque"]["EstoqueTotal"]); 
+                                            $msg = "";
+                                            $ativo = "variante-option variante-naoAtiva";
+                                            if($info["css"] == "alerta"){
+                                                $msg = " - Apenas {$itemCor["Qtde_Estoque"]["EstoqueTotal"]}";
+                                            }
+                                            if($info["css"] == "esgotado"){
+                                                $msg = " - Esgotado";
+                                            }                                                                                                                                                       
+                                        ?>
 
                                         <?php if($itemCarrinho["IdCor"] != $itemCor["IdCor"]) { ?>
-                                            <option value="<?=$itemCor["IdCor"]?>">Cor - <?=$itemCor["DescricaoCor"]?></option>
+                                            <option value="<?=$itemCor["IdCor"]?>" class="<?=$info["css"]?>">Cor - <?=$itemCor["DescricaoCor"]?><?=$msg?></option>
                                         <?php } ?> 
 
                                     <?php } ?>
@@ -78,16 +102,21 @@
 
                         <!-- QUANTIDADE -->
                         <td class="quantidade">
-
+                            
+                            <?php $qtde_Produto = produtoEstoque_BuscarEstoqueVariante($itemCarrinho["Produto"],$itemCarrinho["IdTamanho"],$itemCarrinho["IdCor"]) ?>
+                                                     
+                            <span class="no-view qtde_limite"><?=$qtde_Produto["Qtde_estoque"]?></span>
+                            
                             <input type="text" class="input-qtde form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
                             <div class="opcoes">
-                                <img class="plus" src="<?=base_url("img/plus.png")?>">
                                 
-                                <?php if($itemCarrinho["Quantidade"] > 1 ){?>
-                                    <img class="less" src="<?=base_url("img/less.png")?>">
-                                <?php } else { ?>
+                                <img class="plus <?php if($itemCarrinho["Quantidade"] >= $qtde_Produto["Qtde_estoque"]){echo "no-view";} ?>" src="<?=base_url("img/plus.png")?>">
+     
+                                <?php /*if($itemCarrinho["Quantidade"] > 1 ){ */?>
+                                    <img class="less <?php if($itemCarrinho["Quantidade"] == 0){echo "no-view";} ?>" src="<?=base_url("img/less.png")?>">
+                                <?php /*} else { ?>
                                     <?=anchor("carrinho/excluir_produto_carrinho/{$itemCarrinho["Count"]}","<img class='less' src='".base_url("img/less.png")."' >")?>
-                                <?php } ?>
+                                <?php } */ ?>
                                 
                             </div>    
                         </td>
@@ -140,7 +169,16 @@
                     <?php $n = 1; foreach($lCarrinho as $itemCarrinho){ ?>
                     
                         <input type="hidden" name="IdProduto<?=$n?>" value="<?=$itemCarrinho["Produto"]["Id"]?>"/>
-                    
+                        <input type="hidden" name="IdQuantidade<?=$n?>" value="<?=$itemCarrinho["Quantidade"]?>"/>
+                        
+                        <?php if( isset($itemCarrinho["IdTamanho"]) ){ ?>
+                            <input type="hidden" name="IdTamanho<?=$n?>" value="<?=$itemCarrinho["IdTamanho"]?>"/>
+                        <?php } ?>
+                        
+                        <?php if( isset($itemCarrinho["IdTamanho"]) ){ ?>
+                            <input type="hidden" name="IdCor<?=$n?>" value="<?=$itemCarrinho["IdCor"]?>"/>
+                        <?php } ?>
+                        
                     <?php $n++; } ?>
                     
                     <input type="submit" value="Finalizar Compra" class="btn btn-danger"/>

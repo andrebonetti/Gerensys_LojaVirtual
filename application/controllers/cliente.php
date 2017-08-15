@@ -74,6 +74,9 @@
                 // --- HEADER ---
                 $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
+                
+                // --- HEADER CLIENTE ---
+                $headerCliente = cliente_preencheConteudoHeader($header);
             
                 $data["Cliente"] = $header["Cliente"];
                 $data["lJoin"]    = true;
@@ -87,6 +90,7 @@
                 "countFavoritos" 	=> $coutFavoritos
             	,"lFavoritos" 	    => $lFavoritos
                 ,"header"	        => $header
+                ,"headerCliente"    => $headerCliente    
                 ,"title"            => "Loja Virtual | Área do Cliente"
                 ,"atual_page" 	    => "favoritos");
 
@@ -99,6 +103,9 @@
     			// --- HEADER ---
                 $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
+                
+                // --- HEADER CLIENTE ---
+                $headerCliente = cliente_preencheConteudoHeader($header);
     			
     			$data["Cliente"] = $header["Cliente"];
                 $data["IsCount"] = true;
@@ -109,6 +116,7 @@
                 "countFavoritos" => $countFavoritos
             	,"erros"	      => array()
                 ,"header"	      => $header
+                ,"headerCliente"  => $headerCliente     
                 ,"title"          => "Loja Virtual | Área do Cliente"
                 ,"atual_page"     => "cliente_cadastro");
     			
@@ -122,7 +130,10 @@
             // --- HEADER ---
             $header = header_preencheConteudoHeader();
             if(empty($header["Cliente"])){redirect("home");}
-            
+                
+            // --- HEADER CLIENTE ---
+            $headerCliente = cliente_preencheConteudoHeader($header);
+                
             // -- ENDERECOS --
             $dataEnderecos["Cliente"] = $header["Cliente"];
             $cliente_enderecos = $this->Cliente_Enderecos_model->Listar($dataEnderecos);
@@ -133,9 +144,10 @@
 			
 			// --- CONTENT ---	
 			$content = array(
-            "countFavoritos"     => $countFavoritos
+            "countFavoritos"      => $countFavoritos
         	,"cliente_enderecos"  => $cliente_enderecos
             ,"header"	          => $header
+            ,"headerCliente"      => $headerCliente     
             ,"title"              => "Loja Virtual | Área do Cliente"
             ,"atual_page" 		  => "enderecos");
 
@@ -161,12 +173,16 @@
                 // --- HEADER ---
                 $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
+                
+                // --- HEADER CLIENTE ---
+                $headerCliente = cliente_preencheConteudoHeader($header);
 				
 				$content = array(
                 "dataCadastro"  => array()
 	        	,"erros"	    => array()
                 ,"acao_form"    => "incluir"
                 ,"header"	    => $header
+                ,"headerCliente"=> $headerCliente      
                 ,"title"        => "Loja Virtual | Cadastro"
 	            ,"atual_page"   => "enderecos");
 				
@@ -181,6 +197,9 @@
                 $header = header_preencheConteudoHeader();
                 if(empty($header["Cliente"])){redirect("home");}
                 
+                // --- HEADER CLIENTE ---
+                $headerCliente = cliente_preencheConteudoHeader($header);
+                
                 $data["Id"] = $pId;
                 $data["IsBusca"] = true;
                 
@@ -191,6 +210,7 @@
 	        	,"erros"	    => array()
                 ,"acao_form"    => "atualizar"
                 ,"header"	    => $header
+                ,"headerCliente"=> $headerCliente      
                 ,"title"        => "Loja Virtual | Atualizar Cadastro"
 	            ,"atual_page"   => "enderecos");
 				
@@ -540,7 +560,10 @@
             $cliente = cliente_validarSessao();
             
             if(empty($cliente)){
-                "tratar usuario não logado";
+                
+                $this->session->set_flashdata('msg-alerta',"Faça Login ou Cadastre-se para finalizar a sua compra!");
+                redirect("Cliente/login_form");
+                
             }
             else{
                 
@@ -561,13 +584,16 @@
                     $dataInsertProduto["IdProduto"] = $this->input->post("IdProduto{$n}");
                     
                     $this->Cliente_Pedido_Produtos_model->Incluir($dataInsertProduto);
+                    
+                    // -- Baixa Estoque
+                    produtoEstoque_darBaixaEstoque($n,$dataInsertProduto["IdProduto"]);
                 }
+                
+                carrinho_limpar();
+                redirect("Cliente/pedidos");
             
             }
-            
-            carrinho_limpar();
-            redirect("Cliente/pedidos");
+ 
         }
-        
-            
+              
     }

@@ -278,15 +278,26 @@
                  	
                     <div class="master-box">
 
-                        <div class="box">
+                        <div class="box <?=$produto["CssEstoque"]["css"]?>">
                             
-                            <!-- Novidade Promocao -->
-                            <?php if($produto["PromocaoPorcentagemDesconto"] > 0 ){?>
-                            	<p class="promocao"><?=$produto["PromocaoPorcentagemDesconto"]?>% OFF</p>
+                           <?php if($produto["CssEstoque"]["css"] == "esgotado" ){?>
+                            	<p class="produto-esgotado">Produto Esgotado</p>
                            <?php } ?> 
-                           <?php if($produto["PromocaoPrecoFixoDesconto"] > 0 ){?>
-                            	<p class="promocao">- <?=numeroEmReais( ($produto["NovoPreco"] - $produto["Preco"])*-1) ?></p>
-                           <?php } ?> 
+                           <?php if($produto["CssEstoque"]["css"] == "alerta" ){?>
+                            	<p class="alerta-estoque"><?=$produto["EstoqueTotal"]?> No Estoque</p>
+                           <?php } ?>
+                           
+                           <?php if($produto["CssEstoque"]["css"] == "" ){ ?>
+                           
+                               <!-- Novidade Promocao -->
+                                <?php if($produto["PromocaoPorcentagemDesconto"] > 0 ){?>
+                                	<p class="promocao"><?=$produto["PromocaoPorcentagemDesconto"]?>% OFF</p>
+                               <?php } ?> 
+                               <?php if($produto["PromocaoPrecoFixoDesconto"] > 0 ){?>
+                                	<p class="promocao">- <?=numeroEmReais( ($produto["NovoPreco"] - $produto["Preco"])*-1) ?></p>
+                               <?php } ?> 
+                           
+                           <?php } ?>
                             
                             <!-- Imagem -->
                             <div class="img-content">

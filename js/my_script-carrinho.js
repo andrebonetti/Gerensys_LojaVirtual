@@ -1,6 +1,7 @@
 $(document).on("click", ".plus", function(){
        
     input = $(this).closest(".quantidade").find(".input-qtde");
+    qtdeLimite = $(".qtde_limite").text();
     qtdeAtual = parseInt(input.val());
     
     tr  = $(this).closest("tr");
@@ -10,7 +11,13 @@ $(document).on("click", ".plus", function(){
     
     AlterarSessaoCarrinho(1,idProduto,precoProduto,Count);
     
-    input.val(qtdeAtual + 1);   
+    input.val(qtdeAtual + 1);  
+    
+    $(this).closest(".quantidade").find(".less").show();
+    if( (qtdeAtual + 1) >= qtdeLimite){       
+        $(this).hide();
+    }
+    
 });
 
 $(document).on("click", ".less", function(){
@@ -28,6 +35,12 @@ $(document).on("click", ".less", function(){
         AlterarSessaoCarrinho(-1,idProduto,precoProduto,Count);
         
         input.val(qtdeAtual - 1);
+          
+        $(this).closest(".quantidade").find(".plus").show();
+        
+        if( (qtdeAtual - 1) < 1 ){  
+            $(this).hide();
+        }
     }
     
 });

@@ -120,10 +120,11 @@
                 
                         <h2>Variantes</h2>
                     
-                        <?php if( count($produto["lVariantes"]["lTamanho"] > 0 )) { ?>
-                        
+                        <?php if( (isset($produto["lVariantes"]["lTamanho"])) && (count($produto["lVariantes"]["lTamanho"] > 0 )) ) { ?>
+                         
                             <span class="has-variante-tamanho no-view">1</span>
-                        
+                            <span class="variante-tamanho-ativo no-view">0</span>
+                                 
                             <h3>Tamanhos</h3>
                         
                             <div class="listaVariantes listaTamanhos">
@@ -172,9 +173,11 @@
                         
                         <?php } ?>
                         
-                        <?php if( count($produto["lVariantes"]["lCor"] > 0 )) { ?>
+                        <?php 
+                        if( (isset($produto["lVariantes"]["lCor"])) && (count($produto["lVariantes"]["lCor"] > 0 )) ) { ?>
                         
                             <span class="has-variante-cor no-view">1</span>
+                            <span class="variante-cor-ativo no-view">0</span>
                         
                             <h3>Cores</h3>
                         
@@ -239,7 +242,7 @@
                     
                         <input type="hidden" name="idproduto" value="<?=$produto["Id"]?>"/>
                         <input type="hidden" name="precoproduto" value="<?=$produto["Preco"]?>"/>
-                    
+                        
                         <table class="table table-stripped">
                         
                             <thead>
@@ -248,9 +251,18 @@
                                     <th class="qtde">Quantidade</th>
                                     
                                     <?php if (count($produto["lVariantes"]) > 0){ ?>
-                                    
-                                        <th class="tamanho">Tamanho</th>
-                                        <th class="cor">Cor</th>
+                                        
+                                        <?php if( (isset($produto["lVariantes"]["lTamanho"])) && (count($produto["lVariantes"]["lTamanho"] > 0 )) ) { ?>
+                         
+                                            <th class="tamanho">Tamanho</th>
+                                            
+                                        <?php } ?>
+                                        
+                                        <?php if( (isset($produto["lVariantes"]["lCor"])) && (count($produto["lVariantes"]["lCor"] > 0 )) ) { ?>
+                         
+                                            <th class="cor">Cor</th>
+                                        
+                                        <?php } ?>
                                     
                                     <?php } ?>
                                 </tr>
@@ -264,8 +276,17 @@
                                     
                                     <?php if (count($produto["lVariantes"]) > 0){ ?>
                                     
-                                    <td class="tamanho tamanho-td">---</td>
-                                    <td class="cor cor-td">---</td>
+                                        <?php if( (isset($produto["lVariantes"]["lTamanho"])) && (count($produto["lVariantes"]["lTamanho"] > 0 )) ) { ?>
+                             
+                                            <td class="tamanho tamanho-td">---</td>
+                                            
+                                        <?php } ?>
+                                        
+                                        <?php if( (isset($produto["lVariantes"]["lCor"])) && (count($produto["lVariantes"]["lCor"] > 0 )) ) { ?>
+                                 
+                                            <td class="cor cor-td">---</td>
+                                            
+                                        <?php } ?>
                                     
                                     <?php } ?>
                                     
@@ -290,6 +311,16 @@
                     <?= form_close() ?>  
 
                 </div>
+
+            </div>
+            
+            <div class="ano-view">
+
+                <span class="IdCorPreferencial" value="<?=$produto["IdCor"]?>"></span>
+                
+                <?php foreach($produto["Fotos"] as $itemFoto){ ?>
+                    <span class="imgsProduto"><?=$itemFoto["IdCorFoto"]?></span>
+                <?php } ?>
 
             </div>
 

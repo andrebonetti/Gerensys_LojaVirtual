@@ -34,3 +34,5 @@
         
     </div>
 </section>
+
+<script src="<?= base_url("js/my_script-clienteCadastro.js")?>"></script>

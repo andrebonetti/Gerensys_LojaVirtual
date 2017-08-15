@@ -34,12 +34,14 @@
                 
                 $this->db->select("Tamanho.Id AS IdTamanho,Tamanho.Descricao AS DescricaoTamanho,Tamanho.Ordem as OrdemTamanho");
                 
-                $this->db->order_by("Tamanho.Ordem");
+                $this->db->order_by("Tamanho.Ordem,Tamanho.Descricao");
             }
             if( (isset($pData["JoinCor"])) && ($pData["JoinCor"] == true) ){        
                 $this->db->join("tb_produto_v_cor AS Cor", "Cor.Id = tb_produto_estoque.IdCor","inner");
                 
                 $this->db->select("Cor.Id AS IdCor,Cor.Descricao AS DescricaoCor,Cor.CorCSS AS CorCSS");
+                
+                $this->db->order_by("Cor.Descricao");
             }
             
     		// ORDER BY	

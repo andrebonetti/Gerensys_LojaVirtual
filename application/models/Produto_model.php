@@ -48,8 +48,8 @@
             	$query_select = "";
             	
             	$this->db->join("tb_produto_preco AS Preco", "Preco.IdProduto = tb_produto.Id and Preco.IdTipoPreco = tb_produto.IdTipoPrecoApresentacao","inner");
-            	$this->db->join("tb_produto_fotos AS Fotos", "Fotos.IdProduto = tb_produto.Id and Fotos.Ordem = 1","left");
-                $this->db->join("tb_produto_fotos AS Fotos2", "Fotos2.IdProduto = tb_produto.Id and Fotos2.Ordem = 2","left");
+            	$this->db->join("tb_produto_fotos AS Fotos", "Fotos.IdProduto = tb_produto.Id and Fotos.Ordem = 1 and (tb_produto.IdCor = Fotos.IdCor or Fotos.IdCor IS NULL) ","left");
+                $this->db->join("tb_produto_fotos AS Fotos2", "Fotos2.IdProduto = tb_produto.Id and Fotos2.Ordem = 2 and (tb_produto.IdCor = Fotos2.IdCor or Fotos2.IdCor IS NULL)","left");
             	$this->db->join("tb_produto_promocao AS Promocao", "Promocao.IdProduto = tb_produto.Id","left");// -- ADD Vigencia --
             	
                 //tb_cliente_favoritos

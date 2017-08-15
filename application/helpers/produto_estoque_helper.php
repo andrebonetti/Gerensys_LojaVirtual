@@ -93,6 +93,21 @@
                 
         return $totalEstoque;
     }
+    
+    function produtoEstoque_BuscarEstoqueVariante($pProduto,$pIdTamanho,$pIdCor){
+        
+        $ci =  get_instance();
+         
+        $dataBusca["Produto"]     = $pProduto;
+        $dataBusca["IdTamanho"]   = $pIdTamanho;
+        $dataBusca["IdCor"]       = $pIdCor;
+        $dataBusca["IsBusca"]     = true;
+        
+        $estoque = $ci->Produto_Estoque_model->Listar($dataBusca);
+
+        return $estoque;
+    }
+
 
     function produtoEstoque_DefinirCSSVariante($pQtde){
         
@@ -117,4 +132,64 @@
         }
         
         return $info;
+    }
+
+    function produtoEstoque_DefinirCSSEstoqueProduto($pQtde){
+        
+        $info               = array();
+        $info["css"]        = "";
+        $info["qtdeAlerta"] = 1000000;
+            
+        if($pQtde < 1){
+            
+            $info["css"] = "esgotado";
+            
+        }
+        else{
+            
+            $info["qtdeAlerta"] = BuscarValorConfig("EstoqueAlerta");
+            
+            if($pQtde <= $info["qtdeAlerta"]){
+                
+                $info["css"] = "alerta";
+                
+            }
+        }
+        
+        return $info;
+    }
+
+    function produtoEstoque_darBaixaEstoque($pCount,$pIdProduto){
+        
+        $ci = get_instance();
+        
+        $dataBusca["Cor"]["Id"]     = $ci->input->post("IdCor{$pCount}");
+        $dataBusca["Tamanho"]["Id"] = $ci->input->post("IdTamanho{$pCount}");
+        $dataBusca["IdProduto"]     = $pIdProduto;
+        $dataBusca["IsBusca"]       = true;
+        
+        $EstoqueProduto = $ci->Produto_Estoque_model->Listar($dataBusca);
+        
+        $qtdeBaixa = $ci->input->post("IdQuantidade{$pCount}");
+        
+        if($EstoqueProduto["Qtde_estoque"] >= $qtdeBaixa){
+            
+           $dataAtualizacao["Id"]          = $EstoqueProduto["Id"];
+           $dataAtualizacao["Qtde_estoque"]= $EstoqueProduto["Qtde_estoque"] - $qtdeBaixa;
+            
+           $ci->Produto_Estoque_model->Atualizar($dataAtualizacao);
+            
+        }
+        
+        $dataBuscaProduto["Id"]     = $pIdProduto;
+        $dataBuscaProduto["IsBusca"]= true;
+        
+        $produto = $ci->Produto_model->Listar($dataBuscaProduto);
+        
+        $dataAtualizacaoProduto["Id"] = $pIdProduto;
+        $dataAtualizacaoProduto["EstoqueTotal"] = $produto["EstoqueTotal"] - $qtdeBaixa;
+        
+        $ci->Produto_model->Atualizar($dataAtualizacaoProduto);
+        
+        //var_dump($EstoqueProduto);
     }

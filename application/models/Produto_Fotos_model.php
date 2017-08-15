@@ -45,6 +45,7 @@
                     tb_produto_fotos.*
                     ,Produto.*
                     
+                    ,tb_produto_fotos.IdCor AS IdCorFoto
 					,UI.Nome AS NomeUI,UI.Email AS EmailUI
 					,UA.Nome AS NomeUA,UA.Email AS EmailUA
 					,Origem.Descricao AS DescricaoOrigem

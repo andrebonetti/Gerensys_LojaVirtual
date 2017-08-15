@@ -16,6 +16,7 @@
         <link rel="stylesheet/less" href="<?=base_url("less/style.less")?>">    
 
         <script src="<?=base_url("js/jquery-2.1.3.min.js")?>"></script>
+        <script src="<?=base_url("js/jquery.maskedinput.js")?>"></script>
         <script src="<?=base_url("js/bootstrap.js")?>"></script>
         <script src="<?=base_url("js/my_script-header.js")?>"></script>
         <script src="<?=base_url("js/less.js")?>"></script>
@@ -186,6 +187,10 @@
         
         <?php if (!empty($this->session->flashdata('msg-erro'))){?>
     		<p class="alert alert-danger alert-flash"><?=$this->session->flashdata('msg-erro')?></p>
+    	<?php } ?>
+        
+        <?php if (!empty($this->session->flashdata('msg-alerta'))){?>
+    		<p class="alert alert-warning alert-flash"><?=$this->session->flashdata('msg-alerta')?></p>
     	<?php } ?>
         
         <?php produto_DestroySessaoFiltros($atual_page); ?>

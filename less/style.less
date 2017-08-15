@@ -276,10 +276,15 @@ form{
         .inline-content(5%);
         padding: 5px;
         height: 300px;
+        
+        .esgotado{
+            opacity:0.6;
+        }
 
         .box{
             width: 100%;
             position: relative;
+            text-align:center;
             
             .img-content{
 				height: 180px;
@@ -363,7 +368,29 @@ form{
                 color: @white-9;
                 text-align: center;
             }
-
+            
+            p.produto-esgotado{
+                .lateral-margin(95%);
+                top:5px;
+                .border(5px,@white-8);
+                background-color: @white-8;
+                position: absolute;
+                padding: 2px;
+                color: @red-2;
+                text-align: center;
+            }
+            
+            p.alerta-estoque{
+                .lateral-margin(95%);
+                top:5px;
+                .border(5px,@red-3);
+                background-color: @red-3;
+                position: absolute;
+                padding: 2px;
+                color: @white-10;
+                text-align: center;
+            }
+            
             p.promocao{
                 .lateral-margin(80%);
                 top:150px;
@@ -393,6 +420,15 @@ form{
                 padding-left: 5px;
                 font-size: 1.1em;
                 font-weight: 600;
+                text-align:left;
+            }
+            
+            a.favoritos_remover{
+            
+                img{
+                    width:25px;
+                }
+            
             }
 
         }    
@@ -1174,10 +1210,28 @@ header:extend(.full-container) {
                                 color: @black-7;
                             }
                             
+                            p.js-alerta{
+                                background-color: #c32626;
+                                color: @white-9;
+                                border-color:  @white-9;
+                            }
+                            
                             p.js-esgotado{
                                 opacity:0.6;
                                 cursor:no-drop;
                                 border-color: transparent;
+                                color: @black-7;
+                                background-color: @white-10;
+                                border: solid 2px @black-7;
+                            }
+                            
+                            p.js-esgotado:hover{
+                                opacity:0.6;
+                                cursor:no-drop;
+                                border-color: transparent;
+                                color: @black-7;
+                                background-color: @white-10;
+                                border: solid 2px @black-7;
                             }
                         }
                         
@@ -1307,6 +1361,11 @@ header:extend(.full-container) {
 
             .img-content{
                 .float(left,53%);
+                
+                img{
+                    max-width: 100%;
+                }
+                
             }
          
         }
@@ -1387,6 +1446,23 @@ header:extend(.full-container) {
                 
                 select{
                     margin-bottom:8px;
+                    
+                    .active{
+                        background-color: @blue-3;
+                        color: @white-10;
+                    }
+                    
+                    .alerta{
+                        color: @white-10;
+                        background-color: @red-3;
+                    }
+                    
+                    .esgotado{
+                        cursor: no-drop;
+                        opacity: 0.6;
+                        color: @white-3;
+                    }
+                    
                 }
                 
             }
@@ -1487,13 +1563,13 @@ header:extend(.full-container) {
         }
         
         .finalizacao-compra{
-            .float(right,auto);
+            .float(right,50%);
             text-align: right;
             
             .opcoes:extend(.full-container){
                 
                 a{
-                    float: left;
+                    float: right;
                     margin-left: 5px;
                 }
                 
@@ -1720,6 +1796,16 @@ header:extend(.full-container) {
             
         }
         
+        .produtos-indicados{
+            margin-top:20px;
+            .float(left,100%);
+            
+            h2{
+                
+            }
+            
+        }
+        
         .content-cliente{
             
             .float(right,78%);
@@ -1837,6 +1923,20 @@ header:extend(.full-container) {
             
         }
         
+        .endereco_form{
+            
+            form{
+                .float(left,40%);
+                
+                .alterar{
+                    width: 100%;
+                    margin-top: 5px;
+                    
+                }
+            }
+            
+        }
+        
         .pagamentos{
             
             table{
@@ -1888,6 +1988,7 @@ header:extend(.full-container) {
             .master-box{
                 
                 .inline-content(4%);
+                height:320px;
                 
             }
             

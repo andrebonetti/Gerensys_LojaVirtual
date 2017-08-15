@@ -1,4 +1,4 @@
- <div class="cadastro_form content-cliente">
+ <div class="endereco_form content-cliente">
 
 	<?php if( count($erros) > 0){ ?>
     	<ul class="alert alert-danger">
@@ -26,8 +26,10 @@
 		<label>CEP</label>
         <input type="text" class="cep form-control" name="cep" value="<?php if(isset($dataCadastro["CEP"])){echo $dataCadastro["CEP"];} ?>">
 
-        <input type="submit" value="<?=$acao_form?>" class="btn btn-primary">
+        <input type="submit" value="<?=$acao_form?>" class="btn btn-primary alterar">
 
     <?= form_close()?>
 
 </div>    
+
+<script src="<?= base_url("js/my_script-clienteEnderecos.js")?>"></script>

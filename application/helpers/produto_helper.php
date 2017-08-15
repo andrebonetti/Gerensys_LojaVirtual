@@ -545,6 +545,8 @@
             $pProduto["classImg1"] = "Foto";
         }
         
+        $pProduto["CssEstoque"] = produtoEstoque_DefinirCSSEstoqueProduto($pProduto["EstoqueTotal"]);
+        
         return $pProduto;
         
     }

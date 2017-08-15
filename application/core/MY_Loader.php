@@ -19,6 +19,7 @@ class MY_Loader extends CI_Loader {
         $this->view("cliente/frames/header.php",$content);
         $this->view($nome,$content);
         $this->view("cliente/frames/footer.php",$content);
+        $this->view("frames/footer.php",$content);
     }
 
 }
