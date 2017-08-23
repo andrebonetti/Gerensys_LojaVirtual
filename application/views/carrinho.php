@@ -103,14 +103,25 @@
                         <!-- QUANTIDADE -->
                         <td class="quantidade">
                             
-                            <?php $qtde_Produto = produtoEstoque_BuscarEstoqueVariante($itemCarrinho["Produto"],$itemCarrinho["IdTamanho"],$itemCarrinho["IdCor"]) ?>
+                            <?php 
+                                if(isset($itemCarrinho["IdTamanho"])){
+                                    $pIdTamanho = $itemCarrinho["IdTamanho"];
+                                }
+                                else{$pIdTamanho = null;}
+                                
+                                if(isset($itemCarrinho["IdCor"])){
+                                    $pIdCor = $itemCarrinho["IdCor"];
+                                }
+                                else{$pIdCor = null;}
+                                
+                                $qtde_Produto = produtoEstoque_BuscarEstoqueVariante($itemCarrinho["Produto"],$pIdTamanho,$pIdCor) ?>
                                                      
-                            <span class="no-view qtde_limite"><?=$qtde_Produto["Qtde_estoque"]?></span>
+                            <span class="no-view qtde_limite"><?=$qtde_Produto?></span>
                             
-                            <input type="text" class="input-qtde form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
+                            <input type="text" disabled="true" class="input-qtde form-control" name="quantidade" value="<?=$itemCarrinho["Quantidade"]?>"/>  
                             <div class="opcoes">
                                 
-                                <img class="plus <?php if($itemCarrinho["Quantidade"] >= $qtde_Produto["Qtde_estoque"]){echo "no-view";} ?>" src="<?=base_url("img/plus.png")?>">
+                                <img class="plus <?php if($itemCarrinho["Quantidade"] >= $qtde_Produto){echo "no-view";} ?>" src="<?=base_url("img/plus.png")?>">
      
                                 <?php /*if($itemCarrinho["Quantidade"] > 1 ){ */?>
                                     <img class="less <?php if($itemCarrinho["Quantidade"] == 0){echo "no-view";} ?>" src="<?=base_url("img/less.png")?>">
@@ -170,12 +181,12 @@
                     
                         <input type="hidden" name="IdProduto<?=$n?>" value="<?=$itemCarrinho["Produto"]["Id"]?>"/>
                         <input type="hidden" name="IdQuantidade<?=$n?>" value="<?=$itemCarrinho["Quantidade"]?>"/>
-                        
+
                         <?php if( isset($itemCarrinho["IdTamanho"]) ){ ?>
                             <input type="hidden" name="IdTamanho<?=$n?>" value="<?=$itemCarrinho["IdTamanho"]?>"/>
                         <?php } ?>
                         
-                        <?php if( isset($itemCarrinho["IdTamanho"]) ){ ?>
+                        <?php if( isset($itemCarrinho["IdCor"]) ){ ?>
                             <input type="hidden" name="IdCor<?=$n?>" value="<?=$itemCarrinho["IdCor"]?>"/>
                         <?php } ?>
                         

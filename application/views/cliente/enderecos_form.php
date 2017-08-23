@@ -14,17 +14,26 @@
     
         <input type="hidden" name="Id" value="<?php if(isset($dataCadastro["Id"])){echo $dataCadastro["Id"];} ?>"/>
     
-        <label>Endereço</label>
+        <label>CEP</label>
+        <input type="text" class="cep form-control" name="cep" value="<?php if(isset($dataCadastro["CEP"])){echo $dataCadastro["CEP"];} ?>">
+     
+        <label>Rua</label>
         <input type="text" class="endereco form-control" name="endereco" value="<?php if(isset($dataCadastro["Endereco"])){echo $dataCadastro["Endereco"];} ?>">
         
         <label>Numero</label>
         <input type="text" class="numero form-control" name="numero" value="<?php if(isset($dataCadastro["Numero"])){echo $dataCadastro["Numero"];} ?>">
         
         <label>Complemento</label>
-        <input type="text" class="complemento form-control" name="complemento" value="<?php if(isset($dataCadastro["Complemento"])){echo $dataCadastro["Complemento"];} ?>">
-     
-		<label>CEP</label>
-        <input type="text" class="cep form-control" name="cep" value="<?php if(isset($dataCadastro["CEP"])){echo $dataCadastro["CEP"];} ?>">
+        <input type="text" class="complemento form-control" name="complemento" value="<?php if(isset($dataCadastro["Numero"])){echo $dataCadastro["Numero"];} ?>">
+        
+        <label>Bairro</label>
+        <input type="text" class="bairro form-control" name="bairro" value="<?php if(isset($dataCadastro["Bairro"])){echo $dataCadastro["Bairro"];} ?>">
+        
+        <label>Estado</label>
+        <input type="text" class="estado form-control" name="estado" value="<?php if(isset($dataCadastro["Estado"])){echo $dataCadastro["Estado"];} ?>">
+        
+        <label>Cidade</label>
+        <input type="text" class="cidade form-control" name="cidade" value="<?php if(isset($dataCadastro["Cidade"])){echo $dataCadastro["Cidade"];} ?>">
 
         <input type="submit" value="<?=$acao_form?>" class="btn btn-primary alterar">
 

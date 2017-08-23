@@ -71,6 +71,22 @@ class Ajax_Post extends CI_Controller {
 		echo json_encode($dataResult);
 	}
     
+    public function ConsultarCep(){
+        
+        $cep = $this->input->post("cep");  
+        //$cep = "03627-100";
+        $reg = simplexml_load_file("http://cep.republicavirtual.com.br/web_cep.php?formato=xml&cep=" . $cep);
+
+        $dados['sucesso'] = (string) $reg->resultado;
+        $dados['rua']     = (string) $reg->tipo_logradouro . ' ' . $reg->logradouro;
+        $dados['bairro']  = (string) $reg->bairro;
+        $dados['cidade']  = (string) $reg->cidade;
+        $dados['estado']  = (string) $reg->uf;
+
+        echo json_encode($dados);
+        
+    }
+    
     /*public function ProdutoDescricao_VerificarEstoqueVariante(){
         
         $idProduto = $this->input->post("idProduto");  

@@ -266,7 +266,6 @@
         return $lOpcoesParcelas;
     
     }
-
 	
 	function produto_HasSession(){
 		
@@ -548,6 +547,66 @@
         $pProduto["CssEstoque"] = produtoEstoque_DefinirCSSEstoqueProduto($pProduto["EstoqueTotal"]);
         
         return $pProduto;
+        
+    }
+
+    function produto_prepararProdutoIndicados($pCliente){
+        
+        $ci = get_instance();
+        
+        $dataBusca["Cliente"] = $pCliente; 
+        
+        $lPedidos = $ci->Cliente_Pedidos_model->Listar($dataBusca);
+        
+        //var_dump($lPedidos);
+        
+        $CountSetor = array();
+        $CountGrupo = array();
+        $CountSubGrupo = array();
+        $lProduto = array();
+        foreach($lPedidos as $itemPedido){
+            
+            $dataBuscaProduto["Pedido"] = $itemPedido;
+            $lProdutosPedido = $ci->Cliente_Pedido_Produtos_model->Listar($dataBuscaProduto);
+            
+            foreach($lProdutosPedido as $itemProdutoPedido){
+                
+                $dataBuscaProdutoPedido["Id"] = $itemProdutoPedido["IdProduto"];
+                $dataBuscaProdutoPedido["IsBusca"] = true;
+                
+                $produtoCount = $ci->Produto_model->Listar($dataBuscaProdutoPedido);
+
+                if( isset( $CountSetor[$produtoCount["IdSetor"]] )){
+                    $CountSetor[$produtoCount["IdSetor"]] = $CountSetor[$produtoCount["IdSetor"]] + 1;
+                }
+                else{
+                    $CountSetor[$produtoCount["IdSetor"]] = 1;
+                }
+                if( isset( $CountGrupo[$produtoCount["IdGrupo"]] )){
+                    $CountGrupo[$produtoCount["IdGrupo"]] = $CountGrupo[$produtoCount["IdGrupo"]] + 1;
+                }
+                else{
+                    $CountGrupo[$produtoCount["IdGrupo"]] = 1;
+                }
+                if( isset( $CountSubGrupo[$produtoCount["IdSubGrupo"]] )){
+                    $CountSubGrupo[$produtoCount["IdSubGrupo"]] = $CountSubGrupo[$produtoCount["IdSubGrupo"]] + 1;
+                }
+                else{
+                    $CountSubGrupo[$produtoCount["IdSubGrupo"]] = 1;
+                }
+                
+                $lProduto["{$itemProdutoPedido["IdProduto"]}"] = $produtoCount;
+            }
+            
+        }
+        
+        $Count["Setor"] = $CountSetor;
+        $Count["Grupo"] = $CountGrupo;
+        $Count["SubGrupo"] = $CountSubGrupo;
+        
+        /*var_dump($lProduto);
+        
+        var_dump($Count);*/
         
     }
     

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="D:\wamp\www\Gerensys_LojaVirtual\Gerensys_LojaVirtual.clpprj">
 	<removed value=";D:\wamp\www\Gerensys_LojaVirtual\application\.htaccess;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\index.html;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster0.php;D:\wamp\www\Gerensys_LojaVirtual\application\models\index.html;"/><added value=""/><lastopfiles>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\favoritos.php"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\produtos.php"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\less\style.less"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\enderecos.php"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\enderecos_form.php"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\thumbnail-navigator-with-arrows.source.css"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\pedidos.php"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\pedido_detalhes.php"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\carrinho.php"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\less\style.less"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-adm.js"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\bootstrap.js"/>
 	</lastopfiles>
 	<todoblock>
 		<todofile name="D:\wamp\www\Gerensys_LojaVirtual\js\less.js">
@@ -288,16 +289,16 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\SQL\SQL_2017-06-06.sql" crc="1496772660"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\SQL\SQL_2017-06-05.sql" crc="1496934579"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\SQL\SQL_2017-06-05(Log).sql" crc="1496668496"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\less\style.less" crc="1502759568"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\less\style.less" crc="1503032868"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\less\base.less" crc="1499956875"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\thumbnail-navigator-with-arrows.source.js" crc="1498766257"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\thumbnail-navigator-with-arrows.source.js" crc="1502807748"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-produtos.js" crc="1499716079"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-produtoDescricao.js" crc="1502759260"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-produtoDescricao.js" crc="1502809985"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-home.js" crc="1501593753"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-header.js" crc="1502298964"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-clienteEnderecos.js" crc="1502738213"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-clienteEnderecos.js" crc="1502915023"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-clienteCadastro.js" crc="1502708281"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-carrinho.js" crc="1502706807"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-carrinho.js" crc="1502997446"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_script-adm.js" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\my_jassor.js" crc="1498762981"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\less.js" crc="1437013136"/>
@@ -307,11 +308,12 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\jquery-2.1.3.min.js" crc="1461626160"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\bootstrap.js" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\js\adm_produtos.js" crc="1498136902"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\thumbnail-navigator-with-arrows.source.css" crc="1502803563"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\thumbnail-navigator-with-arrows.source.css" crc="1502809347"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\style.css" crc="1439131764"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\my_jassor.css" crc="1498763584"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\bootstrap.css" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\css\base.css" crc="1439131764"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\snipplets\box.php" crc="1502860324"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\frames\header.php" crc="1502760378"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\frames\footer.php" crc="1498245833"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\errors\html\index.html" crc="1490025068"/>
@@ -330,11 +332,12 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\frames\header.php" crc="1501786975"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\frames\footer.php" crc="1502739120"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\teste.php" crc="1499968990"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\pedidos.php" crc="1501788417"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\pedidos.php" crc="1502981803"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\pedido_detalhes.php" crc="1503065568"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\pagamentos.php" crc="1498747107"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\login.php" crc="1499955702"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\favoritos.php" crc="1502741970"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\enderecos_form.php" crc="1502738389"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\favoritos.php" crc="1502859444"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\enderecos_form.php" crc="1502932313"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\enderecos.php" crc="1499974354"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\cadastro_incluir_form.php" crc="1502708156"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\cliente\cadastro_atualizar_form.php" crc="1502737934"/>
@@ -343,13 +346,13 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\adm\adm_produtos.php" crc="1498136322"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\adm\adm_home.php" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\welcome_message.php" crc="1437013136"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\produtos.php" crc="1502699891"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php" crc="1502803183"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\produtos.php" crc="1502858794"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\produto_descricao.php" crc="1502979988"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\index.html" crc="1490025068"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\home.php" crc="1502707445"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\home.php" crc="1502858789"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\empresa.php" crc="1498195688"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\contato.php" crc="1498246309"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\carrinho.php" crc="1502706555"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\views\carrinho.php" crc="1502998071"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\third_party\index.html" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Usuarios_model.php" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\TipoPreco_model.php" crc="1496947739"/>
@@ -369,7 +372,7 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_V_Cor_model.php" crc="1502307773"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Promocao_model.php" crc="1499184087"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Preco_model.php" crc="1499182034"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php" crc="1502802936"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php" crc="1502810865"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php" crc="1502802724"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Estoque_model.php" crc="1502801329"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Destaques_model.php" crc="1499273864"/>
@@ -382,11 +385,14 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cst_csosn_model.php" crc="1496947644"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Config_model.php" crc="1502213734"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedidos_model.php" crc="1501783387"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php" crc="1501784466"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php" crc="1503031747"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php" crc="1499952523"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php" crc="1500060321"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php" crc="1499975996"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-15.php" crc="1502803408"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-18.php" crc="1503061924"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-17.php" crc="1503001720"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-16.php" crc="1502915036"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-15.php" crc="1502822645"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-14.php" crc="1502741984"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-13.php" crc="1502660258"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\logs\log-2017-08-11.php" crc="1502482187"/>
@@ -451,16 +457,16 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\transform_name_helper.php" crc="1501876904"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\R_SetorXGrupoXSubGrupo_helper.php" crc="1501592003"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_promocao_helper.php" crc="1499315853"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php" crc="1502698077"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_fotos_helper.php" crc="1502803149"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php" crc="1502702497"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php" crc="1502910599"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_fotos_helper.php" crc="1502810786"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php" crc="1502999160"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\preco_helper.php" crc="1497384377"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\header_helper.php" crc="1501787265"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\config_helper.php" crc="1502213964"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\codigosAlternativos_helper.php" crc="1497384435"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_pedidos_helper.php" crc="1501783758"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php" crc="1501786729"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php" crc="1499970231"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php" crc="1502857598"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php" crc="1502932994"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\carrinho_helper.php" crc="1502381650"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\helpers\active_helper.php" crc="1498151256"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\errors\index.html" crc="1437013136"/>
@@ -470,13 +476,13 @@
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\errors\error_404.php" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\core\MY_Loader.php" crc="1502738944"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\core\index.html" crc="1437013136"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php" crc="1502305093"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\produtos.php" crc="1502810853"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\home.php" crc="1501787060"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\empresa.php" crc="1501787060"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\contato.php" crc="1501787060"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php" crc="1502760583"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php" crc="1503030427"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\carrinho.php" crc="1502381724"/>
-		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php" crc="1502385223"/>
+		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php" crc="1502914629"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\adm_produtos.php" crc="1498841956"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\adm_crud.php" crc="1437013136"/>
 		<file name="D:\wamp\www\Gerensys_LojaVirtual\application\controllers\adm.php" crc="1437013136"/>

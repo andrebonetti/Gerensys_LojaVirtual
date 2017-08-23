@@ -1,7 +1,9 @@
+//$(".input-qtde").prop("disable",true);
+
 $(document).on("click", ".plus", function(){
        
     input = $(this).closest(".quantidade").find(".input-qtde");
-    qtdeLimite = $(".qtde_limite").text();
+    qtdeLimite = $(this).closest(".quantidade").find(".qtde_limite").text();
     qtdeAtual = parseInt(input.val());
     
     tr  = $(this).closest("tr");
@@ -14,6 +16,7 @@ $(document).on("click", ".plus", function(){
     input.val(qtdeAtual + 1);  
     
     $(this).closest(".quantidade").find(".less").show();
+    
     if( (qtdeAtual + 1) >= qtdeLimite){       
         $(this).hide();
     }
@@ -55,6 +58,7 @@ function AlterarSessaoCarrinho(pTipo,pIdProduto,pPrecoProduto,pCount){
         success: function(res) {  
             if (res)
             {
+                $(".Preco-total").text(res.ValorTotal);
                 $(".shop").find(".valor").text(res.ValorTotal);
                 $(".subTotal-"+pCount).text(res.SubTotalProdutoAtual);
             }

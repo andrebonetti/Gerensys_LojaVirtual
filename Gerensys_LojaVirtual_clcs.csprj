@@ -2864,100 +2864,491 @@
 <treenode node="update;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript.php;f1;740;2;743;;;;vpos;;vstring;;r Definition     update($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Update  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,741;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
 </treenode>
-<treenode node="CI_Jquery;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f0;26;1;1067;;;;vpos;;vCI_Javascript;;c;;r Definition     class CI_Jquery extends CI_Javascript  Description      Jquery Class;;d38,26;;b0,0;;m">
+<treenode node="CI_Jquery;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f0;26;1;1067;;;;vpos;;vCI_Javascript;;c;;r
+Definition
+    class CI_Jquery extends CI_Javascript
+
+Description
+     Jquery Class;;d38,26;;b0,0;;m">
 <treenode node="__construct;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f8;36;2;47;;;;vpos;;v;;r;;d1,37;;b1,0;;mparams;;p">
 </treenode>
-<treenode node="_add_event;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;915;2;926;;;;vpos;;vstring;;r Definition     _add_event($element, $js, $event)  Description      Add Event  Parameters:     string - The element to attach the event to     string - The code to execute     string - The event to pass;;d1,916;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_add_event;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;915;2;926;;;;vpos;;vstring;;r
+Definition
+    _add_event($element, $js, $event)
+
+Description
+     Add Event
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute
+    string - The event to pass;;d1,916;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_addClass;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;394;2;399;;;;vpos;;vstring;;r Definition     _addClass($element = &apos;this&apos;, $class=&apos;&apos;)  Description      Add Class  Parameters:     string - - element;;d1,395;;b0,0;;melement;;pclass;;p">
+<treenode node="_addClass;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;394;2;399;;;;vpos;;vstring;;r
+Definition
+    _addClass($element = &apos;this&apos;, $class=&apos;&apos;)
+
+Description
+     Add Class
+
+Parameters:
+    string - - element;;d1,395;;b0,0;;melement;;pclass;;p">
 </treenode>
-<treenode node="_animate;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;414;2;441;;;;vpos;;vstring;;r Definition     _animate($element = &apos;this&apos;, $params = array(), $speed = &apos;&apos;, $extra = &apos;&apos;)  Description      Animate  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,415;;b0,0;;melement;;pparams;;pspeed;;pextra;;p">
+<treenode node="_animate;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;414;2;441;;;;vpos;;vstring;;r
+Definition
+    _animate($element = &apos;this&apos;, $params = array(), $speed = &apos;&apos;, $extra = &apos;&apos;)
+
+Description
+     Animate
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,415;;b0,0;;melement;;pparams;;pspeed;;pextra;;p">
 </treenode>
-<treenode node="_blur;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;63;2;66;;;;vpos;;vstring;;r Definition     _blur($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Blur  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,64;;b0,0;;mstring;;pstring;;p">
+<treenode node="_blur;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;63;2;66;;;;vpos;;vstring;;r
+Definition
+    _blur($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Blur
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,64;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_change;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;80;2;83;;;;vpos;;vstring;;r Definition     _change($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Change  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,81;;b0,0;;mstring;;pstring;;p">
+<treenode node="_change;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;80;2;83;;;;vpos;;vstring;;r
+Definition
+    _change($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Change
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,81;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_clear_compile;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;972;2;975;;;;vpos;;vvoid;;r Definition     _clear_compile()  Description      Clear Compile;;d1,973;;b0,0;;m">
+<treenode node="_clear_compile;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;972;2;975;;;;vpos;;vvoid;;r
+Definition
+    _clear_compile()
+
+Description
+     Clear Compile;;d1,973;;b0,0;;m">
 </treenode>
-<treenode node="_click;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;98;2;111;;;;vpos;;vstring;;r Definition     _click($element = &apos;this&apos;, $js = &apos;&apos;, $ret_false = TRUE)  Description      Click  Parameters:     string - The element to attach the event to     string - The code to execute     boolean - whether or not to return false;;d1,99;;b0,0;;mstring;;pstring;;pboolean;;p">
+<treenode node="_click;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;98;2;111;;;;vpos;;vstring;;r
+Definition
+    _click($element = &apos;this&apos;, $js = &apos;&apos;, $ret_false = TRUE)
+
+Description
+     Click
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute
+    boolean - whether or not to return false;;d1,99;;b0,0;;mstring;;pstring;;pboolean;;p">
 </treenode>
-<treenode node="_compile;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;939;2;960;;;;vpos;;vstring;;r Definition     _compile($view_var = &apos;script_foot&apos;, $script_tags = TRUE)  Description      Compile;;d1,940;;b0,0;;mview_var;;pscript_tags;;p">
+<treenode node="_compile;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;939;2;960;;;;vpos;;vstring;;r
+Definition
+    _compile($view_var = &apos;script_foot&apos;, $script_tags = TRUE)
+
+Description
+     Compile;;d1,940;;b0,0;;mview_var;;pscript_tags;;p">
 </treenode>
-<treenode node="_dblclick;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;125;2;128;;;;vpos;;vstring;;r Definition     _dblclick($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Double Click  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,126;;b0,0;;mstring;;pstring;;p">
+<treenode node="_dblclick;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;125;2;128;;;;vpos;;vstring;;r
+Definition
+    _dblclick($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Double Click
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,126;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_document_ready;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;987;2;999;;;;vpos;;vstring;;r Definition     _document_ready($js)  Description      Document Ready;;d1,988;;b0,0;;mjs;;p">
+<treenode node="_document_ready;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;987;2;999;;;;vpos;;vstring;;r
+Definition
+    _document_ready($js)
+
+Description
+     Document Ready;;d1,988;;b0,0;;mjs;;p">
 </treenode>
-<treenode node="_error;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;142;2;145;;;;vpos;;vstring;;r Definition     _error($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Error  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,143;;b0,0;;mstring;;pstring;;p">
+<treenode node="_error;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;142;2;145;;;;vpos;;vstring;;r
+Definition
+    _error($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Error
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,143;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_fadeIn;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;456;2;469;;;;vpos;;vstring;;r Definition     _fadeIn($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Fade In  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,457;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_fadeIn;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;456;2;469;;;;vpos;;vstring;;r
+Definition
+    _fadeIn($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Fade In
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,457;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_fadeOut;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;484;2;497;;;;vpos;;vstring;;r Definition     _fadeOut($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Fade Out  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,485;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_fadeOut;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;484;2;497;;;;vpos;;vstring;;r
+Definition
+    _fadeOut($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Fade Out
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,485;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_focus;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;159;2;162;;;;vpos;;vstring;;r Definition     _focus($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Focus  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,160;;b0,0;;mstring;;pstring;;p">
+<treenode node="_focus;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;159;2;162;;;;vpos;;vstring;;r
+Definition
+    _focus($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Focus
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,160;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_hide;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;512;2;525;;;;vpos;;vstring;;r Definition     _hide($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Hide  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,513;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_hide;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;512;2;525;;;;vpos;;vstring;;r
+Definition
+    _hide($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Hide
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,513;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_hover;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;177;2;184;;;;vpos;;vstring;;r Definition     _hover($element = &apos;this&apos;, $over, $out)  Description      Hover  Parameters:     string - - element     string - - Javascript code for mouse over     string - - Javascript code for mouse out;;d1,178;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_hover;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;177;2;184;;;;vpos;;vstring;;r
+Definition
+    _hover($element = &apos;this&apos;, $over, $out)
+
+Description
+     Hover
+
+Parameters:
+    string - - element
+    string - - Javascript code for mouse over
+    string - - Javascript code for mouse out;;d1,178;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_keydown;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;198;2;201;;;;vpos;;vstring;;r Definition     _keydown($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Keydown  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,199;;b0,0;;mstring;;pstring;;p">
+<treenode node="_keydown;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;198;2;201;;;;vpos;;vstring;;r
+Definition
+    _keydown($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Keydown
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,199;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_keyup;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;215;2;218;;;;vpos;;vstring;;r Definition     _keyup($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Keyup  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,216;;b0,0;;mstring;;pstring;;p">
+<treenode node="_keyup;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;215;2;218;;;;vpos;;vstring;;r
+Definition
+    _keyup($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Keyup
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,216;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_load;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;232;2;235;;;;vpos;;vstring;;r Definition     _load($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Load  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,233;;b0,0;;mstring;;pstring;;p">
+<treenode node="_load;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;232;2;235;;;;vpos;;vstring;;r
+Definition
+    _load($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Load
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,233;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_mousedown;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;249;2;252;;;;vpos;;vstring;;r Definition     _mousedown($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Mousedown  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,250;;b0,0;;mstring;;pstring;;p">
+<treenode node="_mousedown;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;249;2;252;;;;vpos;;vstring;;r
+Definition
+    _mousedown($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Mousedown
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,250;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_mouseout;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;266;2;269;;;;vpos;;vstring;;r Definition     _mouseout($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Mouse Out  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,267;;b0,0;;mstring;;pstring;;p">
+<treenode node="_mouseout;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;266;2;269;;;;vpos;;vstring;;r
+Definition
+    _mouseout($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Mouse Out
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,267;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_mouseover;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;283;2;286;;;;vpos;;vstring;;r Definition     _mouseover($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Mouse Over  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,284;;b0,0;;mstring;;pstring;;p">
+<treenode node="_mouseover;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;283;2;286;;;;vpos;;vstring;;r
+Definition
+    _mouseover($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Mouse Over
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,284;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_mouseup;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;300;2;303;;;;vpos;;vstring;;r Definition     _mouseup($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Mouseup  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,301;;b0,0;;mstring;;pstring;;p">
+<treenode node="_mouseup;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;300;2;303;;;;vpos;;vstring;;r
+Definition
+    _mouseup($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Mouseup
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,301;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_output;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;317;2;328;;;;vpos;;vstring;;r Definition     _output($array_js = &apos;&apos;)  Description      Output  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,318;;b0,0;;marray_js;;p">
+<treenode node="_output;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;317;2;328;;;;vpos;;vstring;;r
+Definition
+    _output($array_js = &apos;&apos;)
+
+Description
+     Output
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,318;;b0,0;;marray_js;;p">
 </treenode>
-<treenode node="_prep_element;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;1032;2;1040;;;;vpos;;vstring;;r Definition     _prep_element($element)  Description      Prep Element  Parameters:     string;;d1,1033;;b0,0;;mstring;;p">
+<treenode node="_prep_element;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;1032;2;1040;;;;vpos;;vstring;;r
+Definition
+    _prep_element($element)
+
+Description
+     Prep Element
+
+Parameters:
+    string;;d1,1033;;b0,0;;mstring;;p">
 </treenode>
-<treenode node="_removeClass;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;538;2;543;;;;vpos;;vstring;;r Definition     _removeClass($element = &apos;this&apos;, $class=&apos;&apos;)  Description      Remove Class  Parameters:     string - - element;;d1,539;;b0,0;;melement;;pclass;;p">
+<treenode node="_removeClass;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;538;2;543;;;;vpos;;vstring;;r
+Definition
+    _removeClass($element = &apos;this&apos;, $class=&apos;&apos;)
+
+Description
+     Remove Class
+
+Parameters:
+    string - - element;;d1,539;;b0,0;;melement;;pclass;;p">
 </treenode>
-<treenode node="_resize;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;342;2;345;;;;vpos;;vstring;;r Definition     _resize($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Resize  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,343;;b0,0;;mstring;;pstring;;p">
+<treenode node="_resize;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;342;2;345;;;;vpos;;vstring;;r
+Definition
+    _resize($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Resize
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,343;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_scroll;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;359;2;362;;;;vpos;;vstring;;r Definition     _scroll($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Scroll  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,360;;b0,0;;mstring;;pstring;;p">
+<treenode node="_scroll;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;359;2;362;;;;vpos;;vstring;;r
+Definition
+    _scroll($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Scroll
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,360;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_show;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;678;2;691;;;;vpos;;vstring;;r Definition     _show($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Show  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,679;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_show;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;678;2;691;;;;vpos;;vstring;;r
+Definition
+    _show($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Show
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,679;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_slideDown;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;586;2;599;;;;vpos;;vstring;;r Definition     _slideDown($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Slide Down  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,587;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_slideDown;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;586;2;599;;;;vpos;;vstring;;r
+Definition
+    _slideDown($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Slide Down
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,587;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_slideToggle;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;614;2;627;;;;vpos;;vstring;;r Definition     _slideToggle($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Slide Toggle  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,615;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_slideToggle;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;614;2;627;;;;vpos;;vstring;;r
+Definition
+    _slideToggle($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Slide Toggle
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,615;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_slideUp;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;558;2;571;;;;vpos;;vstring;;r Definition     _slideUp($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)  Description      Slide Up  Parameters:     string - - element     string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds     string - - Javascript callback function;;d1,559;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_slideUp;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;558;2;571;;;;vpos;;vstring;;r
+Definition
+    _slideUp($element = &apos;this&apos;, $speed = &apos;&apos;, $callback = &apos;&apos;)
+
+Description
+     Slide Up
+
+Parameters:
+    string - - element
+    string - - One of &apos;slow&apos;, &apos;normal&apos;, &apos;fast&apos;, or time in milliseconds
+    string - - Javascript callback function;;d1,559;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_toggle;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;640;2;645;;;;vpos;;vstring;;r Definition     _toggle($element = &apos;this&apos;)  Description      Toggle  Parameters:     string - - element;;d1,641;;b0,0;;mstring;;p">
+<treenode node="_toggle;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;640;2;645;;;;vpos;;vstring;;r
+Definition
+    _toggle($element = &apos;this&apos;)
+
+Description
+     Toggle
+
+Parameters:
+    string - - element;;d1,641;;b0,0;;mstring;;p">
 </treenode>
-<treenode node="_toggleClass;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;658;2;663;;;;vpos;;vstring;;r Definition     _toggleClass($element = &apos;this&apos;, $class=&apos;&apos;)  Description      Toggle Class  Parameters:     string - - element;;d1,659;;b0,0;;melement;;pclass;;p">
+<treenode node="_toggleClass;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;658;2;663;;;;vpos;;vstring;;r
+Definition
+    _toggleClass($element = &apos;this&apos;, $class=&apos;&apos;)
+
+Description
+     Toggle Class
+
+Parameters:
+    string - - element;;d1,659;;b0,0;;melement;;pclass;;p">
 </treenode>
-<treenode node="_unload;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;376;2;379;;;;vpos;;vstring;;r Definition     _unload($element = &apos;this&apos;, $js = &apos;&apos;)  Description      Unload  Parameters:     string - The element to attach the event to     string - The code to execute;;d1,377;;b0,0;;mstring;;pstring;;p">
+<treenode node="_unload;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;376;2;379;;;;vpos;;vstring;;r
+Definition
+    _unload($element = &apos;this&apos;, $js = &apos;&apos;)
+
+Description
+     Unload
+
+Parameters:
+    string - The element to attach the event to
+    string - The code to execute;;d1,377;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="_updater;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;708;2;737;;;;vpos;;vstring;;r Definition     _updater($container = &apos;this&apos;, $controller, $options = &apos;&apos;)  Description      Updater  Parameters:     string - The element to attach the event to     string - the controller to run the call against     string - optional parameters;;d1,709;;b0,0;;mstring;;pstring;;pstring;;p">
+<treenode node="_updater;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;708;2;737;;;;vpos;;vstring;;r
+Definition
+    _updater($container = &apos;this&apos;, $controller, $options = &apos;&apos;)
+
+Description
+     Updater
+
+Parameters:
+    string - The element to attach the event to
+    string - the controller to run the call against
+    string - optional parameters;;d1,709;;b0,0;;mstring;;pstring;;pstring;;p">
 </treenode>
-<treenode node="_validate_speed;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;1053;2;1065;;;;vpos;;vstring;;r Definition     _validate_speed($speed)  Description      Validate Speed  Parameters:     string;;d1,1054;;b0,0;;mstring;;p">
+<treenode node="_validate_speed;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;1053;2;1065;;;;vpos;;vstring;;r
+Definition
+    _validate_speed($speed)
+
+Description
+     Validate Speed
+
+Parameters:
+    string;;d1,1054;;b0,0;;mstring;;p">
 </treenode>
-<treenode node="_zebraTables;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;752;2;766;;;;vpos;;vstring;;r Definition     _zebraTables($class = &apos;&apos;, $odd = &apos;odd&apos;, $hover = &apos;&apos;)  Description      Zebra tables  Parameters:     string - table name     string - plugin location;;d1,753;;b0,0;;mclass;;podd;;phover;;p">
+<treenode node="_zebraTables;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;752;2;766;;;;vpos;;vstring;;r
+Definition
+    _zebraTables($class = &apos;&apos;, $odd = &apos;odd&apos;, $hover = &apos;&apos;)
+
+Description
+     Zebra tables
+
+Parameters:
+    string - table name
+    string - plugin location;;d1,753;;b0,0;;mclass;;podd;;phover;;p">
 </treenode>
-<treenode node="corner;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;783;2;794;;;;vpos;;vstring;;r Definition     corner($element = &apos;&apos;, $corner_style = &apos;&apos;)  Description      Corner Plugin  Parameters:     string - target;;d1,784;;b0,0;;melement;;pcorner_style;;p">
+<treenode node="corner;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;783;2;794;;;;vpos;;vstring;;r
+Definition
+    corner($element = &apos;&apos;, $corner_style = &apos;&apos;)
+
+Description
+     Corner Plugin
+
+Parameters:
+    string - target;;d1,784;;b0,0;;melement;;pcorner_style;;p">
 </treenode>
-<treenode node="effect;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;821;2;824;;;;vpos;;vvoid;;r Definition     effect($src, $relative = FALSE)  Description      Effect;;d1,822;;b0,0;;msrc;;prelative;;p">
+<treenode node="effect;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;821;2;824;;;;vpos;;vvoid;;r
+Definition
+    effect($src, $relative = FALSE)
+
+Description
+     Effect;;d1,822;;b0,0;;msrc;;prelative;;p">
 </treenode>
-<treenode node="modal;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;806;2;809;;;;vpos;;vvoid;;r Definition     modal($src, $relative = FALSE)  Description      modal window;;d1,807;;b0,0;;msrc;;prelative;;p">
+<treenode node="modal;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;806;2;809;;;;vpos;;vvoid;;r
+Definition
+    modal($src, $relative = FALSE)
+
+Description
+     modal window;;d1,807;;b0,0;;msrc;;prelative;;p">
 </treenode>
-<treenode node="plugin;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;836;2;839;;;;vpos;;vvoid;;r Definition     plugin($src, $relative = FALSE)  Description      Plugin;;d1,837;;b0,0;;msrc;;prelative;;p">
+<treenode node="plugin;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;836;2;839;;;;vpos;;vvoid;;r
+Definition
+    plugin($src, $relative = FALSE)
+
+Description
+     Plugin;;d1,837;;b0,0;;msrc;;prelative;;p">
 </treenode>
-<treenode node="script;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;1012;2;1017;;;;vpos;;vstring;;r Definition     script($library_src = &apos;&apos;, $relative = FALSE)  Description      Script Tag  Parameters:     string;;d1,1013;;b0,0;;mlibrary_src;;prelative;;p">
+<treenode node="script;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;1012;2;1017;;;;vpos;;vstring;;r
+Definition
+    script($library_src = &apos;&apos;, $relative = FALSE)
+
+Description
+     Script Tag
+
+Parameters:
+    string;;d1,1013;;b0,0;;mlibrary_src;;prelative;;p">
 </treenode>
-<treenode node="sortable;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;865;2;883;;;;vpos;;vvoid;;r Definition     sortable($element, $options = array())  Description      Sortable;;d1,866;;b0,0;;melement;;poptions;;p">
+<treenode node="sortable;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;865;2;883;;;;vpos;;vvoid;;r
+Definition
+    sortable($element, $options = array())
+
+Description
+     Sortable;;d1,866;;b0,0;;melement;;poptions;;p">
 </treenode>
-<treenode node="tablesorter;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;895;2;898;;;;vpos;;vstring;;r Definition     tablesorter($table = &apos;&apos;, $options = &apos;&apos;)  Description      Table Sorter Plugin  Parameters:     string - table name     string - plugin location;;d1,896;;b0,0;;mstring;;pstring;;p">
+<treenode node="tablesorter;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;895;2;898;;;;vpos;;vstring;;r
+Definition
+    tablesorter($table = &apos;&apos;, $options = &apos;&apos;)
+
+Description
+     Table Sorter Plugin
+
+Parameters:
+    string - table name
+    string - plugin location;;d1,896;;b0,0;;mstring;;pstring;;p">
 </treenode>
-<treenode node="ui;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;851;2;854;;;;vpos;;vvoid;;r Definition     ui($src, $relative = FALSE)  Description      UI;;d1,852;;b0,0;;msrc;;prelative;;p">
+<treenode node="ui;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Javascript\Jquery.php;f1;851;2;854;;;;vpos;;vvoid;;r
+Definition
+    ui($src, $relative = FALSE)
+
+Description
+     UI;;d1,852;;b0,0;;msrc;;prelative;;p">
 </treenode>
 </treenode>
 <treenode node="CI_Lang;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\system\core\Lang.php;f0;26;1;155;;;;vpos;;v;;r Definition     class CI_Lang  Description      Language Class;;d14,26;;b0,0;;m">
@@ -3750,76 +4141,78 @@
 <treenode node="read_file;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\libraries\Zip.php;f1;241;2;261;;;;vpos;;vbool;;r Definition     read_file($path, $preserve_filepath = FALSE)  Description      Read the contents of a file and add it to the zip;;d1,242;;b0,0;;mpath;;ppreserve_filepath;;p">
 </treenode>
 </treenode>
-<treenode node="Cliente;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f1;2;5;598;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
-<treenode node="cadastro_alterarSenha_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;334;5;372;;;;vpos;;v;;r;;d46,334;;b1,0;;m">
+<treenode node="Cliente;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f1;2;5;637;;;;vpos;;vCI_Controller;;c;;r;;d36,2;;b0,0;;m">
+<treenode node="cadastro_alterarSenha_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;360;5;398;;;;vpos;;v;;r;;d46,360;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;100;7;125;;;;vpos;;v;;r;;d53,100;;b1,0;;m">
+<treenode node="cadastro_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;126;7;151;;;;vpos;;v;;r;;d53,126;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_atualizar_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;297;5;332;;;;vpos;;v;;r;;d43,297;;b1,0;;m">
+<treenode node="cadastro_atualizar_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;323;5;358;;;;vpos;;v;;r;;d43,323;;b1,0;;m">
 </treenode>
 <treenode node="cadastro_incluir_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f13;25;9;43;;;;vpos;;v;;r;;d45,25;;b1,0;;m">
 </treenode>
-<treenode node="cadastro_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;263;5;295;;;;vpos;;v;;r;;d44,263;;b1,0;;m">
+<treenode node="cadastro_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;289;5;321;;;;vpos;;v;;r;;d44,289;;b1,0;;m">
 </treenode>
-<treenode node="enderecos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f16;127;5;156;;;;vpos;;v;;r;;d36,127;;b1,0;;m">
+<treenode node="enderecos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f16;153;5;182;;;;vpos;;v;;r;;d36,153;;b1,0;;m">
 </treenode>
-<treenode node="enderecos_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;193;5;219;;;;vpos;;v;;r;;d58,193;;b1,0;;mpId;;p">
+<treenode node="enderecos_atualizar_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;219;5;245;;;;vpos;;v;;r;;d58,219;;b1,0;;mpId;;p">
 </treenode>
-<treenode node="enderecos_atualizar_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;408;6;442;;;;vpos;;v;;r;;d50,408;;b1,0;;m">
+<treenode node="enderecos_atualizar_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;434;6;468;;;;vpos;;v;;r;;d50,434;;b1,0;;m">
 </treenode>
-<treenode node="enderecos_excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;444;9;458;;;;vpos;;v;;r;;d47,444;;b1,0;;mpId;;p">
+<treenode node="enderecos_excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;470;9;484;;;;vpos;;v;;r;;d47,470;;b1,0;;mpId;;p">
 </treenode>
-<treenode node="enderecos_incluir_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;170;5;191;;;;vpos;;v;;r;;d43,170;;b1,0;;m">
+<treenode node="enderecos_incluir_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;196;5;217;;;;vpos;;v;;r;;d43,196;;b1,0;;m">
 </treenode>
-<treenode node="enderecos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;374;5;406;;;;vpos;;v;;r;;d42,374;;b1,0;;m">
+<treenode node="enderecos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f9;400;5;432;;;;vpos;;v;;r;;d42,400;;b1,0;;m">
 </treenode>
-<treenode node="enderecos_tornarPrincipal;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;460;9;478;;;;vpos;;v;;r;;d55,460;;b1,0;;mpId;;p">
+<treenode node="enderecos_tornarPrincipal;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;486;9;504;;;;vpos;;v;;r;;d55,486;;b1,0;;mpId;;p">
 </treenode>
-<treenode node="favoritos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;71;13;98;;;;vpos;;v;;r;;d39,71;;b1,0;;m">
+<treenode node="favoritos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;97;13;124;;;;vpos;;v;;r;;d39,97;;b1,0;;m">
 </treenode>
-<treenode node="favoritos_excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;518;9;538;;;;vpos;;v;;r;;d74,518;;b1,0;;mpIdFavorito;;ppIdProduto;;p">
+<treenode node="favoritos_excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;544;9;564;;;;vpos;;v;;r;;d74,544;;b1,0;;mpIdFavorito;;ppIdProduto;;p">
 </treenode>
-<treenode node="favoritos_excluirTodos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;540;9;553;;;;vpos;;v;;r;;d48,540;;b1,0;;m">
+<treenode node="favoritos_excluirTodos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;566;9;579;;;;vpos;;v;;r;;d48,566;;b1,0;;m">
 </treenode>
-<treenode node="favoritos_incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;480;9;516;;;;vpos;;v;;r;;d54,480;;b1,0;;mpIdProduto;;p">
+<treenode node="favoritos_incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;506;9;542;;;;vpos;;v;;r;;d54,506;;b1,0;;mpIdProduto;;p">
 </treenode>
 <treenode node="login_form;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f10;7;9;23;;;;vpos;;v;;r;;d31,7;;b1,0;;m">
 </treenode>
-<treenode node="login_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;223;6;254;;;;vpos;;v;;r;;d33,223;;b1,0;;m">
+<treenode node="login_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;249;6;280;;;;vpos;;v;;r;;d33,249;;b1,0;;m">
 </treenode>
-<treenode node="pagamentos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f16;158;5;168;;;;vpos;;v;;r;;d37,158;;b1,0;;m">
+<treenode node="pagamentos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f16;184;5;194;;;;vpos;;v;;r;;d37,184;;b1,0;;m">
 </treenode>
-<treenode node="pedidos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f13;47;10;69;;;;vpos;;v;;r;;d31,47;;b1,0;;m">
+<treenode node="pedido_detalhes;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f19;70;13;95;;;;vpos;;v;;r;;d55,70;;b1,0;;mpIdPedido;;p">
 </treenode>
-<treenode node="pedidos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;555;9;596;;;;vpos;;v;;r;;d46,555;;b1,0;;m">
+<treenode node="pedidos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f13;46;10;68;;;;vpos;;v;;r;;d31,46;;b1,0;;m">
 </treenode>
-<treenode node="sair;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;256;9;261;;;;vpos;;v;;r;;d27,256;;b1,0;;m">
+<treenode node="pedidos_incluir_post;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f15;581;9;635;;;;vpos;;v;;r;;d46,581;;b1,0;;m">
+</treenode>
+<treenode node="sair;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\cliente.php;f12;282;9;287;;;;vpos;;v;;r;;d27,282;;b1,0;;m">
 </treenode>
 </treenode>
 <treenode node="Cliente_Enderecos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f1;1;2;64;;;;vpos;;vCI_Model;;c;;r;;d48,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;46;3;49;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;48;3;51;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;48;3;51;;;;vpos;;v;;r;;d31,48;;b0,0;;mpData;;p">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;46;3;49;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;48;3;51;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;48;3;51;;;;vpos;;v;;r;;d31,48;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="AtualizarClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;53;3;56;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;53;3;56;;;;vpos;;v;;r;;d43,53;;b0,0;;mpData;;p">
+<treenode node="AtualizarClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;53;3;56;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;53;3;56;;;;vpos;;v;;r;;d43,53;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;59;3;62;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;59;3;62;;;;vpos;;v;;r;;d29,59;;b0,0;;mpData;;p">
+<treenode node="Excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;59;3;62;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;59;3;62;;;;vpos;;v;;r;;d29,59;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;40;3;43;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;40;3;45;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;40;3;45;;;;vpos;;v;;r;;d29,40;;b0,0;;mpData;;p">
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;40;3;43;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;40;3;45;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f5;40;3;45;;;;vpos;;v;;r;;d29,40;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;37;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f2;4;6;37;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;37;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;37;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;37;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Enderecos_model.php;f2;4;6;37;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="Cliente_Favoritos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f1;1;2;112;;;;vpos;;vCI_Model;;c;;r;;d48,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;91;3;94;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;91;3;94;;;;vpos;;v;;r;;d31,91;;b0,0;;mpData;;p">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;91;3;94;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;91;3;94;;;;vpos;;v;;r;;d31,91;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="AtualizarClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;96;3;99;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;96;3;99;;;;vpos;;v;;r;;d43,96;;b0,0;;mpData;;p">
+<treenode node="AtualizarClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;96;3;99;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;96;3;99;;;;vpos;;v;;r;;d43,96;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;102;3;105;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;102;3;105;;;;vpos;;v;;r;;d29,102;;b0,0;;mpData;;p">
+<treenode node="Excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;102;3;105;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;102;3;105;;;;vpos;;v;;r;;d29,102;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="ExcluirClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f8;107;3;110;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f8;107;3;110;;;;vpos;;v;;r;;d44,107;;b0,0;;mpData;;p">
+<treenode node="ExcluirClienteGeral;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f8;107;3;110;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f8;107;3;110;;;;vpos;;v;;r;;d44,107;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;83;3;88;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;83;3;88;;;;vpos;;v;;r;;d29,83;;b0,0;;mpData;;p">
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;83;3;88;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f5;83;3;88;;;;vpos;;v;;r;;d29,83;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f2;4;6;80;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;80;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;80;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Favoritos_model.php;f2;4;6;80;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="Cliente_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f1;1;2;94;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
@@ -3828,6 +4221,16 @@
 <treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f5;80;3;83;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f5;81;3;86;;;;vpos;;v;;r;;d29,81;;b0,0;;mpData;;p">
 </treenode>
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Codelobster1.php;f2;4;6;77;;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_model.php;f2;4;6;78;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
+</treenode>
+</treenode>
+<treenode node="Cliente_Pedido_Produtos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php;f1;1;2;102;;;;vpos;;vCI_Model;;c;;r;;d54,1;;b0,0;;m">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php;f5;91;3;94;;;;vpos;;v;;r;;d31,91;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Excluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php;f5;97;3;100;;;;vpos;;v;;r;;d29,97;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php;f5;83;3;88;;;;vpos;;v;;r;;d29,83;;b0,0;;mpData;;p">
+</treenode>
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Cliente_Pedido_Produtos_model.php;f2;4;6;80;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="CodigosAlternativos_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\CodigosAlternativos.php;f1;1;2;81;;;;vpos;;vCI_Model;;c;;r;;d50,1;;b0,0;;m">
@@ -3974,12 +4377,12 @@
 <treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Fotos_model.php;f2;4;6;71;;;;vpos;;v;;r;;d32,4;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
-<treenode node="produto_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f1;1;2;242;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
-<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f5;234;3;241;;;;vpos;;v;;r;;d31,234;;b0,0;;mpData;;p">
+<treenode node="produto_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f1;1;2;254;;;;vpos;;vCI_Model;;c;;r;;d38,1;;b0,0;;m">
+<treenode node="Atualizar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f5;246;3;253;;;;vpos;;v;;r;;d31,246;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f5;221;3;231;;;;vpos;;v;;r;;d29,221;;b0,0;;mpData;;p">
+<treenode node="Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f5;233;3;243;;;;vpos;;v;;r;;d29,233;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f8;3;9;218;;;;vpos;;v;;r;;d38,3;;b0,0;;mpData;;p">
+<treenode node="Listar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_model.php;f8;3;9;230;;;;vpos;;v;;r;;d38,3;;b0,0;;mpData;;p">
 </treenode>
 </treenode>
 <treenode node="Produto_Preco_model;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\models\Produto_Preco_model.php;f1;1;2;92;;;;vpos;;vCI_Model;;c;;r;;d44,1;;b0,0;;m">
@@ -4228,15 +4631,15 @@
 </treenode>
 <treenode node="character_limiter;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\helpers\text_helper.php;f1;76;2;101;;;;vpos;;vstring;;r Definition     character_limiter($str, $n = 500, $end_char = &apos;&amp;#8230;s&apos;)  Description      Character Limiter  Parameters:     string     integer     string - the end character;;d1,77;;b0,0;;mstring;;pinteger;;pstring;;p">
 </treenode>
-<treenode node="cliente_enderecos_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f1;2;2;12;;;;vpos;;v;;r;;d38,2;;b0,0;;m">
+<treenode node="cliente_enderecos_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f1;2;2;15;;;;vpos;;v;;r;;d38,2;;b0,0;;m">
 </treenode>
-<treenode node="cliente_enderecos_ValidarCampo;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f4;33;2;47;;;;vpos;;v;;r;;d81,33;;b0,0;;mpValidacao;;ppCampo;;ppCampoNome;;ppId;;p">
+<treenode node="cliente_enderecos_ValidarCampo;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f4;39;2;53;;;;vpos;;v;;r;;d81,39;;b0,0;;mpValidacao;;ppCampo;;ppCampoNome;;ppId;;p">
 </treenode>
-<treenode node="cliente_enderecos_ValidarDados;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f4;14;2;31;;;;vpos;;v;;r;;d74,14;;b0,0;;mpEndereco;;ppTipo;;p">
+<treenode node="cliente_enderecos_ValidarDados;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_enderecos_helper.php;f4;17;2;37;;;;vpos;;v;;r;;d74,17;;b0,0;;mpEndereco;;ppTipo;;p">
 </treenode>
 <treenode node="cliente_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;2;2;13;;;;vpos;;v;;r;;d28,2;;b0,0;;m">
 </treenode>
-<treenode node="cliente_preencheConteudoHeader;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f4;196;5;206;;;;vpos;;v;;r;;d53,196;;b0,0;;mpHeader;;p">
+<treenode node="cliente_preencheConteudoHeader;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f4;196;5;208;;;;vpos;;v;;r;;d53,196;;b0,0;;mpHeader;;p">
 </treenode>
 <treenode node="cliente_validarAlteracaoSenha;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\cliente_helper.php;f1;151;2;194;;;;vpos;;v;;r;;d47,151;;b0,0;;mpData;;p">
 </treenode>
@@ -4456,19 +4859,19 @@
 </treenode>
 <treenode node="prep_url;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\helpers\url_helper.php;f1;444;2;459;;;;vpos;;vstring;;r Definition     prep_url($str = &apos;&apos;)  Description      Prep URL  Parameters:     string - the URL;;d1,445;;b0,0;;mstring;;p">
 </treenode>
-<treenode node="produto_activeFiltro;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;279;2;286;;;;vpos;;v;;r;;d40,279;;b0,0;;mpFiltro;;p">
+<treenode node="produto_activeFiltro;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;278;2;285;;;;vpos;;v;;r;;d40,278;;b0,0;;mpFiltro;;p">
 </treenode>
-<treenode node="produto_activeFiltroValor;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;288;2;297;;;;vpos;;v;;r;;d54,288;;b0,0;;mpFiltro;;ppValor;;p">
+<treenode node="produto_activeFiltroValor;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;287;2;296;;;;vpos;;v;;r;;d54,287;;b0,0;;mpFiltro;;ppValor;;p">
 </treenode>
 <treenode node="produto_CalcularParcela;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;190;2;211;;;;vpos;;v;;r;;d95,190;;b0,0;;mpNumeroParcelas;;ppJurosAPartirDe;;ppPorcentagemJuros;;ppPreco;;p">
 </treenode>
-<treenode node="produto_DefinirOrderBy;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;473;2;505;;;;vpos;;v;;r;;d61,473;;b0,0;;mpProdutoData;;ppPostOrderBy;;p">
+<treenode node="produto_DefinirOrderBy;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;472;2;504;;;;vpos;;v;;r;;d61,472;;b0,0;;mpProdutoData;;ppPostOrderBy;;p">
 </treenode>
-<treenode node="produto_DestroySessaoFiltros;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;390;2;398;;;;vpos;;v;;r;;d51,390;;b0,0;;mpParametro;;p">
+<treenode node="produto_DestroySessaoFiltros;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;389;2;397;;;;vpos;;v;;r;;d51,389;;b0,0;;mpParametro;;p">
 </treenode>
 <treenode node="produto_GetPosts;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;133;5;188;;;;vpos;;v;;r;;d28,133;;b0,0;;m">
 </treenode>
-<treenode node="produto_HasSession;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;270;2;277;;;;vpos;;v;;r;;d30,270;;b0,0;;m">
+<treenode node="produto_HasSession;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;269;2;276;;;;vpos;;v;;r;;d30,269;;b0,0;;m">
 </treenode>
 <treenode node="produto_Incluir;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;86;2;130;;;;vpos;;v;;r;;d46,86;;b0,0;;mpData;;ppParametros;;p">
 </treenode>
@@ -4476,37 +4879,39 @@
 </treenode>
 <treenode node="produto_ListarOpcoesParcelas;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f4;213;5;267;;;;vpos;;v;;r;;d103,213;;b0,0;;mpNumeroParcelas;;ppJurosAPartirDe;;ppPorcentagemJuros;;ppPreco;;p">
 </treenode>
-<treenode node="produto_PreencherArrayBreadCrumb;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;366;2;388;;;;vpos;;v;;r;;d44,366;;b0,0;;m">
+<treenode node="produto_PreencherArrayBreadCrumb;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;365;2;387;;;;vpos;;v;;r;;d44,365;;b0,0;;m">
 </treenode>
-<treenode node="produto_PreencherBreadCrumb;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;314;2;364;;;;vpos;;v;;r;;d80,314;;b0,0;;mpFiltro;;ppValor;;ppNomeFiltro;;ppDescricao;;p">
+<treenode node="produto_PreencherBreadCrumb;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;313;2;363;;;;vpos;;v;;r;;d80,313;;b0,0;;mpFiltro;;ppValor;;ppNomeFiltro;;ppDescricao;;p">
 </treenode>
-<treenode node="produto_PreencherFiltroSession;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;299;2;312;;;;vpos;;v;;r;;d55,299;;b0,0;;mpProdutoData;;p">
+<treenode node="produto_PreencherFiltroSession;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;298;2;311;;;;vpos;;v;;r;;d55,298;;b0,0;;mpProdutoData;;p">
 </treenode>
-<treenode node="produto_prepararConteudoMenu;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f4;508;5;551;;;;vpos;;v;;r;;d52,508;;b0,0;;mpProduto;;p">
+<treenode node="produto_prepararConteudoMenu;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f4;507;5;550;;;;vpos;;v;;r;;d52,507;;b0,0;;mpProduto;;p">
 </treenode>
-<treenode node="produto_prepararFiltros;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;449;2;471;;;;vpos;;v;;r;;d51,449;;b0,0;;mpFiltro;;ppValor;;p">
+<treenode node="produto_prepararFiltros;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;448;2;470;;;;vpos;;v;;r;;d51,448;;b0,0;;mpFiltro;;ppValor;;p">
+</treenode>
+<treenode node="produto_prepararProdutoIndicados;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f4;552;5;610;;;;vpos;;v;;r;;d56,552;;b0,0;;mpCliente;;p">
 </treenode>
 <treenode node="produto_promocao_CalcularPromocao;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_promocao_helper.php;f4;3;5;9;;;;vpos;;v;;r;;d77,3;;b0,0;;mpPorcentagemDesconto;;ppPreco;;p">
 </treenode>
 <treenode node="produto_Salvar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;48;2;84;;;;vpos;;v;;r;;d45,48;;b0,0;;mpData;;ppParametros;;p">
 </treenode>
-<treenode node="produto_unsetDataBreadCrumb;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;400;2;447;;;;vpos;;v;;r;;d52,400;;b0,0;;mpBreadCrumbN;;p">
+<treenode node="produto_unsetDataBreadCrumb;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f1;399;2;446;;;;vpos;;v;;r;;d52,399;;b0,0;;mpBreadCrumbN;;p">
 </treenode>
 <treenode node="produto_Validar;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_helper.php;f4;3;5;20;;;;vpos;;v;;r;;d36,3;;b0,0;;mpData;;p">
 </treenode>
-<treenode node="produtoEstoque_BuscarEstoqueVariante;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;96;5;108;;;;vpos;;v;;r;;d80,96;;b0,0;;mpProduto;;ppIdTamanho;;ppIdCor;;p">
+<treenode node="produtoEstoque_BuscarEstoqueVariante;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;96;5;126;;;;vpos;;v;;r;;d80,96;;b0,0;;mpProduto;;ppIdTamanho;;ppIdCor;;p">
 </treenode>
 <treenode node="produtoEstoque_CalcularEstoqueVariante;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;56;5;94;;;;vpos;;v;;r;;d99,56;;b0,0;;mpProduto;;ppTipo;;ppIdVariante;;p">
 </treenode>
-<treenode node="produtoEstoque_darBaixaEstoque;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;161;5;194;;;;vpos;;v;;r;;d64,161;;b0,0;;mpCount;;ppIdProduto;;p">
+<treenode node="produtoEstoque_darBaixaEstoque;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;179;5;223;;;;vpos;;v;;r;;d64,179;;b0,0;;mpCount;;ppIdProduto;;p">
 </treenode>
-<treenode node="produtoEstoque_DefinirCSSEstoqueProduto;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;136;5;159;;;;vpos;;v;;r;;d60,136;;b0,0;;mpQtde;;p">
+<treenode node="produtoEstoque_DefinirCSSEstoqueProduto;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;154;5;177;;;;vpos;;v;;r;;d60,154;;b0,0;;mpQtde;;p">
 </treenode>
-<treenode node="produtoEstoque_DefinirCSSVariante;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;111;5;134;;;;vpos;;v;;r;;d54,111;;b0,0;;mpQtde;;p">
+<treenode node="produtoEstoque_DefinirCSSVariante;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;129;5;152;;;;vpos;;v;;r;;d54,129;;b0,0;;mpQtde;;p">
 </treenode>
 <treenode node="produtoEstoque_ListarVariantes;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_estoque_helper.php;f4;2;5;54;;;;vpos;;v;;r;;d78,2;;b0,0;;mpProduto;;ppListarEstoque;;p">
 </treenode>
-<treenode node="produtoFotos_ListarPorCor;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_fotos_helper.php;f4;2;5;37;;;;vpos;;v;;r;;d49,2;;b0,0;;mpProduto;;p">
+<treenode node="produtoFotos_ListarPorCor;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\helpers\produto_fotos_helper.php;f4;2;5;38;;;;vpos;;v;;r;;d49,2;;b0,0;;mpProduto;;p">
 </treenode>
 <treenode node="quotes_to_entities;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\system\helpers\string_helper.php;f1;115;2;118;;;;vpos;;vstring;;r Definition     quotes_to_entities($str)  Description      Quotes to Entities  Parameters:     string;;d1,116;;b0,0;;mstring;;p">
 </treenode>

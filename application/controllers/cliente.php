@@ -43,8 +43,7 @@
             
     	   }
     	
-	    	// --- AREA CLIENTE --- //
-	    	
+	    	// --- AREA CLIENTE --- //	
 		   	public function pedidos(){	
             
                 // --- HEADER ---
@@ -53,7 +52,7 @@
                 
                 // --- HEADER CLIENTE ---
                 $headerCliente = cliente_preencheConteudoHeader($header);
-                
+                         
                 $dataBuscaPedidos["IdCliente"] = $header["Cliente"];
                 $lPedidos = $this->Cliente_Pedidos_model->Listar($dataBuscaPedidos);
                 
@@ -68,6 +67,33 @@
             	// --- VIEW ---
             	$this->load->template_cliente("cliente/pedidos.php",$content);
 	        }
+            
+            public function pedido_detalhes($pIdPedido){
+                
+                // --- HEADER ---
+                $header = header_preencheConteudoHeader();
+                if(empty($header["Cliente"])){redirect("home");}
+                
+                // --- HEADER CLIENTE ---
+                $headerCliente = cliente_preencheConteudoHeader($header);
+                
+                $dataBuscaProduto["Pedido"]["Id"] = $pIdPedido;
+                $dataBuscaProduto["lJoin"] = true;
+                $dataBuscaProduto["Join"] = true;
+                $lProdutosPedido = $this->Cliente_Pedido_Produtos_model->Listar($dataBuscaProduto);
+                
+                // --- CONTENT ---	
+    			$content = array(
+                "header"	      => $header
+                ,"headerCliente"  => $headerCliente
+                ,"lProdutos"      => $lProdutosPedido
+                ,"title"          => "Loja Virtual | Catalogo de Produtos"
+                ,"atual_page"     => "pedidos");
+                
+            	// --- VIEW ---
+            	$this->load->template_cliente("cliente/pedido_detalhes.php",$content);
+                
+            }
             
             public function favoritos(){
                 
@@ -379,7 +405,7 @@
 	   		$cliente = cliente_validarSessao();
 	        if(empty($cliente)){redirect("home");} 
 	   	
-	   		$dataEndereco = cliente_enderecos_GetPosts();
+	   		$dataEndereco = cliente_enderecos_GetPosts();   
 	   		$dataEndereco["IdCliente"] = $cliente["Id"];
 	   	
 	   		$validacao = cliente_enderecos_ValidarDados($dataEndereco);
@@ -401,7 +427,7 @@
                 ,"atual_page"   => "enderecos_incluir_form");
 
             	// --- VIEW ---
-                $this->load->template("cliente/cadastro.php",$content);
+                $this->load->template("cliente/pedidos.php",$content);
 			}
 	   		
 	   }
@@ -582,6 +608,19 @@
                 for($n = 1;$n <= $dataInsert["QtdeProdutos"]; $n++){
                     
                     $dataInsertProduto["IdProduto"] = $this->input->post("IdProduto{$n}");
+                    $dataInsertProduto["Qtde"]      = $this->input->post("IdQuantidade{$n}");
+                    
+                    $IdTamanho = $this->input->post("IdTamanho{$n}");
+                    $IdCor = $this->input->post("IdCor{$n}");
+                    
+                    unset($dataInsertProduto["IdTamanho"]);
+                    if( !empty($IdTamanho)){
+                        $dataInsertProduto["IdTamanho"] = $IdTamanho;
+                    }
+                    unset($dataInsertProduto["IdCor"]);
+                    if( !empty($IdCor)){
+                        $dataInsertProduto["IdCor"] = $IdCor;
+                    }
                     
                     $this->Cliente_Pedido_Produtos_model->Incluir($dataInsertProduto);
                     
@@ -589,8 +628,8 @@
                     produtoEstoque_darBaixaEstoque($n,$dataInsertProduto["IdProduto"]);
                 }
                 
-                carrinho_limpar();
-                redirect("Cliente/pedidos");
+                /*carrinho_limpar();
+                redirect("Cliente/pedidos");*/
             
             }
  

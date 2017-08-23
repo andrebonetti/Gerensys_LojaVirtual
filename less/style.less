@@ -343,19 +343,25 @@ form{
                 text-align: center;
                 height: 55px;
             }
+            
+            .preco-content{
+                
+                height:45px;
 
-            p.preco{
-                font-weight: 600;
-                text-align: center;
-                font-size: 1.1em;
-                color: @black-6;
-            }
+                p.preco{
+                    font-weight: 600;
+                    text-align: center;
+                    font-size: 1.1em;
+                    color: @black-6;
+                }
 
-            p.parcela{
-                text-align: center;
-                font-size: 0.9;
-                font-weight: 600;
-                color: @black-9;
+                p.parcela{
+                    text-align: center;
+                    font-size: 0.9;
+                    font-weight: 600;
+                    color: @black-9;
+                }
+                
             }
 
             p.novidade{
@@ -1019,7 +1025,7 @@ header:extend(.full-container) {
         .container1:extend(.full-container){
             
             .info-compra{
-                .float(right,40%);         
+                .float(right,38%);         
                 background-color: @white-8;
                 padding:8px;
                 .border(4px,@blue-3);
@@ -1110,7 +1116,21 @@ header:extend(.full-container) {
                     
                     .classificacao{
                         text-align: center;
-                        .float(right,70%);
+                        .float(right,60%);
+                        
+                        .favoritos-icons:extend(.full-container){
+                            margin-top: 5px;
+                            
+                            .favorito-item{
+                                .inline-content(5%);
+                                text-align: center;
+                                
+                                img{
+                                    width: 30px;
+                                }
+                            }
+                            
+                        }
                     }
                 }
                 
@@ -1847,6 +1867,41 @@ header:extend(.full-container) {
                     
                 }
                 
+            }
+            
+        }
+        
+        .pedido-detalhes{
+            
+            table{
+                
+                td.imagem{
+                    img{
+                        width: 35px;
+                    }
+                }
+                
+                td.variantes{
+                    
+                    .titulo{
+                        width: 40px;
+                        font-weight: 600;
+                    }
+                    
+                }
+                
+                td.acoes{
+
+                    img{
+                        width:30px; 
+                        padding: 5px;
+                        cursor: pointer;
+                    }
+                    
+                    img:hover{
+                        opacity: 0.8;
+                    }
+                }
             }
             
         }

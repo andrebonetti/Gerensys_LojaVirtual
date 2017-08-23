@@ -8,6 +8,9 @@
         $data["Complemento"]	= $ci->input->post("complemento");	
         $data["Numero"]			= $ci->input->post("numero");
         $data["CEP"]			= $ci->input->post("cep");
+        $data["Bairro"]			= $ci->input->post("bairro");
+        $data["Estado"]			= $ci->input->post("estado");
+        $data["Cidade"]			= $ci->input->post("cidade");
         
 		return $data;
 	} 
@@ -26,6 +29,9 @@
 		$validacao = cliente_enderecos_ValidarCampo($validacao,$pEndereco["Complemento"],"Complemento",$Id);
 		$validacao = cliente_enderecos_ValidarCampo($validacao,$pEndereco["Numero"],"Numero",$Id);
         $validacao = cliente_enderecos_ValidarCampo($validacao,$pEndereco["CEP"],"CEP",$Id);
+        $validacao = cliente_enderecos_ValidarCampo($validacao,$pEndereco["Bairro"],"Bairro",$Id);
+        $validacao = cliente_enderecos_ValidarCampo($validacao,$pEndereco["Estado"],"Estado",$Id);
+        $validacao = cliente_enderecos_ValidarCampo($validacao,$pEndereco["Cidade"],"Cidade",$Id);
 		
 		return $validacao;
         

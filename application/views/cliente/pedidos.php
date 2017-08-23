@@ -38,7 +38,7 @@
                         
                     </td>
                     <td>Aguardando Pagamento</td>
-                    <td><a href="#">+ Detalhes</a></td>
+                    <td><?=anchor("Cliente/pedido_detalhes/{$itemPedido["Id"]}","+ Detalhes")?></td>
                            
                 </tr>
                 

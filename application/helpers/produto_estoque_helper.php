@@ -98,12 +98,30 @@
         
         $ci =  get_instance();
          
-        $dataBusca["Produto"]     = $pProduto;
-        $dataBusca["IdTamanho"]   = $pIdTamanho;
-        $dataBusca["IdCor"]       = $pIdCor;
-        $dataBusca["IsBusca"]     = true;
+        if( ($pIdTamanho != null) or ($pIdCor != null) )
+        {
+            $dataBusca["Produto"]     = $pProduto;
+            
+            if($pIdTamanho != null){
+                $dataBusca["IdTamanho"]   = $pIdTamanho;   
+            }
+            if($pIdCor != null){
+                $dataBusca["IdCor"]       = $pIdCor;
+            }
+            
+            $dataBusca["IsBusca"]     = true;
+            
+            $estoque = $ci->Produto_Estoque_model->Listar($dataBusca)["Qtde_estoque"];
+        }
+        else{
+            
+            $dataBusca["Id"]     = $pProduto["Id"];
+            $dataBusca["IsBusca"]= true;
+            
+            $estoque = $ci->Produto_model->Listar($dataBusca)["EstoqueTotal"];
+            
+        }
         
-        $estoque = $ci->Produto_Estoque_model->Listar($dataBusca);
 
         return $estoque;
     }
@@ -163,8 +181,16 @@
         
         $ci = get_instance();
         
-        $dataBusca["Cor"]["Id"]     = $ci->input->post("IdCor{$pCount}");
-        $dataBusca["Tamanho"]["Id"] = $ci->input->post("IdTamanho{$pCount}");
+        $IdTamanho = $ci->input->post("IdTamanho{$pCount}");
+        $IdCor     = $ci->input->post("IdCor{$pCount}");
+        
+        if( !empty($IdTamanho) ){
+            $dataBusca["Tamanho"]["Id"] = $IdTamanho;
+        }
+        if( !empty($IdCor) ){
+            $dataBusca["Cor"]["Id"] = $IdCor;
+        }
+        
         $dataBusca["IdProduto"]     = $pIdProduto;
         $dataBusca["IsBusca"]       = true;
         
@@ -172,13 +198,16 @@
         
         $qtdeBaixa = $ci->input->post("IdQuantidade{$pCount}");
         
-        if($EstoqueProduto["Qtde_estoque"] >= $qtdeBaixa){
+        if( !empty($EstoqueProduto)){
             
-           $dataAtualizacao["Id"]          = $EstoqueProduto["Id"];
-           $dataAtualizacao["Qtde_estoque"]= $EstoqueProduto["Qtde_estoque"] - $qtdeBaixa;
-            
-           $ci->Produto_Estoque_model->Atualizar($dataAtualizacao);
-            
+            if($EstoqueProduto["Qtde_estoque"] >= $qtdeBaixa){
+                
+               $dataAtualizacao["Id"]          = $EstoqueProduto["Id"];
+               $dataAtualizacao["Qtde_estoque"]= $EstoqueProduto["Qtde_estoque"] - $qtdeBaixa;
+                
+               $ci->Produto_Estoque_model->Atualizar($dataAtualizacao);
+                
+            }
         }
         
         $dataBuscaProduto["Id"]     = $pIdProduto;

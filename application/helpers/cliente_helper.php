@@ -203,5 +203,7 @@
         
         $data["CountFavoritos"] = $ci->Cliente_Favoritos_model->Listar($dataBuscaFavoritos);
         
+        $data["ProdutosIndicados"] = produto_prepararProdutoIndicados($dataBuscaFavoritos["Cliente"]);
+        
         return $data;
     }

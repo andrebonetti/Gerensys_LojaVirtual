@@ -18,8 +18,23 @@
 			}
 			else{
 				$this->db->order_by("IdPedido","asc");
-			}			
-						
+			}		
+            
+            if( isset($pData["Join"]) && ($pData["Join"] == true) ){
+                
+                $this->db->join("tb_produto_v_tamanho AS Tamanho", "Tamanho.Id = tb_cliente_pedido_produtos.IdTamanho","left");
+                $this->db->join("tb_produto_v_cor AS Cor", "Cor.Id = tb_cliente_pedido_produtos.IdCor","left");
+                
+            	$query_select = "
+                tb_cliente_pedido_produtos.*
+                
+            	,Tamanho.Descricao as DescricaoTamanho
+                ,Cor.Descricao as DescricaoCor";
+                
+                // --- SELECT ---
+                $this->db->select($query_select, false);
+            }
+		
 			// RETURN
             // ----- Count -----
 			if( (isset($pData["IsCount"])) && ($pData["IsCount"] == true) ){
@@ -31,6 +46,36 @@
 			else{
 				$data = $this->db->get()->result_array();
 			}
+            
+            
+            if( isset($pData["lJoin"]) && ($pData["lJoin"] == true) ){
+                
+                if(isset($pData["IsBusca"])){
+                    
+                    $dataBuscaProduto["Id"] = $data["IdProduto"];
+                    $dataBuscaProduto["IsBusca"] = true;
+                    $dataBuscaProduto["Join"] = true;
+                    
+                    $data["Produto"] = $this->Produto_model->Listar($dataBuscaProduto);
+                
+                }
+                else{
+                    
+                    $n = 0;
+                    foreach($data as $item){
+                        
+                        $dataBuscaProduto["Id"] = $item["IdProduto"];
+                        $dataBuscaProduto["IsBusca"] = true;
+                        $dataBuscaProduto["Join"] = true;
+                    
+                        $data[$n]["Produto"] = $this->Produto_model->Listar($dataBuscaProduto);
+                        
+                        $n++;
+                    }
+                    
+                }
+
+            }	
             
 			return $data;			        
 	    }
