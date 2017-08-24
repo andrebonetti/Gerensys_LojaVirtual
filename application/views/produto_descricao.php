@@ -114,10 +114,20 @@
 
                 <!-- CALCULA-FRETE -->
                 <div class="calculo-frete">
-
-                    <h2>Calculo de Frete</h2>
-                    <input type="text" class="form-control" id="cep" placeholder="CEP">
-                    <button class="calcular-frete" >Calcular Frete</button>
+                    
+                    <?= form_open("Ajax_Post/ConsultarFrete")?>
+                    
+                        <h2>Calculo de Frete</h2>
+                        <input type="text" class="form-control cep-input" name="cepDestino" placeholder="CEP">
+                        <input type="hidden" name="pesoBruto" value="1">
+                        <input type="hidden" name="comprimento" value="16">
+                        <input type="hidden" name="altura" value="5">
+                        <input type="hidden" name="largura" value="15">
+                        <input type="hidden" name="diametro" value="0">
+                        
+                        <input type="submit" class="calcular-frete" value="Calcular Frete">
+                    
+                    <?= form_close() ?>
 
                 </div>
                 

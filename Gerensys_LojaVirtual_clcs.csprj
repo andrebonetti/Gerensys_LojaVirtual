@@ -84,8 +84,12 @@
 <treenode node="produtos;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\adm_produtos.php;f9;4;5;30;;;;vpos;;v;;r;;d28,4;;b1,0;;m">
 </treenode>
 </treenode>
-<treenode node="Ajax_Post;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f0;2;1;81;;;;vpos;;vCI_Controller;;c;;r;;d38,2;;b0,0;;m">
+<treenode node="Ajax_Post;PHP:Class Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f0;2;1;183;;;;vpos;;vCI_Controller;;c;;r;;d38,2;;b0,0;;m">
 <treenode node="AlterarSessaoCarrinho;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f8;56;2;71;;;;vpos;;v;;r;;d41,56;;b1,0;;m">
+</treenode>
+<treenode node="ConsultarCep;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f11;73;5;87;;;;vpos;;v;;r;;d34,73;;b1,0;;m">
+</treenode>
+<treenode node="ConsultarFrete;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f11;89;5;173;;;;vpos;;v;;r;;d36,89;;b1,0;;m">
 </treenode>
 <treenode node="index;PHP:Function Name;D:\wamp\www\Gerensys_LojaVirtual\application\controllers\Ajax_post.php;f8;4;2;6;;;;vpos;;v;;r;;d24,4;;b1,0;;m">
 </treenode>

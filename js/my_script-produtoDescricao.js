@@ -1,3 +1,5 @@
+$(".cep-input").mask("99999-999");
+
 // Valida Variantes
 hasVariante =  $(".has-variante").text();
 if(hasVariante == 1){  
