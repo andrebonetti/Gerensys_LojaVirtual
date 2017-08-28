@@ -1,4 +1,8 @@
-larguraSlide = $(".img-content").width();
+larguraSlide = $(".img-1-1").width();
+alturaSlide = $(".img-1-1").width();
+
+//$(".slide-show").width(larguraSlide);
+//$(".slide-show").height(alturaSlide);
 
 jQuery(document).ready(function ($) {
             var options = {
@@ -34,14 +38,14 @@ jQuery(document).ready(function ($) {
 
                 //responsive code begin
                 //you can remove responsive code if you don't want the slider scales while window resizes
-                function ScaleSlider() {
+                /*function ScaleSlider() {
                     var parentWidth = jssor_slider.$Elmt.parentNode.clientWidth;
                     if (parentWidth)
                         jssor_slider.$ScaleWidth(Math.min(parentWidth, larguraSlide));
                     else
                         window.setTimeout(ScaleSlider, 30);
                 }
-                
+                */
                 numeroSlideShow = numeroSlideShow + 1;
             });
     

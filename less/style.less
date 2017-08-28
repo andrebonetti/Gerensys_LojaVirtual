@@ -1137,16 +1137,54 @@ header:extend(.full-container) {
                 .calculo-frete:extend(.full-container){
                     background-color: @white-10;
                     padding:8px 4px;
+                    
+                    .formulario-cep{
 
-                    input{
+                        input{
+                            .float(left,30%);
+                        }
 
-                        .float(left,30%);
-
+                        .calcular-frete{
+                            .float(right,68%);
+                            height: 33px;
+                        }
+                        
                     }
-
-                    .calcular-frete{
-                        .float(right,68%);
-                        height: 33px;
+                    
+                    .opcoes-frete:extend(.full-container){
+                        height: 0;
+                        overflow: hidden;
+                        display: block;
+                        
+                        .opcao{
+                            .inline-content(2%);
+                            text-align: center;
+                            padding:10px 5px 5px 5px;
+                            display: none;
+                            
+                            img{
+                                margin-bottom: 5px;
+                                padding: 5px;
+                            }
+                            
+                            p{
+                                margin-bottom: 0;
+                                padding: 0;
+                                
+                                .titulo{
+                                    font-weight: 600;
+                                }
+                            }
+                            
+                        }
+                        
+                        .ocultar-frete{
+                            clear: both;
+                            float: right;
+                            text-align: right;
+                            
+                        }
+                        
                     }
 
                 }
@@ -1388,7 +1426,7 @@ header:extend(.full-container) {
                     width: 100%;
                     
                     .img-slide{
-                        width: 100px;
+                        //width: 150px;
                         max-width: 100%;
                     }
                     

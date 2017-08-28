@@ -1,7 +1,4 @@
-<script src="<?=base_url("js/jssor.js")?>"></script>
-<script src="<?=base_url("js/jssor.slider.js")?>"></script> 
-<script src="<?=base_url("js/my_jassor.js")?>"></script>
-<script src="<?=base_url("js/thumbnail-navigator-with-arrows.source.js")?>"></script>
+
 
 <section class="produto-descricao my-content">
     <div class="myContainer">
@@ -75,8 +72,6 @@
                 <!-- CARTOES -->
                 <div class="cartoes">
 
-
-
                 </div>
 
                 <!-- FAVORITOS - CLASSIFICACAO -->
@@ -115,19 +110,46 @@
                 <!-- CALCULA-FRETE -->
                 <div class="calculo-frete">
                     
-                    <?= form_open("Ajax_Post/ConsultarFrete")?>
-                    
-                        <h2>Calculo de Frete</h2>
-                        <input type="text" class="form-control cep-input" name="cepDestino" placeholder="CEP">
-                        <input type="hidden" name="pesoBruto" value="1">
-                        <input type="hidden" name="comprimento" value="16">
-                        <input type="hidden" name="altura" value="5">
-                        <input type="hidden" name="largura" value="15">
-                        <input type="hidden" name="diametro" value="0">
+                    <div class="formulario-cep">
                         
-                        <input type="submit" class="calcular-frete" value="Calcular Frete">
+                        <?php /* form_open("Ajax_Post/ConsultarFrete") */?>
+
+                            <h2>Calculo de Frete</h2>
+                            <input type="text" class="form-control cep-input" name="cepDestino" placeholder="CEP">
+                            <input type="hidden" class="pesoBruto" name="pesoBruto" value="<?=$produto["PesoBruto"]?>">
+                            <input type="hidden" class="comprimento" name="comprimento" value="<?=$produto["Comprimento"]?>">
+                            <input type="hidden" class="altura" name="altura" value="<?=$produto["Altura"]?>">
+                            <input type="hidden" class="largura" name="largura" value="<?=$produto["Largura"]?>">
+                            <input type="hidden" class="diametro" name="diametro" value="<?=$produto["Diametro"]?>">
+
+                            <button class="calcular-frete">Calcular Frete</button>
+                            <?php /*<input type="submit" class="calcular-frete" value="Calcular Frete"> */ ?>
+                        
+                        <?php /*form_close() */?>
                     
-                    <?= form_close() ?>
+                    </div>
+                    
+                    <div class="opcoes-frete">
+                    
+                        <div class="opcao opcao-sedex">
+                        
+                            <img src="<?=base_url("img/sedex.png")?>">
+                            <p class="valor"><span class="titulo">Valor: </span><span class="value-valor-sedex"></span></p>
+                            <p class="prazo"><span class="titulo">Prazo: </span><span class="value-prazo-sedex"></span> dia(s)</p>
+                        
+                        </div>
+                        
+                        <div class="opcao opcao-pac">
+                        
+                            <img src="<?=base_url("img/pac.png")?>">
+                            <p class="valor"><span class="titulo">Valor: </span><span class="value-valor-pac"></span></p>
+                            <p class="prazo"><span class="titulo">Prazo: </span><span class="value-prazo-pac"></span> dia(s)</p>
+                        
+                        </div>
+                        
+                        <button class="ocultar-frete btn">Ocultar</button>
+                    
+                    </div>
 
                 </div>
                 
@@ -358,14 +380,16 @@
                         <!-- Slides Container -->
                         <div u="slides" class="uSlides">
 
-                            <?php foreach($itemCor["Fotos"] as $itemFoto){ ?>
+                            <?php 
+                            $i = 1;
+                            foreach($itemCor["Fotos"] as $itemFoto){ ?>
 
                                 <div>
-                                    <img u="image" class="img-slide" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
+                                    <img u="image" class="img-slide img-<?=$n?>-<?=$i?>" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
                                     <img u="thumb" src="<?=base_url("img/Produtos/".$itemFoto["NomeArquivo"]."")?>"/>
                                 </div>
 
-                            <?php } ?>
+                            <?php $i++; } ?>
 
                         </div>
 
@@ -495,5 +519,10 @@
     </div>
     
 </section>
+
+<script src="<?=base_url("js/jssor.js")?>"></script>
+<script src="<?=base_url("js/jssor.slider.js")?>"></script> 
+<script src="<?=base_url("js/my_jassor.js")?>"></script>
+<script src="<?=base_url("js/thumbnail-navigator-with-arrows.source.js")?>"></script>
 
 <script src="<?=base_url("js/my_script-produtoDescricao.js")?>"></script>

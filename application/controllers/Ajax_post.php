@@ -99,10 +99,10 @@ class Ajax_Post extends CI_Controller {
          $data['sCepOrigem'] = BuscarValorConfig("CepEmpresa");
          
          //CEP de destino, é o CEP do comprador, para onde irá o produto, esse parâmetro também é somente números.
-         $data['sCepDestino'] = preg_replace("/-/", "",  $this->input->post("cepDestino"));//'08270698';// POST
+         $data['sCepDestino'] = preg_replace("/-/", "",  $this->input->post("cepDestino"));
          
          //O peso do produto deverá ser enviado em quilogramas, leve em consideração que isso deverá incluir o peso da embalagem.
-         $data['nVlPeso'] = $this->input->post("pesoBruto");  //'1'; // POST
+         $data['nVlPeso'] = $this->input->post("pesoBruto");
          
          //1 para caixa / pacote  
          //2 para rolo/prisma.
@@ -152,24 +152,30 @@ class Ajax_Post extends CI_Controller {
          
          foreach($result -> cServico as $row) {
              
-             var_dump($row);
+             $dados["Codigo{$row -> Codigo}"]       = "{$row -> Codigo}";
+             $dados["Valor{$row -> Codigo}"]        = "{$row -> Valor}";
+             $dados["PrazoEntrega{$row -> Codigo}"] = "{$row -> PrazoEntrega}";
+             $dados["Erro{$row -> Codigo}"]         = "{$row -> Erro}";
              
-             //Os dados de cada serviço estará aqui
-             if($row -> Erro == 0) {
-                 echo $row -> Codigo . '<br>';
-                 echo $row -> Valor . '<br>';
-                 echo $row -> PrazoEntrega . '<br>';
-                 echo $row -> ValorMaoPropria . '<br>';
-                 echo $row -> ValorAvisoRecebimento . '<br>';
-                 echo $row -> ValorValorDeclarado . '<br>';
-                 echo $row -> EntregaDomiciliar . '<br>';
-                 echo $row -> EntregaSabado;
-             } else {
-                 echo $row -> MsgErro;
+             /*if($dados['Erro'] == 0){
+                $dados['MsgErro']      = "";    
              }
-             echo '<hr>';
-             
+             else{
+                $dados['MsgErro']      = "{$row -> MsgErro;}";
+             }*/
+
+             /*echo $row -> Codigo . '<br>';
+             echo $row -> Valor . '<br>';
+             echo $row -> PrazoEntrega . '<br>';
+             echo $row -> ValorMaoPropria . '<br>';
+             echo $row -> ValorAvisoRecebimento . '<br>';
+             echo $row -> ValorValorDeclarado . '<br>';
+             echo $row -> EntregaDomiciliar . '<br>';
+             echo $row -> EntregaSabado;*/
+                 
          }
+        
+         echo json_encode($dados);
         
     }
     

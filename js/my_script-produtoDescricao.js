@@ -12,6 +12,22 @@ if(hasVariante == 1){
 //Ajustes Slide Jassor
 $(".slide-noActive").css("visibility","hidden");
 
+/*window.onload = function() {
+    $(".uSlides > div > img.img-slide").each(function(){
+
+        //$(this).css("text-align","center");
+        
+        larguraImg = $(this).attr("src");
+        
+        alert(larguraImg);
+        
+        //$(this).css("width","430");
+        
+
+    });
+}*/
+
+//Variantes
 $(document).on("click", ".variante-naoAtiva", function(){
 
     tipo = $(this).attr("data-name");
@@ -238,3 +254,65 @@ function desativar_compra(){
     $(".alerta-variantes").show();
     
 }
+
+//Calcular Frete
+$(document).on("click", ".calcular-frete", function(){
+    
+   input = $(".cep-input").val();
+    
+   $(".opcao-sedex").hide();
+   $(".opcao-pac").hide();
+   $(".opcoes-frete").animate({height:"0px"}, 500); 
+    
+   if( (input.length) == 9 )
+   {
+        
+       pesoBruto = $(".pesoBruto").attr("value");
+       comprimento = $(".comprimento").attr("value");
+       altura = $(".altura").attr("value");
+       largura = $(".largura").attr("value");
+       diametro = $(".diametro").attr("value");
+       
+       /*alert(pesoBruto);
+       alert(comprimento);
+       alert(altura);
+       alert(largura);
+       alert(diametro);*/
+       
+       $.ajax({
+            type : 'POST',
+            url: "http://localhost/Gerensys_LojaVirtual/index.php/Ajax_Post/ConsultarFrete",
+            dataType: 'json', 
+            data: {cepDestino: input, pesoBruto: pesoBruto, comprimento: comprimento, altura: altura, largura: largura, diametro: diametro},
+            success: function(data){
+                
+               if(data.Erro40010 == 0){      
+                    $(".opcao-sedex").show();
+                    $(".value-valor-sedex").text(data.Valor40010);
+                    $(".value-prazo-sedex").text(data.PrazoEntrega40010);
+               }
+                
+               if(data.Erro41106 == 0){   
+                    $(".opcao-pac").show();
+                    $(".value-valor-pac").text(data.Valor41106);
+                    $(".value-prazo-pac").text(data.PrazoEntrega41106);
+               }
+               
+               $(".opcoes-frete").animate({height:"145px"}, 500); 
+            }
+       }); 
+       
+    }
+    else{
+        
+        alert("CEP Inválido");
+        
+    }
+
+});
+
+$(document).on("click", ".ocultar-frete", function(){
+
+    $(".opcoes-frete").animate({height:"0px"}, 500); 
+    
+});
